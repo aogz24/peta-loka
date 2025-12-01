@@ -33,30 +33,35 @@ export async function POST(request) {
         // Jika ada koordinat, ambil data berdasarkan koordinat
         if (data.latitude && data.longitude) {
           const { latitude, longitude, radius = 5000 } = data;
-          
+
           // Generate data dummy berdasarkan koordinat
-          const locationData = generateAllDummyData(latitude, longitude, radius);
-          
+          const locationData = generateAllDummyData(
+            latitude,
+            longitude,
+            radius
+          );
+
           // Hitung statistik area
           const categoryCount = {};
-          locationData.umkm.forEach(item => {
-            categoryCount[item.category] = (categoryCount[item.category] || 0) + 1;
+          locationData.umkm.forEach((item) => {
+            categoryCount[item.category] =
+              (categoryCount[item.category] || 0) + 1;
           });
-          
+
           // Cari pelatihan terdekat
           const nearestTraining = locationData.pelatihan
-            .map(training => {
+            .map((training) => {
               const distance = calculateDistance(
-                latitude, 
-                longitude, 
-                training.lat, 
+                latitude,
+                longitude,
+                training.lat,
                 training.lon
               );
               return { ...training, distance };
             })
             .sort((a, b) => a.distance - b.distance)
             .slice(0, 5);
-          
+
           const areaData = {
             umkmCount: locationData.umkm.length,
             wisataCount: locationData.wisata.length,
@@ -65,10 +70,10 @@ export async function POST(request) {
             location: {
               latitude,
               longitude,
-              radius
-            }
+              radius,
+            },
           };
-          
+
           insight = await kolosalAIService.analyzeAreaPotential(areaData);
         } else {
           // Fallback ke data clustering jika tidak ada koordinat

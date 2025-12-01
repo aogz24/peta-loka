@@ -8,7 +8,7 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated }) {
   const [insight, setInsight] = useState("");
   const [loading, setLoading] = useState(false);
   const [selectedType, setSelectedType] = useState("clustering");
-  
+
   // State untuk input koordinat
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
@@ -16,24 +16,26 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated }) {
 
   const generateInsight = async () => {
     if (!query && selectedType === "chat") return;
-    
+
     // Validasi koordinat untuk area-potential
     if (selectedType === "area-potential") {
       if (!latitude || !longitude) {
         setInsight("Error: Silakan masukkan koordinat latitude dan longitude");
         return;
       }
-      
+
       const lat = parseFloat(latitude);
       const lon = parseFloat(longitude);
-      
+
       if (isNaN(lat) || isNaN(lon)) {
         setInsight("Error: Koordinat harus berupa angka yang valid");
         return;
       }
-      
+
       if (lat < -90 || lat > 90 || lon < -180 || lon > 180) {
-        setInsight("Error: Koordinat tidak valid (latitude: -90 to 90, longitude: -180 to 180)");
+        setInsight(
+          "Error: Koordinat tidak valid (latitude: -90 to 90, longitude: -180 to 180)"
+        );
         return;
       }
     }
@@ -41,18 +43,18 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated }) {
     setLoading(true);
     try {
       let payload;
-      
+
       if (selectedType === "chat") {
         payload = { type: "chat", data: { query, context: clusteringData } };
       } else if (selectedType === "area-potential") {
         // Kirim koordinat ke API untuk analisis area
-        payload = { 
-          type: selectedType, 
+        payload = {
+          type: selectedType,
           data: {
             latitude: parseFloat(latitude),
             longitude: parseFloat(longitude),
-            radius: parseInt(radius)
-          }
+            radius: parseInt(radius),
+          },
         };
       } else {
         payload = { type: selectedType, data: clusteringData };
