@@ -100,7 +100,15 @@ export default function Home() {
                   type="number"
                   step="0.0001"
                   value={center[0]}
-                  onChange={(e) => setCenter([parseFloat(e.target.value), center[1]])}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    if (val === '') return;
+
+                    const parsed = parseFloat(val);
+                    if (!isNaN(parsed)) {
+                      setCenter([parsed, center[1]]);
+                    }
+                  }}
                   disabled={loading || mode !== 'manual'}
                   className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
@@ -120,7 +128,15 @@ export default function Home() {
                   type="number"
                   step="0.0001"
                   value={center[1]}
-                  onChange={(e) => setCenter([center[0], parseFloat(e.target.value)])}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    if (val === '') return;
+
+                    const parsed = parseFloat(val);
+                    if (!isNaN(parsed)) {
+                      setCenter([center[0], parsed]);
+                    }
+                  }}
                   disabled={loading || mode !== 'manual'}
                   className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
