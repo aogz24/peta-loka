@@ -24,6 +24,8 @@ export default function Home() {
   const [clusteringData, setClusteringData] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
   const [activeTab, setActiveTab] = useState('map');
+  const [showPicker, setShowPicker] = useState(false);
+  const [mode, setMode] = useState('manual'); // manual, current, map
 
   // Auto-load data on mount
   useEffect(() => {
@@ -83,55 +85,100 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:invert-100">
       {/* Control Panel */}
       <div className="container mx-auto px-4 py-6">
-        <div className="bg-white rounded-lg shadow-md p-4 mb-6">
-          <div className="flex flex-wrap items-end gap-4">
-            <div className="flex-1 min-w-[200px]">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Latitude</label>
-              <input
-                type="number"
-                step="0.0001"
-                value={center[0]}
-                onChange={(e) => setCenter([parseFloat(e.target.value), center[1]])}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                disabled={loading}
-              />
+        <div className="bg-white rounded-xl shadow p-5 mb-6 border border-gray-100">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Latitude */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">Latitude</label>
+              <div className="relative">
+                <span className="absolute left-3 top-2.5 text-gray-400">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" />
+                  </svg>
+                </span>
+                <input
+                  type="number"
+                  step="0.0001"
+                  value={center[0]}
+                  onChange={(e) => setCenter([parseFloat(e.target.value), center[1]])}
+                  disabled={loading || mode !== 'manual'}
+                  className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
             </div>
-            <div className="flex-1 min-w-[200px]">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Longitude</label>
-              <input
-                type="number"
-                step="0.0001"
-                value={center[1]}
-                onChange={(e) => setCenter([center[0], parseFloat(e.target.value)])}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                disabled={loading}
-              />
+
+            {/* Longitude */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">Longitude</label>
+              <div className="relative">
+                <span className="absolute left-3 top-2.5 text-gray-400">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                  </svg>
+                </span>
+                <input
+                  type="number"
+                  step="0.0001"
+                  value={center[1]}
+                  onChange={(e) => setCenter([center[0], parseFloat(e.target.value)])}
+                  disabled={loading || mode !== 'manual'}
+                  className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
             </div>
-            <div className="flex-1 min-w-[200px]">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Radius (meter)</label>
-              <input
-                type="number"
-                step="500"
-                value={radius}
-                onChange={(e) => setRadius(parseInt(e.target.value))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                disabled={loading}
-              />
+
+            {/* Radius */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">Radius (meter)</label>
+              <div className="relative">
+                <span className="absolute left-3 top-2.5 text-gray-400">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L15 8H9L12 2zM12 22l-3-6h6l-3 6zM2 12l6-3v6l-6-3zM22 12l-6 3V9l6 3z" />
+                  </svg>
+                </span>
+                <input
+                  type="number"
+                  step="500"
+                  value={radius}
+                  onChange={(e) => setRadius(parseInt(e.target.value))}
+                  disabled={loading}
+                  className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
             </div>
-            <button onClick={handleLocationChange} disabled={loading} className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold py-2 px-6 rounded-md flex items-center gap-2 transition-colors">
-              {loading ? (
-                <>
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                  Loading...
-                </>
-              ) : (
-                <>
-                  <Search className="w-5 h-5" />
-                  Cari Data
-                </>
-              )}
-            </button>
           </div>
+
+          {/* Select Mode */}
+          <div className="mt-4">
+            <label className="font-semibold text-gray-700 text-sm">Metode Pemilihan Lokasi</label>
+            <select
+              value={mode}
+              onChange={(e) => {
+                const val = e.target.value;
+                setMode(val);
+
+                if (val === 'current') {
+                  navigator.geolocation.getCurrentPosition((pos) => {
+                    setCenter([pos.coords.latitude, pos.coords.longitude]);
+                  });
+                }
+
+                if (val === 'map') {
+                  setShowPicker(true);
+                }
+              }}
+              className="w-full mt-1 px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="manual">Input Manual</option>
+              <option value="current">Gunakan Lokasi Saat Ini</option>
+              <option value="map">Pilih Lewat Peta</option>
+            </select>
+          </div>
+
+          {/* Button */}
+          <button onClick={handleLocationChange} disabled={loading} className="w-full mt-5 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-semibold">
+            {loading ? 'Memuat...' : 'Cari Data'}
+          </button>
         </div>
 
         {/* Tabs */}
@@ -151,6 +198,28 @@ export default function Home() {
             </button>
           </div>
         </div>
+
+        {showPicker && (
+          <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+            <div className="bg-white p-4 rounded-lg shadow-lg w-[600px] h-[500px] relative">
+              <h2 className="font-semibold mb-2">Pilih Lokasi dari Peta</h2>
+
+              <MapComponent
+                center={center}
+                zoom={13}
+                selectMode={true}
+                onSelectLocation={(lat, lon) => {
+                  setCenter([lat, lon]);
+                  setShowPicker(false);
+                }}
+              />
+
+              <button onClick={() => setShowPicker(false)} className="absolute top-2 right-2 dark:invert-0 bg-red-600 text-white px-3 py-1 rounded">
+                X
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Content */}
         <div className="bg-white rounded-b-lg shadow-md p-6">

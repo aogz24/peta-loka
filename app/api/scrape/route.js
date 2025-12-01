@@ -1,15 +1,12 @@
-import { NextResponse } from "next/server";
-import { generateAllDummyData } from "@/lib/data/dummy-data";
+import { NextResponse } from 'next/server';
+import { generateAllDummyData } from '@/lib/data/dummy-data';
 
 export async function POST(request) {
   try {
     const { lat, lon, radius = 5000 } = await request.json();
 
     if (!lat || !lon) {
-      return NextResponse.json(
-        { error: "Latitude and longitude are required" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Latitude and longitude are required' }, { status: 400 });
     }
 
     // Generate data dummy (menggantikan scraping OpenStreetMap)
@@ -21,10 +18,7 @@ export async function POST(request) {
       message: `Successfully generated ${data.total} dummy locations`,
     });
   } catch (error) {
-    console.error("Error in scrape API:", error);
-    return NextResponse.json(
-      { error: "Failed to generate data", details: error.message },
-      { status: 500 }
-    );
+    console.error('Error in scrape API:', error);
+    return NextResponse.json({ error: 'Failed to generate data', details: error.message }, { status: 500 });
   }
 }
