@@ -17,7 +17,7 @@ const MapComponent = dynamic(() => import('@/components/MapComponent'), {
 });
 
 export default function Home() {
-  const [center, setCenter] = useState([-6.2088, 106.8456]); // Jakarta default
+  const [center, setCenter] = useState([parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LAT), parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LNG)]); // Jakarta default
   const [radius, setRadius] = useState(5000);
   const [loading, setLoading] = useState(false);
   const [scrapedData, setScrapedData] = useState(null);
@@ -287,7 +287,7 @@ export default function Home() {
 
           {activeTab === 'stats' && (
             <div>
-              {clusteringData ? (
+              {clusteringData.overallClusters.clusters.length > 0 ? (
                 <ClusterStats clusteringData={clusteringData} />
               ) : (
                 <div className="text-center py-12">
@@ -300,7 +300,7 @@ export default function Home() {
 
           {activeTab === 'ai' && (
             <div>
-              {clusteringData ? (
+              {clusteringData.overallClusters.clusters.length > 0 ? (
                 <AIAgentPanel clusteringData={clusteringData} />
               ) : (
                 <div className="text-center py-12">
