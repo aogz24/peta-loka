@@ -156,7 +156,15 @@ export default function Home() {
                   type="number"
                   step="500"
                   value={radius}
-                  onChange={(e) => setRadius(parseInt(e.target.value))}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    if (val === '') return;
+                    const parsed = parseFloat(val);
+                    if (!isNaN(parsed)) {
+                      const MIN = 225;
+                      setRadius(parsed <= MIN ? MIN + 1 : parsed);
+                    }
+                  }}
                   disabled={loading}
                   className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
