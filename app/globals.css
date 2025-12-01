@@ -22,10 +22,10 @@
 } */
 
 /* Also support toggling dark mode via `.dark` class on the root element */
-.dark {
+/* .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
-}
+} */
 
 body {
   background: var(--background);
