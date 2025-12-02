@@ -1,13 +1,16 @@
 import { NextResponse } from "next/server";
 import clusteringService from "@/lib/services/clustering";
-import pelatihanData from "@/lib/data/pelatihan.json";
-import umkmData from "@/lib/data/umkm.json";
-import wisataData from "@/lib/data/wisata.json";
+import supabaseService from "@/lib/services/supabase";
 
 export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
     const numClusters = parseInt(searchParams.get("clusters") || "5");
+
+    // Fetch data from Supabase
+    console.log("Fetching data from Supabase...");
+    const { pelatihan: pelatihanData, umkm: umkmData, wisata: wisataData } = 
+      await supabaseService.fetchAllTypes();
 
     // Validasi data
     if (!umkmData || !wisataData || !pelatihanData) {
@@ -15,7 +18,7 @@ export async function GET(request) {
     }
 
     console.log(
-      "Loaded OSM data:",
+      "Loaded data from Supabase:",
       `UMKM(${umkmData.length}), Wisata(${wisataData.length}), Pelatihan(${pelatihanData.length})`
     );
 
@@ -73,10 +76,19 @@ export async function POST(request) {
       numClusters = 5,
     } = await request.json();
 
-    // Gunakan data dari file jika tidak ada custom data
-    const finalUmkm = customUmkm || umkmData;
-    const finalWisata = customWisata || wisataData;
-    const finalPelatihan = customPelatihan || pelatihanData;
+    let finalUmkm, finalWisata, finalPelatihan;
+
+    // Gunakan data dari Supabase jika tidak ada custom data
+    if (!customUmkm || !customWisata || !customPelatihan) {
+      const data = await supabaseService.fetchAllTypes();
+      finalUmkm = customUmkm || data.umkm;
+      finalWisata = customWisata || data.wisata;
+      finalPelatihan = customPelatihan || data.pelatihan;
+    } else {
+      finalUmkm = customUmkm;
+      finalWisata = customWisata;
+      finalPelatihan = customPelatihan;
+    }
 
     if (!finalUmkm || !finalWisata || !finalPelatihan) {
       return NextResponse.json(

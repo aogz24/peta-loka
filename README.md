@@ -1,15 +1,15 @@
 # PetaLoka UMKM 🗺️
 
-Platform pemetaan dan analisis UMKM dengan fitur clustering dan AI insight menggunakan data dari OpenStreetMap dan Kolosal AI.
+Platform pemetaan dan analisis UMKM dengan fitur clustering dan AI insight menggunakan data dari OpenStreetMap, Supabase, dan Kolosal AI.
 
 ## 🎯 Fitur Utama
 
-### 1. **Data Dummy untuk Development**
+### 1. **Database Supabase**
 
-- Generate otomatis data UMKM, wisata mikro, dan tempat pelatihan
-- Area pencarian dengan radius yang dapat disesuaikan
-- Data realistis dengan nama, kategori, dan lokasi yang variatif
-- _(Ready untuk integrasi OpenStreetMap di production)_
+- Data UMKM, wisata mikro, dan tempat pelatihan tersimpan di Supabase
+- Query cepat dengan indexing
+- Real-time ready
+- Scalable dan reliable
 
 ### 2. **Sistem Clustering (K-Means)**
 
@@ -34,7 +34,7 @@ Platform pemetaan dan analisis UMKM dengan fitur clustering dan AI insight mengg
 - Chart dan grafik statistik (Bar Chart, Pie Chart)
 - Dashboard analytics lengkap
 
-## 🚀 Cara Menggunakan
+## 🚀 Quick Start
 
 ### 1. Install Dependencies
 
@@ -42,20 +42,40 @@ Platform pemetaan dan analisis UMKM dengan fitur clustering dan AI insight mengg
 npm install
 ```
 
-### 2. Setup Environment Variables
+### 2. Setup Supabase
+
+Ikuti panduan lengkap di [SUPABASE_SETUP.md](./SUPABASE_SETUP.md)
+
+**Ringkasan:**
+1. Buat project di [Supabase](https://app.supabase.com/)
+2. Copy URL dan Anon Key ke `.env.local`
+3. Jalankan SQL schema dari `lib/supabase/schema.sql`
+4. Migrasi data dengan `npm run migrate`
+
+### 3. Setup Environment Variables
 
 Buat file `.env.local` dan isi dengan:
 
 ```env
 KOLOSAL_API_KEY=YOUR_API_KEY_HERE
-NEXT_PUBLIC_MAP_CENTER_LAT=-6.2088
-NEXT_PUBLIC_MAP_CENTER_LNG=106.8456
+
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=https://xxxxxxxxxxxx.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+# Map Config
+NEXT_PUBLIC_MAP_CENTER_LAT=-6.9170662
+NEXT_PUBLIC_MAP_CENTER_LNG=107.5923976
 NEXT_PUBLIC_MAP_ZOOM=12
 ```
 
-**PENTING**: Ganti `YOUR_API_KEY_HERE` dengan API key Kolosal AI Anda.
+### 4. Migrasi Data ke Supabase
 
-### 3. Jalankan Development Server
+```bash
+npm run migrate
+```
+
+### 5. Jalankan Development Server
 
 ```bash
 npm run dev
@@ -69,7 +89,9 @@ Buka browser dan akses `http://localhost:3000`
 peta-loka/
 ├── app/
 │   ├── api/
-│   │   ├── scrape/          # API untuk scraping OpenStreetMap
+│   │   ├── pelatihan/       # API fetch pelatihan dari Supabase
+│   │   ├── umkm/            # API fetch UMKM dari Supabase
+│   │   ├── wisata/          # API fetch wisata dari Supabase
 │   │   ├── clustering/      # API untuk clustering data
 │   │   └── ai-agent/        # API untuk AI insight
 │   ├── layout.js
@@ -80,36 +102,45 @@ peta-loka/
 │   └── ClusterStats.js      # Statistik dan chart
 ├── lib/
 │   ├── data/
-│   │   └── dummy-data.js        # Generator data dummy
+│   │   ├── pelatihan.json   # Source data untuk migrasi
+│   │   ├── umkm.json        # Source data untuk migrasi
+│   │   └── wisata.json      # Source data untuk migrasi
+│   ├── supabase/
+│   │   ├── client.js        # Supabase client
+│   │   └── schema.sql       # Database schema
 │   └── services/
-│       ├── openstreetmap.js     # Service scraping OSM (optional)
-│       ├── clustering.js        # Service K-Means clustering
-│       └── kolosal-ai.js        # Service Kolosal AI
-└── .env.local                   # Environment variables
+│       ├── supabase.js      # Supabase service
+│       ├── clustering.js    # K-Means clustering
+│       └── kolosal-ai.js    # Kolosal AI service
+├── scripts/
+│   └── migrate-to-supabase.js  # Migration script
+├── .env.local                  # Environment variables
+├── SUPABASE_SETUP.md          # Setup guide
+└── MIGRATION_GUIDE.md         # Migration guide lengkap
 ```
 
 ## 🔧 Tech Stack
 
 - **Frontend**: Next.js 16, React 19, TailwindCSS
+- **Database**: Supabase (PostgreSQL)
 - **Mapping**: Leaflet, React-Leaflet
 - **Charts**: Recharts
 - **Clustering**: ml-kmeans
 - **AI**: Kolosal AI (Llama 4 Maverick) via OpenAI SDK
-- **Data**: Dummy Data Generator (ready untuk OSM integration)
 - **Icons**: Lucide React
 
 ## 📊 Cara Kerja
 
-### 1. **Data Generation (Sementara Dummy)**
+### 1. **Data dari Supabase**
 
-- User input koordinat dan radius
-- System generate data dummy UMKM, wisata, dan pelatihan
-- Data tersebar random dalam radius yang ditentukan
-- Return structured data dengan kategori variatif
+- Data tersimpan di 3 tabel: `pelatihan`, `umkm`, `wisata`
+- API endpoints untuk fetch data dengan filter
+- Caching untuk performance optimal
+- Real-time updates ready
 
 ### 2. **Clustering**
 
-- Input: Data dengan koordinat lat/lon
+- Input: Data dari Supabase dengan koordinat lat/lon
 - Algoritma: K-Means (default 5 clusters)
 - Output:
   - Cluster assignment untuk setiap data point
@@ -144,23 +175,40 @@ peta-loka/
 
 ## 📝 API Endpoints
 
-### POST /api/scrape
+### GET /api/pelatihan
 
-Generate data dummy (menggantikan scraping OSM)
+Fetch data pelatihan dari Supabase
 
-```json
-{
-  "lat": -6.2088,
-  "lon": 106.8456,
-  "radius": 5000
-}
-```
+**Query params:**
+- `category` (optional): Filter by category
+- `limit` (optional): Limit results
 
-Response: Data dummy UMKM (30-50), Wisata (20-30), dan Pelatihan (10-15)
+### GET /api/umkm
+
+Fetch data UMKM dari Supabase
+
+**Query params:**
+- `category` (optional): Filter by category
+- `limit` (optional): Limit results
+
+### GET /api/wisata
+
+Fetch data wisata dari Supabase
+
+**Query params:**
+- `category` (optional): Filter by category
+- `limit` (optional): Limit results
+
+### GET /api/clustering
+
+Lakukan clustering pada data dari Supabase
+
+**Query params:**
+- `clusters` (optional): Jumlah cluster (default: 5)
 
 ### POST /api/clustering
 
-Lakukan clustering pada data
+Clustering dengan custom data
 
 ```json
 {
@@ -184,19 +232,25 @@ Generate AI insight
 
 ## 🌟 Tips Penggunaan
 
-1. **Untuk area padat UMKM**: Gunakan radius 2000-3000 meter
-2. **Untuk area luas**: Gunakan radius 5000-10000 meter
-3. **Optimal clusters**: 3-7 clusters untuk hasil terbaik
-4. **AI Insight**: Tunggu clustering selesai sebelum generate insight
-5. **Data Dummy**: Setiap request akan generate data baru yang random
+1. **Untuk area padat UMKM**: Filter data dengan limit atau category
+2. **Optimal clusters**: 3-7 clusters untuk hasil terbaik
+3. **AI Insight**: Tunggu clustering selesai sebelum generate insight
+4. **Performance**: Data sudah ter-index untuk query cepat
+5. **Scalability**: Supabase mendukung jutaan records
 
-## 🔄 Integrasi OpenStreetMap (Optional)
+## 📚 Dokumentasi Lengkap
 
-Untuk menggunakan data real dari OpenStreetMap, Anda bisa:
+- [SUPABASE_SETUP.md](./SUPABASE_SETUP.md) - Setup Supabase step-by-step
+- [MIGRATION_GUIDE.md](./MIGRATION_GUIDE.md) - Panduan migrasi data lengkap
 
-1. Uncomment code di `lib/services/openstreetmap.js`
-2. Update `app/api/scrape/route.js` untuk menggunakan `openStreetMapService`
-3. Pastikan koneksi internet stabil untuk query Overpass API
+## 🔄 NPM Scripts
+
+```bash
+npm run dev      # Jalankan development server
+npm run build    # Build untuk production
+npm run start    # Jalankan production server
+npm run migrate  # Migrasi data ke Supabase
+```
 
 ## 📄 License
 
@@ -204,4 +258,5 @@ MIT License
 
 ---
 
-**Dibuat dengan ❤️ menggunakan Next.js, OpenStreetMap, dan Kolosal AI**
+**Dibuat dengan ❤️ menggunakan Next.js, Supabase, dan Kolosal AI**
+
