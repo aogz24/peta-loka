@@ -1,24 +1,52 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Send, Loader2, MapPin } from 'lucide-react';
+import { useState } from "react";
+import { Send, Loader2, MapPin } from "lucide-react";
 
-export default function AIAgentPanel({ clusteringData, onInsightGenerated, center }) {
-  const [query, setQuery] = useState('');
-  const [insight, setInsight] = useState('');
+// Fungsi untuk memformat insight agar lebih natural
+const formatInsight = (text) => {
+  if (!text) return "";
+
+  return (
+    text
+      // Hapus markdown bold (**text**)
+      .replace(/\*\*(.+?)\*\*/g, "$1")
+      // Hapus markdown italic (*text* atau _text_)
+      .replace(/([^*])\*([^*]+)\*([^*])/g, "$1$2$3")
+      .replace(/_(.+?)_/g, "$1")
+      // Hapus markdown headers (##, ###, dll)
+      .replace(/^#{1,6}\s+/gm, "")
+      // Hapus markdown list markers (-, *, +)
+      .replace(/^[\*\-\+]\s+/gm, "• ")
+      // Hapus code blocks
+      .replace(/```[\s\S]*?```/g, "")
+      .replace(/`(.+?)`/g, "$1")
+      // Bersihkan spasi berlebih
+      .replace(/\n{3,}/g, "\n\n")
+      .trim()
+  );
+};
+
+export default function AIAgentPanel({
+  clusteringData,
+  onInsightGenerated,
+  center,
+}) {
+  const [query, setQuery] = useState("");
+  const [insight, setInsight] = useState("");
   const [loading, setLoading] = useState(false);
-  const [selectedType, setSelectedType] = useState('clustering');
+  const [selectedType, setSelectedType] = useState("clustering");
 
   // State untuk input koordinat
-  const [radius, setRadius] = useState('5000');
+  const [radius, setRadius] = useState("5000");
 
   const generateInsight = async () => {
-    if (!query && selectedType === 'chat') return;
+    if (!query && selectedType === "chat") return;
 
     // Validasi koordinat untuk area-potential
-    if (selectedType === 'area-potential') {
+    if (selectedType === "area-potential") {
       if (!center || center.length !== 2) {
-        setInsight('Error: Silakan masukkan koordinat latitude dan longitude');
+        setInsight("Error: Silakan masukkan koordinat latitude dan longitude");
         return;
       }
 
@@ -26,12 +54,14 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
       const lon = parseFloat(center[1]);
 
       if (isNaN(lat) || isNaN(lon)) {
-        setInsight('Error: Koordinat harus berupa angka yang valid');
+        setInsight("Error: Koordinat harus berupa angka yang valid");
         return;
       }
 
       if (lat < -90 || lat > 90 || lon < -180 || lon > 180) {
-        setInsight('Error: Koordinat tidak valid (latitude: -90 to 90, longitude: -180 to 180)');
+        setInsight(
+          "Error: Koordinat tidak valid (latitude: -90 to 90, longitude: -180 to 180)"
+        );
         return;
       }
     }
@@ -40,9 +70,9 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
     try {
       let payload;
 
-      if (selectedType === 'chat') {
-        payload = { type: 'chat', data: { query, context: clusteringData } };
-      } else if (selectedType === 'area-potential') {
+      if (selectedType === "chat") {
+        payload = { type: "chat", data: { query, context: clusteringData } };
+      } else if (selectedType === "area-potential") {
         // Kirim koordinat ke API untuk analisis area
         payload = {
           type: selectedType,
@@ -56,24 +86,25 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
         payload = { type: selectedType, data: clusteringData };
       }
 
-      const response = await fetch('/api/ai-agent', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/ai-agent", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
       const result = await response.json();
 
       if (result.success) {
-        setInsight(result.insight);
+        const formattedInsight = formatInsight(result.insight);
+        setInsight(formattedInsight);
         if (onInsightGenerated) {
-          onInsightGenerated(result.insight);
+          onInsightGenerated(formattedInsight);
         }
       } else {
-        setInsight('Error: ' + result.error);
+        setInsight("Error: " + result.error);
       }
     } catch (error) {
-      setInsight('Error generating insight: ' + error.message);
+      setInsight("Error generating insight: " + error.message);
     } finally {
       setLoading(false);
     }
@@ -82,14 +113,25 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 space-y-4">
       <div className="border-b pb-3">
-        <h2 className="text-2xl font-bold text-gray-800">🤖 AI Agent Insight</h2>
-        <p className="text-sm text-gray-600">Dapatkan insight dari hasil clustering menggunakan AI</p>
+        <h2 className="text-2xl font-bold text-gray-800">
+          🤖 AI Agent Insight
+        </h2>
+        <p className="text-sm text-gray-600">
+          Dapatkan insight dari hasil clustering menggunakan AI
+        </p>
       </div>
 
       {/* Type Selector */}
       <div className="space-y-2">
-        <label className="block text-sm font-medium text-gray-700">Tipe Analisis:</label>
-        <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)} className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" disabled={loading}>
+        <label className="block text-sm font-medium text-gray-700">
+          Tipe Analisis:
+        </label>
+        <select
+          value={selectedType}
+          onChange={(e) => setSelectedType(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          disabled={loading}
+        >
           <option value="clustering">Analisis Clustering Lengkap</option>
           <option value="area-potential">Potensi Area</option>
           <option value="chat">Chat Custom</option>
@@ -97,15 +139,17 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
       </div>
 
       {/* Chat Input */}
-      {selectedType === 'chat' && (
+      {selectedType === "chat" && (
         <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-700">Pertanyaan Anda:</label>
+          <label className="block text-sm font-medium text-gray-700">
+            Pertanyaan Anda:
+          </label>
           <div className="flex gap-2">
             <input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && generateInsight()}
+              onKeyPress={(e) => e.key === "Enter" && generateInsight()}
               placeholder="Tanyakan sesuatu tentang data UMKM..."
               className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               disabled={loading}
@@ -117,7 +161,7 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
       {/* Generate Button */}
       <button
         onClick={generateInsight}
-        disabled={loading || (selectedType === 'chat' && !query)}
+        disabled={loading || (selectedType === "chat" && !query)}
         className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold py-3 px-4 rounded-md flex items-center justify-center gap-2 transition-colors"
       >
         {loading ? (
@@ -135,12 +179,17 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
 
       {/* Insight Display */}
       {insight && (
-        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-4 border border-blue-200">
-          <h3 className="font-semibold text-gray-800 mb-2 flex items-center gap-2">
+        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-5 border border-blue-200">
+          <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
             <span className="text-blue-600">💡</span>
-            AI Insight:
+            Insight:
           </h3>
-          <div className="prose prose-sm max-w-none text-gray-700 whitespace-pre-wrap">{insight}</div>
+          <div
+            className="text-gray-700 leading-relaxed"
+            style={{ whiteSpace: "pre-wrap", lineHeight: "1.7" }}
+          >
+            {insight}
+          </div>
         </div>
       )}
 
@@ -150,7 +199,7 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
         <div className="grid grid-cols-2 gap-2">
           <button
             onClick={() => {
-              setSelectedType('clustering');
+              setSelectedType("clustering");
               setTimeout(generateInsight, 100);
             }}
             disabled={loading}
@@ -160,7 +209,7 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
           </button>
           <button
             onClick={() => {
-              setSelectedType('area-potential');
+              setSelectedType("area-potential");
               setTimeout(generateInsight, 100);
             }}
             disabled={loading}
