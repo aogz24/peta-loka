@@ -380,7 +380,7 @@ export default function Home() {
             <div>
               {clusteringData &&
               clusteringData.overall?.clusters?.length > 0 ? (
-                <AIAgentPanel clusteringData={clusteringData} center={center} />
+                <AIAgentPanel clusteringData={clusteringData} center={center} rad={radius} />
               ) : (
                 <div className="text-center py-12">
                   <GraduationCap className="w-16 h-16 text-gray-300 mx-auto mb-4" />

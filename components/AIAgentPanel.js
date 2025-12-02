@@ -31,14 +31,12 @@ export default function AIAgentPanel({
   clusteringData,
   onInsightGenerated,
   center,
+  rad,
 }) {
   const [query, setQuery] = useState("");
   const [insight, setInsight] = useState("");
   const [loading, setLoading] = useState(false);
   const [selectedType, setSelectedType] = useState("clustering");
-
-  // State untuk input koordinat
-  const [radius, setRadius] = useState("5000");
 
   const generateInsight = async () => {
     if (!query && selectedType === "chat") return;
@@ -79,7 +77,7 @@ export default function AIAgentPanel({
           data: {
             latitude: parseFloat(center[0]),
             longitude: parseFloat(center[1]),
-            radius: parseInt(radius),
+            radius: parseInt(rad || 5000),
           },
         };
       } else {
@@ -141,22 +139,14 @@ export default function AIAgentPanel({
       {/* Area Potential Input */}
       {selectedType === "area-potential" && (
         <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-700">
-            Radius (meter):
-          </label>
-          <input
-            type="number"
-            value={radius}
-            onChange={(e) => setRadius(e.target.value)}
-            placeholder="Masukkan radius dalam meter (contoh: 5000)"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            disabled={loading}
-            min="100"
-            max="50000"
-          />
-          <p className="text-xs text-gray-500">
-            Radius pencarian untuk analisis potensi area (100m - 50km)
-          </p>
+          <div className="bg-blue-50 border border-blue-200 rounded-md p-3">
+            <p className="text-sm text-blue-800">
+              <span className="font-semibold">Radius:</span> {rad || 5000} meter
+            </p>
+            <p className="text-xs text-blue-600 mt-1">
+              Radius otomatis dari peta saat ini
+            </p>
+          </div>
         </div>
       )}
 
