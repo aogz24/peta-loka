@@ -153,19 +153,30 @@ export default function AIAgentPanel({
           <div className="flex items-center gap-2">
             <Key className="w-4 h-4 text-gray-600" />
             <span className="text-sm font-medium text-gray-700">
-             Custom Kolosal AI API Key
+              Custom Kolosal AI API Key
             </span>
           </div>
           {apiKeySaved ? (
             <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">
-              ✓ Custom API Key
+              ✓ Tersimpan
             </span>
           ) : (
             <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded">
-              Default API Key
+              Belum Diatur
             </span>
           )}
         </div>
+
+        {apiKeySaved ? (
+          <p className="text-xs text-gray-500">
+            API key Anda telah disimpan. Gunakan tombol "Ubah" untuk memperbarui atau "Hapus" untuk menghapusnya.
+          </p>
+        ): (
+          <p className="text-xs text-gray-500">
+            Masukkan API key Kolosal AI Custom Anda untuk mengaktifkan fitur AI Agent apabila fitur tersebut tidak bisa saat menggunakan default API key sistem. 
+            API key ini akan disimpan di browser Anda dan tidak dikirim ke server.
+          </p>
+        )}
 
         {!showApiKeyInput && !apiKeySaved && (
           <button
