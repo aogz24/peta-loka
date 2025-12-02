@@ -9,8 +9,11 @@ export async function GET(request) {
 
     // Fetch data from Supabase
     console.log("Fetching data from Supabase...");
-    const { pelatihan: pelatihanData, umkm: umkmData, wisata: wisataData } = 
-      await supabaseService.fetchAllTypes();
+    const {
+      pelatihan: pelatihanData,
+      umkm: umkmData,
+      wisata: wisataData,
+    } = await supabaseService.fetchAllTypes();
 
     // Validasi data
     if (!umkmData || !wisataData || !pelatihanData) {

@@ -33,6 +33,7 @@ Ikuti checklist ini untuk setup Supabase dan migrasi data.
 - [ ] Isi juga `KOLOSAL_API_KEY` jika belum
 
 File `.env.local` harus terlihat seperti ini:
+
 ```env
 KOLOSAL_API_KEY=your_kolosal_api_key
 
@@ -64,6 +65,7 @@ npm run migrate
 ```
 
 **Expected output:**
+
 ```
 🚀 Starting migration to Supabase...
    Batch size: 1000
@@ -90,12 +92,14 @@ npm run migrate
 ### 6. Verify Migration
 
 #### Di Supabase Dashboard:
+
 - [ ] Buka "Table Editor"
 - [ ] Check table `pelatihan` (~18,557 records)
 - [ ] Check table `umkm` (~46,443 records)
 - [ ] Check table `wisata` (~52,841 records)
 
 #### Di Aplikasi:
+
 ```bash
 npm run dev
 ```
@@ -120,13 +124,13 @@ Jika semua checklist sudah ✅, aplikasi Anda sudah menggunakan Supabase! 🎉
 
 ## 🆘 Troubleshooting
 
-| Problem | Solution |
-|---------|----------|
-| Error: Missing Supabase env vars | Check `.env.local` sudah diisi dengan benar |
-| Table not found | Run SQL schema di Supabase Dashboard |
-| Migration failed | Check internet connection, try smaller batch size |
-| No data in app | Verify migration success in Supabase Dashboard |
-| API errors | Check browser console & terminal for error messages |
+| Problem                          | Solution                                            |
+| -------------------------------- | --------------------------------------------------- |
+| Error: Missing Supabase env vars | Check `.env.local` sudah diisi dengan benar         |
+| Table not found                  | Run SQL schema di Supabase Dashboard                |
+| Migration failed                 | Check internet connection, try smaller batch size   |
+| No data in app                   | Verify migration success in Supabase Dashboard      |
+| API errors                       | Check browser console & terminal for error messages |
 
 ## 📚 Documentation
 

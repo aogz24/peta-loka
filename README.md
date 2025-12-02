@@ -47,6 +47,7 @@ npm install
 Ikuti panduan lengkap di [SUPABASE_SETUP.md](./SUPABASE_SETUP.md)
 
 **Ringkasan:**
+
 1. Buat project di [Supabase](https://app.supabase.com/)
 2. Copy URL dan Anon Key ke `.env.local`
 3. Jalankan SQL schema dari `lib/supabase/schema.sql`
@@ -180,6 +181,7 @@ peta-loka/
 Fetch data pelatihan dari Supabase
 
 **Query params:**
+
 - `category` (optional): Filter by category
 - `limit` (optional): Limit results
 
@@ -188,6 +190,7 @@ Fetch data pelatihan dari Supabase
 Fetch data UMKM dari Supabase
 
 **Query params:**
+
 - `category` (optional): Filter by category
 - `limit` (optional): Limit results
 
@@ -196,6 +199,7 @@ Fetch data UMKM dari Supabase
 Fetch data wisata dari Supabase
 
 **Query params:**
+
 - `category` (optional): Filter by category
 - `limit` (optional): Limit results
 
@@ -204,6 +208,7 @@ Fetch data wisata dari Supabase
 Lakukan clustering pada data dari Supabase
 
 **Query params:**
+
 - `clusters` (optional): Jumlah cluster (default: 5)
 
 ### POST /api/clustering
@@ -259,4 +264,3 @@ MIT License
 ---
 
 **Dibuat dengan ❤️ menggunakan Next.js, Supabase, dan Kolosal AI**
-

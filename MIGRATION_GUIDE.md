@@ -93,22 +93,22 @@ Buka aplikasi dan periksa apakah data muncul di map.
 
 Semua table (pelatihan, umkm, wisata) memiliki struktur yang sama:
 
-| Column | Type | Description |
-|--------|------|-------------|
-| id | BIGINT | Primary key (dari OSM ID) |
-| type | TEXT | Tipe data (pelatihan/umkm/wisata) |
-| name | TEXT | Nama lokasi |
-| category | TEXT | Kategori (school/hotel/restaurant/etc) |
-| lat | DOUBLE PRECISION | Latitude |
-| lon | DOUBLE PRECISION | Longitude |
-| address | TEXT | Alamat |
-| phone | TEXT | Nomor telepon |
-| website | TEXT | Website |
-| opening_hours | TEXT | Jam operasional |
-| description | TEXT | Deskripsi |
-| tags | JSONB | Tags tambahan dari OSM |
-| created_at | TIMESTAMP | Waktu insert |
-| updated_at | TIMESTAMP | Waktu update terakhir |
+| Column        | Type             | Description                            |
+| ------------- | ---------------- | -------------------------------------- |
+| id            | BIGINT           | Primary key (dari OSM ID)              |
+| type          | TEXT             | Tipe data (pelatihan/umkm/wisata)      |
+| name          | TEXT             | Nama lokasi                            |
+| category      | TEXT             | Kategori (school/hotel/restaurant/etc) |
+| lat           | DOUBLE PRECISION | Latitude                               |
+| lon           | DOUBLE PRECISION | Longitude                              |
+| address       | TEXT             | Alamat                                 |
+| phone         | TEXT             | Nomor telepon                          |
+| website       | TEXT             | Website                                |
+| opening_hours | TEXT             | Jam operasional                        |
+| description   | TEXT             | Deskripsi                              |
+| tags          | JSONB            | Tags tambahan dari OSM                 |
+| created_at    | TIMESTAMP        | Waktu insert                           |
+| updated_at    | TIMESTAMP        | Waktu update terakhir                  |
 
 ### Indexes
 
@@ -123,10 +123,12 @@ Semua table (pelatihan, umkm, wisata) memiliki struktur yang sama:
 Fetch data pelatihan dari Supabase.
 
 **Query Parameters:**
+
 - `category` (optional): Filter berdasarkan kategori
 - `limit` (optional): Batasi jumlah hasil
 
 **Contoh:**
+
 ```bash
 # Semua data pelatihan
 GET /api/pelatihan
@@ -146,10 +148,12 @@ GET /api/pelatihan?category=university&limit=50
 Fetch data UMKM dari Supabase.
 
 **Query Parameters:**
+
 - `category` (optional): Filter berdasarkan kategori
 - `limit` (optional): Batasi jumlah hasil
 
 **Contoh:**
+
 ```bash
 GET /api/umkm
 GET /api/umkm?category=convenience
@@ -161,10 +165,12 @@ GET /api/umkm?limit=100
 Fetch data wisata dari Supabase.
 
 **Query Parameters:**
+
 - `category` (optional): Filter berdasarkan kategori
 - `limit` (optional): Batasi jumlah hasil
 
 **Contoh:**
+
 ```bash
 GET /api/wisata
 GET /api/wisata?category=hotel
@@ -176,9 +182,11 @@ GET /api/wisata?limit=100
 Melakukan clustering pada semua data dari Supabase.
 
 **Query Parameters:**
+
 - `clusters` (optional): Jumlah cluster (default: 5)
 
 **Contoh:**
+
 ```bash
 GET /api/clustering
 GET /api/clustering?clusters=7
@@ -189,6 +197,7 @@ GET /api/clustering?clusters=7
 Clustering dengan custom data.
 
 **Request Body:**
+
 ```json
 {
   "umkmData": [...],
@@ -210,7 +219,8 @@ Clustering dengan custom data.
 
 ### Error: Batch upload failed
 
-**Solusi:** 
+**Solusi:**
+
 - Coba kurangi batch size: `--batch-size=100`
 - Periksa koneksi internet
 - Periksa quota Supabase project
@@ -218,6 +228,7 @@ Clustering dengan custom data.
 ### Data tidak muncul di aplikasi
 
 **Solusi:**
+
 1. Periksa apakah migrasi berhasil di Supabase Dashboard
 2. Restart development server: `npm run dev`
 3. Clear browser cache

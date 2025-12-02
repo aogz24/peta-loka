@@ -84,12 +84,15 @@ Untuk dokumentasi lengkap, lihat [MIGRATION_GUIDE.md](./MIGRATION_GUIDE.md)
 ## ⚠️ Troubleshooting
 
 **Error: Missing Supabase environment variables**
+
 - Pastikan `.env.local` terisi dengan benar
 - Restart development server
 
 **Error: relation "pelatihan" does not exist**
+
 - Jalankan SQL schema di Supabase Dashboard
 
 **Data tidak muncul**
+
 - Cek apakah migrasi berhasil di Supabase Dashboard
 - Restart dev server: `npm run dev`

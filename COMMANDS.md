@@ -93,40 +93,40 @@ SQL queries yang berguna:
 
 ```sql
 -- Count records per table
-SELECT 
-  'pelatihan' as table_name, 
-  COUNT(*) as count 
+SELECT
+  'pelatihan' as table_name,
+  COUNT(*) as count
 FROM pelatihan
 UNION ALL
-SELECT 
-  'umkm' as table_name, 
-  COUNT(*) as count 
+SELECT
+  'umkm' as table_name,
+  COUNT(*) as count
 FROM umkm
 UNION ALL
-SELECT 
-  'wisata' as table_name, 
-  COUNT(*) as count 
+SELECT
+  'wisata' as table_name,
+  COUNT(*) as count
 FROM wisata;
 
 -- Get top 10 categories in UMKM
-SELECT 
-  category, 
-  COUNT(*) as count 
-FROM umkm 
-GROUP BY category 
-ORDER BY count DESC 
+SELECT
+  category,
+  COUNT(*) as count
+FROM umkm
+GROUP BY category
+ORDER BY count DESC
 LIMIT 10;
 
 -- Get locations near a point
-SELECT 
-  name, 
-  category, 
-  lat, 
-  lon 
-FROM umkm 
-WHERE 
-  lat BETWEEN -6.92 AND -6.91 
-  AND lon BETWEEN 107.60 AND 107.62 
+SELECT
+  name,
+  category,
+  lat,
+  lon
+FROM umkm
+WHERE
+  lat BETWEEN -6.92 AND -6.91
+  AND lon BETWEEN 107.60 AND 107.62
 LIMIT 20;
 
 -- Delete all data (use with caution!)
@@ -274,6 +274,7 @@ vercel --prod
 ### Environment Variables for Production:
 
 Remember to set in Vercel dashboard:
+
 - `KOLOSAL_API_KEY`
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
