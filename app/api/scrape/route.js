@@ -37,14 +37,12 @@ export async function POST(request) {
 
     const pelatihan = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'lib/data/pelatihan.json'), 'utf-8'));
 
-    console.log(`Loaded OSM data: UMKM(${umkm.length}), Wisata(${wisata.length}), Pelatihan(${pelatihan.length})`);
 
     // Filter berdasarkan radius
     const umkmFiltered = filterByRadius(umkm, lat, lon, radius);
     const wisataFiltered = filterByRadius(wisata, lat, lon, radius);
     const pelatihanFiltered = filterByRadius(pelatihan, lat, lon, radius);
 
-    console.log(`Filtered data counts: UMKM(${umkmFiltered.length}), Wisata(${wisataFiltered.length}), Pelatihan(${pelatihanFiltered.length})`);
 
     return NextResponse.json({
       success: true,

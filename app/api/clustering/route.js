@@ -7,8 +7,6 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const numClusters = parseInt(searchParams.get("clusters") || "5");
 
-    // Fetch data from Supabase
-    console.log("Fetching data from Supabase...");
     const {
       pelatihan: pelatihanData,
       umkm: umkmData,
@@ -19,34 +17,6 @@ export async function GET(request) {
     if (!umkmData || !wisataData || !pelatihanData) {
       return NextResponse.json({ error: "Data not found" }, { status: 404 });
     }
-
-    console.log(
-      "Loaded data from Supabase:",
-      `UMKM(${umkmData.length}), Wisata(${wisataData.length}), Pelatihan(${pelatihanData.length})`
-    );
-
-    // Debug: Check sample data
-    console.log("Sample UMKM data:", umkmData[0]);
-    console.log("Sample Wisata data:", wisataData[0]);
-    console.log("Sample Pelatihan data:", pelatihanData[0]);
-
-    // Debug: Check each filter condition
-    console.log("UMKM checks:", {
-      hasType: umkmData.filter((i) => i.type === "umkm").length,
-      hasCategory: umkmData.filter((i) => i.category).length,
-      hasLat: umkmData.filter((i) => i.lat).length,
-      hasLon: umkmData.filter((i) => i.lon).length,
-      all: umkmData.filter(
-        (i) => i.type === "umkm" && i.category && i.lat && i.lon
-      ).length,
-    });
-
-    console.log("Clustering data:", {
-      umkm: umkmData.length,
-      wisata: wisataData.length,
-      pelatihan: pelatihanData.length,
-      clusters: numClusters,
-    });
 
     // Lakukan clustering dan analisis
     const analysis = clusteringService.analyzeAll(
