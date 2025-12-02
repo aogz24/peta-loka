@@ -138,6 +138,28 @@ export default function AIAgentPanel({
         </select>
       </div>
 
+      {/* Area Potential Input */}
+      {selectedType === "area-potential" && (
+        <div className="space-y-2">
+          <label className="block text-sm font-medium text-gray-700">
+            Radius (meter):
+          </label>
+          <input
+            type="number"
+            value={radius}
+            onChange={(e) => setRadius(e.target.value)}
+            placeholder="Masukkan radius dalam meter (contoh: 5000)"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            disabled={loading}
+            min="100"
+            max="50000"
+          />
+          <p className="text-xs text-gray-500">
+            Radius pencarian untuk analisis potensi area (100m - 50km)
+          </p>
+        </div>
+      )}
+
       {/* Chat Input */}
       {selectedType === "chat" && (
         <div className="space-y-2">
