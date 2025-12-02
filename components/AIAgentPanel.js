@@ -153,16 +153,16 @@ export default function AIAgentPanel({
           <div className="flex items-center gap-2">
             <Key className="w-4 h-4 text-gray-600" />
             <span className="text-sm font-medium text-gray-700">
-             Kolosal AI API Key
+             Custom Kolosal AI API Key
             </span>
           </div>
           {apiKeySaved ? (
             <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">
-              ✓ Tersimpan
+              ✓ Custom API Key
             </span>
           ) : (
             <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded">
-              Belum diatur
+              Default API Key
             </span>
           )}
         </div>
