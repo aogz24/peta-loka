@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import kolosalAIService from "@/lib/services/kolosal-ai";
-import { generateAllDummyData } from "@/lib/data/dummy-data";
-import { performClustering } from "@/lib/services/clustering";
+import pelatihanData from "@/lib/data/pelatihan.json";
+import umkmData from "@/lib/data/umkm.json";
+import wisataData from "@/lib/data/wisata.json";
 
 export async function POST(request) {
   try {
@@ -34,22 +35,36 @@ export async function POST(request) {
         if (data.latitude && data.longitude) {
           const { latitude, longitude, radius = 5000 } = data;
 
-          // Generate data dummy berdasarkan koordinat
-          const locationData = generateAllDummyData(
-            latitude,
-            longitude,
-            radius
-          );
+          // Filter data berdasarkan radius dari koordinat
+          const nearbyUMKM = umkmData.filter((item) => {
+            const distance = calculateDistance(
+              latitude,
+              longitude,
+              item.lat,
+              item.lon
+            );
+            return distance <= radius / 1000; // Convert meter to km
+          });
+
+          const nearbyWisata = wisataData.filter((item) => {
+            const distance = calculateDistance(
+              latitude,
+              longitude,
+              item.lat,
+              item.lon
+            );
+            return distance <= radius / 1000;
+          });
 
           // Hitung statistik area
           const categoryCount = {};
-          locationData.umkm.forEach((item) => {
+          nearbyUMKM.forEach((item) => {
             categoryCount[item.category] =
               (categoryCount[item.category] || 0) + 1;
           });
 
           // Cari pelatihan terdekat
-          const nearestTraining = locationData.pelatihan
+          const nearestTraining = pelatihanData
             .map((training) => {
               const distance = calculateDistance(
                 latitude,
@@ -63,8 +78,8 @@ export async function POST(request) {
             .slice(0, 5);
 
           const areaData = {
-            umkmCount: locationData.umkm.length,
-            wisataCount: locationData.wisata.length,
+            umkmCount: nearbyUMKM.length,
+            wisataCount: nearbyWisata.length,
             categories: categoryCount,
             nearestTraining,
             location: {
