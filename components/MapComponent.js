@@ -1,34 +1,24 @@
-"use client";
+'use client';
 
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  Circle,
-  useMap,
-} from "react-leaflet";
-import MarkerClusterGroup from "react-leaflet-cluster";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
-import { useEffect, useMemo } from "react";
-import clusterColors from "@/constant/ClusterColor";
+import { MapContainer, TileLayer, Marker, Popup, Circle, useMap } from 'react-leaflet';
+import MarkerClusterGroup from 'react-leaflet-cluster';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import { useEffect, useMemo } from 'react';
+import clusterColors from '@/constant/ClusterColor';
 
 // Fix untuk default marker icons di Leaflet
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-  iconUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-  shadowUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
 // Custom icons
 const createIcon = (color) => {
   return L.divIcon({
-    className: "custom-marker",
+    className: 'custom-marker',
     html: `<div style="background-color: ${color}; width: 25px; height: 25px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);"></div>`,
     iconSize: [25, 25],
     iconAnchor: [12, 12],
@@ -42,18 +32,18 @@ function MapClickHandler({ onSelectLocation }) {
       onSelectLocation(e.latlng.lat, e.latlng.lng);
     };
 
-    map.on("click", onClick);
-    return () => map.off("click", onClick);
+    map.on('click', onClick);
+    return () => map.off('click', onClick);
   }, [map, onSelectLocation]);
 
   return null;
 }
 
 const icons = {
-  umkm: createIcon("#3b82f6"), // blue
-  wisata: createIcon("#10b981"), // green
-  pelatihan: createIcon("#f59e0b"), // amber
-  centroid: createIcon("#ef4444"), // red
+  umkm: createIcon('#3b82f6'), // blue
+  wisata: createIcon('#10b981'), // green
+  pelatihan: createIcon('#f59e0b'), // amber
+  centroid: createIcon('#ef4444'), // red
 };
 
 function MapController({ center, zoom }) {
@@ -83,25 +73,14 @@ export default function MapComponent({
   // Memoize markers untuk performa
   const umkmMarkers = useMemo(() => umkmData.slice(0, 500), [umkmData]);
   const wisataMarkers = useMemo(() => wisataData.slice(0, 300), [wisataData]);
-  const pelatihanMarkers = useMemo(
-    () => pelatihanData.slice(0, 200),
-    [pelatihanData]
-  );
+  const pelatihanMarkers = useMemo(() => pelatihanData.slice(0, 200), [pelatihanData]);
 
   return (
     <div className="w-full h-full rounded-lg overflow-hidden shadow-lg">
-      <MapContainer
-        center={center}
-        zoom={zoom}
-        style={{ height: "100%", width: "100%" }}
-        className="z-0"
-      >
+      <MapContainer center={center} zoom={zoom} style={{ height: '100%', width: '100%' }} className="z-0">
         <MapController center={center} zoom={zoom} />
 
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+        <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
         {selectMode && <MapClickHandler onSelectLocation={onSelectLocation} />}
 
@@ -119,15 +98,10 @@ export default function MapComponent({
                     fillOpacity: 0.1,
                   }}
                 />
-                <Marker
-                  position={[centroid.lat, centroid.lon]}
-                  icon={icons.centroid}
-                >
+                <Marker position={[centroid.lat, centroid.lon]} icon={icons.centroid}>
                   <Popup>
                     <div className="p-2">
-                      <h3 className="font-bold text-red-600">
-                        Cluster Center {index + 1}
-                      </h3>
+                      <h3 className="font-bold text-red-600">Cluster Center {index + 1}</h3>
                       <p className="text-xs text-gray-500">
                         [{centroid.lat.toFixed(4)}, {centroid.lon.toFixed(4)}]
                       </p>
@@ -138,29 +112,21 @@ export default function MapComponent({
             ))}
 
             {/* MarkerClusterGroup untuk UMKM */}
-            <MarkerClusterGroup
-              chunkedLoading
-              showCoverageOnHover={false}
-              maxClusterRadius={50}
-            >
+            <MarkerClusterGroup chunkedLoading showCoverageOnHover={false} maxClusterRadius={50}>
               {umkmMarkers.map((item, index) => (
                 <Marker
                   key={`umkm-${item.id || index}`}
                   position={[item.lat, item.lon]}
                   icon={icons.umkm}
                   eventHandlers={{
-                    click: () => onMarkerClick({ ...item, type: "umkm" }),
+                    click: () => onMarkerClick({ ...item, type: 'umkm' }),
                   }}
                 >
                   <Popup>
                     <div className="p-2">
                       <h3 className="font-bold text-blue-600">{item.name}</h3>
                       <p className="text-sm text-gray-600">{item.category}</p>
-                      {item.cluster !== undefined && (
-                        <p className="text-xs font-semibold mt-1">
-                          Cluster: {item.cluster}
-                        </p>
-                      )}
+                      {item.cluster !== undefined && <p className="text-xs font-semibold mt-1">Cluster: {item.cluster}</p>}
                     </div>
                   </Popup>
                 </Marker>
@@ -168,18 +134,14 @@ export default function MapComponent({
             </MarkerClusterGroup>
 
             {/* MarkerClusterGroup untuk Wisata */}
-            <MarkerClusterGroup
-              chunkedLoading
-              showCoverageOnHover={false}
-              maxClusterRadius={50}
-            >
+            <MarkerClusterGroup chunkedLoading showCoverageOnHover={false} maxClusterRadius={50}>
               {wisataMarkers.map((item, index) => (
                 <Marker
                   key={`wisata-${item.id || index}`}
                   position={[item.lat, item.lon]}
                   icon={icons.wisata}
                   eventHandlers={{
-                    click: () => onMarkerClick({ ...item, type: "wisata" }),
+                    click: () => onMarkerClick({ ...item, type: 'wisata' }),
                   }}
                 >
                   <Popup>
@@ -199,7 +161,7 @@ export default function MapComponent({
                 position={[item.lat, item.lon]}
                 icon={icons.pelatihan}
                 eventHandlers={{
-                  click: () => onMarkerClick({ ...item, type: "pelatihan" }),
+                  click: () => onMarkerClick({ ...item, type: 'pelatihan' }),
                 }}
               >
                 <Popup>

@@ -19,15 +19,15 @@ function RecenterMap({ lat, lon }) {
 
 export default function MapCard({ lat, lon, onClose }) {
   return (
-    <div className="fixed bottom-4 right-4 w-[350px] md:w-[450px] h-[300px] bg-white shadow-xl rounded-xl border z-50">
+    <div className="fixed bottom-4 right-4 w-[350px] md:w-[450px] h-[300px] bg-white dark:bg-gray-800 shadow-xl rounded-xl border z-50">
       <div className="flex justify-between items-center p-3 border-b">
-        <h3 className="font-bold">Lokasi Cluster</h3>
+        <h3 className="font-bold text-gray-800 dark:text-gray-200">Lokasi Cluster</h3>
         <button onClick={onClose} className="text-red-500 hover:text-red-700 font-bold">
           ✕
         </button>
       </div>
 
-      <MapContainer center={[lat, lon]} zoom={15} className="w-full h-[240px] rounded-b-xl">
+      <MapContainer center={[lat, lon]} zoom={15} className="w-full h-60 rounded-b-xl">
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
         {/* Recenter every time the props change */}

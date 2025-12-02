@@ -12,9 +12,9 @@ const items = [
     content: 'Data berasal dari Supabase (tabel `umkm`, `wisata`, `pelatihan`) dan peta menggunakan data OpenStreetMap. AI insight dihasilkan menggunakan Kolosal AI.',
   },
   {
-    id: 'setup',
-    title: 'Bagaimana cara setup cepat proyek ini?',
-    content: 'Install dependencies dengan `npm install`, buat file `.env.local` sesuai README (Supabase dan KOLOSAL_API_KEY), jalankan `npm run migrate`, lalu `npm run dev` untuk development.',
+    id: 'data',
+    title: 'Kenapa data UMKM hanya tersedia di area sekitar Bandung?',
+    content: 'Saat ini, data UMKM yang tersedia di Supabase hanya mencakup area sekitar Bandung yang dikumpulkan melalui scraping. Kami berencana untuk memperluas cakupan data di masa mendatang.',
   },
   {
     id: 'clustering',
