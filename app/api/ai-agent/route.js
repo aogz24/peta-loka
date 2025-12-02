@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
-import kolosalAIService from "@/lib/services/kolosal-ai";
+import { KolosalAIService } from "@/lib/services/kolosal-ai";
 import pelatihanData from "@/lib/data/pelatihan.json";
 import umkmData from "@/lib/data/umkm.json";
 import wisataData from "@/lib/data/wisata.json";
 
 export async function POST(request) {
   try {
-    const { type, data } = await request.json();
+    const { type, data, apiKey } = await request.json();
 
     if (!type || !data) {
       return NextResponse.json(
@@ -14,6 +14,11 @@ export async function POST(request) {
         { status: 400 }
       );
     }
+
+    // Buat instance service dengan API key (dari user atau env)
+    const kolosalAIService = apiKey
+      ? KolosalAIService.withApiKey(apiKey)
+      : new KolosalAIService();
 
     let insight;
 
