@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import { MapPin, TrendingUp, GraduationCap, Search, Loader2 } from 'lucide-react';
+import { MapPin, TrendingUp, GraduationCap, Search, Loader2, MapPinned } from 'lucide-react';
 import AIAgentPanel from '@/components/AIAgentPanel';
 import ClusterStats from '@/components/ClusterStats';
 
@@ -10,8 +10,8 @@ import ClusterStats from '@/components/ClusterStats';
 const MapComponent = dynamic(() => import('@/components/MapComponent'), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded-lg">
-      <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
+    <div className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg">
+      <Loader2 className="w-8 h-8 animate-spin text-blue-600 dark:text-blue-100" />
     </div>
   ),
 });
@@ -87,17 +87,27 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left: Controls & Summary */}
           <aside className="lg:col-span-1 space-y-6">
-            <div className="block gap-4">
+            {/* Header Section */}
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold tracking-tight flex gap-2 items-center bg-linear-to-r from-blue-600 to-indigo-500 dark:from-blue-400 dark:to-indigo-300 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(59,130,246,0.35)]">
+                <MapPinned className="text-blue-600/70" /> Cari Potensi UMKM
+              </h2>
+
+              <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Temukan potensi UMKM dalam radius tertentu berdasarkan lokasi pilihan Anda.</p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-white/70 dark:bg-zinc-900/70 backdrop-blur border border-zinc-200/60 dark:border-zinc-700 shadow-lg space-y-5">
               {/* Latitude */}
-              <div>
-                <label className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-1">Latitude</label>
+              <div className="space-y-1.5">
+                <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Latitude</label>
                 <div className="relative">
-                  <span className="absolute left-3 top-3 text-zinc-400 dark:text-zinc-500">
+                  <span className="absolute left-3 top-2.5 text-zinc-400 dark:text-zinc-500">
                     <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z" />
                       <circle cx="12" cy="9.5" r="2" strokeWidth="1.2" />
                     </svg>
                   </span>
+
                   <input
                     type="number"
                     step="0.0001"
@@ -105,27 +115,28 @@ export default function Home() {
                     onChange={(e) => {
                       const val = e.target.value;
                       if (val === '') return;
-
                       const parsed = parseFloat(val);
-                      if (!isNaN(parsed)) {
-                        setCenter([parsed, center[1]]);
-                      }
+                      if (!isNaN(parsed)) setCenter([parsed, center[1]]);
                     }}
                     disabled={loading || mode !== 'manual'}
-                    className="w-full pl-12 pr-3 py-2 border border-zinc-200 dark:border-zinc-700 rounded-xl shadow-sm bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full pl-12 pr-3 py-2.5 rounded-xl bg-white dark:bg-zinc-900 
+                   border border-zinc-300 dark:border-zinc-700 
+                   text-zinc-900 dark:text-zinc-100
+                   shadow-sm focus:ring-2 focus:ring-blue-500 transition-all"
                   />
                 </div>
               </div>
 
               {/* Longitude */}
-              <div>
-                <label className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-1">Longitude</label>
+              <div className="space-y-1.5">
+                <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Longitude</label>
                 <div className="relative">
-                  <span className="absolute left-3 top-3 text-zinc-400 dark:text-zinc-500">
+                  <span className="absolute left-3 top-2.5 text-zinc-400 dark:text-zinc-500">
                     <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <circle cx="12" cy="12" r="9" strokeWidth="1.4" />
                     </svg>
                   </span>
+
                   <input
                     type="number"
                     step="0.0001"
@@ -133,93 +144,120 @@ export default function Home() {
                     onChange={(e) => {
                       const val = e.target.value;
                       if (val === '') return;
-
                       const parsed = parseFloat(val);
-                      if (!isNaN(parsed)) {
-                        setCenter([center[0], parsed]);
-                      }
+                      if (!isNaN(parsed)) setCenter([center[0], parsed]);
                     }}
                     disabled={loading || mode !== 'manual'}
-                    className="w-full pl-12 pr-3 py-2 border border-zinc-200 dark:border-zinc-700 rounded-xl shadow-sm bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full pl-12 pr-3 py-2.5 rounded-xl bg-white dark:bg-zinc-900 
+                   border border-zinc-300 dark:border-zinc-700 
+                   text-zinc-900 dark:text-zinc-100 
+                   shadow-sm focus:ring-2 focus:ring-blue-500 transition-all"
                   />
                 </div>
               </div>
 
               {/* Radius */}
-              <div>
-                <label className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-1">Radius (meter)</label>
+              <div className="space-y-2">
+                <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Radius (meter)</label>
+
                 <div className="relative">
-                  <span className="absolute left-3 top-3 text-zinc-400 dark:text-zinc-500">
+                  <span className="absolute left-3 top-2.5 text-zinc-400 dark:text-zinc-500">
                     <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 2L15 8H9L12 2z" />
                     </svg>
                   </span>
+
                   <input
                     type="number"
                     step="500"
                     value={radius}
                     onChange={(e) => {
-                      const val = e.target.value;
-                      if (val === '') return;
-                      const parsed = parseFloat(val);
-                      if (!isNaN(parsed)) {
-                        const MIN = 225;
-                        setRadius(parsed <= MIN ? MIN + 1 : parsed);
-                      }
+                      const val = parseFloat(e.target.value);
+                      if (!isNaN(val)) setRadius(val <= 225 ? 226 : val);
                     }}
                     disabled={loading}
-                    className="w-full pl-12 pr-3 py-2 border border-zinc-200 dark:border-zinc-700 rounded-xl shadow-sm bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full pl-12 pr-3 py-2.5 rounded-xl bg-white dark:bg-zinc-900 
+                   border border-zinc-300 dark:border-zinc-700
+                   text-zinc-900 dark:text-zinc-100 
+                   shadow-sm focus:ring-2 focus:ring-blue-500 transition-all"
                   />
                 </div>
-                <div className="mt-2">
-                  <input
-                    type="range"
-                    min={225}
-                    max={20000}
-                    step={500}
-                    value={radius}
-                    onChange={(e) => {
-                      const v = parseInt(e.target.value);
-                      setRadius(v <= 225 ? 226 : v);
-                    }}
-                    className="w-full"
-                  />
-                </div>
+
+                <input type="range" min={225} max={20000} step={500} value={radius} onChange={(e) => setRadius(Math.max(parseInt(e.target.value), 226))} className="w-full accent-blue-600 cursor-pointer" />
               </div>
             </div>
 
-            {/* Select Mode */}
-            <div className="mt-4">
+            {/* Method Buttons */}
+            <div className="mt-4 space-y-2">
               <label className="font-semibold text-gray-700 text-sm">Metode Pemilihan Lokasi</label>
-              <select
-                value={mode}
-                onChange={(e) => {
-                  const val = e.target.value;
-                  setMode(val);
 
-                  if (val === 'current') {
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {/* Manual Input */}
+                <button
+                  onClick={() => setMode('manual')}
+                  className={`px-3 py-2 rounded-lg border font-medium transition ${
+                    mode === 'manual' ? 'border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700' : 'border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700'
+                  }`}
+                >
+                  Input Manual
+                </button>
+
+                {/* Lokasi Saat Ini */}
+                {/* <button
+                  onClick={() => {
                     navigator.geolocation.getCurrentPosition((pos) => {
                       setCenter([pos.coords.latitude, pos.coords.longitude]);
+                      setMode('current');
                     });
-                  }
+                  }}
+                  className="px-3 py-2 rounded-lg border font-medium border-gray-300 hover:bg-gray-100 transition"
+                >
+                  Gunakan Lokasi Anda
+                </button> */}
 
-                  if (val === 'map') {
+                {/* Pilih dari Peta */}
+                <button
+                  onClick={() => {
                     setShowPicker(true);
-                  }
-                }}
-                className="w-full mt-1 px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
-              >
-                <option value="manual">Input Manual</option>
-                <option value="current">Gunakan Lokasi Saat Ini</option>
-                <option value="map">Pilih Lewat Peta</option>
-              </select>
+                    setMode('picker');
+                  }}
+                  className={`px-3 py-2 rounded-lg border font-medium transition ${
+                    mode === 'picker' ? 'border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700' : 'border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700'
+                  }`}
+                >
+                  Pilih Lokasi Lewat Peta
+                </button>
+              </div>
             </div>
 
             {/* Button */}
-            <button onClick={handleLocationChange} disabled={loading} className="w-full mt-5 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-semibold">
+            <button onClick={handleLocationChange} disabled={loading} className="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-semibold">
               {loading ? 'Memuat...' : 'Cari Data'}
             </button>
           </aside>
+
+          {showPicker && (
+            <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 h-full w-full">
+              <div className="bg-white dark:bg-gray-900 dark:text-white p-4 rounded-lg shadow-lg lg:w-1/2 w-3/4 h-3/4 relative overflow-auto">
+                <h2 className="font-semibold mb-2">Pilih Lokasi dari Peta</h2>
+
+                <MapComponent
+                  className="h-full rounded-lg"
+                  center={center}
+                  zoom={13}
+                  selectMode
+                  onSelectLocation={(lat, lon) => {
+                    setCenter([lat, lon]);
+                    setShowPicker(false);
+                  }}
+                />
+
+                <button onClick={() => setShowPicker(false)} className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded">
+                  X
+                </button>
+              </div>
+            </div>
+          )}
 
           {/* Right: Map and Panels */}
           <main className="lg:col-span-2 space-y-6">
@@ -265,7 +303,7 @@ export default function Home() {
                   {/* Legend */}
 
                   <p className="pl-4 ">Interaksi peta: klik marker untuk detail, daftar di kiri memudahkan navigasi.</p>
-                  <div className="glass-card rounded-lg p-4">
+                  <div className="glass-card rounded-lg p-4 mt-2">
                     <h3 className="font-semibold text-gray-800 dark:text-gray-200 mb-3">Legend:</h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                       <div className="flex items-center gap-2">

@@ -112,3 +112,11 @@ body {
   background: rgba(17, 24, 39, 0.55);
   box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6), 0 0 22px rgba(0, 120, 255, 0.18);
 }
+
+input:disabled {
+  background: rgba(230, 230, 230, 0.5);
+  color: #9ca3af; /* zinc-400 */
+  cursor: not-allowed;
+  border-color: rgba(150, 150, 150, 0.3);
+  opacity: 0.75;
+}
