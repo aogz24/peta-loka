@@ -309,7 +309,7 @@ export default function Home() {
           {activeTab === 'ai' && (
             <div>
               {clusteringData.overallClusters.clusters.length > 0 ? (
-                <AIAgentPanel clusteringData={clusteringData} />
+                <AIAgentPanel clusteringData={clusteringData} center={center} />
               ) : (
                 <div className="text-center py-12">
                   <GraduationCap className="w-16 h-16 text-gray-300 mx-auto mb-4" />

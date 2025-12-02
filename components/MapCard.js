@@ -1,8 +1,8 @@
 'use client';
-
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Circle, useMap } from 'react-leaflet';
 import { useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
+import clusterColors from '@/constant/ClusterColor';
 
 // Komponen kecil untuk memaksa map pindah center saat lat/lon berubah
 function RecenterMap({ lat, lon }) {

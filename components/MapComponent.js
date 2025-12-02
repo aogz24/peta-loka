@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup, Circle, useMap } from 'react-le
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useEffect } from 'react';
+import clusterColors from '@/constant/ClusterColor';
 
 // Fix untuk default marker icons di Leaflet
 delete L.Icon.Default.prototype._getIconUrl;
@@ -68,8 +69,6 @@ export default function MapComponent({
   selectMode = false,
   onSelectLocation = () => {},
 }) {
-  const clusterColors = ['#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316', '#6366f1', '#84cc16'];
-
   return (
     <div className="w-full h-full rounded-lg overflow-hidden shadow-lg">
       <MapContainer center={center} zoom={zoom} style={{ height: '100%', width: '100%' }} className="z-0">
