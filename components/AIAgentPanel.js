@@ -3,15 +3,13 @@
 import { useState } from 'react';
 import { Send, Loader2, MapPin } from 'lucide-react';
 
-export default function AIAgentPanel({ clusteringData, onInsightGenerated }) {
+export default function AIAgentPanel({ clusteringData, onInsightGenerated, center }) {
   const [query, setQuery] = useState('');
   const [insight, setInsight] = useState('');
   const [loading, setLoading] = useState(false);
   const [selectedType, setSelectedType] = useState('clustering');
 
   // State untuk input koordinat
-  const [latitude, setLatitude] = useState('');
-  const [longitude, setLongitude] = useState('');
   const [radius, setRadius] = useState('5000');
 
   const generateInsight = async () => {
@@ -19,13 +17,13 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated }) {
 
     // Validasi koordinat untuk area-potential
     if (selectedType === 'area-potential') {
-      if (!latitude || !longitude) {
+      if (!center || center.length !== 2) {
         setInsight('Error: Silakan masukkan koordinat latitude dan longitude');
         return;
       }
 
-      const lat = parseFloat(latitude);
-      const lon = parseFloat(longitude);
+      const lat = parseFloat(center[0]);
+      const lon = parseFloat(center[1]);
 
       if (isNaN(lat) || isNaN(lon)) {
         setInsight('Error: Koordinat harus berupa angka yang valid');
@@ -49,8 +47,8 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated }) {
         payload = {
           type: selectedType,
           data: {
-            latitude: parseFloat(latitude),
-            longitude: parseFloat(longitude),
+            latitude: parseFloat(center[0]),
+            longitude: parseFloat(center[1]),
             radius: parseInt(radius),
           },
         };

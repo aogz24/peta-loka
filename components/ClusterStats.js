@@ -41,7 +41,13 @@ export default function ClusterStats({ clusteringData }) {
     });
   });
 
-  const pieData = Object.entries(categoryData).map(([name, value]) => ({
+  const top10Categories = Object.entries(categoryData)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10);
+
+  console.log('Top 10 Categories:', top10Categories);
+
+  const pieData = top10Categories.map(([name, value]) => ({
     name,
     value,
   }));
@@ -87,7 +93,7 @@ export default function ClusterStats({ clusteringData }) {
 
         {/* Kategori Distribution */}
         <div className="bg-white rounded-lg shadow-lg p-6">
-          <h3 className="text-lg font-bold text-gray-800 mb-4">Distribusi Kategori UMKM</h3>
+          <h3 className="text-lg font-bold text-gray-800 mb-4">10 Teratas Distribusi Kategori UMKM</h3>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie data={pieData} cx="50%" cy="50%" labelLine={false} label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`} outerRadius={100} fill="#8884d8" dataKey="value">
@@ -121,7 +127,7 @@ export default function ClusterStats({ clusteringData }) {
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{cluster.totalItems}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{cluster.dominantCategory}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <ClusterLocationButton key={index} onClick={() => setActiveCluster({ lat: cluster.center.lat, lon: cluster.center.lon })} />
+                    <ClusterLocationButton key={index} onClick={() => setActiveCluster({ lat: cluster.center.lat, lon: cluster.center.lon, index: index })} />
                   </td>
                 </tr>
               ))}
@@ -129,7 +135,7 @@ export default function ClusterStats({ clusteringData }) {
           </table>
         </div>
       </div>
-      {activeCluster && <MapCard lat={activeCluster.lat} lon={activeCluster.lon} onClose={() => setActiveCluster(null)} />}
+      {activeCluster && <MapCard lat={activeCluster.lat} lon={activeCluster.lon} onClose={() => setActiveCluster(null)} index={activeCluster.index} />}
 
       {/* Wisata Potensi */}
       <div className="bg-white rounded-lg shadow-lg p-6">
