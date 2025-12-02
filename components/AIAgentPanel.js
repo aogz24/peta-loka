@@ -173,8 +173,7 @@ export default function AIAgentPanel({
           </p>
         ): (
           <p className="text-xs text-gray-500">
-            Masukkan API key Kolosal AI Custom Anda untuk mengaktifkan fitur AI Agent apabila fitur tersebut tidak bisa saat menggunakan default API key sistem. 
-            API key ini akan disimpan di browser Anda dan tidak dikirim ke server.
+            Masukkan API key Kolosal AI Custom Anda untuk mengaktifkan fitur AI Agent apabila fitur tersebut tidak bisa saat menggunakan default API key sistem.
           </p>
         )}
 
