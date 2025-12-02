@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { Send, Loader2, MapPin, Trash } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Send, Loader2, MapPin, Key, Trash } from 'lucide-react';
 
 // Fungsi untuk memformat insight agar lebih natural
 const formatInsight = (text) => {
@@ -32,6 +32,34 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
   const [insight, setInsight] = useState('');
   const [loading, setLoading] = useState(false);
   const [selectedType, setSelectedType] = useState('clustering');
+  const [apiKey, setApiKey] = useState('');
+  const [showApiKeyInput, setShowApiKeyInput] = useState(false);
+  const [apiKeySaved, setApiKeySaved] = useState(false);
+
+  // Load API key dari localStorage saat component mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const savedApiKey = localStorage.getItem('kolosal_api_key');
+      if (savedApiKey) {
+        setApiKey(savedApiKey);
+        setApiKeySaved(true);
+      }
+    }
+  }, []);
+
+  const saveApiKey = () => {
+    if (apiKey.trim()) {
+      localStorage.setItem('kolosal_api_key', apiKey.trim());
+      setApiKeySaved(true);
+      setShowApiKeyInput(false);
+    }
+  };
+
+  const removeApiKey = () => {
+    localStorage.removeItem('kolosal_api_key');
+    setApiKey('');
+    setApiKeySaved(false);
+  };
 
   const generateInsight = async () => {
     if (!query && selectedType === 'chat') return;
@@ -80,7 +108,7 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
       const response = await fetch('/api/ai-agent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, apiKey: apiKey || undefined }),
       });
 
       const result = await response.json();
@@ -102,15 +130,71 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
   };
 
   return (
-    <div className="glass-card p-6 space-y-5">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-        <div>
-          <h2 className="text-2xl font-extrabold text-zinc-900 dark:text-zinc-50">AI Agent Insight</h2>
-          <p className="text-sm text-zinc-600 dark:text-zinc-300">Dapatkan insight dari hasil clustering menggunakan AI</p>
+    <div className=" rounded-lg shadow-lg p-6 space-y-4">
+      <div className="border-b pb-3">
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">🤖 AI Agent Insight</h2>
+        <p className="text-sm text-gray-600 dark:text-gray-400">Dapatkan insight dari hasil clustering menggunakan AI</p>
+      </div>
+
+      {/* API Key Section */}
+      <div className="glass-card rounded-lg p-4 space-y-3">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Key className="w-4 h-4 text-gray-600 dark:text-gray-200" />
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-200">Custom Kolosal AI API Key</span>
+          </div>
+          {apiKeySaved ? <span className="text-xs bg-green-100  text-green-700 px-2 py-1 rounded">✓ Tersimpan</span> : <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded">Belum Diatur</span>}
         </div>
-        <div className="text-sm text-zinc-500 dark:text-zinc-400">
-          Koordinat: <span className="font-medium text-zinc-700 dark:text-zinc-200">{center?.[0]?.toFixed ? `${center[0].toFixed(4)}, ${center[1].toFixed(4)}` : '—'}</span>
-        </div>
+
+        {apiKeySaved ? (
+          <p className="text-xs text-gray-500 dark:text-gray-400">API key Anda telah disimpan. Gunakan tombol `Ubah` untuk memperbarui atau `Hapus`` untuk menghapusnya.</p>
+        ) : (
+          <p className="text-xs text-gray-500 dark:text-gray-400">Masukkan API key Kolosal AI Custom Anda untuk mengaktifkan fitur AI Agent apabila fitur tersebut tidak berjalan saat menggunakan default API key sistem.</p>
+        )}
+
+        {!showApiKeyInput && !apiKeySaved && (
+          <button onClick={() => setShowApiKeyInput(true)} className="text-xs text-blue-600 hover:text-blue-700 font-medium">
+            + Tambah API Key
+          </button>
+        )}
+
+        {!showApiKeyInput && apiKeySaved && (
+          <div className="flex gap-2">
+            <button onClick={() => setShowApiKeyInput(true)} className="text-xs text-blue-600 hover:text-blue-700 font-medium">
+              Ubah
+            </button>
+            <button onClick={removeApiKey} className="text-xs text-red-600 hover:text-red-700 font-medium">
+              Hapus
+            </button>
+          </div>
+        )}
+
+        {showApiKeyInput && (
+          <div className="space-y-2">
+            <input
+              type="password"
+              value={apiKey}
+              onChange={(e) => setApiKey(e.target.value)}
+              placeholder="Masukkan API key Kolosal AI Anda"
+              className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <div className="flex gap-2">
+              <button onClick={saveApiKey} disabled={!apiKey.trim()} className="flex-1 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white text-xs font-semibold py-2 px-3 rounded-md transition-colors">
+                Simpan
+              </button>
+              <button
+                onClick={() => {
+                  setShowApiKeyInput(false);
+                  if (!apiKeySaved) setApiKey('');
+                }}
+                className="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 text-xs font-semibold py-2 px-3 rounded-md transition-colors"
+              >
+                Batal
+              </button>
+            </div>
+            <p className="text-xs text-gray-500">API key akan disimpan di browser Anda dan tidak dikirim ke server.</p>
+          </div>
+        )}
       </div>
 
       {/* Type Selector */}
