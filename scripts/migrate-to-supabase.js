@@ -17,7 +17,7 @@ const fs = require("fs");
 const path = require("path");
 
 // Load environment variables
-require("dotenv").config({ path: ".env.local" });
+require("dotenv").config({ path: ".env" });
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
