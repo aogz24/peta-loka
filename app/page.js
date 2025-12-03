@@ -32,7 +32,7 @@ export default function Home() {
               <a href="/search" className="glass-btn inline-block px-6 py-3 rounded-md text-white bg-blue-600 hover:bg-blue-700">
                 Cari Potensi Peta Baru
               </a>
-              <a href="/about" className="inline-block px-6 py-3 rounded-md border border-zinc-200 dark:border-zinc-700 text-sm text-zinc-700 dark:text-zinc-200">
+              <a href="/faq" className="inline-block px-6 py-3 rounded-lg border border-zinc-200 dark:border-zinc-700 text-sm text-zinc-700 dark:text-zinc-200">
                 Pelajari Lebih Lanjut
               </a>
             </div>
