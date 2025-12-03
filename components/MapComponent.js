@@ -6,7 +6,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useEffect, useMemo } from 'react';
 import clusterColors from '@/constant/ClusterColor';
-import icons from '@/utils/iconMap';
+import icons from '@/lib/utils/iconMap';
 
 // Fix untuk default marker icons di Leaflet
 delete L.Icon.Default.prototype._getIconUrl;
