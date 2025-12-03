@@ -425,6 +425,30 @@
     }
   },
   {
+    "id": 1935264711,
+    "type": "pelatihan",
+    "name": "Yayasan Pendidikan Wahana Madani",
+    "category": "school",
+    "lat": -6.7974208,
+    "lon": 107.652336,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "amenity": "school",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "30",
+      "ele": "7",
+      "name": "Yayasan Pendidikan Wahana Madani"
+    }
+  },
+  {
     "id": 1960107459,
     "type": "pelatihan",
     "name": "Politehnik Swis ITB",
@@ -543,6 +567,24 @@
     "tags": {
       "amenity": "school",
       "name": "Kitchen SMKK BPP"
+    }
+  },
+  {
+    "id": 3392409486,
+    "type": "pelatihan",
+    "name": "Diklat Kementrian Dalam Negeri",
+    "category": "college",
+    "lat": -6.9028424,
+    "lon": 107.7633897,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "college",
+      "name": "Diklat Kementrian Dalam Negeri",
+      "operator": "Kementrian Dalam Negeri"
     }
   },
   {
@@ -1710,6 +1752,26 @@
     }
   },
   {
+    "id": 4462703094,
+    "type": "pelatihan",
+    "name": "Pelita Kindergarden",
+    "category": "kindergarten",
+    "lat": -6.8202623,
+    "lon": 107.6248222,
+    "address": "Jalan Repelita III",
+    "phone": "",
+    "website": "",
+    "openingHours": "Mo-Fr",
+    "description": "",
+    "tags": {
+      "addr:housenumber": "90",
+      "addr:street": "Jalan Repelita III",
+      "amenity": "kindergarten",
+      "name": "Pelita Kindergarden",
+      "opening_hours": "Mo-Fr"
+    }
+  },
+  {
     "id": 4538382491,
     "type": "pelatihan",
     "name": "komplek kurdi",
@@ -1762,6 +1824,23 @@
     }
   },
   {
+    "id": 4810919721,
+    "type": "pelatihan",
+    "name": "Smp negeri 1 atap cikoneng",
+    "category": "school",
+    "lat": -6.9028421,
+    "lon": 107.7436462,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Smp negeri 1 atap cikoneng"
+    }
+  },
+  {
     "id": 4863109262,
     "type": "pelatihan",
     "name": "F 114",
@@ -1796,6 +1875,25 @@
       "addr:street": "Jl. Gegerkalong Girang Baru No.11",
       "amenity": "school",
       "name": "SMP Daarut Tauhid"
+    }
+  },
+  {
+    "id": 5153093176,
+    "type": "pelatihan",
+    "name": "SDN Sukahurip",
+    "category": "school",
+    "lat": -6.8225008,
+    "lon": 107.5862494,
+    "address": "Jl. Cigugur Girang",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Cigugur Girang",
+      "amenity": "school",
+      "name": "SDN Sukahurip",
+      "religion": "muslim"
     }
   },
   {
@@ -1871,6 +1969,32 @@
     }
   },
   {
+    "id": 5280439307,
+    "type": "pelatihan",
+    "name": "PAUD AL-AMANAH Jatiroke",
+    "category": "school",
+    "lat": -6.9324024,
+    "lon": 107.786911,
+    "address": "Jalan Letda Lukito",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "Pusat Pendidikan Anak Usia Dini Al-Amanah Desa Jatiroke",
+    "tags": {
+      "addr:city": "Sumedang",
+      "addr:housenumber": "11",
+      "addr:postcode": "45363",
+      "addr:street": "Jalan Letda Lukito",
+      "addr:unit": "RT.06 RW.01 Desa Jatiroke Kec. Jatinangor",
+      "amenity": "school",
+      "description": "Pusat Pendidikan Anak Usia Dini Al-Amanah Desa Jatiroke",
+      "ele": "11",
+      "email": "ppaudalamanah@gmail.com",
+      "name": "PAUD AL-AMANAH Jatiroke",
+      "operator": "PPAUD AL-AMANAH"
+    }
+  },
+  {
     "id": 5624353021,
     "type": "pelatihan",
     "name": "Tempat Pelatihan",
@@ -1941,6 +2065,93 @@
       "email": "imaesaroh35@gmail.com",
       "name": "TK Aisyiah 10",
       "phone": "+62222035849"
+    }
+  },
+  {
+    "id": 5946695185,
+    "type": "pelatihan",
+    "name": "MTs Negeri 1 Ciparay",
+    "category": "school",
+    "lat": -7.0280853,
+    "lon": 107.6921607,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "MTs Negeri 1 Ciparay"
+    }
+  },
+  {
+    "id": 5946695186,
+    "type": "pelatihan",
+    "name": "Madrasah Aliyah Negeri Ciparay",
+    "category": "school",
+    "lat": -7.0313398,
+    "lon": 107.6965114,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Madrasah Aliyah Negeri Ciparay"
+    }
+  },
+  {
+    "id": 5948084162,
+    "type": "pelatihan",
+    "name": "SDN",
+    "category": "school",
+    "lat": -7.0327156,
+    "lon": 107.6983276,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN",
+      "name:en": "Baranangsiang 1",
+      "operator:type": "public"
+    }
+  },
+  {
+    "id": 5965330586,
+    "type": "pelatihan",
+    "name": "SMK Sangkuriang 2 Cimahi",
+    "category": "school",
+    "lat": -6.8651878,
+    "lon": 107.5401771,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SMK Sangkuriang 2 Cimahi"
+    }
+  },
+  {
+    "id": 5965334785,
+    "type": "pelatihan",
+    "name": "SMK Sangkuriang 1 Cimahi",
+    "category": "school",
+    "lat": -6.8691843,
+    "lon": 107.5368532,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SMK Sangkuriang 1 Cimahi"
     }
   },
   {
@@ -2018,6 +2229,31 @@
     }
   },
   {
+    "id": 7259982252,
+    "type": "pelatihan",
+    "name": "al-amanah islamic centre",
+    "category": "school",
+    "lat": -6.8087708,
+    "lon": 107.6495586,
+    "address": "Cibogo",
+    "phone": "",
+    "website": "https://www.alamanah.sch.id/",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:city": "Lembang Bandung Barat",
+      "addr:postcode": "40931",
+      "addr:street": "Cibogo",
+      "amenity": "school",
+      "name": "al-amanah islamic centre",
+      "name:id": "Bahasa",
+      "operator": "Yayasan Islam At Taubah Lembang",
+      "operator:type": "religious",
+      "religion": "muslim",
+      "website": "https://www.alamanah.sch.id/"
+    }
+  },
+  {
     "id": 7277456985,
     "type": "pelatihan",
     "name": "Common Room",
@@ -2063,6 +2299,76 @@
       "opening_hours": "Mo-Fr 09:00-17:00",
       "phone": "+62 821 1666 1590",
       "website": "https://www.instagram.com/lebahbandung/"
+    }
+  },
+  {
+    "id": 7994914162,
+    "type": "pelatihan",
+    "name": "SD Negeri Gambung",
+    "category": "school",
+    "lat": -6.9996998,
+    "lon": 107.4740713,
+    "address": "Mukapayung, Cililin",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Mukapayung, Cililin",
+      "amenity": "school",
+      "name": "SD Negeri Gambung"
+    }
+  },
+  {
+    "id": 8006134273,
+    "type": "pelatihan",
+    "name": "SDN SUKAJAYA",
+    "category": "school",
+    "lat": -6.8088728,
+    "lon": 107.5973685,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN SUKAJAYA"
+    }
+  },
+  {
+    "id": 8340924415,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.9693216,
+    "lon": 107.8281669,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
+    }
+  },
+  {
+    "id": 8608856717,
+    "type": "pelatihan",
+    "name": "UNAI",
+    "category": "school",
+    "lat": -6.8027772,
+    "lon": 107.5797711,
+    "address": "Kolonel Masturi",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:housenumber": "188",
+      "addr:street": "Kolonel Masturi",
+      "amenity": "school",
+      "name": "UNAI"
     }
   },
   {
@@ -2151,6 +2457,47 @@
       "name": "JAGAD ALIT WALDORF",
       "operator": "https://www.instagram.com/jagadalitwaldorf_playkinder/",
       "operator:type": "private"
+    }
+  },
+  {
+    "id": 9659972923,
+    "type": "pelatihan",
+    "name": "SMAN 2 Cimahi",
+    "category": "school",
+    "lat": -6.8821368,
+    "lon": 107.5342938,
+    "address": "",
+    "phone": "",
+    "website": "https://sman2cimahi.sch.id/",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "grades": "11-13",
+      "name": "SMAN 2 Cimahi",
+      "operator": "Government",
+      "operator:type": "government",
+      "website": "https://sman2cimahi.sch.id/"
+    }
+  },
+  {
+    "id": 9659972924,
+    "type": "pelatihan",
+    "name": "SMPN 3 Cimahi",
+    "category": "school",
+    "lat": -6.8816682,
+    "lon": 107.5335857,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "grades": "7-9`",
+      "name": "SMPN 3 Cimahi",
+      "operator": "government",
+      "operator:type": "government"
     }
   },
   {
@@ -2685,6 +3032,23 @@
     }
   },
   {
+    "id": 9805809071,
+    "type": "pelatihan",
+    "name": "SMP Negeri 1 Padalarang",
+    "category": "school",
+    "lat": -6.8496462,
+    "lon": 107.4926108,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SMP Negeri 1 Padalarang"
+    }
+  },
+  {
     "id": 9805978343,
     "type": "pelatihan",
     "name": "SMA SMP Edu Global Bandung - Sekolah Bilingual Integrated Cambridge",
@@ -2766,6 +3130,23 @@
     }
   },
   {
+    "id": 9808033372,
+    "type": "pelatihan",
+    "name": "Yayasan Adhi Guna Kencana",
+    "category": "college",
+    "lat": -6.935951,
+    "lon": 107.7100708,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "college",
+      "name": "Yayasan Adhi Guna Kencana"
+    }
+  },
+  {
     "id": 9808055465,
     "type": "pelatihan",
     "name": "PAUD Al Haidar",
@@ -2832,6 +3213,23 @@
       "amenity": "school",
       "name": "Advent High School Naripan Bandung",
       "religion": "christian"
+    }
+  },
+  {
+    "id": 9809195045,
+    "type": "pelatihan",
+    "name": "TK Asih Putera Setiamanah",
+    "category": "kindergarten",
+    "lat": -6.8727993,
+    "lon": 107.5392505,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "kindergarten",
+      "name": "TK Asih Putera Setiamanah"
     }
   },
   {
@@ -2954,6 +3352,23 @@
     }
   },
   {
+    "id": 9814278690,
+    "type": "pelatihan",
+    "name": "SMK TI Garuda Nusantara Cimahi",
+    "category": "school",
+    "lat": -6.8671611,
+    "lon": 107.5371122,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SMK TI Garuda Nusantara Cimahi"
+    }
+  },
+  {
     "id": 9814298868,
     "type": "pelatihan",
     "name": "SMAN 1 Cimahi",
@@ -3070,6 +3485,23 @@
     "tags": {
       "amenity": "school",
       "name": "SMPI Al Washliyah Bandung"
+    }
+  },
+  {
+    "id": 9816051557,
+    "type": "pelatihan",
+    "name": "Pondok Pesantren Al-Ihsan Cibiru Hilir",
+    "category": "school",
+    "lat": -6.9375913,
+    "lon": 107.7223115,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Pondok Pesantren Al-Ihsan Cibiru Hilir"
     }
   },
   {
@@ -3411,6 +3843,23 @@
     "tags": {
       "amenity": "school",
       "name": "SDN Antapani 1"
+    }
+  },
+  {
+    "id": 9817007037,
+    "type": "pelatihan",
+    "name": "Paud Cempaka Sauyunan",
+    "category": "kindergarten",
+    "lat": -6.8628113,
+    "lon": 107.5061219,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "kindergarten",
+      "name": "Paud Cempaka Sauyunan"
     }
   },
   {
@@ -3852,6 +4301,26 @@
     }
   },
   {
+    "id": 10285435741,
+    "type": "pelatihan",
+    "name": "Perpustakaan Desa Bojongkoneng",
+    "category": "library",
+    "lat": -6.8137924,
+    "lon": 107.4963241,
+    "address": "Ngamprah",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:city": "Bandung Barat",
+      "addr:housenumber": "Kantor Kepala  Desa Bojongkoneng",
+      "addr:street": "Ngamprah",
+      "amenity": "library",
+      "name": "Perpustakaan Desa Bojongkoneng"
+    }
+  },
+  {
     "id": 10653842119,
     "type": "pelatihan",
     "name": "Tempat Pelatihan",
@@ -3912,6 +4381,61 @@
     }
   },
   {
+    "id": 10778189332,
+    "type": "pelatihan",
+    "name": "Pondok Pesantren Ar-Rochmah",
+    "category": "school",
+    "lat": -6.8190699,
+    "lon": 107.6594533,
+    "address": "Jalan Cicalung Maribaya",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:city": "Bandung Barat",
+      "addr:housenumber": "Kp. Cicalung RT.03 RW.06 Ds. Wamgunharja Kec. Lembang",
+      "addr:postcode": "40391",
+      "addr:street": "Jalan Cicalung Maribaya",
+      "amenity": "school",
+      "denomination": "sunni",
+      "grades": "1-10",
+      "name": "Pondok Pesantren Ar-Rochmah",
+      "operator": "Asep Irfan Fanani",
+      "operator:type": "government_facility-public",
+      "religion": "muslim"
+    }
+  },
+  {
+    "id": 10806571586,
+    "type": "pelatihan",
+    "name": "Yayasan Ar Rochmah Bandung Barat",
+    "category": "school",
+    "lat": -6.8192386,
+    "lon": 107.6594769,
+    "address": "Jalan Cicalung Maribaya",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "Yayasan Ar Rochmah Bandung Barat\nKp. Cicalung RT. 03 RW. 06 Ds. Wangunharja Kec. Lembang Kab. Bandung Barat",
+    "tags": {
+      "addr:city": "Bandung Barat",
+      "addr:housenumber": "Kp. Cicalung RT.03 RW.06 Ds. Wangunharja Kec. Lembang",
+      "addr:postcode": "40391",
+      "addr:street": "Jalan Cicalung Maribaya",
+      "amenity": "school",
+      "denomination": "sunni",
+      "description": "Yayasan Ar Rochmah Bandung Barat\nKp. Cicalung RT. 03 RW. 06 Ds. Wangunharja Kec. Lembang Kab. Bandung Barat",
+      "email": "arrochmah.lembang@gmail.com",
+      "grades": "1-10",
+      "name": "Yayasan Ar Rochmah Bandung Barat",
+      "operator": "Asep Irfan Fanani",
+      "operator:type": "public",
+      "religion": "muslim",
+      "source": "Yayasan Ar Rochmah Bandung Barat;local knowledge;survey"
+    }
+  },
+  {
     "id": 10807880601,
     "type": "pelatihan",
     "name": "TK Al Kautsar",
@@ -3951,6 +4475,25 @@
     }
   },
   {
+    "id": 10813133821,
+    "type": "pelatihan",
+    "name": "Tk Al Islam Kota Bandung",
+    "category": "kindergarten",
+    "lat": -6.9093035,
+    "lon": 107.72292,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "kindergarten",
+      "name": "Tk Al Islam Kota Bandung",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
     "id": 10813287294,
     "type": "pelatihan",
     "name": "TK PGRI Harapan Bangsa 1",
@@ -3966,6 +4509,26 @@
       "amenity": "kindergarten",
       "name": "TK PGRI Harapan Bangsa 1",
       "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 10813330157,
+    "type": "pelatihan",
+    "name": "TK Bandung Institut",
+    "category": "kindergarten",
+    "lat": -6.9212427,
+    "lon": 107.7154595,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "kindergarten",
+      "name": "TK Bandung Institut",
+      "source": "POI_WRI_Survey_2023",
+      "task": "109",
       "wheelchair": "no"
     }
   },
@@ -4043,6 +4606,23 @@
       "amenity": "school",
       "name": "TK Islam Cendekia Muda",
       "religion": "muslim"
+    }
+  },
+  {
+    "id": 11766451255,
+    "type": "pelatihan",
+    "name": "Pondok Pesantren Modern Nurul Hikmah Sumbersari",
+    "category": "school",
+    "lat": -6.9942938,
+    "lon": 107.7058344,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Pondok Pesantren Modern Nurul Hikmah Sumbersari"
     }
   },
   {
@@ -4159,6 +4739,57 @@
     }
   },
   {
+    "id": 12187813110,
+    "type": "pelatihan",
+    "name": "MA AlIhsan Ciparay",
+    "category": "school",
+    "lat": -7.0325699,
+    "lon": 107.7044733,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "MA AlIhsan Ciparay"
+    }
+  },
+  {
+    "id": 12187834973,
+    "type": "pelatihan",
+    "name": "SMA KP 1 Ciparay",
+    "category": "school",
+    "lat": -7.0415518,
+    "lon": 107.712041,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SMA KP 1 Ciparay"
+    }
+  },
+  {
+    "id": 12187842663,
+    "type": "pelatihan",
+    "name": "SDN Andir",
+    "category": "school",
+    "lat": -7.0412016,
+    "lon": 107.7120398,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN Andir"
+    }
+  },
+  {
     "id": 12189364141,
     "type": "pelatihan",
     "name": "SMP Telkom Bandung",
@@ -4174,6 +4805,227 @@
       "addr:street": "jl.Radio Palasari",
       "amenity": "school",
       "name": "SMP Telkom Bandung"
+    }
+  },
+  {
+    "id": 12195922773,
+    "type": "pelatihan",
+    "name": "SDIT Bintang Islam Robithoh Ciparay",
+    "category": "school",
+    "lat": -7.0463916,
+    "lon": 107.709967,
+    "address": "Jl. Raya Pacet",
+    "phone": "",
+    "website": "sditbintangislam",
+    "openingHours": "",
+    "description": "Yayasan Robithoh Sekesalam Ciparay Bandung \n@ Raudhatul Athfal \n@ Sekolah Dasar Islam Terpadu ( SDIT Bintang Islam)",
+    "tags": {
+      "addr:housenumber": "128",
+      "addr:street": "Jl. Raya Pacet",
+      "amenity": "school",
+      "description": "Yayasan Robithoh Sekesalam Ciparay Bandung \n@ Raudhatul Athfal \n@ Sekolah Dasar Islam Terpadu ( SDIT Bintang Islam)",
+      "name": "SDIT Bintang Islam Robithoh Ciparay",
+      "website": "sditbintangislam"
+    }
+  },
+  {
+    "id": 12250458562,
+    "type": "pelatihan",
+    "name": "SDN Astakrama",
+    "category": "school",
+    "lat": -7.0688613,
+    "lon": 107.4880266,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN Astakrama"
+    }
+  },
+  {
+    "id": 12250481748,
+    "type": "pelatihan",
+    "name": "SDN Ciseupan",
+    "category": "school",
+    "lat": -7.0899602,
+    "lon": 107.5041421,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN Ciseupan"
+    }
+  },
+  {
+    "id": 12250484315,
+    "type": "pelatihan",
+    "name": "SDN Sukawening",
+    "category": "school",
+    "lat": -7.0782624,
+    "lon": 107.4695701,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN Sukawening"
+    }
+  },
+  {
+    "id": 12250488909,
+    "type": "pelatihan",
+    "name": "SDN Cibodas 1",
+    "category": "school",
+    "lat": -7.0936857,
+    "lon": 107.4838454,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN Cibodas 1"
+    }
+  },
+  {
+    "id": 12250494141,
+    "type": "pelatihan",
+    "name": "SDN Cintalaksana",
+    "category": "school",
+    "lat": -7.0762408,
+    "lon": 107.5225555,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN Cintalaksana"
+    }
+  },
+  {
+    "id": 12250498725,
+    "type": "pelatihan",
+    "name": "SDN Cikuya",
+    "category": "school",
+    "lat": -7.0543904,
+    "lon": 107.534085,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN Cikuya"
+    }
+  },
+  {
+    "id": 12250530933,
+    "type": "pelatihan",
+    "name": "SDN Dermalita",
+    "category": "school",
+    "lat": -7.0268588,
+    "lon": 107.4719181,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN Dermalita"
+    }
+  },
+  {
+    "id": 12393916755,
+    "type": "pelatihan",
+    "name": "POSKO PMI Kabupaten Bandung",
+    "category": "social_facility",
+    "lat": -7.0250783,
+    "lon": 107.5314584,
+    "address": "Jl. Terusan Al Fathu KM. 17 Soreang",
+    "phone": "0225891313",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:district": "Bandung",
+      "addr:province": "Jawa Barat",
+      "addr:street": "Jl. Terusan Al Fathu KM. 17 Soreang",
+      "addr:subdistrict": "Soreang",
+      "addr:village": "Panyirapan",
+      "amenity": "social_facility",
+      "email": "posko.pmikabbandung@gmail.com",
+      "name": "POSKO PMI Kabupaten Bandung",
+      "operator": "Palang Merah Indonesia",
+      "operator:short": "PMI",
+      "phone": "0225891313",
+      "social_facility": "command_post"
+    }
+  },
+  {
+    "id": 12393916756,
+    "type": "pelatihan",
+    "name": "KSR PMI Kabupaten Bandung",
+    "category": "social_facility",
+    "lat": -7.0250683,
+    "lon": 107.531449,
+    "address": "Jl. Terusan Al Fathu KM 17 Soreang",
+    "phone": "0225891313",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:district": "Bandung",
+      "addr:province": "Jawa Barat",
+      "addr:street": "Jl. Terusan Al Fathu KM 17 Soreang",
+      "addr:subdistrict": "Soreang",
+      "addr:village": "Panyirapan",
+      "amenity": "social_facility",
+      "email": "posko.pmikabbandung@gmail.com",
+      "name": "KSR PMI Kabupaten Bandung",
+      "operator": "Palang Merah Indonesia",
+      "operator:short": "PMI",
+      "phone": "0225891313",
+      "social_facility": "ksr_district_office"
+    }
+  },
+  {
+    "id": 12393916757,
+    "type": "pelatihan",
+    "name": "PMI Kabupaten Bandung",
+    "category": "social_facility",
+    "lat": -7.025092,
+    "lon": 107.531448,
+    "address": "Jl. Terusan Al Fathu KM. 17 Soreang",
+    "phone": "0225891313",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:district": "Bandung",
+      "addr:province": "Jawa Barat",
+      "addr:street": "Jl. Terusan Al Fathu KM. 17 Soreang",
+      "addr:subdistrict": "Soreang",
+      "addr:village": "Panyirapan",
+      "amenity": "social_facility",
+      "email": "posko.pmikabbandung@gmail.com",
+      "name": "PMI Kabupaten Bandung",
+      "operator": "Palang Merah Indonesia",
+      "operator:short": "PMI",
+      "phone": "0225891313",
+      "social_facility": "office"
     }
   },
   {
@@ -4204,6 +5056,77 @@
       "operator:wikidata": "Q3003251",
       "phone": "08981262220",
       "social_facility": "office"
+    }
+  },
+  {
+    "id": 12395684263,
+    "type": "pelatihan",
+    "name": "PMI Kota Kota Cimahi",
+    "category": "social_facility",
+    "lat": -6.854,
+    "lon": 107.538,
+    "address": "Jl. Bobojong No.148 Kel. Cipageran Kec. Cimahi Utara, Kota Cimahi 40511",
+    "phone": "2220667378",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:district": "Kota Cimahi",
+      "addr:province": "Jawa Barat",
+      "addr:street": "Jl. Bobojong No.148 Kel. Cipageran Kec. Cimahi Utara, Kota Cimahi 40511",
+      "addr:subdistrict": "Cimahi Utara",
+      "addr:village": "Cipageran",
+      "amenity": "social_facility",
+      "email": "pmi_cimahi@yahoo.co.id",
+      "name": "PMI Kota Kota Cimahi",
+      "operator": "Palang Merah Indonesia",
+      "operator:short": "PMI",
+      "phone": "2220667378",
+      "social_facility": "office"
+    }
+  },
+  {
+    "id": 12395684269,
+    "type": "pelatihan",
+    "name": "PMI Kabupaten Bandung Barat",
+    "category": "social_facility",
+    "lat": -6.901,
+    "lon": 107.501,
+    "address": "Jl. Raya Batujajar No.KM. 3, RW.8, Giriasih, Kec. Batujajar, Kabupaten Bandung Barat, Jawa Barat 40561",
+    "phone": "226865797",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:district": "Bandung Barat",
+      "addr:province": "Jawa Barat",
+      "addr:street": "Jl. Raya Batujajar No.KM. 3, RW.8, Giriasih, Kec. Batujajar, Kabupaten Bandung Barat, Jawa Barat 40561",
+      "addr:subdistrict": "Batujajar",
+      "addr:village": "Giriasih",
+      "amenity": "social_facility",
+      "email": "poskopmikbb2@gmail.com",
+      "name": "PMI Kabupaten Bandung Barat",
+      "operator": "Palang Merah Indonesia",
+      "operator:short": "PMI",
+      "phone": "226865797",
+      "social_facility": "office"
+    }
+  },
+  {
+    "id": 12401893526,
+    "type": "pelatihan",
+    "name": "TK Zahira",
+    "category": "school",
+    "lat": -6.8187412,
+    "lon": 107.6275518,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "TK Zahira"
     }
   },
   {
@@ -4290,6 +5213,26 @@
     }
   },
   {
+    "id": 13076205001,
+    "type": "pelatihan",
+    "name": "Yayasan Kreasi Insan Parahyangan",
+    "category": "school",
+    "lat": -6.9683089,
+    "lon": 107.770332,
+    "address": "Jalan Rancakendal No 1",
+    "phone": "",
+    "website": "",
+    "openingHours": "Mo-Fr 06:30-15:30",
+    "description": "",
+    "tags": {
+      "addr:street": "Jalan Rancakendal No 1",
+      "amenity": "school",
+      "internet_access": "wlan",
+      "name": "Yayasan Kreasi Insan Parahyangan",
+      "opening_hours": "Mo-Fr 06:30-15:30"
+    }
+  },
+  {
     "id": 13077938801,
     "type": "pelatihan",
     "name": "Institut Agama Islam Persatuan Islam (PERSIS) Bandung",
@@ -4332,6 +5275,67 @@
     }
   },
   {
+    "id": 13097732888,
+    "type": "pelatihan",
+    "name": "SMP Negeri 2 Ngamprah",
+    "category": "school",
+    "lat": -6.8591352,
+    "lon": 107.5313527,
+    "address": "Jalan Somawinata",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jalan Somawinata",
+      "amenity": "school",
+      "grades": "7-9",
+      "name": "SMP Negeri 2 Ngamprah",
+      "operator": "State",
+      "operator:type": "public"
+    }
+  },
+  {
+    "id": 13097732889,
+    "type": "pelatihan",
+    "name": "SD Negeri Pakusarakan",
+    "category": "school",
+    "lat": -6.859381,
+    "lon": 107.5310256,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "grades": "1-6",
+      "name": "SD Negeri Pakusarakan",
+      "operator": "State",
+      "operator:type": "public"
+    }
+  },
+  {
+    "id": 13097732890,
+    "type": "pelatihan",
+    "name": "SD Negeri Margamulya",
+    "category": "school",
+    "lat": -6.8592051,
+    "lon": 107.5307599,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "grades": "1-6",
+      "name": "SD Negeri Margamulya",
+      "operator": "state",
+      "operator:type": "public"
+    }
+  },
+  {
     "id": 13123188601,
     "type": "pelatihan",
     "name": "SMK Widya Utama",
@@ -4346,6 +5350,66 @@
     "tags": {
       "amenity": "school",
       "name": "SMK Widya Utama"
+    }
+  },
+  {
+    "id": 13198454706,
+    "type": "pelatihan",
+    "name": "SD Negeri Palintang Jaya",
+    "category": "school",
+    "lat": -6.8634464,
+    "lon": 107.7296599,
+    "address": "Jalan Palintang9",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jalan Palintang9",
+      "amenity": "school",
+      "name": "SD Negeri Palintang Jaya",
+      "official_name": "Sekolah Dasar Negeri Palintang Jaya",
+      "short_name": "SDN Palintang Jaya"
+    }
+  },
+  {
+    "id": 13242787529,
+    "type": "pelatihan",
+    "name": "SDI Al-Azhar 62 Summarecon",
+    "category": "school",
+    "lat": -6.9605939,
+    "lon": 107.7020001,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "isced:level": "1",
+      "name": "SDI Al-Azhar 62 Summarecon",
+      "name:id": "Sekolah Dasar Islam Al Azhar 62 Summarecon",
+      "operator": "Yayasan Al Azhar"
+    }
+  },
+  {
+    "id": 13242787530,
+    "type": "pelatihan",
+    "name": "SMPI Al-Azhar 42 Summarecon",
+    "category": "school",
+    "lat": -6.9605739,
+    "lon": 107.7021651,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "isced:level": "2",
+      "name": "SMPI Al-Azhar 42 Summarecon",
+      "name:id": "Sekolah Menengah Pertama Islam Al Azhar 42 Summarecon",
+      "operator": "Yayasan Al Azhar"
     }
   },
   {
@@ -4364,6 +5428,28 @@
       "amenity": "library",
       "name": "Perpustakaan Bank Indonesia",
       "opening_hours": "Mo-Sa 08:00-16:30"
+    }
+  },
+  {
+    "id": 13273220507,
+    "type": "pelatihan",
+    "name": "SMP Pasundan Rancaekek",
+    "category": "school",
+    "lat": -6.9689278,
+    "lon": 107.7580956,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "SMP Pasundan Rancaekek",
+    "tags": {
+      "amenity": "school",
+      "building:levels": "2",
+      "description": "SMP Pasundan Rancaekek",
+      "education": "school",
+      "grades": "7-9",
+      "name": "SMP Pasundan Rancaekek",
+      "note": "Tolong isi alamat sekolahnya yang resmi."
     }
   },
   {
@@ -4680,6 +5766,98 @@
       "operator:type": "government",
       "source": "S2City_POI_2022",
       "wheelchair": "limited"
+    }
+  },
+  {
+    "id": 133952521,
+    "type": "pelatihan",
+    "name": "Perpustakaan FMIPA Unpad",
+    "category": "library",
+    "lat": -6.9255518,
+    "lon": 107.7733942,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "library",
+      "building": "university",
+      "internet_access": "yes",
+      "name": "Perpustakaan FMIPA Unpad",
+      "tactile_paving": "no",
+      "wheelchair": "no",
+      "wikidata": "Q115862846"
+    }
+  },
+  {
+    "id": 134117279,
+    "type": "pelatihan",
+    "name": "Institut Koperasi Indonesia",
+    "category": "school",
+    "lat": -6.9343189,
+    "lon": 107.7666626,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "Institut Koperasi Indonesia"
+    }
+  },
+  {
+    "id": 134117623,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.9298736,
+    "lon": 107.7797933,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes"
+    }
+  },
+  {
+    "id": 134117626,
+    "type": "pelatihan",
+    "name": "SMP Negeri 1 Jatinangor",
+    "category": "school",
+    "lat": -6.9302715,
+    "lon": 107.7798749,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP Negeri 1 Jatinangor"
+    }
+  },
+  {
+    "id": 134117628,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.9305899,
+    "lon": 107.7796816,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes"
     }
   },
   {
@@ -5160,6 +6338,40 @@
     }
   },
   {
+    "id": 168609990,
+    "type": "pelatihan",
+    "name": "Plaza Batu",
+    "category": "community_centre",
+    "lat": -6.9278378,
+    "lon": 107.7743871,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "community_centre",
+      "name": "Plaza Batu"
+    }
+  },
+  {
+    "id": 168609991,
+    "type": "pelatihan",
+    "name": "Plaza Batu",
+    "category": "community_centre",
+    "lat": -6.9279265,
+    "lon": 107.7741978,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "community_centre",
+      "name": "Plaza Batu"
+    }
+  },
+  {
     "id": 174044215,
     "type": "pelatihan",
     "name": "STIA Lembaga Administrasi Negara",
@@ -5208,6 +6420,414 @@
     }
   },
   {
+    "id": 177609476,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9407625,
+    "lon": 107.7251954,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609478,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9414918,
+    "lon": 107.724479,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609480,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9408794,
+    "lon": 107.7244852,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609481,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9413617,
+    "lon": 107.7246509,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609485,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9409745,
+    "lon": 107.7247136,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609486,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9412771,
+    "lon": 107.7250735,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609487,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9409694,
+    "lon": 107.7255574,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609488,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9412094,
+    "lon": 107.7245433,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609489,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9410424,
+    "lon": 107.7245693,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609490,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.941346,
+    "lon": 107.7248477,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609493,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9405307,
+    "lon": 107.7250246,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609495,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9408981,
+    "lon": 107.7248497,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609496,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9411825,
+    "lon": 107.7249365,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609498,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9407078,
+    "lon": 107.7249125,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609499,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9410787,
+    "lon": 107.7252394,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609501,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9410411,
+    "lon": 107.7248738,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609502,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9413307,
+    "lon": 107.7252307,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177609504,
+    "type": "pelatihan",
+    "name": "SD Laboratorium UPI",
+    "category": "school",
+    "lat": -6.9410164,
+    "lon": 107.7250599,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Laboratorium UPI"
+    }
+  },
+  {
+    "id": 177611000,
+    "type": "pelatihan",
+    "name": "Krida Nusantara",
+    "category": "school",
+    "lat": -6.9131011,
+    "lon": 107.7283547,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Krida Nusantara"
+    }
+  },
+  {
+    "id": 177611002,
+    "type": "pelatihan",
+    "name": "Krida Nusantara",
+    "category": "school",
+    "lat": -6.915207,
+    "lon": 107.7274004,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Krida Nusantara"
+    }
+  },
+  {
+    "id": 177611006,
+    "type": "pelatihan",
+    "name": "Krida Nusantara",
+    "category": "school",
+    "lat": -6.9152599,
+    "lon": 107.7278702,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Krida Nusantara"
+    }
+  },
+  {
+    "id": 177611008,
+    "type": "pelatihan",
+    "name": "Krida Nusantara",
+    "category": "school",
+    "lat": -6.9158432,
+    "lon": 107.7271353,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Krida Nusantara"
+    }
+  },
+  {
+    "id": 177611009,
+    "type": "pelatihan",
+    "name": "Krida Nusantara",
+    "category": "school",
+    "lat": -6.9162877,
+    "lon": 107.7274592,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Krida Nusantara"
+    }
+  },
+  {
+    "id": 177611018,
+    "type": "pelatihan",
+    "name": "Krida Nusantara",
+    "category": "school",
+    "lat": -6.9161017,
+    "lon": 107.7268079,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Krida Nusantara"
+    }
+  },
+  {
     "id": 177629384,
     "type": "pelatihan",
     "name": "Institut Teknologi Bandung",
@@ -5238,6 +6858,669 @@
       "wheelchair": "yes",
       "wikidata": "Q1579397",
       "wikipedia": "en:Bandung Institute of Technology"
+    }
+  },
+  {
+    "id": 182956143,
+    "type": "pelatihan",
+    "name": "PAUD Nagrak",
+    "category": "school",
+    "lat": -6.7965034,
+    "lon": 107.5997229,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "PAUD Nagrak"
+    }
+  },
+  {
+    "id": 182956145,
+    "type": "pelatihan",
+    "name": "Pos Pengamanan Lembang Asri Resort",
+    "category": "community_centre",
+    "lat": -6.797887,
+    "lon": 107.5984639,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "community_centre",
+      "name": "Pos Pengamanan Lembang Asri Resort"
+    }
+  },
+  {
+    "id": 182985178,
+    "type": "pelatihan",
+    "name": "SDN 1 Cibogo",
+    "category": "school",
+    "lat": -6.8123675,
+    "lon": 107.6345548,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN 1 Cibogo"
+    }
+  },
+  {
+    "id": 182985179,
+    "type": "pelatihan",
+    "name": "SDN Ciburial",
+    "category": "school",
+    "lat": -6.8102297,
+    "lon": 107.636005,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN Ciburial"
+    }
+  },
+  {
+    "id": 182985186,
+    "type": "pelatihan",
+    "name": "YPI Al Rochmah",
+    "category": "school",
+    "lat": -6.8111496,
+    "lon": 107.6371785,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "YPI Al Rochmah"
+    }
+  },
+  {
+    "id": 183114491,
+    "type": "pelatihan",
+    "name": "PAUD",
+    "category": "school",
+    "lat": -6.7869889,
+    "lon": 107.6540247,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "PAUD"
+    }
+  },
+  {
+    "id": 183122048,
+    "type": "pelatihan",
+    "name": "NURUL HUDA",
+    "category": "school",
+    "lat": -6.7937936,
+    "lon": 107.6488834,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "amenity": "school",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "unreinforced_masonry",
+      "building:walls": "brick",
+      "name": "NURUL HUDA",
+      "type:id": "PONDOK PESANTREN"
+    }
+  },
+  {
+    "id": 183122050,
+    "type": "pelatihan",
+    "name": "NURUL HUDA",
+    "category": "school",
+    "lat": -6.7933647,
+    "lon": 107.6486225,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "amenity": "school",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "plastered",
+      "building:walls": "brick",
+      "capacity:persons": "150 ORANG",
+      "name": "NURUL HUDA",
+      "type:id": "SD/MI"
+    }
+  },
+  {
+    "id": 183122052,
+    "type": "pelatihan",
+    "name": "SD. 6 CIBOGO",
+    "category": "school",
+    "lat": -6.795392,
+    "lon": 107.6471963,
+    "address": "Kp. CIBEDUG Ds. CIKOLE LEMBANG",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Kp. CIBEDUG Ds. CIKOLE LEMBANG",
+      "amenity": "school",
+      "building": "school",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "unreinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "240 ORANG",
+      "name": "SD. 6 CIBOGO",
+      "type:id": "SD"
+    }
+  },
+  {
+    "id": 183123243,
+    "type": "pelatihan",
+    "name": "Yayasan Nurul Falah",
+    "category": "school",
+    "lat": -6.8160408,
+    "lon": 107.6180888,
+    "address": "Jl. Grand Hotel",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jl. Grand Hotel",
+      "amenity": "school",
+      "building:levels": "2",
+      "building:part": "school",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "500",
+      "ele": "15",
+      "name": "Yayasan Nurul Falah",
+      "type:id": "Panti Asuhan"
+    }
+  },
+  {
+    "id": 183123244,
+    "type": "pelatihan",
+    "name": "Yayasan Putra Maju",
+    "category": "school",
+    "lat": -6.8154338,
+    "lon": 107.6155782,
+    "address": "Jl. Grand Hotel",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jl. Grand Hotel",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "2",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "500",
+      "ele": "15",
+      "name": "Yayasan Putra Maju",
+      "type:id": "SMP"
+    }
+  },
+  {
+    "id": 183136096,
+    "type": "pelatihan",
+    "name": "sdn 3 cibogo",
+    "category": "school",
+    "lat": -6.8081735,
+    "lon": 107.6469754,
+    "address": "jl lembang-tangkuban perahu",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "jl lembang-tangkuban perahu",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "unreinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "150",
+      "name": "sdn 3 cibogo",
+      "type:id": "SD"
+    }
+  },
+  {
+    "id": 183136097,
+    "type": "pelatihan",
+    "name": "yayasan sadeawiah",
+    "category": "school",
+    "lat": -6.8079849,
+    "lon": 107.6478841,
+    "address": "jl. ciburial cikole lembang",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "jl. ciburial cikole lembang",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "unreinforced_masonry",
+      "building:walls": "brick",
+      "name": "yayasan sadeawiah",
+      "type:id": "mts"
+    }
+  },
+  {
+    "id": 183136997,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.8128586,
+    "lon": 107.6212414,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
+    }
+  },
+  {
+    "id": 183136999,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.8126434,
+    "lon": 107.6211051,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
+    }
+  },
+  {
+    "id": 183137001,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.8124252,
+    "lon": 107.6208896,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
+    }
+  },
+  {
+    "id": 183137002,
+    "type": "pelatihan",
+    "name": "SMPN 1 Lembang",
+    "category": "school",
+    "lat": -6.8131441,
+    "lon": 107.6210322,
+    "address": "Jl. Raya Lembang",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Raya Lembang",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMPN 1 Lembang"
+    }
+  },
+  {
+    "id": 183137003,
+    "type": "pelatihan",
+    "name": "SMPN 1 Lembang",
+    "category": "school",
+    "lat": -6.8133612,
+    "lon": 107.6210373,
+    "address": "Jl. Raya Lembang",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Raya Lembang",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMPN 1 Lembang"
+    }
+  },
+  {
+    "id": 183137005,
+    "type": "pelatihan",
+    "name": "SMPN 1 Lembang",
+    "category": "school",
+    "lat": -6.8130147,
+    "lon": 107.6207494,
+    "address": "Jl. Raya Lembang",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Raya Lembang",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMPN 1 Lembang"
+    }
+  },
+  {
+    "id": 183137007,
+    "type": "pelatihan",
+    "name": "SMPN 1 Lembang",
+    "category": "school",
+    "lat": -6.8128517,
+    "lon": 107.6207799,
+    "address": "Jl. Raya Lembang",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Raya Lembang",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMPN 1 Lembang"
+    }
+  },
+  {
+    "id": 183137009,
+    "type": "pelatihan",
+    "name": "SMPN 1 Lembang",
+    "category": "school",
+    "lat": -6.8129722,
+    "lon": 107.6209617,
+    "address": "Jl. Raya Lembang",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Raya Lembang",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMPN 1 Lembang"
+    }
+  },
+  {
+    "id": 183137011,
+    "type": "pelatihan",
+    "name": "SMPN 1 Lembang",
+    "category": "school",
+    "lat": -6.8130063,
+    "lon": 107.6211549,
+    "address": "Jl. Raya Lembang",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Raya Lembang",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMPN 1 Lembang"
+    }
+  },
+  {
+    "id": 183137018,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.812812,
+    "lon": 107.6211159,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
+    }
+  },
+  {
+    "id": 183137020,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.8124909,
+    "lon": 107.6212617,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
+    }
+  },
+  {
+    "id": 183137022,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.8126793,
+    "lon": 107.6212437,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
+    }
+  },
+  {
+    "id": 183137024,
+    "type": "pelatihan",
+    "name": "SMPN 1 Lembang",
+    "category": "school",
+    "lat": -6.8131711,
+    "lon": 107.6206085,
+    "address": "Jl. Raya Lembang",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Raya Lembang",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMPN 1 Lembang"
+    }
+  },
+  {
+    "id": 183162989,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.805988,
+    "lon": 107.6370775,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school"
+    }
+  },
+  {
+    "id": 183162996,
+    "type": "pelatihan",
+    "name": "rumah Guru",
+    "category": "school",
+    "lat": -6.80751,
+    "lon": 107.6375215,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "rumah Guru"
+    }
+  },
+  {
+    "id": 183168096,
+    "type": "pelatihan",
+    "name": "RA/TPA Al-Fauzan",
+    "category": "kindergarten",
+    "lat": -6.8043087,
+    "lon": 107.6408149,
+    "address": "jl. Cilumber",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "jl. Cilumber",
+      "amenity": "kindergarten",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "50",
+      "ele": "1216",
+      "name": "RA/TPA Al-Fauzan"
+    }
+  },
+  {
+    "id": 183168099,
+    "type": "pelatihan",
+    "name": "SDN Cilumbar",
+    "category": "school",
+    "lat": -6.8051664,
+    "lon": 107.6406066,
+    "address": "Jl. Cilumber",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jl. Cilumber",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "600",
+      "ele": "1227",
+      "name": "SDN Cilumbar",
+      "type:id": "SD"
+    }
+  },
+  {
+    "id": 183168102,
+    "type": "pelatihan",
+    "name": "SDN Cilumbar",
+    "category": "school",
+    "lat": -6.8051332,
+    "lon": 107.6404677,
+    "address": "Jl. Cilumber",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jl. Cilumber",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "600",
+      "ele": "1227",
+      "name": "SDN Cilumbar",
+      "type:id": "SD"
+    }
+  },
+  {
+    "id": 183177872,
+    "type": "pelatihan",
+    "name": "Kelompok Bermain/Taman Kanak-Kanak Al Biruni",
+    "category": "school",
+    "lat": -6.9382662,
+    "lon": 107.7124409,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "isced:level": "0",
+      "name": "Kelompok Bermain/Taman Kanak-Kanak Al Biruni",
+      "name:id": "KB/TK Al Biruni"
+    }
+  },
+  {
+    "id": 183177877,
+    "type": "pelatihan",
+    "name": "Sekolah Dasar Al Biruni",
+    "category": "school",
+    "lat": -6.9378571,
+    "lon": 107.7130469,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "isced:level": "1",
+      "landuse": "education",
+      "name": "Sekolah Dasar Al Biruni"
     }
   },
   {
@@ -5553,6 +7836,29 @@
     }
   },
   {
+    "id": 204551991,
+    "type": "pelatihan",
+    "name": "Universitas Jenderal Achmad Yani",
+    "category": "university",
+    "lat": -6.8885816,
+    "lon": 107.5264975,
+    "address": "Jalan Terusan Jendral Sudirman",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:city": "CImahi",
+      "addr:postcode": "40285",
+      "addr:street": "Jalan Terusan Jendral Sudirman",
+      "amenity": "university",
+      "name": "Universitas Jenderal Achmad Yani",
+      "short_name": "Unjani",
+      "wikidata": "Q12523356",
+      "wikipedia": "id:Universitas Jenderal Achmad Yani"
+    }
+  },
+  {
     "id": 219370516,
     "type": "pelatihan",
     "name": "Yayasan Pembina Nusantara",
@@ -5672,6 +7978,53 @@
       "check_date": "2024-04-07",
       "name": "SMK Negeri 4 Bandung",
       "website": "https://smkn4bdg.sch.id/"
+    }
+  },
+  {
+    "id": 287215117,
+    "type": "pelatihan",
+    "name": "Universitas Islam Negeri Sunan Gunung Djati",
+    "category": "university",
+    "lat": -6.9308588,
+    "lon": 107.7174855,
+    "address": "",
+    "phone": "",
+    "website": "https://uinsgd.ac.id",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "alt_name": "UIN Sunan Gunung Djati",
+      "amenity": "university",
+      "name": "Universitas Islam Negeri Sunan Gunung Djati",
+      "short_name": "UIN SGD",
+      "website": "https://uinsgd.ac.id",
+      "wikidata": "Q13098212",
+      "wikipedia": "id:Universitas Islam Negeri Sunan Gunung Djati"
+    }
+  },
+  {
+    "id": 289974528,
+    "type": "pelatihan",
+    "name": "Perpustakaan Rachmat Djatnika",
+    "category": "library",
+    "lat": -6.9312957,
+    "lon": 107.7169468,
+    "address": "",
+    "phone": "0227800525",
+    "website": "",
+    "openingHours": "Mo-Sa 08:00-16:00",
+    "description": "",
+    "tags": {
+      "amenity": "library",
+      "building": "yes",
+      "name": "Perpustakaan Rachmat Djatnika",
+      "opening_hours": "Mo-Sa 08:00-16:00",
+      "operator": "UIN",
+      "operator:type": "public",
+      "phone": "0227800525",
+      "tactile_paving": "yes",
+      "wheelchair": "yes",
+      "wikidata": "Q115862588"
     }
   },
   {
@@ -5904,6 +8257,133 @@
     "tags": {
       "amenity": "college",
       "name": "STIE Ekuitas"
+    }
+  },
+  {
+    "id": 332971849,
+    "type": "pelatihan",
+    "name": "TK Al-Muslimun",
+    "category": "kindergarten",
+    "lat": -6.9492745,
+    "lon": 107.7710962,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "kindergarten",
+      "building": "school",
+      "name": "TK Al-Muslimun",
+      "operator": "Al-Muslimun"
+    }
+  },
+  {
+    "id": 332973961,
+    "type": "pelatihan",
+    "name": "SD INPRES Mekarsari",
+    "category": "school",
+    "lat": -6.948739,
+    "lon": 107.7720115,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD INPRES Mekarsari"
+    }
+  },
+  {
+    "id": 332973962,
+    "type": "pelatihan",
+    "name": "SD Negeri Sayang",
+    "category": "school",
+    "lat": -6.9483366,
+    "lon": 107.7724779,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Negeri Sayang"
+    }
+  },
+  {
+    "id": 332973963,
+    "type": "pelatihan",
+    "name": "TK Bhanyangkari",
+    "category": "kindergarten",
+    "lat": -6.9480312,
+    "lon": 107.7726071,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "kindergarten",
+      "name": "TK Bhanyangkari"
+    }
+  },
+  {
+    "id": 332974432,
+    "type": "pelatihan",
+    "name": "SD Cikeruh 1 & 2, SD Ciawi",
+    "category": "school",
+    "lat": -6.9370811,
+    "lon": 107.7731956,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Cikeruh 1 & 2, SD Ciawi"
+    }
+  },
+  {
+    "id": 337755176,
+    "type": "pelatihan",
+    "name": "Bina Siswa SMA Plus",
+    "category": "school",
+    "lat": -6.8173086,
+    "lon": 107.5501216,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Bina Siswa SMA Plus",
+      "operator:type": "private",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 337760293,
+    "type": "pelatihan",
+    "name": "SMA Negeri 1 CIsarua",
+    "category": "school",
+    "lat": -6.8172599,
+    "lon": 107.5490311,
+    "address": "Jl.Terusan Kolonel Masturi",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl.Terusan Kolonel Masturi",
+      "amenity": "school",
+      "name": "SMA Negeri 1 CIsarua",
+      "operator:type": "government",
+      "school:type_idn": "sma",
+      "wikidata": "Q19734671"
     }
   },
   {
@@ -6745,6 +9225,23 @@
     }
   },
   {
+    "id": 425979889,
+    "type": "pelatihan",
+    "name": "Universitas Advent Indonesia",
+    "category": "university",
+    "lat": -6.8017573,
+    "lon": 107.5794473,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "university",
+      "name": "Universitas Advent Indonesia"
+    }
+  },
+  {
     "id": 455732694,
     "type": "pelatihan",
     "name": "Politeknik Kesehatan Kemenkes Bandung Jurusan Keperawatan",
@@ -6760,6 +9257,57 @@
       "amenity": "university",
       "building": "yes",
       "name": "Politeknik Kesehatan Kemenkes Bandung Jurusan Keperawatan"
+    }
+  },
+  {
+    "id": 474132692,
+    "type": "pelatihan",
+    "name": "SDN Giri Aji",
+    "category": "school",
+    "lat": -6.735438,
+    "lon": 107.6458219,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN Giri Aji"
+    }
+  },
+  {
+    "id": 474132693,
+    "type": "pelatihan",
+    "name": "SDN Ciater",
+    "category": "school",
+    "lat": -6.7357537,
+    "lon": 107.6461343,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN Ciater"
+    }
+  },
+  {
+    "id": 474243610,
+    "type": "pelatihan",
+    "name": "SDN Panaruban",
+    "category": "school",
+    "lat": -6.6998234,
+    "lon": 107.6426824,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN Panaruban"
     }
   },
   {
@@ -6838,6 +9386,47 @@
       "addr:street": "Jalan Sersan Bajuri",
       "amenity": "school",
       "name": "Sekolah Mutiara Nusantara"
+    }
+  },
+  {
+    "id": 508146695,
+    "type": "pelatihan",
+    "name": "Bale Pabukon",
+    "category": "library",
+    "lat": -6.9319485,
+    "lon": 107.7757656,
+    "address": "Jalan Raya Jatinangor",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:city": "Bandung",
+      "addr:postcode": "45363",
+      "addr:street": "Jalan Raya Jatinangor",
+      "amenity": "library",
+      "building": "yes",
+      "name": "Bale Pabukon",
+      "operator": "UNPAD",
+      "operator:type": "public"
+    }
+  },
+  {
+    "id": 508147672,
+    "type": "pelatihan",
+    "name": "SMAN Jatinangor",
+    "category": "school",
+    "lat": -6.9282166,
+    "lon": 107.7794865,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMAN Jatinangor"
     }
   },
   {
@@ -8019,6 +10608,44 @@
     }
   },
   {
+    "id": 520441072,
+    "type": "pelatihan",
+    "name": "SMK Perjuangan",
+    "category": "school",
+    "lat": -6.8104041,
+    "lon": 107.5760584,
+    "address": "Jl. Cihanjuang Rahayu Rt 04/12",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Jl. Cihanjuang Rahayu Rt 04/12",
+      "amenity": "school",
+      "name": "SMK Perjuangan",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 520441093,
+    "type": "pelatihan",
+    "name": "SDN Cijanjuang 2",
+    "category": "school",
+    "lat": -6.811179,
+    "lon": 107.5767235,
+    "address": "Jl. Cihanjuang Rahayu Rt 02/12",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Jl. Cihanjuang Rahayu Rt 02/12",
+      "amenity": "school",
+      "name": "SDN Cijanjuang 2",
+      "school:type_idn": "sd"
+    }
+  },
+  {
     "id": 520484794,
     "type": "pelatihan",
     "name": "SMK Negeri 3 Cimahi",
@@ -8070,6 +10697,54 @@
       "amenity": "school",
       "building": "yes",
       "name": "SDN Hanjuang Samijaya"
+    }
+  },
+  {
+    "id": 520711124,
+    "type": "pelatihan",
+    "name": "SDN 3 CIKAHURIPAN 3",
+    "category": "school",
+    "lat": -6.8008184,
+    "lon": 107.6016879,
+    "address": "KP. BARUNAGRI RT03 RW03",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP. BARUNAGRI RT03 RW03",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SDN 3 CIKAHURIPAN 3",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 520744545,
+    "type": "pelatihan",
+    "name": "SMPN 3 Lembang",
+    "category": "school",
+    "lat": -6.8153986,
+    "lon": 107.6127623,
+    "address": "Jalan Holtikultura Rt 02/05",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jalan Holtikultura Rt 02/05",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:part": "school",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "1000",
+      "ele": "10",
+      "name": "SMPN 3 Lembang",
+      "type:id": "SMP"
     }
   },
   {
@@ -8455,6 +11130,60 @@
     }
   },
   {
+    "id": 530308686,
+    "type": "pelatihan",
+    "name": "SDN 1 Cibacang",
+    "category": "school",
+    "lat": -6.8742672,
+    "lon": 107.4763989,
+    "address": "Kp Garunggang, Cipeundeuy",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Kp Garunggang, Cipeundeuy",
+      "amenity": "school",
+      "name": "SDN 1 Cibacang"
+    }
+  },
+  {
+    "id": 530335455,
+    "type": "pelatihan",
+    "name": "SMP Bhakti Mulya",
+    "category": "school",
+    "lat": -6.9183391,
+    "lon": 107.4947203,
+    "address": "Jl. SMP, Batujajar",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. SMP, Batujajar",
+      "amenity": "school",
+      "name": "SMP Bhakti Mulya"
+    }
+  },
+  {
+    "id": 530335456,
+    "type": "pelatihan",
+    "name": "SMP N 1 Batujajar",
+    "category": "school",
+    "lat": -6.9175725,
+    "lon": 107.4949216,
+    "address": "Jl. SMP No. 12 Batujajar",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. SMP No. 12 Batujajar",
+      "amenity": "school",
+      "name": "SMP N 1 Batujajar"
+    }
+  },
+  {
     "id": 530343053,
     "type": "pelatihan",
     "name": "TKA TPA Dago Biru",
@@ -8517,6 +11246,80 @@
     }
   },
   {
+    "id": 530350618,
+    "type": "pelatihan",
+    "name": "SMK Bandung Barat",
+    "category": "school",
+    "lat": -6.8636318,
+    "lon": 107.5088069,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "Alamat": "Jalan Cimareme No.51, Cimareme, Ngamprah, Bandung, Jawa Barat 40552",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMK Bandung Barat"
+    }
+  },
+  {
+    "id": 530365510,
+    "type": "pelatihan",
+    "name": "Sekolah Dasar Negeri Cibeber 3",
+    "category": "school",
+    "lat": -6.8913633,
+    "lon": 107.5195503,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "Alamat": "Jl. Ibu Ganirah No.71, Cibeber, Cimahi Sel., Kota Cimahi, Jawa Barat • 40534",
+      "amenity": "school",
+      "name": "Sekolah Dasar Negeri Cibeber 3"
+    }
+  },
+  {
+    "id": 530365512,
+    "type": "pelatihan",
+    "name": "STAI Siliwangi Bandung",
+    "category": "college",
+    "lat": -6.8883132,
+    "lon": 107.5301673,
+    "address": "Jl. Terusan Jenderal Sudirman",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Terusan Jenderal Sudirman",
+      "amenity": "college",
+      "name": "STAI Siliwangi Bandung",
+      "official_name": "Sekolah Tinggi Agama Islam Siliwangi Bandung"
+    }
+  },
+  {
+    "id": 530365513,
+    "type": "pelatihan",
+    "name": "SMP Budi Luhur",
+    "category": "school",
+    "lat": -6.8886146,
+    "lon": 107.5311139,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "Alamat": "Jl. KPAD Kebon Rumput,Baros, Cimahi Tengah, Kota Cimahi, Jawa Barat 40521",
+      "amenity": "school",
+      "name": "SMP Budi Luhur"
+    }
+  },
+  {
     "id": 530365514,
     "type": "pelatihan",
     "name": "Akademi Fisioterapi Rumah Sakit Dustira",
@@ -8568,6 +11371,173 @@
       "Alamat": "Jl. Jend. Sudirman No.152, Baros, Cimahi Tengah, Kota Cimahi, Jawa Barat 40521",
       "amenity": "school",
       "name": "Sekolah Menengah Pertama Negeri 2 Cimahi"
+    }
+  },
+  {
+    "id": 530365550,
+    "type": "pelatihan",
+    "name": "MAN Cimahi",
+    "category": "school",
+    "lat": -6.9026995,
+    "lon": 107.5228286,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "Alamat": "Leuwigajah, Cimahi Selatan, Leuwigajah, Cimahi, Kota Cimahi, Jawa Barat 40532",
+      "amenity": "school",
+      "name": "MAN Cimahi"
+    }
+  },
+  {
+    "id": 530365551,
+    "type": "pelatihan",
+    "name": "Sekolah Dasar Negeri Linggabudi",
+    "category": "school",
+    "lat": -6.9034832,
+    "lon": 107.5209252,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "Alamat": "Jl. Kerkof No.56, RT.9/RW.9, Leuwigajah, Cimahi Sel., Kota Cimahi, Jawa Barat 40532",
+      "amenity": "school",
+      "name": "Sekolah Dasar Negeri Linggabudi"
+    }
+  },
+  {
+    "id": 530365552,
+    "type": "pelatihan",
+    "name": "Sekolahh Dasar Negeri Cihapit",
+    "category": "school",
+    "lat": -6.9036581,
+    "lon": 107.5214566,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "Alamat": "Jl. Kerkof, Leuwigajah, Cimahi Sel., Kota Cimahi, Jawa Barat 40532",
+      "amenity": "school",
+      "name": "Sekolahh Dasar Negeri Cihapit"
+    }
+  },
+  {
+    "id": 530365553,
+    "type": "pelatihan",
+    "name": "Sekolah Menengah Pertama Negeri 8 Cimahi",
+    "category": "school",
+    "lat": -6.9029965,
+    "lon": 107.5215532,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "Alamat": "Jl. Kihapit Barat No.320, Leuwigajah, Cimahi Sel., Kota Cimahi, Jawa Barat 40532",
+      "amenity": "school",
+      "name": "Sekolah Menengah Pertama Negeri 8 Cimahi"
+    }
+  },
+  {
+    "id": 530365554,
+    "type": "pelatihan",
+    "name": "Sekolah Menengah Atas Negeri 4 Cimahi",
+    "category": "school",
+    "lat": -6.9024106,
+    "lon": 107.5216269,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "Alamat": "Jl. Kihapit Barat No.323, Leuwigajah, Cimahi Sel., Kota Cimahi, Jawa Barat 40532",
+      "amenity": "school",
+      "name": "Sekolah Menengah Atas Negeri 4 Cimahi"
+    }
+  },
+  {
+    "id": 530366895,
+    "type": "pelatihan",
+    "name": "Sekolah Menengah Atas Negeri 2 Cimahi",
+    "category": "school",
+    "lat": -6.8823813,
+    "lon": 107.5340571,
+    "address": "Jalan Sriwijaya IX",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "Alamat": "Jl. Sriwijaya 9 No.45A, Setiamanah, Cimahi Tengah, Kota Cimahi, Jawa Barat 40524",
+      "addr:city": "Cimahi",
+      "addr:postcode": "40524",
+      "addr:street": "Jalan Sriwijaya IX",
+      "amenity": "school",
+      "name": "Sekolah Menengah Atas Negeri 2 Cimahi",
+      "religion": "none",
+      "wikidata": "Q25469635"
+    }
+  },
+  {
+    "id": 530366896,
+    "type": "pelatihan",
+    "name": "Sekolah Menengah Pertama Negeri 3 Cimahi",
+    "category": "school",
+    "lat": -6.8818283,
+    "lon": 107.5334716,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "Alamat": "Sriwijaya 1, Setiamanah, Cimahi Tengah, Kota Cimahi, Jawa Barat 40524",
+      "amenity": "school",
+      "name": "Sekolah Menengah Pertama Negeri 3 Cimahi"
+    }
+  },
+  {
+    "id": 530368743,
+    "type": "pelatihan",
+    "name": "SD Negeri 4 Cimareme",
+    "category": "school",
+    "lat": -6.8616219,
+    "lon": 107.50156,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "Alamat": "Jl. Raya Caringin No.302, Cimareme, Ngamprah, Kabupaten Bandung Barat, Jawa Barat 40552",
+      "amenity": "school",
+      "name": "SD Negeri 4 Cimareme"
+    }
+  },
+  {
+    "id": 530372192,
+    "type": "pelatihan",
+    "name": "SMPN 2 Batujajar",
+    "category": "school",
+    "lat": -6.9062743,
+    "lon": 107.4631266,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "Alamat": "Jl Desa Pangauban No.184.A, Kec. Batujajar, Kabupaten Bandung Barat, Jawa Barat 40561",
+      "amenity": "school",
+      "name": "SMPN 2 Batujajar"
     }
   },
   {
@@ -8704,6 +11674,80 @@
       "addr:street": "Jl. Cihanjuang Atas Km 2,5",
       "amenity": "school",
       "name": "SMPN 10 Cimahi"
+    }
+  },
+  {
+    "id": 530922017,
+    "type": "pelatihan",
+    "name": "SD Negeri Situwangi",
+    "category": "school",
+    "lat": -6.9539841,
+    "lon": 107.5100978,
+    "address": "Situwangi, Genteng",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Situwangi, Genteng",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD Negeri Situwangi"
+    }
+  },
+  {
+    "id": 530922018,
+    "type": "pelatihan",
+    "name": "SD Negeri Situwangi",
+    "category": "school",
+    "lat": -6.9540575,
+    "lon": 107.5099716,
+    "address": "Situwangi, Genteng",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Situwangi, Genteng",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD Negeri Situwangi"
+    }
+  },
+  {
+    "id": 530940615,
+    "type": "pelatihan",
+    "name": "Al Azhar Syifa Budi Parahyangan",
+    "category": "school",
+    "lat": -6.8598423,
+    "lon": 107.5003256,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "Al Azhar Syifa Budi Parahyangan"
+    }
+  },
+  {
+    "id": 530946971,
+    "type": "pelatihan",
+    "name": "SD Interaktif Gemilang Mutafannin Bandung",
+    "category": "school",
+    "lat": -6.8659401,
+    "lon": 107.5126049,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD Interaktif Gemilang Mutafannin Bandung"
     }
   },
   {
@@ -8847,6 +11891,26 @@
     }
   },
   {
+    "id": 531049173,
+    "type": "pelatihan",
+    "name": "Perpustakaan Desa Giriasih",
+    "category": "library",
+    "lat": -6.8996906,
+    "lon": 107.4994183,
+    "address": "alan Cangkorah",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:housenumber": "RT 04 RW 08",
+      "addr:street": "alan Cangkorah",
+      "amenity": "library",
+      "building": "yes",
+      "name": "Perpustakaan Desa Giriasih"
+    }
+  },
+  {
     "id": 531049493,
     "type": "pelatihan",
     "name": "Sekolah Menengah Pertama 43 Bandung",
@@ -8922,6 +11986,332 @@
     }
   },
   {
+    "id": 534403344,
+    "type": "pelatihan",
+    "name": "SD Negeri 2 Batujajar",
+    "category": "school",
+    "lat": -6.9133645,
+    "lon": 107.510361,
+    "address": "Jl. Haurngambang",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:housenumber": "4",
+      "addr:street": "Jl. Haurngambang",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD Negeri 2 Batujajar"
+    }
+  },
+  {
+    "id": 534403345,
+    "type": "pelatihan",
+    "name": "SD Negeri 2 Batujajar",
+    "category": "school",
+    "lat": -6.9132267,
+    "lon": 107.5104818,
+    "address": "Jl. Haurngambang",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:housenumber": "4",
+      "addr:street": "Jl. Haurngambang",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD Negeri 2 Batujajar"
+    }
+  },
+  {
+    "id": 534403346,
+    "type": "pelatihan",
+    "name": "SD Negeri 2 Batujajar",
+    "category": "school",
+    "lat": -6.913307,
+    "lon": 107.5105985,
+    "address": "Jl. Haurngambang",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:housenumber": "4",
+      "addr:street": "Jl. Haurngambang",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD Negeri 2 Batujajar"
+    }
+  },
+  {
+    "id": 534403356,
+    "type": "pelatihan",
+    "name": "SMP Negeri 3 Batujajar",
+    "category": "school",
+    "lat": -6.9115537,
+    "lon": 107.5076567,
+    "address": "Jl. Batujajar Timur",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Batujajar Timur",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMP Negeri 3 Batujajar"
+    }
+  },
+  {
+    "id": 534403357,
+    "type": "pelatihan",
+    "name": "SMP Negeri 3 Batujajar",
+    "category": "school",
+    "lat": -6.9114108,
+    "lon": 107.5076954,
+    "address": "Jl. Batujajar Timur",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Batujajar Timur",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMP Negeri 3 Batujajar"
+    }
+  },
+  {
+    "id": 534403358,
+    "type": "pelatihan",
+    "name": "SMP Negeri 3 Batujajar",
+    "category": "school",
+    "lat": -6.9112192,
+    "lon": 107.5077507,
+    "address": "Jl. Batujajar Timur",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Batujajar Timur",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMP Negeri 3 Batujajar"
+    }
+  },
+  {
+    "id": 534403360,
+    "type": "pelatihan",
+    "name": "SMP Negeri 3 Batujajar",
+    "category": "school",
+    "lat": -6.9112675,
+    "lon": 107.5080533,
+    "address": "Jl. Batujajar Timur",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Batujajar Timur",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMP Negeri 3 Batujajar"
+    }
+  },
+  {
+    "id": 534403361,
+    "type": "pelatihan",
+    "name": "SMP Negeri 3 Batujajar",
+    "category": "school",
+    "lat": -6.911482,
+    "lon": 107.507993,
+    "address": "Jl. Batujajar Timur",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Batujajar Timur",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMP Negeri 3 Batujajar"
+    }
+  },
+  {
+    "id": 534403362,
+    "type": "pelatihan",
+    "name": "SMP Negeri 3 Batujajar",
+    "category": "school",
+    "lat": -6.911612,
+    "lon": 107.5078683,
+    "address": "Jl. Batujajar Timur",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Batujajar Timur",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMP Negeri 3 Batujajar"
+    }
+  },
+  {
+    "id": 534403363,
+    "type": "pelatihan",
+    "name": "SMP Cendekia Batujajar",
+    "category": "school",
+    "lat": -6.9093946,
+    "lon": 107.503224,
+    "address": "Jl. Raya Batujajar",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Raya Batujajar",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMP Cendekia Batujajar"
+    }
+  },
+  {
+    "id": 534438029,
+    "type": "pelatihan",
+    "name": "SD Negeri Babakanpari",
+    "category": "school",
+    "lat": -6.9100929,
+    "lon": 107.5055084,
+    "address": "Jl. Aster 1",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Aster 1",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD Negeri Babakanpari"
+    }
+  },
+  {
+    "id": 534438032,
+    "type": "pelatihan",
+    "name": "SD Negeri Babakanpari",
+    "category": "school",
+    "lat": -6.909945,
+    "lon": 107.5056942,
+    "address": "Jl. Aster 1",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Aster 1",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD Negeri Babakanpari"
+    }
+  },
+  {
+    "id": 534438096,
+    "type": "pelatihan",
+    "name": "SD Ranca Irung 3",
+    "category": "school",
+    "lat": -6.9200178,
+    "lon": 107.4945165,
+    "address": "Jl. Cihampas Rancaririp",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Cihampas Rancaririp",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD Ranca Irung 3"
+    }
+  },
+  {
+    "id": 534604306,
+    "type": "pelatihan",
+    "name": "MTs Nurul Falah",
+    "category": "school",
+    "lat": -6.9412826,
+    "lon": 107.4705241,
+    "address": "Karangtanjung",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Karangtanjung",
+      "amenity": "school",
+      "building": "yes",
+      "name": "MTs Nurul Falah"
+    }
+  },
+  {
+    "id": 534604308,
+    "type": "pelatihan",
+    "name": "MTs Nurul Falah",
+    "category": "school",
+    "lat": -6.9411768,
+    "lon": 107.4702415,
+    "address": "Karangtanjung",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Karangtanjung",
+      "amenity": "school",
+      "building": "yes",
+      "name": "MTs Nurul Falah"
+    }
+  },
+  {
+    "id": 534604311,
+    "type": "pelatihan",
+    "name": "MTs Nurul Falah",
+    "category": "school",
+    "lat": -6.9409848,
+    "lon": 107.4705087,
+    "address": "Karangtanjung",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Karangtanjung",
+      "amenity": "school",
+      "building": "yes",
+      "name": "MTs Nurul Falah"
+    }
+  },
+  {
+    "id": 534604313,
+    "type": "pelatihan",
+    "name": "MTs Nurul Falah",
+    "category": "school",
+    "lat": -6.9411002,
+    "lon": 107.4707219,
+    "address": "Karangtanjung",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Karangtanjung",
+      "amenity": "school",
+      "building": "yes",
+      "name": "MTs Nurul Falah"
+    }
+  },
+  {
     "id": 534763426,
     "type": "pelatihan",
     "name": "SD Negeri Krida Winaya",
@@ -8938,6 +12328,236 @@
       "amenity": "school",
       "building": "yes",
       "name": "SD Negeri Krida Winaya"
+    }
+  },
+  {
+    "id": 534873776,
+    "type": "pelatihan",
+    "name": "MAK MADANI CIHURANG",
+    "category": "school",
+    "lat": -6.9534923,
+    "lon": 107.482072,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "MAK MADANI CIHURANG"
+    }
+  },
+  {
+    "id": 534873788,
+    "type": "pelatihan",
+    "name": "SDN LAMPINGSARI",
+    "category": "school",
+    "lat": -6.9521977,
+    "lon": 107.4816489,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN LAMPINGSARI"
+    }
+  },
+  {
+    "id": 535207056,
+    "type": "pelatihan",
+    "name": "SMA Leppesa Cililin",
+    "category": "school",
+    "lat": -6.9949803,
+    "lon": 107.4715935,
+    "address": "Mukapayung, Cililin",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Mukapayung, Cililin",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMA Leppesa Cililin"
+    }
+  },
+  {
+    "id": 535207057,
+    "type": "pelatihan",
+    "name": "SMA Leppesa Cililin",
+    "category": "school",
+    "lat": -6.9949154,
+    "lon": 107.4715645,
+    "address": "Mukapayung, Cililin",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Mukapayung, Cililin",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMA Leppesa Cililin"
+    }
+  },
+  {
+    "id": 535207063,
+    "type": "pelatihan",
+    "name": "SD Negeri Gambung",
+    "category": "school",
+    "lat": -6.9999761,
+    "lon": 107.4744496,
+    "address": "Mukapayung, Cililin",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Mukapayung, Cililin",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD Negeri Gambung"
+    }
+  },
+  {
+    "id": 535207064,
+    "type": "pelatihan",
+    "name": "SD Negeri Gambung",
+    "category": "school",
+    "lat": -6.9999147,
+    "lon": 107.4743732,
+    "address": "Mukapayung, Cililin",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Mukapayung, Cililin",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD Negeri Gambung"
+    }
+  },
+  {
+    "id": 535207065,
+    "type": "pelatihan",
+    "name": "SD Negeri Gambung",
+    "category": "school",
+    "lat": -6.9997832,
+    "lon": 107.4742739,
+    "address": "Mukapayung, Cililin",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Mukapayung, Cililin",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD Negeri Gambung"
+    }
+  },
+  {
+    "id": 535228790,
+    "type": "pelatihan",
+    "name": "MI CILUTUNG",
+    "category": "school",
+    "lat": -6.9471486,
+    "lon": 107.4782247,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "MI CILUTUNG"
+    }
+  },
+  {
+    "id": 535255023,
+    "type": "pelatihan",
+    "name": "SD Negeri Situwangi",
+    "category": "school",
+    "lat": -6.9542014,
+    "lon": 107.5100238,
+    "address": "Situwangi, Genteng",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Situwangi, Genteng",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD Negeri Situwangi"
+    }
+  },
+  {
+    "id": 535409082,
+    "type": "pelatihan",
+    "name": "SD Budisari",
+    "category": "school",
+    "lat": -6.9645844,
+    "lon": 107.4727125,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "plastered",
+      "building:walls": "brick",
+      "capacity": "50",
+      "name": "SD Budisari",
+      "operator:type": "government",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 535409382,
+    "type": "pelatihan",
+    "name": "SMP MADANI CIHURANG",
+    "category": "school",
+    "lat": -6.9514698,
+    "lon": 107.4798427,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP MADANI CIHURANG"
+    }
+  },
+  {
+    "id": 535409484,
+    "type": "pelatihan",
+    "name": "SDN LAMPINGSARI",
+    "category": "school",
+    "lat": -6.9519773,
+    "lon": 107.4816278,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN LAMPINGSARI"
     }
   },
   {
@@ -9762,6 +13382,25 @@
     }
   },
   {
+    "id": 547187235,
+    "type": "pelatihan",
+    "name": "SMP SMA AL MUSYAWAROH",
+    "category": "school",
+    "lat": -6.8169319,
+    "lon": 107.6185087,
+    "address": "KP BARUAJAG RT04 RW06",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP BARUAJAG RT04 RW06",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMP SMA AL MUSYAWAROH"
+    }
+  },
+  {
     "id": 547799198,
     "type": "pelatihan",
     "name": "Tempat Pelatihan",
@@ -10062,6 +13701,24 @@
     }
   },
   {
+    "id": 577959298,
+    "type": "pelatihan",
+    "name": "SMAN Jatinangor",
+    "category": "school",
+    "lat": -6.9291419,
+    "lon": 107.7796073,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMAN Jatinangor"
+    }
+  },
+  {
     "id": 579089344,
     "type": "pelatihan",
     "name": "BJB University Braga",
@@ -10183,6 +13840,46 @@
     }
   },
   {
+    "id": 626552488,
+    "type": "pelatihan",
+    "name": "SLTA SALADIN",
+    "category": "school",
+    "lat": -6.7998287,
+    "lon": 107.5927298,
+    "address": "KP. NAGRAK RT012 RW16",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP. NAGRAK RT012 RW16",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SLTA SALADIN",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 626552489,
+    "type": "pelatihan",
+    "name": "SLTA SALADIN",
+    "category": "school",
+    "lat": -6.7999514,
+    "lon": 107.5926854,
+    "address": "KP. NAGRAK RT012 RW16",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP. NAGRAK RT012 RW16",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SLTA SALADIN",
+      "school:type_idn": "sma"
+    }
+  },
+  {
     "id": 629769419,
     "type": "pelatihan",
     "name": "SMA Negeri 6 Cimahi",
@@ -10254,6 +13951,114 @@
       "name": "MAN 1 Kota Bandung",
       "religion": "muslim",
       "school": "high_school"
+    }
+  },
+  {
+    "id": 630066486,
+    "type": "pelatihan",
+    "name": "SDN 4 Cibogo & SDN 7 Cibogo",
+    "category": "school",
+    "lat": -6.79837,
+    "lon": 107.6538976,
+    "address": "Jl. Pasar Ahad Cikole",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jl. Pasar Ahad Cikole",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "360",
+      "ele": "5",
+      "name": "SDN 4 Cibogo & SDN 7 Cibogo",
+      "type:id": "SD"
+    }
+  },
+  {
+    "id": 630066487,
+    "type": "pelatihan",
+    "name": "SDN 4 Cibogo & SDN 7 Cibogo",
+    "category": "school",
+    "lat": -6.7982264,
+    "lon": 107.6538692,
+    "address": "Jl. Pasar Ahad Cikole",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jl. Pasar Ahad Cikole",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "360",
+      "ele": "5",
+      "name": "SDN 4 Cibogo & SDN 7 Cibogo",
+      "type:id": "SD"
+    }
+  },
+  {
+    "id": 630066488,
+    "type": "pelatihan",
+    "name": "SDN 4 Cibogo & SDN 7 Cibogo",
+    "category": "school",
+    "lat": -6.7984726,
+    "lon": 107.6540477,
+    "address": "Jl. Pasar Ahad Cikole",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jl. Pasar Ahad Cikole",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "360",
+      "ele": "5",
+      "name": "SDN 4 Cibogo & SDN 7 Cibogo",
+      "type:id": "SD"
+    }
+  },
+  {
+    "id": 630066489,
+    "type": "pelatihan",
+    "name": "SDN 4 Cibogo & SDN 7 Cibogo",
+    "category": "school",
+    "lat": -6.7984273,
+    "lon": 107.6541258,
+    "address": "Jl. Pasar Ahad Cikole",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jl. Pasar Ahad Cikole",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "360",
+      "ele": "5",
+      "name": "SDN 4 Cibogo & SDN 7 Cibogo",
+      "type:id": "SD"
     }
   },
   {
@@ -11195,6 +15000,219 @@
     }
   },
   {
+    "id": 633674517,
+    "type": "pelatihan",
+    "name": "PESANTREN AL AMANAH",
+    "category": "school",
+    "lat": -6.952379,
+    "lon": 107.4505442,
+    "address": "KP PASIR MEONG RT2 RW13",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP PASIR MEONG RT2 RW13",
+      "amenity": "school",
+      "building": "yes",
+      "capacity": "500",
+      "name": "PESANTREN AL AMANAH"
+    }
+  },
+  {
+    "id": 633680317,
+    "type": "pelatihan",
+    "name": "RA BUSTANUL AFHAL",
+    "category": "kindergarten",
+    "lat": -6.9511631,
+    "lon": 107.4568366,
+    "address": "KJL RAYA CILILIN KAMPUNG KAUNG RT1 RW07",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KJL RAYA CILILIN KAMPUNG KAUNG RT1 RW07",
+      "amenity": "kindergarten",
+      "building": "yes",
+      "building:roof": "tile",
+      "building:walls": "brick",
+      "capacity": "20",
+      "name": "RA BUSTANUL AFHAL"
+    }
+  },
+  {
+    "id": 633680419,
+    "type": "pelatihan",
+    "name": "RA ANISA",
+    "category": "kindergarten",
+    "lat": -6.9505212,
+    "lon": 107.4562861,
+    "address": "KP SUMURBANDUNG RT02 RW02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP SUMURBANDUNG RT02 RW02",
+      "amenity": "kindergarten",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:walls": "brick",
+      "capacity": "20",
+      "name": "RA ANISA"
+    }
+  },
+  {
+    "id": 633683851,
+    "type": "pelatihan",
+    "name": "SD Karang Tanjung 02",
+    "category": "school",
+    "lat": -6.9495096,
+    "lon": 107.4662685,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "amenity": "school",
+      "building": "school",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "plastered",
+      "building:walls": "brick",
+      "capacity": "300",
+      "name": "SD Karang Tanjung 02",
+      "operator:type": "government",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 633684059,
+    "type": "pelatihan",
+    "name": "SDN Karang Tanjung",
+    "category": "school",
+    "lat": -6.9493633,
+    "lon": 107.466165,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN Karang Tanjung"
+    }
+  },
+  {
+    "id": 633684065,
+    "type": "pelatihan",
+    "name": "SDN Karang Tanjung",
+    "category": "school",
+    "lat": -6.9492769,
+    "lon": 107.4662229,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN Karang Tanjung"
+    }
+  },
+  {
+    "id": 633684066,
+    "type": "pelatihan",
+    "name": "SDN KARANGTANJUNG 1",
+    "category": "school",
+    "lat": -6.9492882,
+    "lon": 107.4663634,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN KARANGTANJUNG 1"
+    }
+  },
+  {
+    "id": 633686801,
+    "type": "pelatihan",
+    "name": "PAUD NURUL HUDA",
+    "category": "kindergarten",
+    "lat": -6.9553505,
+    "lon": 107.458808,
+    "address": "KP RADIO RT4 RW1",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP RADIO RT4 RW1",
+      "amenity": "kindergarten",
+      "building": "yes",
+      "capacity": "20",
+      "name": "PAUD NURUL HUDA"
+    }
+  },
+  {
+    "id": 633688338,
+    "type": "pelatihan",
+    "name": "SDN 4 CILIIN",
+    "category": "school",
+    "lat": -6.9516932,
+    "lon": 107.4584191,
+    "address": "JL RAYA ALUN ALUN CILILIN TIMUR NO 1",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "JL RAYA ALUN ALUN CILILIN TIMUR NO 1",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:walls": "brick",
+      "capacity": "200",
+      "name": "SDN 4 CILIIN",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 633688342,
+    "type": "pelatihan",
+    "name": "SDN 1 CILILIN",
+    "category": "school",
+    "lat": -6.9516815,
+    "lon": 107.4582056,
+    "address": "JL RAYA ALUN ALUN CILILIN TIMUR NO 1",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "JL RAYA ALUN ALUN CILILIN TIMUR NO 1",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:walls": "brick",
+      "capacity": "200",
+      "name": "SDN 1 CILILIN",
+      "school:type_idn": "sd"
+    }
+  },
+  {
     "id": 633756359,
     "type": "pelatihan",
     "name": "SD Al Hidayah",
@@ -11426,6 +15444,78 @@
     }
   },
   {
+    "id": 634075077,
+    "type": "pelatihan",
+    "name": "SMP SUMUR BANDUNG",
+    "category": "school",
+    "lat": -6.9468454,
+    "lon": 107.457787,
+    "address": "KP CINTA KARYA RW5",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP CINTA KARYA RW5",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:walls": "brick",
+      "capacity": "500",
+      "name": "SMP SUMUR BANDUNG",
+      "school:type_idn": "smp"
+    }
+  },
+  {
+    "id": 634075251,
+    "type": "pelatihan",
+    "name": "SDN 2 CILILIN",
+    "category": "school",
+    "lat": -6.9479131,
+    "lon": 107.4575191,
+    "address": "JL RAYA CILILIN UTARA NO 1 RW9",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "JL RAYA CILILIN UTARA NO 1 RW9",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:walls": "brick",
+      "capacity": "200",
+      "name": "SDN 2 CILILIN",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 634075253,
+    "type": "pelatihan",
+    "name": "SDN 5 CILILIN",
+    "category": "school",
+    "lat": -6.9479928,
+    "lon": 107.4576267,
+    "address": "JL RAYA CILILIN UTARA NO 1 RW9",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "JL RAYA CILILIN UTARA NO 1 RW9",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:walls": "brick",
+      "capacity": "200",
+      "name": "SDN 5 CILILIN",
+      "school:type_idn": "sd"
+    }
+  },
+  {
     "id": 634325332,
     "type": "pelatihan",
     "name": "Aneka G",
@@ -11578,6 +15668,589 @@
     }
   },
   {
+    "id": 635505510,
+    "type": "pelatihan",
+    "name": "SMK BUDI RAKSA",
+    "category": "school",
+    "lat": -6.814098,
+    "lon": 107.6025055,
+    "address": "KP. CITESPONG RT04 RW02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP. CITESPONG RT04 RW02",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMK BUDI RAKSA",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 635505513,
+    "type": "pelatihan",
+    "name": "SDN NAGRAK",
+    "category": "school",
+    "lat": -6.8029845,
+    "lon": 107.5981655,
+    "address": "KP. NAGRAK RT01 RW08",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP. NAGRAK RT01 RW08",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SDN NAGRAK",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 635505516,
+    "type": "pelatihan",
+    "name": "SDN NAGRAK",
+    "category": "school",
+    "lat": -6.8029769,
+    "lon": 107.5982993,
+    "address": "KP. NAGRAK RT01 RW08",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP. NAGRAK RT01 RW08",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SDN NAGRAK",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 635505527,
+    "type": "pelatihan",
+    "name": "SDN 3 CIKAHURIPAN 3",
+    "category": "school",
+    "lat": -6.8009566,
+    "lon": 107.6015631,
+    "address": "KP. BARUNAGRI RT03 RW03",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP. BARUNAGRI RT03 RW03",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SDN 3 CIKAHURIPAN 3",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 635505530,
+    "type": "pelatihan",
+    "name": "SDN SUKAJAYA",
+    "category": "school",
+    "lat": -6.8097778,
+    "lon": 107.5981279,
+    "address": "JL. KOL MASTURI NO 95 KP. PAMECELAN RT03 RW04",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "JL. KOL MASTURI NO 95 KP. PAMECELAN RT03 RW04",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SDN SUKAJAYA",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 635505533,
+    "type": "pelatihan",
+    "name": "TK PUTRA PRATIWI",
+    "category": "kindergarten",
+    "lat": -6.8131664,
+    "lon": 107.6013535,
+    "address": "KP. CTESPONG RT02 RW02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP. CTESPONG RT02 RW02",
+      "amenity": "kindergarten",
+      "building": "yes",
+      "name": "TK PUTRA PRATIWI"
+    }
+  },
+  {
+    "id": 635505536,
+    "type": "pelatihan",
+    "name": "TK AL MUHAJIRIN",
+    "category": "kindergarten",
+    "lat": -6.803911,
+    "lon": 107.5913806,
+    "address": "KP GEDONG LIMA RT02 RW10",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP GEDONG LIMA RT02 RW10",
+      "amenity": "kindergarten",
+      "building": "yes",
+      "building:roof": "tile",
+      "building:walls": "brick",
+      "capacity": "40",
+      "name": "TK AL MUHAJIRIN"
+    }
+  },
+  {
+    "id": 635505539,
+    "type": "pelatihan",
+    "name": "SMP AL MUHAJIRIN",
+    "category": "school",
+    "lat": -6.803829,
+    "lon": 107.5912434,
+    "address": "KP GEDONG LIMA RT02 RW10",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP GEDONG LIMA RT02 RW10",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "2",
+      "building:roof": "concrete",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "name": "SMP AL MUHAJIRIN",
+      "school:type_idn": "smp"
+    }
+  },
+  {
+    "id": 635536780,
+    "type": "pelatihan",
+    "name": "SMP PANCAKARSA",
+    "category": "school",
+    "lat": -6.8187616,
+    "lon": 107.6255128,
+    "address": "KP SUKAWANGI RT02 RW14",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP SUKAWANGI RT02 RW14",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMP PANCAKARSA",
+      "school:type_idn": "smp"
+    }
+  },
+  {
+    "id": 635536782,
+    "type": "pelatihan",
+    "name": "SDN 1 LEMBANG",
+    "category": "school",
+    "lat": -6.815633,
+    "lon": 107.6224625,
+    "address": "KP. PANORAMA RT02 RW03",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP. PANORAMA RT02 RW03",
+      "amenity": "school",
+      "building": "yes",
+      "check_date": "2025-08-04",
+      "name": "SDN 1 LEMBANG",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 635536785,
+    "type": "pelatihan",
+    "name": "SDIT ISTIQOMAH",
+    "category": "school",
+    "lat": -6.8195297,
+    "lon": 107.6231541,
+    "address": "KP TEGALMANTRI RT01 RW12",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP TEGALMANTRI RT01 RW12",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SDIT ISTIQOMAH",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 635536786,
+    "type": "pelatihan",
+    "name": "SDIT ISTIQOMAH",
+    "category": "school",
+    "lat": -6.8193941,
+    "lon": 107.6230914,
+    "address": "KP TEGALMANTRI RT01 RW12",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP TEGALMANTRI RT01 RW12",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SDIT ISTIQOMAH",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 635536789,
+    "type": "pelatihan",
+    "name": "SDN 3 LEMBANG",
+    "category": "school",
+    "lat": -6.8197422,
+    "lon": 107.6196693,
+    "address": "KP SUKAMANDI RT04 RW05",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP SUKAMANDI RT04 RW05",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SDN 3 LEMBANG",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 635536791,
+    "type": "pelatihan",
+    "name": "SDN 11 LEMBANG",
+    "category": "school",
+    "lat": -6.8195241,
+    "lon": 107.6196552,
+    "address": "KP SUKAMANDI RT04 RW05",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP SUKAMANDI RT04 RW05",
+      "amenity": "school",
+      "building": "yes",
+      "name": "SDN 11 LEMBANG",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 635544758,
+    "type": "pelatihan",
+    "name": "SMP 4 Lembang",
+    "category": "school",
+    "lat": -6.8183244,
+    "lon": 107.6773946,
+    "address": "Kp. Sukarasa RW 05",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Kp. Sukarasa RW 05",
+      "amenity": "school",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:structure": "plastered",
+      "building:walls": "brick",
+      "capacity": "800",
+      "name": "SMP 4 Lembang",
+      "operator:type": "government",
+      "school:type_idn": "smp"
+    }
+  },
+  {
+    "id": 635545054,
+    "type": "pelatihan",
+    "name": "SLB Bina Anugerah",
+    "category": "school",
+    "lat": -6.8232756,
+    "lon": 107.6124705,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "SLB Bina Anugerah",
+      "operator": "Pemerintah"
+    }
+  },
+  {
+    "id": 635546537,
+    "type": "pelatihan",
+    "name": "SMPN 3 Lembang",
+    "category": "school",
+    "lat": -6.8152589,
+    "lon": 107.6127977,
+    "address": "Jalan Holtikultura Rt 02/05",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jalan Holtikultura Rt 02/05",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:part": "school",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "1000",
+      "ele": "10",
+      "name": "SMPN 3 Lembang",
+      "type:id": "SMP"
+    }
+  },
+  {
+    "id": 635546548,
+    "type": "pelatihan",
+    "name": "SMPN 3 Lembang",
+    "category": "school",
+    "lat": -6.8155883,
+    "lon": 107.6124358,
+    "address": "Jalan Holtikultura Rt 02/05",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jalan Holtikultura Rt 02/05",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:part": "school",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "1000",
+      "ele": "10",
+      "name": "SMPN 3 Lembang",
+      "type:id": "SMP"
+    }
+  },
+  {
+    "id": 635546550,
+    "type": "pelatihan",
+    "name": "SMPN 3 Lembang",
+    "category": "school",
+    "lat": -6.8157755,
+    "lon": 107.6122486,
+    "address": "Jalan Holtikultura Rt 02/05",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jalan Holtikultura Rt 02/05",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:part": "school",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "1000",
+      "ele": "10",
+      "name": "SMPN 3 Lembang",
+      "type:id": "SMP"
+    }
+  },
+  {
+    "id": 635546551,
+    "type": "pelatihan",
+    "name": "SMPN 3 Lembang",
+    "category": "school",
+    "lat": -6.8156876,
+    "lon": 107.6125163,
+    "address": "Jalan Holtikultura Rt 02/05",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jalan Holtikultura Rt 02/05",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:part": "school",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "1000",
+      "ele": "10",
+      "name": "SMPN 3 Lembang",
+      "type:id": "SMP"
+    }
+  },
+  {
+    "id": 635546552,
+    "type": "pelatihan",
+    "name": "SMPN 3 Lembang",
+    "category": "school",
+    "lat": -6.8158554,
+    "lon": 107.6124137,
+    "address": "Jalan Holtikultura Rt 02/05",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jalan Holtikultura Rt 02/05",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:part": "school",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "1000",
+      "ele": "10",
+      "name": "SMPN 3 Lembang",
+      "type:id": "SMP"
+    }
+  },
+  {
+    "id": 635546553,
+    "type": "pelatihan",
+    "name": "SMPN 3 Lembang",
+    "category": "school",
+    "lat": -6.8160858,
+    "lon": 107.6123903,
+    "address": "Jalan Holtikultura Rt 02/05",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jalan Holtikultura Rt 02/05",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:part": "school",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "1000",
+      "ele": "10",
+      "name": "SMPN 3 Lembang",
+      "type:id": "SMP"
+    }
+  },
+  {
+    "id": 635546554,
+    "type": "pelatihan",
+    "name": "SMPN 3 Lembang",
+    "category": "school",
+    "lat": -6.815944,
+    "lon": 107.612525,
+    "address": "Jalan Holtikultura Rt 02/05",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jalan Holtikultura Rt 02/05",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:part": "school",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "1000",
+      "ele": "10",
+      "name": "SMPN 3 Lembang",
+      "type:id": "SMP"
+    }
+  },
+  {
+    "id": 635546555,
+    "type": "pelatihan",
+    "name": "SMPN 3 Lembang",
+    "category": "school",
+    "lat": -6.815753,
+    "lon": 107.6126314,
+    "address": "Jalan Holtikultura Rt 02/05",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jalan Holtikultura Rt 02/05",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:part": "school",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "1000",
+      "ele": "10",
+      "name": "SMPN 3 Lembang",
+      "type:id": "SMP"
+    }
+  },
+  {
+    "id": 635546556,
+    "type": "pelatihan",
+    "name": "SMPN 3 Lembang",
+    "category": "school",
+    "lat": -6.8155027,
+    "lon": 107.6127212,
+    "address": "Jalan Holtikultura Rt 02/05",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "access:roof": "no",
+      "addr:full": "Jalan Holtikultura Rt 02/05",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:part": "school",
+      "building:roof": "tile",
+      "building:structure": "reinforced_masonry",
+      "building:walls": "brick",
+      "capacity:persons": "1000",
+      "ele": "10",
+      "name": "SMPN 3 Lembang",
+      "type:id": "SMP"
+    }
+  },
+  {
     "id": 635734030,
     "type": "pelatihan",
     "name": "Tempat Pelatihan",
@@ -11682,6 +16355,200 @@
       "amenity": "school",
       "building": "yes",
       "name": "SMP Negeri 41 Bandung"
+    }
+  },
+  {
+    "id": 635850774,
+    "type": "pelatihan",
+    "name": "SMK Rajawali",
+    "category": "school",
+    "lat": -6.8291282,
+    "lon": 107.5738108,
+    "address": "Kp. Tutugan Rt 01/06",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Tutugan Rt 01/06",
+      "amenity": "school",
+      "name": "SMK Rajawali",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 635850776,
+    "type": "pelatihan",
+    "name": "Pesantren Eko",
+    "category": "school",
+    "lat": -6.8366369,
+    "lon": 107.5715294,
+    "address": "Kp. Manglayang Rt 01/02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Manglayang Rt 01/02",
+      "amenity": "school",
+      "name": "Pesantren Eko",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 635850784,
+    "type": "pelatihan",
+    "name": "Komplek Pendidikan Azzahra",
+    "category": "school",
+    "lat": -6.8155236,
+    "lon": 107.5768844,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Komplek Pendidikan Azzahra"
+    }
+  },
+  {
+    "id": 635850786,
+    "type": "pelatihan",
+    "name": "SDN Cijanjuang 4",
+    "category": "school",
+    "lat": -6.8128915,
+    "lon": 107.5768097,
+    "address": "Jl. Cihanjuang Rahayu Rt 03/12",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Jl. Cihanjuang Rahayu Rt 03/12",
+      "amenity": "school",
+      "name": "SDN Cijanjuang 4",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 635850790,
+    "type": "pelatihan",
+    "name": "SMAN 1 Parompong",
+    "category": "school",
+    "lat": -6.8099429,
+    "lon": 107.5761741,
+    "address": "Jl. Cihanjuang Rahayu Rt 04/12",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Jl. Cihanjuang Rahayu Rt 04/12",
+      "amenity": "school",
+      "name": "SMAN 1 Parompong",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 635850791,
+    "type": "pelatihan",
+    "name": "SMPN 1 Parompong",
+    "category": "school",
+    "lat": -6.809266,
+    "lon": 107.5759604,
+    "address": "Jl. Cihanjuang Rahayu Rt 05/12",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Jl. Cihanjuang Rahayu Rt 05/12",
+      "amenity": "school",
+      "name": "SMPN 1 Parompong",
+      "school:type_idn": "smp"
+    }
+  },
+  {
+    "id": 635865564,
+    "type": "pelatihan",
+    "name": "SD-SMP YPII",
+    "category": "school",
+    "lat": -6.9861116,
+    "lon": 107.4394329,
+    "address": "Kp. Ciriri Rt 02/16",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Ciriri Rt 02/16",
+      "amenity": "school",
+      "name": "SD-SMP YPII",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 635865566,
+    "type": "pelatihan",
+    "name": "SMP-SMA Lepesa",
+    "category": "school",
+    "lat": -6.9810106,
+    "lon": 107.4361215,
+    "address": "Kp. Pojok Rt 05/02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Pojok Rt 05/02",
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP-SMA Lepesa",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 635865568,
+    "type": "pelatihan",
+    "name": "Komplek Pendidikan Arafah",
+    "category": "school",
+    "lat": -6.9832488,
+    "lon": 107.434457,
+    "address": "Kp. Pasirjati Rt 03/17",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Pasirjati Rt 03/17",
+      "amenity": "school",
+      "name": "Komplek Pendidikan Arafah",
+      "school:type_idn": "sd"
+    }
+  },
+  {
+    "id": 635867170,
+    "type": "pelatihan",
+    "name": "MTs NURUL HUDA",
+    "category": "school",
+    "lat": -6.9551957,
+    "lon": 107.4587461,
+    "address": "KP RADIO RT4 RW1",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "KP RADIO RT4 RW1",
+      "amenity": "school",
+      "building": "yes",
+      "building:levels": "1",
+      "building:roof": "tile",
+      "building:walls": "brick",
+      "capacity": "100",
+      "name": "MTs NURUL HUDA",
+      "school:type_idn": "smp"
     }
   },
   {
@@ -12545,6 +17412,321 @@
     }
   },
   {
+    "id": 636668221,
+    "type": "pelatihan",
+    "name": "Krida Nusantara",
+    "category": "school",
+    "lat": -6.9140158,
+    "lon": 107.7278878,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "Krida Nusantara"
+    }
+  },
+  {
+    "id": 636668224,
+    "type": "pelatihan",
+    "name": "Krida Nusantara",
+    "category": "school",
+    "lat": -6.9142486,
+    "lon": 107.7277613,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "Krida Nusantara"
+    }
+  },
+  {
+    "id": 636668226,
+    "type": "pelatihan",
+    "name": "Krida Nusantara",
+    "category": "school",
+    "lat": -6.9147647,
+    "lon": 107.7280164,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "Krida Nusantara"
+    }
+  },
+  {
+    "id": 636668227,
+    "type": "pelatihan",
+    "name": "Krida Nusantara",
+    "category": "school",
+    "lat": -6.9147862,
+    "lon": 107.7275181,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "Krida Nusantara"
+    }
+  },
+  {
+    "id": 636668230,
+    "type": "pelatihan",
+    "name": "Krida Nusantara",
+    "category": "school",
+    "lat": -6.9157966,
+    "lon": 107.7278055,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "Krida Nusantara"
+    }
+  },
+  {
+    "id": 636668234,
+    "type": "pelatihan",
+    "name": "SDIT Krida Nusantara",
+    "category": "school",
+    "lat": -6.9161135,
+    "lon": 107.7266872,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDIT Krida Nusantara",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 636668592,
+    "type": "pelatihan",
+    "name": "Madrasah Ar-rosyidiah",
+    "category": "school",
+    "lat": -6.9210459,
+    "lon": 107.7236201,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "Madrasah Ar-rosyidiah",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 636670708,
+    "type": "pelatihan",
+    "name": "SMP Bina Persada Nusantara",
+    "category": "school",
+    "lat": -6.9260312,
+    "lon": 107.7173956,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP Bina Persada Nusantara",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 636732976,
+    "type": "pelatihan",
+    "name": "BAABUSSALAM",
+    "category": "school",
+    "lat": -6.9243342,
+    "lon": 107.7118727,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "BAABUSSALAM",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 636753828,
+    "type": "pelatihan",
+    "name": "Krida Nusantara",
+    "category": "school",
+    "lat": -6.9139889,
+    "lon": 107.7270116,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "Krida Nusantara",
+      "task": "109"
+    }
+  },
+  {
+    "id": 636791866,
+    "type": "pelatihan",
+    "name": "SMP Negeri 71 Kota Bandung",
+    "category": "school",
+    "lat": -6.9218411,
+    "lon": 107.7148206,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP Negeri 71 Kota Bandung",
+      "source": "POI_WRI_Survey_2023",
+      "task": "109",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 636793155,
+    "type": "pelatihan",
+    "name": "Yayasan Perguruan Bandung",
+    "category": "school",
+    "lat": -6.9212723,
+    "lon": 107.7154053,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "Yayasan Perguruan Bandung",
+      "source": "POI_WRI_Survey_2023",
+      "task": "109",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 636793268,
+    "type": "pelatihan",
+    "name": "SLB ABCDE LOB",
+    "category": "school",
+    "lat": -6.9215521,
+    "lon": 107.7157687,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SLB ABCDE LOB",
+      "source": "POI_WRI_Survey_2023",
+      "task": "109",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 636985887,
+    "type": "pelatihan",
+    "name": "Sekolah Intan Al-Sali",
+    "category": "school",
+    "lat": -6.913408,
+    "lon": 107.7168543,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "isced:level": "1;2;3",
+      "name": "Sekolah Intan Al-Sali",
+      "official_name": "Sekolah Dasar Plus Intan Al-Sali; Sekolah Menengah Pertama Plus Intan Al-Sali; Madrasah Aliyah Plus Intan Al-Sali",
+      "short_name": "SD SMP MA Plus Intan Al-Sali",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 636985899,
+    "type": "pelatihan",
+    "name": "SDN CILENGKRANG 029",
+    "category": "school",
+    "lat": -6.9135296,
+    "lon": 107.7196775,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN CILENGKRANG 029",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 636987262,
+    "type": "pelatihan",
+    "name": "SDN HANURA 124",
+    "category": "school",
+    "lat": -6.8995659,
+    "lon": 107.7245169,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN HANURA 124",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
     "id": 637430527,
     "type": "pelatihan",
     "name": "PAUD - TK Bintang Puri Widya",
@@ -12984,6 +18166,160 @@
     }
   },
   {
+    "id": 705911232,
+    "type": "pelatihan",
+    "name": "Pusat Studi Bahasa Jepang",
+    "category": "university",
+    "lat": -6.9276422,
+    "lon": 107.7763392,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "university",
+      "name": "Pusat Studi Bahasa Jepang"
+    }
+  },
+  {
+    "id": 711967928,
+    "type": "pelatihan",
+    "name": "Batuloceng sekolah",
+    "category": "school",
+    "lat": -6.8331578,
+    "lon": 107.7029756,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Batuloceng sekolah",
+      "religion": "muslim"
+    }
+  },
+  {
+    "id": 713851925,
+    "type": "pelatihan",
+    "name": "TK AISYIYAH BUSTANUL ATHFAL 2 Ciparay",
+    "category": "kindergarten",
+    "lat": -7.0756097,
+    "lon": 107.6903509,
+    "address": "Kp. Babakan Rt. 03 Rw. 01 Desa Babakan Kec.Ciparay",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:city": "Kab. Bandung",
+      "addr:postcode": "40381",
+      "addr:street": "Kp. Babakan Rt. 03 Rw. 01 Desa Babakan Kec.Ciparay",
+      "amenity": "kindergarten",
+      "building": "kindergarten",
+      "name": "TK AISYIYAH BUSTANUL ATHFAL 2 Ciparay",
+      "roof:colour": "red"
+    }
+  },
+  {
+    "id": 713872406,
+    "type": "pelatihan",
+    "name": "SDS Muhammadiyah 5",
+    "category": "school",
+    "lat": -7.0769113,
+    "lon": 107.6898958,
+    "address": "Kp. Babakan Rt. 03 Rw. 03 Desa Babakan Kec. Ciparay Kab. Bandung",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:city": "Kab. Bandung",
+      "addr:postcode": "40381",
+      "addr:street": "Kp. Babakan Rt. 03 Rw. 03 Desa Babakan Kec. Ciparay Kab. Bandung",
+      "amenity": "school",
+      "building": "school",
+      "name": "SDS Muhammadiyah 5"
+    }
+  },
+  {
+    "id": 714615572,
+    "type": "pelatihan",
+    "name": "Universitas Padjadjaran",
+    "category": "university",
+    "lat": -6.9210013,
+    "lon": 107.7729801,
+    "address": "Jl. Raya Bandung Sumedang",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:city": "Bandung",
+      "addr:street": "Jl. Raya Bandung Sumedang",
+      "amenity": "university",
+      "internet_access": "yes",
+      "internet_access:fee": "no",
+      "name": "Universitas Padjadjaran",
+      "name:en": "Padjadjaran University"
+    }
+  },
+  {
+    "id": 714615573,
+    "type": "pelatihan",
+    "name": "Institut Pemerintahan Dalam Negeri",
+    "category": "university",
+    "lat": -6.930422,
+    "lon": 107.7630239,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "university",
+      "name": "Institut Pemerintahan Dalam Negeri"
+    }
+  },
+  {
+    "id": 714615574,
+    "type": "pelatihan",
+    "name": "Institut Manajemen Koperasi Indonesia",
+    "category": "university",
+    "lat": -6.9330584,
+    "lon": 107.7664424,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "university",
+      "name": "Institut Manajemen Koperasi Indonesia"
+    }
+  },
+  {
+    "id": 714615575,
+    "type": "pelatihan",
+    "name": "Institut Teknologi Bandung, Jatinangor",
+    "category": "university",
+    "lat": -6.9289102,
+    "lon": 107.7686782,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "university",
+      "internet_access": "yes",
+      "internet_access:fee": "customers",
+      "name": "Institut Teknologi Bandung, Jatinangor",
+      "name:en": "Bandung Institute of Technology, Jatinangor"
+    }
+  },
+  {
     "id": 718918918,
     "type": "pelatihan",
     "name": "Tempat Pelatihan",
@@ -13217,6 +18553,23 @@
     }
   },
   {
+    "id": 722274770,
+    "type": "pelatihan",
+    "name": "SMK 45 Lembang",
+    "category": "school",
+    "lat": -6.8098421,
+    "lon": 107.6238776,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SMK 45 Lembang"
+    }
+  },
+  {
     "id": 722451178,
     "type": "pelatihan",
     "name": "SD Negeri 32 Tilil",
@@ -13318,6 +18671,44 @@
     }
   },
   {
+    "id": 735308747,
+    "type": "pelatihan",
+    "name": "Boarding School YPI NURUZZAMAN",
+    "category": "school",
+    "lat": -6.8932671,
+    "lon": 107.7236518,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "Boarding School YPI NURUZZAMAN",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 736650421,
+    "type": "pelatihan",
+    "name": "SMAN 1 Rancaekek",
+    "category": "school",
+    "lat": -6.9599892,
+    "lon": 107.7658289,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMAN 1 Rancaekek"
+    }
+  },
+  {
     "id": 769024630,
     "type": "pelatihan",
     "name": "SMP Negeri 30 Kota Bandung",
@@ -13410,6 +18801,42 @@
       "amenity": "school",
       "building": "yes",
       "name": "SMP - SMA - SMK BPPI Baleendah"
+    }
+  },
+  {
+    "id": 791687447,
+    "type": "pelatihan",
+    "name": "SMKN 1 Katapang",
+    "category": "school",
+    "lat": -7.0089941,
+    "lon": 107.547562,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMKN 1 Katapang"
+    }
+  },
+  {
+    "id": 791870765,
+    "type": "pelatihan",
+    "name": "SD At Taqwim Katapang",
+    "category": "school",
+    "lat": -7.0101967,
+    "lon": 107.5461862,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD At Taqwim Katapang"
     }
   },
   {
@@ -13606,6 +19033,217 @@
     }
   },
   {
+    "id": 851668837,
+    "type": "pelatihan",
+    "name": "SMP Negeri 1 Cileunyi",
+    "category": "school",
+    "lat": -6.9347134,
+    "lon": 107.7398588,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMP Negeri 1 Cileunyi"
+    }
+  },
+  {
+    "id": 854404026,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.9922616,
+    "lon": 107.559857,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school"
+    }
+  },
+  {
+    "id": 854773191,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.8126443,
+    "lon": 107.6208251,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
+    }
+  },
+  {
+    "id": 854773192,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.8127485,
+    "lon": 107.6209556,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
+    }
+  },
+  {
+    "id": 855002289,
+    "type": "pelatihan",
+    "name": "SMA IT Fithrah Insani Bandung",
+    "category": "school",
+    "lat": -6.8645166,
+    "lon": 107.5220745,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMA IT Fithrah Insani Bandung"
+    }
+  },
+  {
+    "id": 855770229,
+    "type": "pelatihan",
+    "name": "SMK BINA SISWA 1",
+    "category": "school",
+    "lat": -6.9748202,
+    "lon": 107.4276285,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMK BINA SISWA 1"
+    }
+  },
+  {
+    "id": 855770230,
+    "type": "pelatihan",
+    "name": "SMK BINA SISWA 1",
+    "category": "school",
+    "lat": -6.9747144,
+    "lon": 107.4278068,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMK BINA SISWA 1"
+    }
+  },
+  {
+    "id": 855770231,
+    "type": "pelatihan",
+    "name": "SMK BINA SISWA 1",
+    "category": "school",
+    "lat": -6.9748598,
+    "lon": 107.4278364,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMK BINA SISWA 1"
+    }
+  },
+  {
+    "id": 855774290,
+    "type": "pelatihan",
+    "name": "SDN RANCAPANGGUNG 2",
+    "category": "school",
+    "lat": -6.9782402,
+    "lon": 107.4317453,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN RANCAPANGGUNG 2"
+    }
+  },
+  {
+    "id": 855774291,
+    "type": "pelatihan",
+    "name": "SDN RANCAPANGGUNG 2",
+    "category": "school",
+    "lat": -6.9782844,
+    "lon": 107.4319276,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN RANCAPANGGUNG 2"
+    }
+  },
+  {
+    "id": 855774292,
+    "type": "pelatihan",
+    "name": "SDN RANCAPANGGUNG 2",
+    "category": "school",
+    "lat": -6.9783673,
+    "lon": 107.4318331,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN RANCAPANGGUNG 2"
+    }
+  },
+  {
+    "id": 855774293,
+    "type": "pelatihan",
+    "name": "SDN RANCAPANGGUNG 2",
+    "category": "school",
+    "lat": -6.9783842,
+    "lon": 107.4319785,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN RANCAPANGGUNG 2"
+    }
+  },
+  {
     "id": 856181532,
     "type": "pelatihan",
     "name": "SMP Garuda Dayeuhkolot",
@@ -13642,6 +19280,38 @@
     }
   },
   {
+    "id": 856319271,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.8152323,
+    "lon": 107.61252,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
+    }
+  },
+  {
+    "id": 856319272,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.8152903,
+    "lon": 107.6125988,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
+    }
+  },
+  {
     "id": 856602803,
     "type": "pelatihan",
     "name": "Kampus UNIBBA",
@@ -13675,6 +19345,60 @@
       "amenity": "school",
       "building": "yes",
       "name": "SMPK 3 Bina Bakti Margahayu"
+    }
+  },
+  {
+    "id": 857093640,
+    "type": "pelatihan",
+    "name": "SD Merdeka",
+    "category": "school",
+    "lat": -6.8230309,
+    "lon": 107.6123798,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD Merdeka"
+    }
+  },
+  {
+    "id": 857093641,
+    "type": "pelatihan",
+    "name": "SMP Negri 6",
+    "category": "school",
+    "lat": -6.823132,
+    "lon": 107.6126655,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMP Negri 6"
+    }
+  },
+  {
+    "id": 857093642,
+    "type": "pelatihan",
+    "name": "SMP Negri 6",
+    "category": "school",
+    "lat": -6.8231118,
+    "lon": 107.6129392,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "SMP Negri 6"
     }
   },
   {
@@ -13729,6 +19453,75 @@
       "amenity": "school",
       "building": "yes",
       "name": "SDN Jeungjing Rigil Tengah"
+    }
+  },
+  {
+    "id": 857372950,
+    "type": "pelatihan",
+    "name": "SDN LEMBANG",
+    "category": "school",
+    "lat": -6.9869754,
+    "lon": 107.4647369,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN LEMBANG"
+    }
+  },
+  {
+    "id": 857399045,
+    "type": "pelatihan",
+    "name": "SDN SUKAMANAH",
+    "category": "school",
+    "lat": -6.98279,
+    "lon": 107.4611243,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN SUKAMANAH"
+    }
+  },
+  {
+    "id": 857408496,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.9844432,
+    "lon": 107.460278,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
+    }
+  },
+  {
+    "id": 857544898,
+    "type": "pelatihan",
+    "name": "SDN CIKAHURIPAN",
+    "category": "school",
+    "lat": -6.8085953,
+    "lon": 107.6050952,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN CIKAHURIPAN"
     }
   },
   {
@@ -13822,6 +19615,299 @@
     }
   },
   {
+    "id": 858064626,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.9753411,
+    "lon": 107.4433562,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school"
+    }
+  },
+  {
+    "id": 858064627,
+    "type": "pelatihan",
+    "name": "SDN DAYEUH LUHUR",
+    "category": "school",
+    "lat": -6.9753949,
+    "lon": 107.4434569,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN DAYEUH LUHUR"
+    }
+  },
+  {
+    "id": 858166309,
+    "type": "pelatihan",
+    "name": "SD - SMP - SMK Bakti Nusantara 666 Cileunyi",
+    "category": "school",
+    "lat": -6.9415095,
+    "lon": 107.7405378,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "yes",
+      "name": "SD - SMP - SMK Bakti Nusantara 666 Cileunyi"
+    }
+  },
+  {
+    "id": 858199046,
+    "type": "pelatihan",
+    "name": "SMP-SMA Lepesa",
+    "category": "school",
+    "lat": -6.9809084,
+    "lon": 107.4362415,
+    "address": "Kp. Pojok Rt 05/02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Pojok Rt 05/02",
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP-SMA Lepesa",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 858199047,
+    "type": "pelatihan",
+    "name": "SMP-SMA Lepesa",
+    "category": "school",
+    "lat": -6.9808276,
+    "lon": 107.4361099,
+    "address": "Kp. Pojok Rt 05/02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Pojok Rt 05/02",
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP-SMA Lepesa",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 858199048,
+    "type": "pelatihan",
+    "name": "SMP-SMA Lepesa",
+    "category": "school",
+    "lat": -6.9812427,
+    "lon": 107.435595,
+    "address": "Kp. Pojok Rt 05/02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Pojok Rt 05/02",
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP-SMA Lepesa",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 858199049,
+    "type": "pelatihan",
+    "name": "SMP-SMA Lepesa",
+    "category": "school",
+    "lat": -6.9806981,
+    "lon": 107.4360351,
+    "address": "Kp. Pojok Rt 05/02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Pojok Rt 05/02",
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP-SMA Lepesa",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 858199050,
+    "type": "pelatihan",
+    "name": "SMP-SMA Lepesa",
+    "category": "school",
+    "lat": -6.9807951,
+    "lon": 107.4362502,
+    "address": "Kp. Pojok Rt 05/02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Pojok Rt 05/02",
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP-SMA Lepesa",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 858199051,
+    "type": "pelatihan",
+    "name": "SMP-SMA Lepesa",
+    "category": "school",
+    "lat": -6.9807387,
+    "lon": 107.4362507,
+    "address": "Kp. Pojok Rt 05/02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Pojok Rt 05/02",
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP-SMA Lepesa",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 858199052,
+    "type": "pelatihan",
+    "name": "SMP-SMA Lepesa",
+    "category": "school",
+    "lat": -6.9806788,
+    "lon": 107.436187,
+    "address": "Kp. Pojok Rt 05/02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Pojok Rt 05/02",
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP-SMA Lepesa",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 858199053,
+    "type": "pelatihan",
+    "name": "SMP-SMA Lepesa",
+    "category": "school",
+    "lat": -6.9806009,
+    "lon": 107.4360219,
+    "address": "Kp. Pojok Rt 05/02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Pojok Rt 05/02",
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP-SMA Lepesa",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 858199054,
+    "type": "pelatihan",
+    "name": "SMP-SMA Lepesa",
+    "category": "school",
+    "lat": -6.9805985,
+    "lon": 107.4362732,
+    "address": "Kp. Pojok Rt 05/02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Pojok Rt 05/02",
+      "amenity": "school",
+      "building": "detached",
+      "name": "SMP-SMA Lepesa",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 858199055,
+    "type": "pelatihan",
+    "name": "SMP-SMA Lepesa",
+    "category": "school",
+    "lat": -6.980555,
+    "lon": 107.436119,
+    "address": "Kp. Pojok Rt 05/02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Pojok Rt 05/02",
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP-SMA Lepesa",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 858199056,
+    "type": "pelatihan",
+    "name": "SMP-SMA Lepesa",
+    "category": "school",
+    "lat": -6.9805637,
+    "lon": 107.4361898,
+    "address": "Kp. Pojok Rt 05/02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Pojok Rt 05/02",
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP-SMA Lepesa",
+      "school:type_idn": "sma"
+    }
+  },
+  {
+    "id": 858199057,
+    "type": "pelatihan",
+    "name": "SMP-SMA Lepesa",
+    "category": "school",
+    "lat": -6.9807438,
+    "lon": 107.4363838,
+    "address": "Kp. Pojok Rt 05/02",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:full": "Kp. Pojok Rt 05/02",
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP-SMA Lepesa",
+      "school:type_idn": "sma"
+    }
+  },
+  {
     "id": 858204091,
     "type": "pelatihan",
     "name": "MTS Al Haq",
@@ -13841,6 +19927,316 @@
     }
   },
   {
+    "id": 858229140,
+    "type": "pelatihan",
+    "name": "MI RANCAUCIT",
+    "category": "school",
+    "lat": -6.9833331,
+    "lon": 107.4256699,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "MI RANCAUCIT"
+    }
+  },
+  {
+    "id": 858229234,
+    "type": "pelatihan",
+    "name": "SMPN 2 CILILIN",
+    "category": "school",
+    "lat": -6.9825607,
+    "lon": 107.425571,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMPN 2 CILILIN"
+    }
+  },
+  {
+    "id": 858229235,
+    "type": "pelatihan",
+    "name": "SMPN 2 CILILIN",
+    "category": "school",
+    "lat": -6.9823849,
+    "lon": 107.4257224,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMPN 2 CILILIN"
+    }
+  },
+  {
+    "id": 858229236,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.9823009,
+    "lon": 107.425595,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "operator": "SMPN 2 CILILIN"
+    }
+  },
+  {
+    "id": 858229237,
+    "type": "pelatihan",
+    "name": "SMPN 2 CILILIN",
+    "category": "school",
+    "lat": -6.9823787,
+    "lon": 107.4254324,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMPN 2 CILILIN"
+    }
+  },
+  {
+    "id": 858229239,
+    "type": "pelatihan",
+    "name": "SMPN 2 CILILIN",
+    "category": "school",
+    "lat": -6.9820976,
+    "lon": 107.4254951,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMPN 2 CILILIN"
+    }
+  },
+  {
+    "id": 858229240,
+    "type": "pelatihan",
+    "name": "SMPN 2 CILILIN",
+    "category": "school",
+    "lat": -6.9818412,
+    "lon": 107.4255522,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMPN 2 CILILIN"
+    }
+  },
+  {
+    "id": 858253756,
+    "type": "pelatihan",
+    "name": "SMPN 2 CILILIN",
+    "category": "school",
+    "lat": -6.9821602,
+    "lon": 107.4257235,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMPN 2 CILILIN"
+    }
+  },
+  {
+    "id": 858253757,
+    "type": "pelatihan",
+    "name": "SMPN 2 CILILIN",
+    "category": "school",
+    "lat": -6.9819916,
+    "lon": 107.4257884,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMPN 2 CILILIN"
+    }
+  },
+  {
+    "id": 858253760,
+    "type": "pelatihan",
+    "name": "SMPN 2 CILILIN",
+    "category": "school",
+    "lat": -6.981852,
+    "lon": 107.4258724,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMPN 2 CILILIN"
+    }
+  },
+  {
+    "id": 858370300,
+    "type": "pelatihan",
+    "name": "SDN RANCaPANGGUNG 1",
+    "category": "school",
+    "lat": -6.9799224,
+    "lon": 107.432437,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN RANCaPANGGUNG 1"
+    }
+  },
+  {
+    "id": 858370301,
+    "type": "pelatihan",
+    "name": "SDN RANCaPANGGUNG 1",
+    "category": "school",
+    "lat": -6.9798251,
+    "lon": 107.4324573,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN RANCaPANGGUNG 1"
+    }
+  },
+  {
+    "id": 858370302,
+    "type": "pelatihan",
+    "name": "SDN RANCaPANGGUNG 1",
+    "category": "school",
+    "lat": -6.9798087,
+    "lon": 107.4325407,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN RANCaPANGGUNG 1"
+    }
+  },
+  {
+    "id": 858370303,
+    "type": "pelatihan",
+    "name": "SDN RANCaPANGGUNG 1",
+    "category": "school",
+    "lat": -6.9797991,
+    "lon": 107.4321951,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN RANCaPANGGUNG 1"
+    }
+  },
+  {
+    "id": 858370696,
+    "type": "pelatihan",
+    "name": "SDN RANCAPANGGUNG 2",
+    "category": "school",
+    "lat": -6.9783798,
+    "lon": 107.4322128,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN RANCAPANGGUNG 2"
+    }
+  },
+  {
+    "id": 858677585,
+    "type": "pelatihan",
+    "name": "SD Negeri Cibiru 050",
+    "category": "school",
+    "lat": -6.9341635,
+    "lon": 107.7213821,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SD Negeri Cibiru 050",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 858680640,
+    "type": "pelatihan",
+    "name": "MAN 2 Kota Bandung",
+    "category": "school",
+    "lat": -6.927526,
+    "lon": 107.716604,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "MAN 2 Kota Bandung",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
     "id": 858687998,
     "type": "pelatihan",
     "name": "Tempat Pelatihan",
@@ -13856,6 +20252,182 @@
       "amenity": "school",
       "building": "yes",
       "layer": "1"
+    }
+  },
+  {
+    "id": 859497860,
+    "type": "pelatihan",
+    "name": "SDN LEMAHSARI",
+    "category": "school",
+    "lat": -6.9501573,
+    "lon": 107.4795417,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN LEMAHSARI"
+    }
+  },
+  {
+    "id": 859497861,
+    "type": "pelatihan",
+    "name": "SMP MADANI CIHURANG",
+    "category": "school",
+    "lat": -6.9516441,
+    "lon": 107.4798052,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SMP MADANI CIHURANG"
+    }
+  },
+  {
+    "id": 859497862,
+    "type": "pelatihan",
+    "name": "MI MADANI CIHURANG",
+    "category": "school",
+    "lat": -6.9515002,
+    "lon": 107.4796895,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "MI MADANI CIHURANG"
+    }
+  },
+  {
+    "id": 859504911,
+    "type": "pelatihan",
+    "name": "MAK MADANI CIHURANG",
+    "category": "school",
+    "lat": -6.9535447,
+    "lon": 107.482222,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "MAK MADANI CIHURANG"
+    }
+  },
+  {
+    "id": 859504912,
+    "type": "pelatihan",
+    "name": "MAK MADANI CIHURANG",
+    "category": "school",
+    "lat": -6.9531886,
+    "lon": 107.4822017,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "MAK MADANI CIHURANG"
+    }
+  },
+  {
+    "id": 859504913,
+    "type": "pelatihan",
+    "name": "MAK MADANI CIHURANG",
+    "category": "school",
+    "lat": -6.9533246,
+    "lon": 107.4820479,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "MAK MADANI CIHURANG"
+    }
+  },
+  {
+    "id": 859523845,
+    "type": "pelatihan",
+    "name": "PAUD KHAIRU UMMAH",
+    "category": "school",
+    "lat": -6.9532454,
+    "lon": 107.4795984,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "PAUD KHAIRU UMMAH"
+    }
+  },
+  {
+    "id": 859944539,
+    "type": "pelatihan",
+    "name": "SDN Karang Tanjung",
+    "category": "school",
+    "lat": -6.9494684,
+    "lon": 107.4664346,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SDN Karang Tanjung"
+    }
+  },
+  {
+    "id": 863029674,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.8125495,
+    "lon": 107.6211407,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
+    }
+  },
+  {
+    "id": 863029675,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.8127024,
+    "lon": 107.6207423,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
     }
   },
   {
@@ -13985,6 +20557,31 @@
     }
   },
   {
+    "id": 895741626,
+    "type": "pelatihan",
+    "name": "Kandaga Unpad",
+    "category": "library",
+    "lat": -6.9281657,
+    "lon": 107.7754821,
+    "address": "Jalan Raya Jatinangor",
+    "phone": "02284288806",
+    "website": "http://cisral.unpad.ac.id/",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:city": "Sumedang",
+      "addr:postcode": "45363",
+      "addr:street": "Jalan Raya Jatinangor",
+      "amenity": "library",
+      "building": "yes",
+      "internet_access": "yes",
+      "name": "Kandaga Unpad",
+      "phone": "02284288806",
+      "website": "http://cisral.unpad.ac.id/",
+      "wikidata": "Q115860691"
+    }
+  },
+  {
     "id": 895880084,
     "type": "pelatihan",
     "name": "Gedung Padepokan Panglipur",
@@ -14003,6 +20600,44 @@
       "amenity": "community_centre",
       "building": "yes",
       "name": "Gedung Padepokan Panglipur"
+    }
+  },
+  {
+    "id": 896209151,
+    "type": "pelatihan",
+    "name": "Tempat Pelatihan",
+    "category": "school",
+    "lat": -6.9443022,
+    "lon": 107.7874158,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school"
+    }
+  },
+  {
+    "id": 898005705,
+    "type": "pelatihan",
+    "name": "SMP Negeri 3 Jatinangor",
+    "category": "school",
+    "lat": -6.8977738,
+    "lon": 107.7701538,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "isced:level": "2",
+      "name": "SMP Negeri 3 Jatinangor",
+      "official_name": "Sekolah Menengah Pertama Negeri 3 Jatinangor",
+      "operator:type": "public",
+      "wheelchair": "limited"
     }
   },
   {
@@ -14141,6 +20776,23 @@
       "operator:type": "government",
       "website": "https://www.instagram.com/disarpuskotabdg/?hl=en",
       "wheelchair": "yes"
+    }
+  },
+  {
+    "id": 975427235,
+    "type": "pelatihan",
+    "name": "SDN Baros Mandiri 2",
+    "category": "school",
+    "lat": -6.8885492,
+    "lon": 107.5314951,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN Baros Mandiri 2"
     }
   },
   {
@@ -16292,6 +22944,24 @@
     }
   },
   {
+    "id": 1081039941,
+    "type": "pelatihan",
+    "name": "SMP Negeri 3 Cileunyi",
+    "category": "school",
+    "lat": -6.9186298,
+    "lon": 107.7421026,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:city": "Kabupaten Bandung",
+      "amenity": "school",
+      "name": "SMP Negeri 3 Cileunyi"
+    }
+  },
+  {
     "id": 1081974041,
     "type": "pelatihan",
     "name": "SMP Assalaam",
@@ -16453,6 +23123,42 @@
       "website": "https://perpustakaanajiprosidi.wordpress.com/",
       "wikidata": "Q98645237",
       "wikimedia_commons": "Category:Perpustakaan Ajip Rosidi"
+    }
+  },
+  {
+    "id": 1126204061,
+    "type": "pelatihan",
+    "name": "Universitas Bhakti Kencana",
+    "category": "university",
+    "lat": -6.9365753,
+    "lon": 107.7101246,
+    "address": "",
+    "phone": "",
+    "website": "https://bku.ac.id",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "university",
+      "name": "Universitas Bhakti Kencana",
+      "website": "https://bku.ac.id"
+    }
+  },
+  {
+    "id": 1126204062,
+    "type": "pelatihan",
+    "name": "Universitas Muhammadiyah Bandung",
+    "category": "university",
+    "lat": -6.9368816,
+    "lon": 107.7086654,
+    "address": "",
+    "phone": "",
+    "website": "https://umbandung.ac.id",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "university",
+      "name": "Universitas Muhammadiyah Bandung",
+      "website": "https://umbandung.ac.id"
     }
   },
   {
@@ -16938,6 +23644,45 @@
     }
   },
   {
+    "id": 1162239529,
+    "type": "pelatihan",
+    "name": "SMA Muhammadiyah 4 Kota Bandung, SMK 2 Muhammadiyah Kota Bandung",
+    "category": "school",
+    "lat": -6.9236554,
+    "lon": 107.7132041,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SMA Muhammadiyah 4 Kota Bandung, SMK 2 Muhammadiyah Kota Bandung",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 1162239531,
+    "type": "pelatihan",
+    "name": "SD NEGERI PELITA 169",
+    "category": "school",
+    "lat": -6.9227251,
+    "lon": 107.7199227,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SD NEGERI PELITA 169",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
     "id": 1162434830,
     "type": "pelatihan",
     "name": "SMK Otista Bandung",
@@ -16996,6 +23741,105 @@
     }
   },
   {
+    "id": 1162464528,
+    "type": "pelatihan",
+    "name": "Universitas Krida Nusantara",
+    "category": "university",
+    "lat": -6.9135887,
+    "lon": 107.7285571,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "university",
+      "name": "Universitas Krida Nusantara",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 1162469739,
+    "type": "pelatihan",
+    "name": "SD Cibiru 08",
+    "category": "school",
+    "lat": -6.9230498,
+    "lon": 107.7262601,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SD Cibiru 08",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 1162674056,
+    "type": "pelatihan",
+    "name": "SD Negeri 152 Cicagak",
+    "category": "school",
+    "lat": -6.9078195,
+    "lon": 107.7246033,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SD Negeri 152 Cicagak",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 1162679601,
+    "type": "pelatihan",
+    "name": "Smp Al Islam Kota Bandung",
+    "category": "school",
+    "lat": -6.9092701,
+    "lon": 107.7227821,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "Smp Al Islam Kota Bandung",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 1162679806,
+    "type": "pelatihan",
+    "name": "MI Ar-Rofi",
+    "category": "school",
+    "lat": -6.9072192,
+    "lon": 107.7276929,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "MI Ar-Rofi",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
     "id": 1162681725,
     "type": "pelatihan",
     "name": "SMP,SMA, SMK Bina Dharma",
@@ -17030,6 +23874,46 @@
     "tags": {
       "amenity": "school",
       "name": "SD Negeri Sukapura 2",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 1162683220,
+    "type": "pelatihan",
+    "name": "SD Negeri 153 Taruna Karya",
+    "category": "school",
+    "lat": -6.9189541,
+    "lon": 107.7160875,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SD Negeri 153 Taruna Karya",
+      "source": "POI_WRI_Survey_2023",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "id": 1162685097,
+    "type": "pelatihan",
+    "name": "SD Negeri 125 Taruna Karya",
+    "category": "school",
+    "lat": -6.9157152,
+    "lon": 107.7203088,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "building": "school",
+      "name": "SD Negeri 125 Taruna Karya",
       "source": "POI_WRI_Survey_2023",
       "wheelchair": "no"
     }
@@ -17233,6 +24117,23 @@
     }
   },
   {
+    "id": 1180193642,
+    "type": "pelatihan",
+    "name": "SMPN 3 Ngamprah",
+    "category": "school",
+    "lat": -6.8608158,
+    "lon": 107.5148692,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SMPN 3 Ngamprah"
+    }
+  },
+  {
     "id": 1181068880,
     "type": "pelatihan",
     "name": "TK A Baa Ta Tsa",
@@ -17250,6 +24151,45 @@
       "isced:level": "0",
       "landuse": "education",
       "name": "TK A Baa Ta Tsa"
+    }
+  },
+  {
+    "id": 1193448842,
+    "type": "pelatihan",
+    "name": "Cahaya Bangsa Classical School",
+    "category": "school",
+    "lat": -6.8692373,
+    "lon": 107.4679901,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "education": "school",
+      "landuse": "education",
+      "name": "Cahaya Bangsa Classical School"
+    }
+  },
+  {
+    "id": 1193448843,
+    "type": "pelatihan",
+    "name": "Bandung Alliance Intercultural School",
+    "category": "school",
+    "lat": -6.86925,
+    "lon": 107.4663975,
+    "address": "",
+    "phone": "",
+    "website": "https://www.baisedu.org/",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "education": "school",
+      "landuse": "education",
+      "name": "Bandung Alliance Intercultural School",
+      "website": "https://www.baisedu.org/"
     }
   },
   {
@@ -17324,6 +24264,62 @@
       "building": "commercial",
       "building:use": "education",
       "name": "Sempoa Sip"
+    }
+  },
+  {
+    "id": 1221780015,
+    "type": "pelatihan",
+    "name": "Sekolah Al-Azhar Summarecon",
+    "category": "school",
+    "lat": -6.9608671,
+    "lon": 107.7019887,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "isced:level": "1;2",
+      "landuse": "education",
+      "name": "Sekolah Al-Azhar Summarecon",
+      "operator": "Yayasan Al Azhar"
+    }
+  },
+  {
+    "id": 1222646753,
+    "type": "pelatihan",
+    "name": "SD Negeri 274 Cempaka Arum",
+    "category": "school",
+    "lat": -6.9574752,
+    "lon": 107.7076863,
+    "address": "Jalan Umar Bin Khattab",
+    "phone": "+62 22 7831910",
+    "website": "https://sdncempakaarum.wordpress.com",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:city": "Bandung",
+      "addr:country": "ID",
+      "addr:housenumber": "59",
+      "addr:postcode": "40375",
+      "addr:state": "JB",
+      "addr:street": "Jalan Umar Bin Khattab",
+      "alt_name": "Sekolah Dasar Negeri Cempaka Arum;SD Negeri Cempaka Arum",
+      "amenity": "school",
+      "contact:youtube": "https://www.youtube.com/channel/UCFJYhhUvVYN_qsiCobUL3pA",
+      "email": "cempakaarumsdn@gmail.com",
+      "grades": "1-6",
+      "isced:level": "1",
+      "min_age": "6",
+      "name": "SD Negeri 274 Cempaka Arum",
+      "official_name": "Sekolah Dasar Negeri 274 Cempaka Arum",
+      "operator:type": "public",
+      "phone": "+62 22 7831910",
+      "short_name": "SDN 274 Cempaka Arum;SDN Cempaka Arum",
+      "start_date": "1999-01-01",
+      "website": "https://sdncempakaarum.wordpress.com",
+      "wheelchair": "limited"
     }
   },
   {
@@ -17438,6 +24434,108 @@
       "official_name": "SMA Negeri 5 Bandung",
       "website": "https://sman5bdg.sch.id",
       "wikidata": "Q5287796"
+    }
+  },
+  {
+    "id": 1266962968,
+    "type": "pelatihan",
+    "name": "SMP Dienul Islam",
+    "category": "school",
+    "lat": -6.9946626,
+    "lon": 107.7142293,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SMP Dienul Islam"
+    }
+  },
+  {
+    "id": 1267027791,
+    "type": "pelatihan",
+    "name": "SMK Wirakarya 1 & 2",
+    "category": "school",
+    "lat": -7.0398249,
+    "lon": 107.7112121,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SMK Wirakarya 1 & 2"
+    }
+  },
+  {
+    "id": 1267138231,
+    "type": "pelatihan",
+    "name": "SMP-YPI",
+    "category": "school",
+    "lat": -7.0815794,
+    "lon": 107.7073193,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SMP-YPI"
+    }
+  },
+  {
+    "id": 1267329089,
+    "type": "pelatihan",
+    "name": "SMK Farmasi Istiqomah Adjeng Suharno",
+    "category": "school",
+    "lat": -7.0903019,
+    "lon": 107.7063842,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SMK Farmasi Istiqomah Adjeng Suharno"
+    }
+  },
+  {
+    "id": 1267503556,
+    "type": "pelatihan",
+    "name": "Pondok Pesantren Baitul Arqom",
+    "category": "school",
+    "lat": -7.1149096,
+    "lon": 107.701374,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Pondok Pesantren Baitul Arqom"
+    }
+  },
+  {
+    "id": 1273094984,
+    "type": "pelatihan",
+    "name": "SDN Culamega",
+    "category": "school",
+    "lat": -7.0567204,
+    "lon": 107.4942624,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SDN Culamega"
     }
   },
   {
@@ -17863,6 +24961,23 @@
     }
   },
   {
+    "id": 1382479326,
+    "type": "pelatihan",
+    "name": "Observatorium Bosscha",
+    "category": "school",
+    "lat": -6.8245403,
+    "lon": 107.6161741,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Observatorium Bosscha"
+    }
+  },
+  {
     "id": 1382606727,
     "type": "pelatihan",
     "name": "SMP Negeri 2 Bandung",
@@ -17938,6 +25053,24 @@
     }
   },
   {
+    "id": 1394087587,
+    "type": "pelatihan",
+    "name": "SDN 090 CIBIRU BANDUNG",
+    "category": "school",
+    "lat": -6.9341533,
+    "lon": 107.7211646,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "layer": "1",
+      "name": "SDN 090 CIBIRU BANDUNG"
+    }
+  },
+  {
     "id": 1394554028,
     "type": "pelatihan",
     "name": "SDN Mulyasari 01-02",
@@ -17968,6 +25101,23 @@
     "description": "",
     "tags": {
       "amenity": "university"
+    }
+  },
+  {
+    "id": 1409468319,
+    "type": "pelatihan",
+    "name": "Pondok Pesantren Darul Iman",
+    "category": "school",
+    "lat": -6.8344425,
+    "lon": 107.571329,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Pondok Pesantren Darul Iman"
     }
   },
   {
@@ -18017,6 +25167,23 @@
     "description": "",
     "tags": {
       "amenity": "school"
+    }
+  },
+  {
+    "id": 1411416967,
+    "type": "pelatihan",
+    "name": "Universitas Terbuka Bandung",
+    "category": "university",
+    "lat": -6.9368682,
+    "lon": 107.7125805,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "university",
+      "name": "Universitas Terbuka Bandung"
     }
   },
   {
@@ -18267,6 +25434,23 @@
     }
   },
   {
+    "id": 1415745372,
+    "type": "pelatihan",
+    "name": "SD Negeri Pameungpeuk 01",
+    "category": "school",
+    "lat": -7.0190577,
+    "lon": 107.5969003,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Negeri Pameungpeuk 01"
+    }
+  },
+  {
     "id": 1416243715,
     "type": "pelatihan",
     "name": "SD Negeri Ciwaruga 2",
@@ -18282,6 +25466,23 @@
       "amenity": "school",
       "landuse": "education",
       "name": "SD Negeri Ciwaruga 2"
+    }
+  },
+  {
+    "id": 1417318539,
+    "type": "pelatihan",
+    "name": "Sekolah Menengah Atas 27 Bandung",
+    "category": "school",
+    "lat": -6.9592595,
+    "lon": 107.7070162,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "Sekolah Menengah Atas 27 Bandung"
     }
   },
   {
@@ -18345,6 +25546,23 @@
       "addr:street": "Jalan Lengkong Besar",
       "amenity": "school",
       "name": "Sekolah Dasar Negeri 020 Lengkong Besar"
+    }
+  },
+  {
+    "id": 1429543099,
+    "type": "pelatihan",
+    "name": "SD Negeri Cukanghaur",
+    "category": "school",
+    "lat": -7.0581963,
+    "lon": 107.4990928,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "name": "SD Negeri Cukanghaur"
     }
   },
   {
@@ -18552,6 +25770,98 @@
       "education": "school",
       "name": "Sekolah Kristen Bina Bakti",
       "name:zh": "基督教立人學校"
+    }
+  },
+  {
+    "id": 1449899632,
+    "type": "pelatihan",
+    "name": "BPK Penabur Kota Baru Parahyangan",
+    "category": "school",
+    "lat": -6.8655217,
+    "lon": 107.4698841,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "education": "school",
+      "name": "BPK Penabur Kota Baru Parahyangan"
+    }
+  },
+  {
+    "id": 1449899641,
+    "type": "pelatihan",
+    "name": "Universitas Santo Borromeus",
+    "category": "university",
+    "lat": -6.8648306,
+    "lon": 107.4755206,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "university",
+      "education": "university",
+      "name": "Universitas Santo Borromeus"
+    }
+  },
+  {
+    "id": 1449906087,
+    "type": "pelatihan",
+    "name": "Al Irsyad Satya Islamic School",
+    "category": "school",
+    "lat": -6.8647497,
+    "lon": 107.4771749,
+    "address": "Jl. Parahyangan Km 2.7 Kota Baru Parahyangan, Padalarang",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "addr:street": "Jl. Parahyangan Km 2.7 Kota Baru Parahyangan, Padalarang",
+      "amenity": "school",
+      "education": "school",
+      "name": "Al Irsyad Satya Islamic School",
+      "religion": "muslim"
+    }
+  },
+  {
+    "id": 1449910164,
+    "type": "pelatihan",
+    "name": "Universitas Maranatha",
+    "category": "university",
+    "lat": -6.8718243,
+    "lon": 107.4676644,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "university",
+      "education": "university",
+      "name": "Universitas Maranatha"
+    }
+  },
+  {
+    "id": 1453231411,
+    "type": "pelatihan",
+    "name": "Sekolah Bina Persada",
+    "category": "school",
+    "lat": -6.8726292,
+    "lon": 107.4725418,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "openingHours": "",
+    "description": "",
+    "tags": {
+      "amenity": "school",
+      "education": "school",
+      "name": "Sekolah Bina Persada"
     }
   }
 ]
