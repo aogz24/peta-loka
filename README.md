@@ -34,14 +34,14 @@ Platform pemetaan dan analisis UMKM dengan fitur clustering dan AI insight mengg
 - Chart dan grafik statistik (Bar Chart, Pie Chart)
 - Dashboard analytics lengkap
 
-### 5. **🎯 Prediksi Lokasi Potensial** ⭐ NEW
+### 5. **🎯 Prediksi Lokasi Potensial**
 
 - Scan area untuk menemukan lokasi terbaik untuk UMKM baru
 - Scoring berdasarkan kompetitor density, proximity ke wisata & pelatihan
 - Rating: Sangat Potensial, Potensial, Cukup Potensial, Kurang Potensial
 - Mode: Auto-scan atau analisis point spesifik
 
-### 6. **🎯 Analisis Kompetitor** ⭐ NEW
+### 6. **🎯 Analisis Kompetitor**
 
 - Competitive intelligence dalam radius tertentu
 - Market saturation level (Very Low → Very High)
@@ -49,7 +49,7 @@ Platform pemetaan dan analisis UMKM dengan fitur clustering dan AI insight mengg
 - Strategic recommendations berbasis AI
 - Compare locations & market gap analysis
 
-### 7. **✨ Rekomendasi Personal** ⭐ NEW
+### 7. **✨ Rekomendasi Personal**
 
 - User behavior tracking (view, click, search, favorite)
 - Personalized recommendations berbasis preferensi
