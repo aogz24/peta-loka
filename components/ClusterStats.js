@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic';
 const MapCard = dynamic(() => import('./MapCard'), { ssr: false });
 const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ef4444', '#ec4899', '#14b8a6', '#f97316'];
 
-export default function ClusterStats({ clusteringData }) {
+export default function ClusterStats({ clusteringData, radius }) {
   const [activeCluster, setActiveCluster] = useState(null);
 
   if (!clusteringData || !clusteringData.umkm) {
@@ -137,7 +137,7 @@ export default function ClusterStats({ clusteringData }) {
           </table>
         </div>
       </div>
-      {activeCluster && <MapCard lat={activeCluster.lat} lon={activeCluster.lon} onClose={() => setActiveCluster(null)} index={activeCluster.index} />}
+      {activeCluster && <MapCard lat={activeCluster.lat} lon={activeCluster.lon} onClose={() => setActiveCluster(null)} index={activeCluster.index} radius={radius} />}
 
       {/* Wisata Potensi */}
       <div className="glass-card p-6">

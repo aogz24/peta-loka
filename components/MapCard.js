@@ -18,7 +18,7 @@ function RecenterMap({ lat, lon }) {
   return null;
 }
 
-export default function MapCard({ lat, lon, onClose, index }) {
+export default function MapCard({ lat, lon, onClose, index, radius }) {
   return (
     <div className="fixed bottom-4 right-4 w-[350px] md:w-[450px] h-[300px] bg-white dark:bg-gray-800 shadow-xl rounded-xl border z-50">
       <div className="flex justify-between items-center p-3 border-b">
@@ -36,15 +36,17 @@ export default function MapCard({ lat, lon, onClose, index }) {
 
         {/* Marker will update automatically because props changed */}
         <div key={`centroid-${index}`}>
-          <Circle
-            center={[lat, lon]}
-            radius={500}
-            pathOptions={{
-              color: clusterColors[index % clusterColors.length],
-              fillColor: clusterColors[index % clusterColors.length],
-              fillOpacity: 0.1,
-            }}
-          />
+          {radius && !isNaN(radius) && (
+            <Circle
+              center={[lat, lon]}
+              radius={radius}
+              pathOptions={{
+                color: clusterColors[index % clusterColors.length],
+                fillColor: clusterColors[index % clusterColors.length],
+                fillOpacity: 0.1,
+              }}
+            />
+          )}
           <Marker position={[lat, lon]} icon={icons.centroid}>
             <Popup>
               <div className="p-2">

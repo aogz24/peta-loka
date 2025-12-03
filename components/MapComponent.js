@@ -45,6 +45,7 @@ function MapController({ center, zoom }) {
 export default function MapComponent({
   center = [-6.2088, 106.8456],
   zoom = 12,
+  radius = 500,
   umkmData = [],
   wisataData = [],
   pelatihanData = [],
@@ -59,6 +60,7 @@ export default function MapComponent({
   const wisataMarkers = useMemo(() => wisataData.slice(0, 300), [wisataData]);
   const pelatihanMarkers = useMemo(() => pelatihanData.slice(0, 200), [pelatihanData]);
 
+  console.log('radius di MapComponent:', radius);
   return (
     <div className="w-full h-full rounded-lg overflow-hidden shadow-lg">
       <MapContainer center={center} zoom={zoom} style={{ height: '100%', width: '100%' }} className="z-0">
@@ -73,15 +75,18 @@ export default function MapComponent({
             {/* Centroids dengan circle - render dulu agar di belakang */}
             {centroids.map((centroid, index) => (
               <div key={`centroid-${index}`}>
-                <Circle
-                  center={[centroid.lat, centroid.lon]}
-                  radius={500}
-                  pathOptions={{
-                    color: clusterColors[index % clusterColors.length],
-                    fillColor: clusterColors[index % clusterColors.length],
-                    fillOpacity: 0.1,
-                  }}
-                />
+                {radius && !isNaN(radius) && (
+                  <Circle
+                    center={[centroid.lat, centroid.lon]}
+                    radius={radius}
+                    pathOptions={{
+                      color: clusterColors[index % clusterColors.length],
+                      fillColor: clusterColors[index % clusterColors.length],
+                      fillOpacity: 0.1,
+                    }}
+                  />
+                )}
+
                 <Marker position={[centroid.lat, centroid.lon]} icon={icons.centroid}>
                   <Popup>
                     <div className="p-2">

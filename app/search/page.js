@@ -16,7 +16,7 @@ const MapComponent = dynamic(() => import('@/components/MapComponent'), {
   ),
 });
 
-export default function Home() {
+export default function SearchUMKM() {
   const [center, setCenter] = useState([parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LAT), parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LNG)]); // Jakarta default
   const [radius, setRadius] = useState(5000);
   const [loading, setLoading] = useState(false);
@@ -245,6 +245,7 @@ export default function Home() {
                   className="h-full rounded-lg"
                   center={center}
                   zoom={13}
+                  radius={radius}
                   selectMode
                   onSelectLocation={(lat, lon) => {
                     setCenter([lat, lon]);
@@ -267,6 +268,7 @@ export default function Home() {
                   <MapComponent
                     center={center}
                     zoom={13}
+                    radius={radius}
                     umkmData={scrapedData.umkm || []}
                     wisataData={scrapedData.wisata || []}
                     pelatihanData={scrapedData.pelatihan || []}
@@ -329,7 +331,7 @@ export default function Home() {
 
               {activeTab === 'stats' &&
                 (clusteringData && clusteringData.overall?.clusters?.length > 0 ? (
-                  <ClusterStats clusteringData={clusteringData} />
+                  <ClusterStats clusteringData={clusteringData} radius={radius} />
                 ) : (
                   <div className="text-sm text-zinc-500 py-8 text-center">Belum ada data clustering. Jalankan pencarian terlebih dahulu.</div>
                 ))}
