@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup, Circle, useMap } from 'react-le
 import { useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
 import clusterColors from '@/constant/ClusterColor';
-import icons from '@/utils/iconMap';
+import icons from '@/lib/utils/iconMap';
 
 // Komponen kecil untuk memaksa map pindah center saat lat/lon berubah
 function RecenterMap({ lat, lon }) {
