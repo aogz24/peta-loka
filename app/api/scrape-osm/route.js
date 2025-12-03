@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import OpenStreetMapService from "@/lib/services/openstreetmap";
+import cacheManager from "@/lib/utils/cache";
 import path from "path";
 import { promises as fs } from "fs";
 
@@ -15,6 +16,21 @@ export async function POST(request) {
         { error: "Latitude and longitude are required" },
         { status: 400 }
       );
+    }
+
+    // Check cache first (TTL: 1 hour for OSM scraping)
+    const cacheKey = cacheManager.generateKey("scrape-osm", {
+      lat,
+      lon,
+      radius,
+    });
+    const cachedResult = cacheManager.get(cacheKey);
+
+    if (cachedResult) {
+      return NextResponse.json({
+        ...cachedResult,
+        cached: true,
+      });
     }
 
     // 🔥 1. SCRAPE DATA DARI OSM
@@ -36,7 +52,7 @@ export async function POST(request) {
     await fs.writeFile(wisataPath, JSON.stringify(data.wisata, null, 2));
     await fs.writeFile(pelatihanPath, JSON.stringify(data.pelatihan, null, 2));
 
-    return NextResponse.json({
+    const response = {
       success: true,
       saved: {
         umkmPath,
@@ -45,7 +61,13 @@ export async function POST(request) {
       },
       total: data.total,
       message: `Successfully scraped & saved ${data.total} items`,
-    });
+      cached: false,
+    };
+
+    // Store in cache (TTL: 1 hour)
+    cacheManager.set(cacheKey, response, 60 * 60 * 1000);
+
+    return NextResponse.json(response);
   } catch (error) {
     console.error("Error in scrape API:", error);
 

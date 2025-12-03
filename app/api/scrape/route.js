@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import supabaseService from "@/lib/services/supabase";
+import cacheManager from "@/lib/utils/cache";
 
 /**
  * API untuk mengambil data dari Supabase berdasarkan radius
@@ -15,10 +16,21 @@ export async function POST(request) {
       );
     }
 
+    // Check cache first (TTL: 15 minutes)
+    const cacheKey = cacheManager.generateKey("scrape", { lat, lon, radius });
+    const cachedResult = cacheManager.get(cacheKey);
+
+    if (cachedResult) {
+      return NextResponse.json({
+        ...cachedResult,
+        cached: true,
+      });
+    }
+
     // Fetch data dari Supabase berdasarkan radius
     const result = await supabaseService.fetchByRadius(lat, lon, radius);
 
-    return NextResponse.json({
+    const response = {
       success: true,
       data: {
         umkm: result.umkm,
@@ -29,7 +41,13 @@ export async function POST(request) {
       radius: radius,
       center: { lat, lon },
       message: `Found ${result.total} items within ${radius}m radius from Supabase`,
-    });
+      cached: false,
+    };
+
+    // Store in cache (TTL: 15 minutes)
+    cacheManager.set(cacheKey, response, 15 * 60 * 1000);
+
+    return NextResponse.json(response);
   } catch (error) {
     console.error("Error in scrape API:", error);
     return NextResponse.json(
