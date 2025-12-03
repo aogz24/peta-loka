@@ -7,7 +7,10 @@ export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
 
   // avoid SSR mismatch: only render theme-dependent UI after mount
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const id = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(id);
+  }, []);
 
   // simple icons (no external assets)
   const Sun = (

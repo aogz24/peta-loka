@@ -173,7 +173,7 @@ export default function Home() {
                     value={radius}
                     onChange={(e) => {
                       const val = parseFloat(e.target.value);
-                      if (!isNaN(val)) setRadius(val <= 225 ? 226 : val);
+                      if (!isNaN(val)) setRadius(val <= 500 ? 500 : val);
                     }}
                     disabled={loading}
                     className="w-full pl-12 pr-3 py-2.5 rounded-xl bg-white dark:bg-zinc-900 
@@ -183,7 +183,7 @@ export default function Home() {
                   />
                 </div>
 
-                <input type="range" min={225} max={20000} step={500} value={radius} onChange={(e) => setRadius(Math.max(parseInt(e.target.value), 226))} className="w-full accent-blue-600 cursor-pointer" />
+                <input type="range" min={500} max={20000} step={500} value={radius} onChange={(e) => setRadius(Math.max(parseInt(e.target.value), 500))} className="w-full accent-blue-600 cursor-pointer" />
               </div>
             </div>
 
@@ -267,7 +267,7 @@ export default function Home() {
                   <MapComponent
                     center={center}
                     zoom={13}
-                    umkmData={clusteringData.umkm?.data || []}
+                    umkmData={scrapedData.umkm || []}
                     wisataData={scrapedData.wisata || []}
                     pelatihanData={scrapedData.pelatihan || []}
                     centroids={clusteringData.umkm?.centroids || []}
