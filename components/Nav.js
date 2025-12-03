@@ -27,7 +27,7 @@ export default function Nav() {
             {[
               { href: '/search', label: 'Cari Potensi' },
               { href: '/faq', label: 'FAQ' },
-              { href: '/contact', label: 'Contact' },
+              { href: '/contact', label: 'Kontak' },
             ].map((item) => {
               const isActive = pathname === item.href || (item.href !== '/' && pathname?.startsWith(item.href + '/')) || pathname === item.href + '/';
               return (
@@ -70,7 +70,7 @@ export default function Nav() {
             {[
               { href: '/search', label: 'Cari Potensi' },
               { href: '/faq', label: 'FAQ' },
-              { href: '/contact', label: 'Contact' },
+              { href: '/contact', label: 'Kontak' },
             ].map((item) => {
               const isActive = pathname === item.href || (item.href !== '/' && pathname?.startsWith(item.href + '/')) || pathname === item.href + '/';
               return (

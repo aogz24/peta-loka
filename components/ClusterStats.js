@@ -3,8 +3,9 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import ClusterLocationButton from './ClusterLocationButton';
 import { useState } from 'react';
-import MapCard from './MapCard';
+import dynamic from 'next/dynamic';
 
+const MapCard = dynamic(() => import('./MapCard'), { ssr: false });
 const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ef4444', '#ec4899', '#14b8a6', '#f97316'];
 
 export default function ClusterStats({ clusteringData }) {
@@ -45,8 +46,6 @@ export default function ClusterStats({ clusteringData }) {
     .sort((a, b) => b[1] - a[1])
     .slice(0, 10);
 
-  console.log('Top 10 Categories:', top10Categories);
-
   const pieData = top10Categories.map(([name, value]) => ({
     name,
     value,
@@ -86,7 +85,6 @@ export default function ClusterStats({ clusteringData }) {
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
-                <Legend />
                 <Bar dataKey="umkm" fill="#3b82f6" />
               </BarChart>
             </ResponsiveContainer>
