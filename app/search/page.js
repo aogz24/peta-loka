@@ -5,6 +5,9 @@ import dynamic from 'next/dynamic';
 import { MapPin, TrendingUp, GraduationCap, Search, Loader2, MapPinned } from 'lucide-react';
 import AIAgentPanel from '@/components/AIAgentPanel';
 import ClusterStats from '@/components/ClusterStats';
+import LocationPredictionPanel from '@/components/LocationPredictionPanel';
+import CompetitorAnalysisPanel from '@/components/CompetitorAnalysisPanel';
+import RecommendationPanel from '@/components/RecommendationPanel';
 
 // Dynamic import untuk MapComponent (client-side only)
 const MapComponent = dynamic(() => import('@/components/MapComponent'), {
@@ -287,15 +290,24 @@ export default function SearchUMKM() {
         </div>
         <div className=" gap-4 w-full mt-4">
           <div className="md:col-span-2 glass-card">
-            <div className="flex items-center gap-4">
-              <button onClick={() => setActiveTab('map')} className={`px-3 py-2 rounded-md text-sm ${activeTab === 'map' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200'}`}>
-                Map
+            <div className="flex items-center gap-2 overflow-x-auto">
+              <button onClick={() => setActiveTab('map')} className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'map' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}>
+                🗺️ Map
               </button>
-              <button onClick={() => setActiveTab('stats')} className={`px-3 py-2 rounded-md text-sm ${activeTab === 'stats' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200'}`}>
-                Stats
+              <button onClick={() => setActiveTab('stats')} className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'stats' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}>
+                📊 Stats
               </button>
-              <button onClick={() => setActiveTab('ai')} className={`px-3 py-2 rounded-md text-sm ${activeTab === 'ai' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200'}`}>
-                AI Insight
+              <button onClick={() => setActiveTab('ai')} className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'ai' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}>
+                🤖 AI Insight
+              </button>
+              <button onClick={() => setActiveTab('prediction')} className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'prediction' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}>
+                🎯 Prediksi Lokasi
+              </button>
+              <button onClick={() => setActiveTab('competitor')} className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'competitor' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}>
+                🎯 Analisis Kompetitor
+              </button>
+              <button onClick={() => setActiveTab('recommendations')} className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'recommendations' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}>
+                ✨ Rekomendasi
               </button>
             </div>
 
@@ -342,6 +354,36 @@ export default function SearchUMKM() {
                 ) : (
                   <div className="text-sm text-zinc-500 py-8 text-center">Analisis AI akan tersedia setelah data diperoleh.</div>
                 ))}
+
+              {activeTab === 'prediction' && (
+                <LocationPredictionPanel 
+                  onLocationSelect={(lat, lng) => {
+                    setCenter([lat, lng]);
+                    setActiveTab('map');
+                  }}
+                />
+              )}
+
+              {activeTab === 'competitor' && (
+                <CompetitorAnalysisPanel 
+                  onLocationSelect={(lat, lng) => {
+                    setCenter([lat, lng]);
+                    setActiveTab('map');
+                  }}
+                />
+              )}
+
+              {activeTab === 'recommendations' && (
+                <RecommendationPanel 
+                  onItemClick={(item) => {
+                    setSelectedItem(item);
+                    if (item.lat && item.lon) {
+                      setCenter([item.lat, item.lon]);
+                    }
+                    setActiveTab('map');
+                  }}
+                />
+              )}
             </div>
           </div>
         </div>

@@ -34,6 +34,29 @@ Platform pemetaan dan analisis UMKM dengan fitur clustering dan AI insight mengg
 - Chart dan grafik statistik (Bar Chart, Pie Chart)
 - Dashboard analytics lengkap
 
+### 5. **🎯 Prediksi Lokasi Potensial** ⭐ NEW
+
+- Scan area untuk menemukan lokasi terbaik untuk UMKM baru
+- Scoring berdasarkan kompetitor density, proximity ke wisata & pelatihan
+- Rating: Sangat Potensial, Potensial, Cukup Potensial, Kurang Potensial
+- Mode: Auto-scan atau analisis point spesifik
+
+### 6. **🎯 Analisis Kompetitor** ⭐ NEW
+
+- Competitive intelligence dalam radius tertentu
+- Market saturation level (Very Low → Very High)
+- Density zones: very close, close, moderate
+- Strategic recommendations berbasis AI
+- Compare locations & market gap analysis
+
+### 7. **✨ Rekomendasi Personal** ⭐ NEW
+
+- User behavior tracking (view, click, search, favorite)
+- Personalized recommendations berbasis preferensi
+- 6 tipe rekomendasi: category match, location-based, similar items, dll
+- Privacy-first: semua data di localStorage
+- Auto-discovery kategori baru
+
 ## 🚀 Quick Start
 
 ### 1. Install Dependencies
@@ -247,6 +270,7 @@ Generate AI insight
 
 - [SUPABASE_SETUP.md](./SUPABASE_SETUP.md) - Setup Supabase step-by-step
 - [MIGRATION_GUIDE.md](./MIGRATION_GUIDE.md) - Panduan migrasi data lengkap
+- [NEW_FEATURES.md](./NEW_FEATURES.md) - Dokumentasi fitur baru (Prediksi Lokasi, Analisis Kompetitor, Rekomendasi) ⭐
 
 ## 🔄 NPM Scripts
 
