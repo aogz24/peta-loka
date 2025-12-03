@@ -5,7 +5,7 @@
 Tiga fitur powerful telah ditambahkan ke platform PetaLoka untuk memberikan insight mendalam dan pengalaman personal:
 
 1. **🎯 Prediksi Lokasi Potensial** - Analisis lokasi terbaik untuk UMKM baru
-2. **🎯 Analisis Kompetitor** - Competitive intelligence dalam radius tertentu  
+2. **🎯 Analisis Kompetitor** - Competitive intelligence dalam radius tertentu
 3. **✨ Rekomendasi Personal** - Rekomendasi berbasis user behavior tracking
 
 ---
@@ -13,7 +13,9 @@ Tiga fitur powerful telah ditambahkan ke platform PetaLoka untuk memberikan insi
 ## 1. 🎯 Prediksi Lokasi Potensial
 
 ### Deskripsi
+
 Fitur ini menganalisis lokasi geografis untuk menentukan potensi area untuk membuka UMKM baru berdasarkan:
+
 - **Density kompetitor** - Sweet spot: ada kompetitor tapi tidak terlalu banyak
 - **Proximity ke wisata** - Dekat dengan tempat wisata = traffic tinggi
 - **Proximity ke pelatihan** - Akses ke skill development
@@ -22,7 +24,9 @@ Fitur ini menganalisis lokasi geografis untuk menentukan potensi area untuk memb
 ### Cara Kerja
 
 #### Mode 1: Scan Area (Auto-Discovery)
+
 Scan seluruh area untuk menemukan top lokasi potensial:
+
 ```javascript
 // API Call
 GET /api/location-prediction?mode=scan&topN=10&minScore=50
@@ -49,7 +53,9 @@ GET /api/location-prediction?mode=scan&topN=10&minScore=50
 ```
 
 #### Mode 2: Analyze Specific Point
+
 Analisis lokasi spesifik yang dipilih:
+
 ```javascript
 GET /api/location-prediction?mode=analyze&lat=-6.914742&lng=107.614526&searchRadius=1.0
 ```
@@ -57,11 +63,13 @@ GET /api/location-prediction?mode=analyze&lat=-6.914742&lng=107.614526&searchRad
 ### Scoring System
 
 **Total Score (0-100)** = Weighted sum of:
+
 - **Competitor Score (30%)**: Optimal 3-5 kompetitor (terlalu sedikit/banyak = penalty)
 - **Wisata Score (35%)**: Distance ke wisata terdekat (semakin dekat semakin baik)
 - **Pelatihan Score (35%)**: Distance ke pelatihan terdekat
 
 **Rating Categories**:
+
 - 75+ = **Sangat Potensial** ✅
 - 60-74 = **Potensial** ✔️
 - 40-59 = **Cukup Potensial** ⚠️
@@ -70,16 +78,17 @@ GET /api/location-prediction?mode=analyze&lat=-6.914742&lng=107.614526&searchRad
 ### Usage di UI
 
 ```jsx
-import LocationPredictionPanel from '@/components/LocationPredictionPanel';
+import LocationPredictionPanel from "@/components/LocationPredictionPanel";
 
-<LocationPredictionPanel 
+<LocationPredictionPanel
   onLocationSelect={(lat, lng) => {
     // Navigate to location on map
   }}
-/>
+/>;
 ```
 
 ### Use Cases
+
 - **Calon entrepreneur**: Mencari lokasi ideal untuk UMKM baru
 - **Pemerintah daerah**: Identifikasi area yang perlu dikembangkan
 - **Investor**: Due diligence lokasi sebelum investasi
@@ -90,9 +99,11 @@ import LocationPredictionPanel from '@/components/LocationPredictionPanel';
 ## 2. 🎯 Analisis Kompetitor
 
 ### Deskripsi
+
 Competitive intelligence tool untuk memahami landscape kompetitor dalam radius tertentu.
 
 ### Features
+
 - **Density Zones** - Kompetitor dalam 3 zona: very close (0-300m), close (300-700m), moderate (700m+)
 - **Market Saturation** - Very Low, Low, Moderate, High, Very High
 - **Competition Intensity Score** - 0-100 (higher = more intense)
@@ -103,6 +114,7 @@ Competitive intelligence tool untuk memahami landscape kompetitor dalam radius t
 ### Cara Kerja
 
 #### Basic Analysis
+
 ```javascript
 GET /api/competitor-analysis?lat=-6.914742&lng=107.614526&radius=1.0&category=Kuliner
 
@@ -135,6 +147,7 @@ GET /api/competitor-analysis?lat=-6.914742&lng=107.614526&radius=1.0&category=Ku
 ```
 
 #### Compare Two Locations
+
 ```javascript
 POST /api/competitor-analysis
 {
@@ -146,6 +159,7 @@ POST /api/competitor-analysis
 ```
 
 #### Find Market Gaps
+
 ```javascript
 POST /api/competitor-analysis
 {
@@ -158,24 +172,24 @@ POST /api/competitor-analysis
 
 ### Saturation Levels
 
-| Level | Competitors | Description |
-|-------|-------------|-------------|
-| Very Low | 0 | No direct competition (warning: might mean no demand) |
-| Low | 1-3 | Low competition, good opportunity |
-| Moderate | 4-8 | Established market, need differentiation |
-| High | 9-15 | High competition, need strong strategy |
-| Very High | 16+ | Saturated market, consider other location |
+| Level     | Competitors | Description                                           |
+| --------- | ----------- | ----------------------------------------------------- |
+| Very Low  | 0           | No direct competition (warning: might mean no demand) |
+| Low       | 1-3         | Low competition, good opportunity                     |
+| Moderate  | 4-8         | Established market, need differentiation              |
+| High      | 9-15        | High competition, need strong strategy                |
+| Very High | 16+         | Saturated market, consider other location             |
 
 ### Usage di UI
 
 ```jsx
-import CompetitorAnalysisPanel from '@/components/CompetitorAnalysisPanel';
+import CompetitorAnalysisPanel from "@/components/CompetitorAnalysisPanel";
 
-<CompetitorAnalysisPanel 
+<CompetitorAnalysisPanel
   onLocationSelect={(lat, lng) => {
     // Zoom to location
   }}
-/>
+/>;
 ```
 
 ---
@@ -183,9 +197,11 @@ import CompetitorAnalysisPanel from '@/components/CompetitorAnalysisPanel';
 ## 3. ✨ Rekomendasi Personal
 
 ### Deskripsi
+
 Personalized recommendation engine berbasis user behavior tracking dengan localStorage persistence.
 
 ### Tracked Behaviors
+
 - **View** - User melihat detail UMKM/wisata
 - **Click** - User mengklik marker/item
 - **Search** - User search kategori tertentu
@@ -194,18 +210,19 @@ Personalized recommendation engine berbasis user behavior tracking dengan localS
 ### Cara Kerja
 
 #### User Behavior Tracking (Client-side)
+
 ```javascript
-import { UserBehaviorTracker } from '@/lib/services/recommendations';
+import { UserBehaviorTracker } from "@/lib/services/recommendations";
 
 const tracker = new UserBehaviorTracker();
 
 // Track interaction
-tracker.track('view', {
-  umkmId: 'umkm-123',
-  category: 'Kuliner',
+tracker.track("view", {
+  umkmId: "umkm-123",
+  category: "Kuliner",
   lat: -6.914742,
   lng: 107.614526,
-  name: 'Warung Bu Ani'
+  name: "Warung Bu Ani",
 });
 
 // Get preferences
@@ -222,6 +239,7 @@ const preferences = tracker.getUserPreferences();
 ```
 
 #### Get Personalized Recommendations
+
 ```javascript
 POST /api/recommendations
 {
@@ -260,18 +278,19 @@ POST /api/recommendations
 
 ### Recommendation Types
 
-| Type | Description | Score |
-|------|-------------|-------|
-| `category_match` | Matches favorite category | 95 |
-| `location_based` | Near center of interest | 85 |
-| `similar_items` | Similar to viewed items | 80 |
-| `nearby_attraction` | Nearby wisata | 75 |
-| `discovery` | New unexplored category | 70 |
-| `popular` | Popular items (fallback) | 60 |
+| Type                | Description               | Score |
+| ------------------- | ------------------------- | ----- |
+| `category_match`    | Matches favorite category | 95    |
+| `location_based`    | Near center of interest   | 85    |
+| `similar_items`     | Similar to viewed items   | 80    |
+| `nearby_attraction` | Nearby wisata             | 75    |
+| `discovery`         | New unexplored category   | 70    |
+| `popular`           | Popular items (fallback)  | 60    |
 
 ### Other Endpoints
 
 #### Category-based Recommendations
+
 ```javascript
 POST /api/recommendations
 {
@@ -282,6 +301,7 @@ POST /api/recommendations
 ```
 
 #### Related Recommendations ("You might also like")
+
 ```javascript
 POST /api/recommendations
 {
@@ -292,6 +312,7 @@ POST /api/recommendations
 ```
 
 #### Quick Recommendations (No tracking)
+
 ```javascript
 GET /api/recommendations?limit=10&category=Kuliner
 ```
@@ -299,17 +320,18 @@ GET /api/recommendations?limit=10&category=Kuliner
 ### Usage di UI
 
 ```jsx
-import RecommendationPanel from '@/components/RecommendationPanel';
+import RecommendationPanel from "@/components/RecommendationPanel";
 
-<RecommendationPanel 
+<RecommendationPanel
   onItemClick={(item) => {
     // Navigate to item and track behavior
     setSelectedItem(item);
   }}
-/>
+/>;
 ```
 
 ### Privacy & Data
+
 - **All data stored in localStorage** (client-side only)
 - **No server-side tracking**
 - User can clear history anytime
@@ -321,53 +343,53 @@ import RecommendationPanel from '@/components/RecommendationPanel';
 ## 🚀 Integration Example
 
 ```jsx
-'use client';
+"use client";
 
-import { useState } from 'react';
-import LocationPredictionPanel from '@/components/LocationPredictionPanel';
-import CompetitorAnalysisPanel from '@/components/CompetitorAnalysisPanel';
-import RecommendationPanel from '@/components/RecommendationPanel';
+import { useState } from "react";
+import LocationPredictionPanel from "@/components/LocationPredictionPanel";
+import CompetitorAnalysisPanel from "@/components/CompetitorAnalysisPanel";
+import RecommendationPanel from "@/components/RecommendationPanel";
 
 export default function AdvancedAnalytics() {
-  const [activeTab, setActiveTab] = useState('prediction');
+  const [activeTab, setActiveTab] = useState("prediction");
   const [selectedLocation, setSelectedLocation] = useState(null);
 
   return (
     <div>
       {/* Tab Navigation */}
       <div className="flex gap-2">
-        <button onClick={() => setActiveTab('prediction')}>
+        <button onClick={() => setActiveTab("prediction")}>
           🎯 Prediksi Lokasi
         </button>
-        <button onClick={() => setActiveTab('competitor')}>
+        <button onClick={() => setActiveTab("competitor")}>
           🎯 Analisis Kompetitor
         </button>
-        <button onClick={() => setActiveTab('recommendations')}>
+        <button onClick={() => setActiveTab("recommendations")}>
           ✨ Rekomendasi
         </button>
       </div>
 
       {/* Content */}
-      {activeTab === 'prediction' && (
-        <LocationPredictionPanel 
+      {activeTab === "prediction" && (
+        <LocationPredictionPanel
           onLocationSelect={(lat, lng) => {
             setSelectedLocation({ lat, lng });
           }}
         />
       )}
 
-      {activeTab === 'competitor' && (
-        <CompetitorAnalysisPanel 
+      {activeTab === "competitor" && (
+        <CompetitorAnalysisPanel
           onLocationSelect={(lat, lng) => {
             setSelectedLocation({ lat, lng });
           }}
         />
       )}
 
-      {activeTab === 'recommendations' && (
-        <RecommendationPanel 
+      {activeTab === "recommendations" && (
+        <RecommendationPanel
           onItemClick={(item) => {
-            console.log('Selected:', item);
+            console.log("Selected:", item);
           }}
         />
       )}
@@ -404,6 +426,7 @@ peta-loka/
 ## 🎯 Use Case Scenarios
 
 ### Scenario 1: New Business Owner
+
 **Goal**: Find best location to open a new café
 
 1. Use **Location Prediction** → Scan area → Get top 10 potential locations
@@ -412,6 +435,7 @@ peta-loka/
 4. Make informed decision based on data
 
 ### Scenario 2: Existing UMKM Owner
+
 **Goal**: Understand competitive landscape
 
 1. Input current location → **Competitor Analysis**
@@ -420,6 +444,7 @@ peta-loka/
 4. Compare with alternative locations if needed
 
 ### Scenario 3: Tourist/Customer
+
 **Goal**: Discover interesting UMKM to visit
 
 1. Browse map and view UMKM
@@ -428,6 +453,7 @@ peta-loka/
 4. Discover new UMKM similar to liked ones
 
 ### Scenario 4: Government/NGO
+
 **Goal**: Strategic planning for UMKM development
 
 1. Use **Location Prediction** across entire city
@@ -440,6 +466,7 @@ peta-loka/
 ## 🔧 Configuration & Customization
 
 ### Location Prediction Config
+
 ```javascript
 {
   searchRadius: 1.0,           // km, radius for analysis
@@ -454,6 +481,7 @@ peta-loka/
 ```
 
 ### Competitor Analysis Config
+
 ```javascript
 {
   radius: 1.0,                 // km, search radius
@@ -463,6 +491,7 @@ peta-loka/
 ```
 
 ### Recommendations Config
+
 ```javascript
 {
   maxRecommendations: 10,      // Max items to recommend
@@ -478,16 +507,19 @@ peta-loka/
 ## 🚦 Performance Considerations
 
 ### Location Prediction
+
 - **Grid scanning**: O(n²) for grid points × data points
 - **Optimization**: Limit grid size and search radius
 - **Caching**: Consider caching results for popular areas
 
-### Competitor Analysis  
+### Competitor Analysis
+
 - **Distance calculation**: O(n) where n = total UMKM
 - **Optimization**: Use spatial indexing in production
 - **Real-time**: Fast for radius < 5km
 
 ### Recommendations
+
 - **Client-side tracking**: Zero server overhead
 - **localStorage**: 100 behaviors ≈ 50KB
 - **Algorithm**: O(n) where n = total UMKM
@@ -500,11 +532,13 @@ peta-loka/
 Track these metrics for insights:
 
 1. **Location Prediction**
+
    - Average score of top locations
    - Distribution of ratings
    - Most common optimal radius
 
 2. **Competitor Analysis**
+
    - Average saturation level by area
    - Most competitive categories
    - Market gap opportunities
@@ -519,17 +553,20 @@ Track these metrics for insights:
 ## 🔮 Future Enhancements
 
 ### Short-term
+
 - [ ] Export analysis results to PDF
 - [ ] Save favorite locations
 - [ ] Email alerts for new opportunities
 
 ### Mid-term
+
 - [ ] Machine learning for better predictions
 - [ ] Historical trend analysis
 - [ ] Collaborative filtering for recommendations
 - [ ] Integration with Google Places API
 
 ### Long-term
+
 - [ ] Real-time competitor monitoring
 - [ ] Predictive analytics (future demand)
 - [ ] AR visualization of potential locations

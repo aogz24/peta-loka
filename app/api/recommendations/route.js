@@ -3,30 +3,30 @@
  * Endpoint untuk rekomendasi personalized berdasarkan user behavior
  */
 
-import { NextResponse } from 'next/server';
-import { 
+import { NextResponse } from "next/server";
+import {
   generatePersonalizedRecommendations,
   getRecommendationsByCategory,
   getRelatedRecommendations,
-  UserBehaviorTracker
-} from '@/lib/services/recommendations';
-import supabaseService from '@/lib/services/supabase';
+  UserBehaviorTracker,
+} from "@/lib/services/recommendations";
+import supabaseService from "@/lib/services/supabase";
 
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { 
-      type, 
+    const {
+      type,
       behaviors = [],
       category = null,
       currentItem = null,
-      options = {}
+      options = {},
     } = body;
 
     // Fetch data
     const [umkmData, wisataData] = await Promise.all([
       supabaseService.fetchUmkm(),
-      supabaseService.fetchWisata()
+      supabaseService.fetchWisata(),
     ]);
 
     // Create tracker dari behaviors yang dikirim client
@@ -37,7 +37,7 @@ export async function POST(request) {
     let result;
 
     switch (type) {
-      case 'personalized':
+      case "personalized":
         // General personalized recommendations
         result = generatePersonalizedRecommendations(
           umkmData,
@@ -47,63 +47,66 @@ export async function POST(request) {
         );
         break;
 
-      case 'category':
+      case "category":
         // Category-based with personalization
         if (!category) {
           return NextResponse.json(
-            { success: false, error: 'Category required' },
+            { success: false, error: "Category required" },
             { status: 400 }
           );
         }
         result = {
-          type: 'category',
+          type: "category",
           category,
           recommendations: getRecommendationsByCategory(
             category,
             umkmData,
             tracker,
             options
-          )
+          ),
         };
         break;
 
-      case 'related':
+      case "related":
         // Related to current item
         if (!currentItem) {
           return NextResponse.json(
-            { success: false, error: 'Current item required' },
+            { success: false, error: "Current item required" },
             { status: 400 }
           );
         }
         result = {
-          type: 'related',
+          type: "related",
           currentItem,
           recommendations: getRelatedRecommendations(
             currentItem,
             umkmData,
             tracker,
             options
-          )
+          ),
         };
         break;
 
       default:
         return NextResponse.json(
-          { success: false, error: 'Invalid type. Use "personalized", "category", or "related"' },
+          {
+            success: false,
+            error: 'Invalid type. Use "personalized", "category", or "related"',
+          },
           { status: 400 }
         );
     }
 
     return NextResponse.json({
       success: true,
-      ...result
+      ...result,
     });
   } catch (error) {
-    console.error('Recommendations error:', error);
+    console.error("Recommendations error:", error);
     return NextResponse.json(
-      { 
-        success: false, 
-        error: error.message 
+      {
+        success: false,
+        error: error.message,
       },
       { status: 500 }
     );
@@ -114,15 +117,15 @@ export async function POST(request) {
 export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
-    const limit = parseInt(searchParams.get('limit')) || 10;
-    const category = searchParams.get('category');
+    const limit = parseInt(searchParams.get("limit")) || 10;
+    const category = searchParams.get("category");
 
     const umkmData = await supabaseService.fetchUmkm();
 
     let recommendations;
     if (category) {
       recommendations = umkmData
-        .filter(umkm => umkm.category === category)
+        .filter((umkm) => umkm.category === category)
         .slice(0, limit);
     } else {
       recommendations = umkmData.slice(0, limit);
@@ -130,20 +133,20 @@ export async function GET(request) {
 
     return NextResponse.json({
       success: true,
-      type: 'quick',
-      recommendations: recommendations.map(item => ({
+      type: "quick",
+      recommendations: recommendations.map((item) => ({
         ...item,
-        reason: 'Rekomendasi populer',
+        reason: "Rekomendasi populer",
         score: 60,
-        type: 'popular'
-      }))
+        type: "popular",
+      })),
     });
   } catch (error) {
-    console.error('Quick recommendations error:', error);
+    console.error("Quick recommendations error:", error);
     return NextResponse.json(
-      { 
-        success: false, 
-        error: error.message 
+      {
+        success: false,
+        error: error.message,
       },
       { status: 500 }
     );

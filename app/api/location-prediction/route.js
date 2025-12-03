@@ -3,33 +3,33 @@
  * Endpoint untuk prediksi lokasi potensial UMKM baru
  */
 
-import { NextResponse } from 'next/server';
-import { 
-  findPotentialLocations, 
-  analyzeSpecificLocation 
-} from '@/lib/services/location-prediction';
-import supabaseService from '@/lib/services/supabase';
+import { NextResponse } from "next/server";
+import {
+  findPotentialLocations,
+  analyzeSpecificLocation,
+} from "@/lib/services/location-prediction";
+import supabaseService from "@/lib/services/supabase";
 
 export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
-    
-    const mode = searchParams.get('mode') || 'scan'; // 'scan' atau 'analyze'
-    const lat = searchParams.get('lat');
-    const lng = searchParams.get('lng');
-    const gridSize = parseFloat(searchParams.get('gridSize')) || 0.5;
-    const topN = parseInt(searchParams.get('topN')) || 10;
-    const minScore = parseFloat(searchParams.get('minScore')) || 50;
-    const searchRadius = parseFloat(searchParams.get('searchRadius')) || 1.0;
+
+    const mode = searchParams.get("mode") || "scan"; // 'scan' atau 'analyze'
+    const lat = searchParams.get("lat");
+    const lng = searchParams.get("lng");
+    const gridSize = parseFloat(searchParams.get("gridSize")) || 0.5;
+    const topN = parseInt(searchParams.get("topN")) || 10;
+    const minScore = parseFloat(searchParams.get("minScore")) || 50;
+    const searchRadius = parseFloat(searchParams.get("searchRadius")) || 1.0;
 
     // Fetch data dari Supabase
     const [umkmData, wisataData, pelatihanData] = await Promise.all([
       supabaseService.fetchUmkm(),
       supabaseService.fetchWisata(),
-      supabaseService.fetchPelatihan()
+      supabaseService.fetchPelatihan(),
     ]);
 
-    if (mode === 'analyze' && lat && lng) {
+    if (mode === "analyze" && lat && lng) {
       // Analyze specific location
       const result = analyzeSpecificLocation(
         parseFloat(lat),
@@ -42,13 +42,13 @@ export async function GET(request) {
 
       return NextResponse.json({
         success: true,
-        mode: 'analyze',
-        result
+        mode: "analyze",
+        result,
       });
     } else {
       // Scan area untuk top potential locations
-      const bounds = searchParams.get('bounds') 
-        ? JSON.parse(searchParams.get('bounds'))
+      const bounds = searchParams.get("bounds")
+        ? JSON.parse(searchParams.get("bounds"))
         : null;
 
       const topLocations = findPotentialLocations(
@@ -60,23 +60,23 @@ export async function GET(request) {
           gridSize,
           topN,
           minScore,
-          searchRadius
+          searchRadius,
         }
       );
 
       return NextResponse.json({
         success: true,
-        mode: 'scan',
+        mode: "scan",
         count: topLocations.length,
-        locations: topLocations
+        locations: topLocations,
       });
     }
   } catch (error) {
-    console.error('Location prediction error:', error);
+    console.error("Location prediction error:", error);
     return NextResponse.json(
-      { 
-        success: false, 
-        error: error.message 
+      {
+        success: false,
+        error: error.message,
       },
       { status: 500 }
     );
@@ -92,10 +92,10 @@ export async function POST(request) {
     const [umkmData, wisataData, pelatihanData] = await Promise.all([
       supabaseService.fetchUmkm(),
       supabaseService.fetchWisata(),
-      supabaseService.fetchPelatihan()
+      supabaseService.fetchPelatihan(),
     ]);
 
-    const results = locations.map(loc => 
+    const results = locations.map((loc) =>
       analyzeSpecificLocation(
         loc.lat,
         loc.lng,
@@ -109,14 +109,14 @@ export async function POST(request) {
     return NextResponse.json({
       success: true,
       count: results.length,
-      results
+      results,
     });
   } catch (error) {
-    console.error('Batch location analysis error:', error);
+    console.error("Batch location analysis error:", error);
     return NextResponse.json(
-      { 
-        success: false, 
-        error: error.message 
+      {
+        success: false,
+        error: error.message,
       },
       { status: 500 }
     );

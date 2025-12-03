@@ -1,20 +1,26 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Target, TrendingDown, AlertCircle, Loader2, MapPin } from 'lucide-react';
+import { useState } from "react";
+import {
+  Target,
+  TrendingDown,
+  AlertCircle,
+  Loader2,
+  MapPin,
+} from "lucide-react";
 
 export default function CompetitorAnalysisPanel({ onLocationSelect }) {
   const [loading, setLoading] = useState(false);
   const [analysis, setAnalysis] = useState(null);
-  const [lat, setLat] = useState('');
-  const [lng, setLng] = useState('');
-  const [category, setCategory] = useState('');
+  const [lat, setLat] = useState("");
+  const [lng, setLng] = useState("");
+  const [category, setCategory] = useState("");
   const [radius, setRadius] = useState(1.0);
   const [includeAll, setIncludeAll] = useState(false);
 
   const handleAnalyze = async () => {
     if (!lat || !lng) {
-      alert('Masukkan koordinat atau klik pada peta');
+      alert("Masukkan koordinat atau klik pada peta");
       return;
     }
 
@@ -24,12 +30,12 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
         `/api/competitor-analysis?lat=${lat}&lng=${lng}&category=${category}&radius=${radius}&includeAll=${includeAll}`
       );
       const data = await response.json();
-      
+
       if (data.success) {
         setAnalysis(data.analysis);
       }
     } catch (error) {
-      console.error('Analysis error:', error);
+      console.error("Analysis error:", error);
     } finally {
       setLoading(false);
     }
@@ -37,26 +43,26 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
 
   const getSaturationColor = (level) => {
     switch (level) {
-      case 'Very Low':
-        return 'bg-blue-50 text-blue-700 border-blue-200';
-      case 'Low':
-        return 'bg-green-50 text-green-700 border-green-200';
-      case 'Moderate':
-        return 'bg-yellow-50 text-yellow-700 border-yellow-200';
-      case 'High':
-        return 'bg-orange-50 text-orange-700 border-orange-200';
-      case 'Very High':
-        return 'bg-red-50 text-red-700 border-red-200';
+      case "Very Low":
+        return "bg-blue-50 text-blue-700 border-blue-200";
+      case "Low":
+        return "bg-green-50 text-green-700 border-green-200";
+      case "Moderate":
+        return "bg-yellow-50 text-yellow-700 border-yellow-200";
+      case "High":
+        return "bg-orange-50 text-orange-700 border-orange-200";
+      case "Very High":
+        return "bg-red-50 text-red-700 border-red-200";
       default:
-        return 'bg-gray-50 text-gray-700 border-gray-200';
+        return "bg-gray-50 text-gray-700 border-gray-200";
     }
   };
 
   const getRecommendationIcon = (type) => {
     switch (type) {
-      case 'warning':
+      case "warning":
         return <AlertCircle className="w-5 h-5 text-red-500" />;
-      case 'opportunity':
+      case "opportunity":
         return <TrendingDown className="w-5 h-5 text-green-500" />;
       default:
         return <Target className="w-5 h-5 text-blue-500" />;
@@ -71,7 +77,8 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
           Analisis Kompetitor
         </h3>
         <p className="text-sm text-gray-600">
-          Analisis kompetitor dalam radius tertentu untuk memahami tingkat kompetisi dan peluang pasar
+          Analisis kompetitor dalam radius tertentu untuk memahami tingkat
+          kompetisi dan peluang pasar
         </p>
       </div>
 
@@ -79,7 +86,9 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
       <div className="space-y-3">
         <div className="grid grid-cols-2 gap-2">
           <div>
-            <label className="block text-xs font-medium text-gray-700 mb-1">Latitude</label>
+            <label className="block text-xs font-medium text-gray-700 mb-1">
+              Latitude
+            </label>
             <input
               type="number"
               step="0.000001"
@@ -90,7 +99,9 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
             />
           </div>
           <div>
-            <label className="block text-xs font-medium text-gray-700 mb-1">Longitude</label>
+            <label className="block text-xs font-medium text-gray-700 mb-1">
+              Longitude
+            </label>
             <input
               type="number"
               step="0.000001"
@@ -103,7 +114,9 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-gray-700 mb-1">Kategori (opsional)</label>
+          <label className="block text-xs font-medium text-gray-700 mb-1">
+            Kategori (opsional)
+          </label>
           <input
             type="text"
             value={category}
@@ -164,26 +177,40 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
       {analysis && (
         <div className="mt-6 space-y-4">
           {/* Summary Card */}
-          <div className={`p-4 rounded-lg border-2 ${getSaturationColor(analysis.summary.saturationLevel)}`}>
+          <div
+            className={`p-4 rounded-lg border-2 ${getSaturationColor(
+              analysis.summary.saturationLevel
+            )}`}
+          >
             <div className="flex justify-between items-start mb-3">
               <div>
-                <div className="text-2xl font-bold">{analysis.summary.totalCompetitors} Kompetitor</div>
-                <div className="text-sm opacity-75">dalam radius {analysis.summary.radius} km</div>
+                <div className="text-2xl font-bold">
+                  {analysis.summary.totalCompetitors} Kompetitor
+                </div>
+                <div className="text-sm opacity-75">
+                  dalam radius {analysis.summary.radius} km
+                </div>
               </div>
               <div className="px-3 py-1 rounded-full text-xs font-bold border">
                 {analysis.summary.saturationLevel}
               </div>
             </div>
-            <p className="text-sm mb-3">{analysis.summary.saturationDescription}</p>
-            
+            <p className="text-sm mb-3">
+              {analysis.summary.saturationDescription}
+            </p>
+
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-white bg-opacity-50 p-3 rounded">
                 <div className="text-xs opacity-75">Intensity Score</div>
-                <div className="text-xl font-bold">{analysis.summary.intensityScore}</div>
+                <div className="text-xl font-bold">
+                  {analysis.summary.intensityScore}
+                </div>
               </div>
               <div className="bg-white bg-opacity-50 p-3 rounded">
                 <div className="text-xs opacity-75">Opportunity Score</div>
-                <div className="text-xl font-bold">{analysis.summary.opportunityScore}</div>
+                <div className="text-xl font-bold">
+                  {analysis.summary.opportunityScore}
+                </div>
               </div>
             </div>
           </div>
@@ -222,7 +249,10 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
               <h4 className="font-semibold mb-3">Kompetitor per Kategori</h4>
               <div className="space-y-2 max-h-48 overflow-y-auto">
                 {analysis.byCategory.map((cat, idx) => (
-                  <div key={idx} className="flex justify-between items-center p-2 hover:bg-gray-50 rounded">
+                  <div
+                    key={idx}
+                    className="flex justify-between items-center p-2 hover:bg-gray-50 rounded"
+                  >
                     <div className="flex-1">
                       <div className="font-medium text-sm">{cat.category}</div>
                       <div className="text-xs text-gray-500">
@@ -231,7 +261,9 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
                     </div>
                     <div className="text-right">
                       <div className="font-bold">{cat.count}</div>
-                      <div className="text-xs text-gray-500">{cat.percentage}%</div>
+                      <div className="text-xs text-gray-500">
+                        {cat.percentage}%
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -245,13 +277,20 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
               <h4 className="font-semibold mb-3">Top Kompetitor Terdekat</h4>
               <div className="space-y-2 max-h-64 overflow-y-auto">
                 {analysis.topCompetitors.map((comp, idx) => (
-                  <div key={idx} className="p-3 border border-gray-200 rounded-lg hover:bg-gray-50">
+                  <div
+                    key={idx}
+                    className="p-3 border border-gray-200 rounded-lg hover:bg-gray-50"
+                  >
                     <div className="flex justify-between items-start">
                       <div>
                         <div className="font-medium">{comp.name}</div>
-                        <div className="text-xs text-gray-500">{comp.category}</div>
-                        {comp.address !== 'N/A' && (
-                          <div className="text-xs text-gray-400 mt-1">{comp.address}</div>
+                        <div className="text-xs text-gray-500">
+                          {comp.category}
+                        </div>
+                        {comp.address !== "N/A" && (
+                          <div className="text-xs text-gray-400 mt-1">
+                            {comp.address}
+                          </div>
                         )}
                       </div>
                       <div className="text-sm font-semibold text-blue-600">
@@ -275,7 +314,9 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
                       {getRecommendationIcon(rec.type)}
                       <div className="flex-1">
                         <div className="font-medium text-sm">{rec.title}</div>
-                        <div className="text-xs text-gray-600 mt-1">{rec.description}</div>
+                        <div className="text-xs text-gray-600 mt-1">
+                          {rec.description}
+                        </div>
                       </div>
                     </div>
                   </div>
