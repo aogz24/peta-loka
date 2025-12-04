@@ -296,7 +296,7 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
             </div>
             <div className="h-[calc(100%-60px)]">
               <MapComponent
-                center={lat && lng ? [parseFloat(lat), parseFloat(lng)] : [-6.2088, 106.8456]}
+                center={lat && lng ? [parseFloat(lat), parseFloat(lng)] : [parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LAT), parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LNG)]}
                 zoom={13}
                 selectMode
                 onSelectLocation={(selectedLat, selectedLng) => {

@@ -20,7 +20,7 @@ const MapComponent = dynamic(() => import('@/components/MapComponent'), {
 });
 
 export default function SearchUMKM() {
-  const [center, setCenter] = useState([parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LAT), parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LNG)]); // Jakarta default
+  const [center, setCenter] = useState([parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LAT), parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LNG)]); // Bandung default
   const [radius, setRadius] = useState(5000);
   const [numClusters, setNumClusters] = useState(5);
   const [loading, setLoading] = useState(false);
@@ -428,7 +428,7 @@ export default function SearchUMKM() {
             </div>
             <div className="h-[calc(100%-60px)]">
               <MapComponent
-                center={center ? [parseFloat(center[0]), parseFloat(center[1])] : [-6.2088, 106.8456]}
+                center={center ? [parseFloat(center[0]), parseFloat(center[1])] : [parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LAT), parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LNG)]}
                 zoom={13}
                 selectMode
                 onSelectLocation={(selectedLat, selectedLng) => {
