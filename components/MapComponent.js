@@ -60,7 +60,7 @@ export default function MapComponent({
   const wisataMarkers = useMemo(() => wisataData.slice(0, 300), [wisataData]);
   const pelatihanMarkers = useMemo(() => pelatihanData.slice(0, 200), [pelatihanData]);
 
-  console.log('radius di MapComponent:', radius);
+  console.log('selected item:', selectedItem);
   return (
     <div className="w-full h-full rounded-lg overflow-hidden shadow-lg">
       <MapContainer center={center} zoom={zoom} style={{ height: '100%', width: '100%' }} className="z-0">
@@ -168,6 +168,17 @@ export default function MapComponent({
               </Marker>
             ))}
           </>
+        )}
+
+        {selectedItem && (
+          <Marker position={[selectedItem.lat, selectedItem.lon]} icon={selectedItem.source == 'umkm' ? icons.umkm : icons.selected}>
+            <Popup>
+              <div className="p-2">
+                <h3 className={`font-bold ${selectedItem.source == 'umkm' ? 'text-blue-600' : 'text-green-600'}`}>{selectedItem.name}</h3>
+                <p className="text-sm text-gray-600">{selectedItem.category}</p>
+              </div>
+            </Popup>
+          </Marker>
         )}
       </MapContainer>
     </div>

@@ -282,7 +282,6 @@ export default function SearchUMKM() {
                     pelatihanData={scrapedData.pelatihan || []}
                     centroids={clusteringData.umkm?.centroids || []}
                     selectedItem={selectedItem}
-                    onMarkerClick={setSelectedItem}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded-lg">
@@ -295,43 +294,60 @@ export default function SearchUMKM() {
         </div>
         <div className=" gap-4 w-full mt-4">
           <div className="md:col-span-2 glass-card">
-            <div className="flex items-center gap-2 overflow-x-auto">
-              <button
-                onClick={() => setActiveTab('map')}
-                className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'map' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
-              >
-                🗺️ Map
-              </button>
-              <button
-                onClick={() => setActiveTab('stats')}
-                className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'stats' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
-              >
-                📊 Stats
-              </button>
-              <button
-                onClick={() => setActiveTab('ai')}
-                className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'ai' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
-              >
-                🤖 AI Insight
-              </button>
-              <button
-                onClick={() => setActiveTab('prediction')}
-                className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'prediction' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
-              >
-                🎯 Prediksi Lokasi
-              </button>
-              <button
-                onClick={() => setActiveTab('competitor')}
-                className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'competitor' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
-              >
-                🎯 Analisis Kompetitor
-              </button>
-              <button
-                onClick={() => setActiveTab('recommendations')}
-                className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'recommendations' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
-              >
-                ✨ Rekomendasi
-              </button>
+            {/* Desktop: button tabs; Mobile: select dropdown */}
+            <div className="flex items-center gap-2">
+              {/* Desktop buttons (hidden on mobile) */}
+              <div className="hidden md:flex items-center gap-2 overflow-x-auto">
+                <button
+                  onClick={() => setActiveTab('map')}
+                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'map' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
+                >
+                  🗺️ Map
+                </button>
+                <button
+                  onClick={() => setActiveTab('stats')}
+                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'stats' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
+                >
+                  📊 Stats
+                </button>
+                <button
+                  onClick={() => setActiveTab('ai')}
+                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'ai' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
+                >
+                  🤖 AI Insight
+                </button>
+                <button
+                  onClick={() => setActiveTab('prediction')}
+                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'prediction' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
+                >
+                  🎯 Prediksi Lokasi
+                </button>
+                <button
+                  onClick={() => setActiveTab('competitor')}
+                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'competitor' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
+                >
+                  🎯 Analisis Kompetitor
+                </button>
+                <button
+                  onClick={() => setActiveTab('recommendations')}
+                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'recommendations' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
+                >
+                  ✨ Rekomendasi
+                </button>
+              </div>
+
+              {/* Mobile select (visible on small screens) */}
+              <div className="w-full md:hidden">
+                <label className="sr-only">Pilih Tab</label>
+                <select value={activeTab} onChange={(e) => setActiveTab(e.target.value)} className="w-full rounded-md border px-3 py-2 bg-white dark:bg-zinc-900 text-sm text-zinc-700 dark:text-zinc-200">
+                  <option value="map">🗺️ Map</option>
+                  <option value="stats">📊 Stats</option>
+                  <option value="ai">🤖 AI Insight</option>
+                  <option value="prediction">🎯 Prediksi Lokasi</option>
+                  <option value="competitor">🎯 Analisis Kompetitor</option>
+                  <option value="recommendations">✨ Rekomendasi</option>
+                </select>
+              </div>
             </div>
 
             <div className="mt-4">
@@ -383,7 +399,14 @@ export default function SearchUMKM() {
                   onLocationSelect={(lat, lng) => {
                     setCenter([lat, lng]);
                     setZoom(15);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    if (typeof window !== 'undefined') {
+                      // Pada mobile (<= 768px) scroll ke tinggi device, selainnya scroll ke atas
+                      if (window.innerWidth <= 768) {
+                        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                      } else {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }
+                    }
                   }}
                 />
               )}
@@ -393,7 +416,14 @@ export default function SearchUMKM() {
                   onLocationSelect={(lat, lng) => {
                     setCenter([lat, lng]);
                     setZoom(15);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    if (typeof window !== 'undefined') {
+                      // Pada mobile (<= 768px) scroll ke tinggi device, selainnya scroll ke atas
+                      if (window.innerWidth <= 768) {
+                        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                      } else {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }
+                    }
                   }}
                 />
               )}
@@ -405,7 +435,15 @@ export default function SearchUMKM() {
                     if (item.lat && item.lon) {
                       setCenter([item.lat, item.lon]);
                     }
-                    setActiveTab('map');
+                    setZoom(100);
+                    if (typeof window !== 'undefined') {
+                      // Pada mobile (<= 768px) scroll ke tinggi device, selainnya scroll ke atas
+                      if (window.innerWidth <= 768) {
+                        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                      } else {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }
+                    }
                   }}
                 />
               )}
@@ -413,7 +451,6 @@ export default function SearchUMKM() {
           </div>
         </div>
       </div>
-
       {/* Map Picker Modal */}
       {showMapPicker && (
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">

@@ -3,84 +3,60 @@
  * Endpoint untuk rekomendasi personalized berdasarkan user behavior
  */
 
-import { NextResponse } from "next/server";
-import {
-  generatePersonalizedRecommendations,
-  getRecommendationsByCategory,
-  getRelatedRecommendations,
-  UserBehaviorTracker,
-} from "@/lib/services/recommendations";
-import supabaseService from "@/lib/services/supabase";
+import { NextResponse } from 'next/server';
+import { generatePersonalizedRecommendations, getRecommendationsByCategory, getRelatedRecommendations, UserBehaviorTracker } from '@/lib/services/recommendations';
+import supabaseService from '@/lib/services/supabase';
 
 export async function POST(request) {
   try {
     const body = await request.json();
-    const {
-      type,
-      behaviors = [],
-      category = null,
-      currentItem = null,
-      options = {},
-    } = body;
+    const { type, behaviors = [], category = null, currentItem = null, options = {} } = body;
 
     // Fetch data
-    const [umkmData, wisataData] = await Promise.all([
-      supabaseService.fetchUmkm(),
-      supabaseService.fetchWisata(),
-    ]);
+    const [umkmData, wisataData] = await Promise.all([supabaseService.fetchUmkm(), supabaseService.fetchWisata()]);
+
+    // Tambahkan kolom source ke tiap item
+    const umkmWithSource = umkmData.map((d) => ({ ...d, source: 'umkm' }));
+    const wisataWithSource = wisataData.map((d) => ({ ...d, source: 'wisata' }));
 
     // Create tracker dari behaviors yang dikirim client
     const tracker = new UserBehaviorTracker();
-    // Override behaviors untuk server-side processing
     tracker.behaviors = behaviors;
 
     let result;
 
     switch (type) {
-      case "personalized":
-        // General personalized recommendations
-        result = generatePersonalizedRecommendations(
-          umkmData,
-          wisataData,
-          tracker,
-          options
-        );
+      case 'personalized':
+        // Gabungkan kedua jenis data untuk personalized
+        result = generatePersonalizedRecommendations(umkmWithSource, wisataWithSource, tracker, options);
         break;
 
-      case "category":
-        // Category-based with personalization
+      case 'category':
         if (!category) {
-          return NextResponse.json(
-            { success: false, error: "Category required" },
-            { status: 400 }
-          );
+          return NextResponse.json({ success: false, error: 'Category required' }, { status: 400 });
         }
         result = {
-          type: "category",
+          type: 'category',
           category,
           recommendations: getRecommendationsByCategory(
             category,
-            umkmData,
+            umkmWithSource, // hanya UMKM untuk kategori
             tracker,
             options
           ),
         };
         break;
 
-      case "related":
-        // Related to current item
+      case 'related':
         if (!currentItem) {
-          return NextResponse.json(
-            { success: false, error: "Current item required" },
-            { status: 400 }
-          );
+          return NextResponse.json({ success: false, error: 'Current item required' }, { status: 400 });
         }
         result = {
-          type: "related",
+          type: 'related',
           currentItem,
           recommendations: getRelatedRecommendations(
             currentItem,
-            umkmData,
+            umkmWithSource, // related hanya ke UMKM
             tracker,
             options
           ),
@@ -102,7 +78,7 @@ export async function POST(request) {
       ...result,
     });
   } catch (error) {
-    console.error("Recommendations error:", error);
+    console.error('Recommendations error:', error);
     return NextResponse.json(
       {
         success: false,
@@ -117,32 +93,33 @@ export async function POST(request) {
 export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
-    const limit = parseInt(searchParams.get("limit")) || 10;
-    const category = searchParams.get("category");
+    const limit = parseInt(searchParams.get('limit')) || 10;
+    const category = searchParams.get('category');
 
-    const umkmData = await supabaseService.fetchUmkm();
+    const umkmRaw = await supabaseService.fetchUmkm();
+
+    // Tambahkan source
+    const umkmData = umkmRaw.map((i) => ({ ...i, source: 'umkm' }));
 
     let recommendations;
     if (category) {
-      recommendations = umkmData
-        .filter((umkm) => umkm.category === category)
-        .slice(0, limit);
+      recommendations = umkmData.filter((umkm) => umkm.category === category).slice(0, limit);
     } else {
       recommendations = umkmData.slice(0, limit);
     }
 
     return NextResponse.json({
       success: true,
-      type: "quick",
+      type: 'quick',
       recommendations: recommendations.map((item) => ({
         ...item,
-        reason: "Rekomendasi populer",
+        reason: 'Rekomendasi populer',
         score: 60,
-        type: "popular",
+        type: 'popular',
       })),
     });
   } catch (error) {
-    console.error("Quick recommendations error:", error);
+    console.error('Quick recommendations error:', error);
     return NextResponse.json(
       {
         success: false,
