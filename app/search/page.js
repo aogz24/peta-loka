@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import { MapPin, TrendingUp, GraduationCap, Search, Loader2, MapPinned } from 'lucide-react';
+import { Loader2, MapPinned } from 'lucide-react';
 import AIAgentPanel from '@/components/AIAgentPanel';
 import ClusterStats from '@/components/ClusterStats';
 import LocationPredictionPanel from '@/components/LocationPredictionPanel';
