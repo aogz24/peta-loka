@@ -154,7 +154,7 @@ export default function RecommendationPanel({ onItemClick }) {
       <button
         onClick={handleGetRecommendations}
         disabled={loading}
-        className="w-full py-3 px-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-lg font-medium hover:from-pink-700 hover:to-purple-700 disabled:opacity-50 transition-all"
+        className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 transition-all"
       >
         {loading ? (
           <>

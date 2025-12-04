@@ -257,7 +257,11 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
 
       {/* Generate Button */}
       <div className="flex gap-3">
-        <button onClick={generateInsight} disabled={loading || (selectedType === 'chat' && !query)} className="flex-1 glass-btn inline-flex items-center justify-center gap-2 disabled:opacity-60">
+        <button
+          onClick={generateInsight}
+          disabled={loading || (selectedType === 'chat' && !query)}
+          className=" flex gap-4 justify-center w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 transition-all"
+        >
           {loading ? (
             <>
               <Loader2 className="w-5 h-5 animate-spin" />
