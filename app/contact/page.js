@@ -18,8 +18,8 @@ export default function Page() {
           <h3 className="font-semibold mb-2">Informasi Kontak</h3>
           <p className="text-sm text-zinc-700 dark:text-zinc-300">
             Email:{' '}
-            <a className="text-blue-600" href="mailto:hello@peta-loka.example">
-              hello@peta-loka.example
+            <a className="text-blue-600" href="mailto:ragus8188@gmail.com">
+              ragus8188@gmail.com
             </a>
           </p>
           <p className="mt-3 text-sm">Sumber data & docs:</p>
