@@ -84,6 +84,7 @@ export default function SearchUMKM() {
 
   const handleLocationChange = () => {
     handleScrapeAndCluster();
+    setSelectedItem(null);
     setZoom(13);
   };
 
