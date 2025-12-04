@@ -407,8 +407,8 @@ export default function SearchUMKM() {
                     onMarkerClick={setSelectedItem}
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded-lg">
-                    <p className="text-gray-500">
+                  <div className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg">
+                    <p className="text-gray-500 dark:text-gray-400">
                       {loading
                         ? "Memuat data..."
                         : 'Klik "Cari Data" untuk memulai'}
@@ -554,6 +554,15 @@ export default function SearchUMKM() {
                     Analisis AI akan tersedia setelah data diperoleh.
                   </div>
                 ))}
+
+              {activeTab === "prediction" && (
+                <LocationPredictionPanel
+                  onLocationSelect={(active) => {
+                    setMapSelectorActive(active);
+                  }}
+                  selectedLocation={selectedLocation}
+                />
+              )}
 
               {activeTab === "prediction" && (
                 <LocationPredictionPanel
