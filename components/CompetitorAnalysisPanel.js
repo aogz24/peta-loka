@@ -22,7 +22,7 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
   const [radius, setRadius] = useState(1.0);
   const [includeAll, setIncludeAll] = useState(false);
   const [mode, setMode] = useState('manual'); // 'manual' or 'picker'
-  const [showPicker, setShowPicker] = useState(false);
+  const [showMapPicker, setShowMapPicker] = useState(false);
 
   const handleAnalyze = async () => {
     if (!lat || !lng) {
@@ -114,7 +114,7 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
             {/* Pilih dari Peta */}
             <button
               onClick={() => {
-                setShowPicker(true);
+                setShowMapPicker(true);
                 setMode('picker');
               }}
               className={`px-3 py-2 rounded-lg border font-medium transition text-xs ${
@@ -126,34 +126,15 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
           </div>
         </div>
 
-        {showPicker && (
-          <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 h-full w-full">
-            <div className="bg-white dark:bg-gray-900 dark:text-white p-4 rounded-lg shadow-lg lg:w-1/2 w-3/4 h-3/4 relative overflow-auto">
-              <h2 className="font-semibold mb-2">Pilih Lokasi dari Peta</h2>
-
-              <MapComponent
-                className="h-full rounded-lg"
-                center={[-6.914742, 107.614526]}
-                zoom={13}
-                radius={radius}
-                selectMode
-                onSelectLocation={(lat, lon) => {
-                  setLat(lat);
-                  setLng(lon);
-                  setShowPicker(false);
-                }}
-              />
-
-              <button onClick={() => setShowPicker(false)} className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded">
-                X
-              </button>
-            </div>
-          </div>
-        )}
-
         <div>
           <label className="block text-xs font-medium text-gray-700 mb-1 dark:text-gray-300">Kategori (opsional)</label>
-          <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm" placeholder="e.g., Kuliner, Kerajinan" />
+          <input
+            type="text"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 rounded-lg text-sm"
+            placeholder="e.g., Kuliner, Kerajinan"
+          />
         </div>
 
         <div>
@@ -298,6 +279,34 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
               </div>
             </div>
           )}
+        </div>
+      )}
+
+      {/* Map Picker Modal */}
+      {showMapPicker && (
+        <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+          <div className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 h-3/4 relative">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="font-semibold text-lg">Pilih Lokasi dari Peta</h2>
+              <button onClick={() => setShowMapPicker(false)} className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="h-[calc(100%-60px)]">
+              <MapComponent
+                center={lat && lng ? [parseFloat(lat), parseFloat(lng)] : [-6.2088, 106.8456]}
+                zoom={13}
+                selectMode
+                onSelectLocation={(selectedLat, selectedLng) => {
+                  setLat(selectedLat.toFixed(6));
+                  setLng(selectedLng.toFixed(6));
+                  setShowMapPicker(false);
+                }}
+              />
+            </div>
+          </div>
         </div>
       )}
     </div>

@@ -28,8 +28,9 @@ export default function SearchUMKM() {
   const [clusteringData, setClusteringData] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
   const [activeTab, setActiveTab] = useState('map');
-  const [showPicker, setShowPicker] = useState(false);
+  const [showMapPicker, setShowMapPicker] = useState(false);
   const [mode, setMode] = useState('manual'); // manual, current, map
+  const [zoom, setZoom] = useState(13);
 
   // Auto-load data on mount
   useEffect(() => {
@@ -83,6 +84,7 @@ export default function SearchUMKM() {
 
   const handleLocationChange = () => {
     handleScrapeAndCluster();
+    setZoom(13);
   };
 
   return (
@@ -248,7 +250,7 @@ export default function SearchUMKM() {
                 {/* Pilih dari Peta */}
                 <button
                   onClick={() => {
-                    setShowPicker(true);
+                    setShowMapPicker(true);
                     setMode('picker');
                   }}
                   className={`px-3 py-2 rounded-lg border font-medium transition ${
@@ -266,30 +268,6 @@ export default function SearchUMKM() {
             </button>
           </aside>
 
-          {showPicker && (
-            <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 h-full w-full">
-              <div className="bg-white dark:bg-gray-900 dark:text-white p-4 rounded-lg shadow-lg lg:w-1/2 w-3/4 h-3/4 relative overflow-auto">
-                <h2 className="font-semibold mb-2">Pilih Lokasi dari Peta</h2>
-
-                <MapComponent
-                  className="h-full rounded-lg"
-                  center={center}
-                  zoom={13}
-                  radius={radius}
-                  selectMode
-                  onSelectLocation={(lat, lon) => {
-                    setCenter([lat, lon]);
-                    setShowPicker(false);
-                  }}
-                />
-
-                <button onClick={() => setShowPicker(false)} className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded">
-                  X
-                </button>
-              </div>
-            </div>
-          )}
-
           {/* Right: Map and Panels */}
           <main className="lg:col-span-2 space-y-6">
             <div className="glass-card p-0 overflow-hidden">
@@ -297,7 +275,7 @@ export default function SearchUMKM() {
                 {scrapedData && clusteringData ? (
                   <MapComponent
                     center={center}
-                    zoom={13}
+                    zoom={zoom}
                     radius={radius}
                     umkmData={scrapedData.umkm || []}
                     wisataData={scrapedData.wisata || []}
@@ -404,7 +382,8 @@ export default function SearchUMKM() {
                 <LocationPredictionPanel
                   onLocationSelect={(lat, lng) => {
                     setCenter([lat, lng]);
-                    setActiveTab('map');
+                    setZoom(15);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                 />
               )}
@@ -413,7 +392,8 @@ export default function SearchUMKM() {
                 <CompetitorAnalysisPanel
                   onLocationSelect={(lat, lng) => {
                     setCenter([lat, lng]);
-                    setActiveTab('map');
+                    setZoom(15);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                 />
               )}
@@ -433,6 +413,33 @@ export default function SearchUMKM() {
           </div>
         </div>
       </div>
+
+      {/* Map Picker Modal */}
+      {showMapPicker && (
+        <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+          <div className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 h-3/4 relative">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="font-semibold text-lg">Pilih Lokasi dari Peta</h2>
+              <button onClick={() => setShowMapPicker(false)} className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="h-[calc(100%-60px)]">
+              <MapComponent
+                center={center ? [parseFloat(center[0]), parseFloat(center[1])] : [-6.2088, 106.8456]}
+                zoom={13}
+                selectMode
+                onSelectLocation={(selectedLat, selectedLng) => {
+                  setCenter([selectedLat, selectedLng]);
+                  setShowMapPicker(false);
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

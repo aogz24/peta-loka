@@ -10,7 +10,7 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <header className="w-full backdrop-blur-md bg-white/70 dark:bg-gray-900 dark:border-gray-700  supports-[backdrop-filter]:bg-white/40  border-b border-white/20 dark:border-white/5 shadow-sm">
+    <header className="w-full backdrop-blur-md bg-white/70 dark:bg-gray-900 dark:border-gray-700  supports-[backdrop-filter]:bg-white/40  border-b border-white/20 dark:border-white/5 shadow-sm fixed top-0 left-0 z-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3">
           {/* Logo Section */}
