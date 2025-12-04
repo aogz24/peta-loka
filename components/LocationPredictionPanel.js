@@ -20,6 +20,17 @@ const MapComponent = dynamic(() => import("@/components/MapComponent"), {
   ),
 });
 
+import dynamic from 'next/dynamic';
+// Dynamic import untuk MapComponent (client-side only)
+const MapComponent = dynamic(() => import('@/components/MapComponent'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg">
+      <Loader2 className="w-8 h-8 animate-spin text-blue-600 dark:text-blue-100" />
+    </div>
+  ),
+});
+
 export default function LocationPredictionPanel({ onLocationSelect }) {
   const [mode, setMode] = useState("scan"); // 'scan' atau 'analyze'
   const [loading, setLoading] = useState(false);
@@ -27,7 +38,12 @@ export default function LocationPredictionPanel({ onLocationSelect }) {
   const [selectedLat, setSelectedLat] = useState("");
   const [selectedLng, setSelectedLng] = useState("");
   const [searchRadius, setSearchRadius] = useState(1.0);
+<<<<<<< HEAD
   const [showMapPicker, setShowMapPicker] = useState(false);
+=======
+  const [modePoint, setModePoint] = useState('manual'); // 'manual' or 'picker'
+  const [showPicker, setShowPicker] = useState(false);
+>>>>>>> d2ba357aeeb9a820e31b2f521302684bf8a313a2
 
   const handleScanArea = async () => {
     setLoading(true);
@@ -153,6 +169,7 @@ export default function LocationPredictionPanel({ onLocationSelect }) {
           </p>
           <div className="grid grid-cols-2 gap-2">
             <div>
+<<<<<<< HEAD
               <label className="block text-xs font-medium text-gray-700 mb-1 dark:text-gray-300">
                 Latitude
               </label>
@@ -162,10 +179,21 @@ export default function LocationPredictionPanel({ onLocationSelect }) {
                 value={selectedLat}
                 onChange={(e) => setSelectedLat(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 rounded-lg text-sm"
+=======
+              <label className="block text-xs font-medium text-gray-700 mb-1 dark:text-gray-300">Latitude</label>
+              <input
+                type="number"
+                step="0.000001"
+                disabled={modePoint !== 'manual'}
+                value={selectedLat}
+                onChange={(e) => setSelectedLat(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
+>>>>>>> d2ba357aeeb9a820e31b2f521302684bf8a313a2
                 placeholder="-6.914742"
               />
             </div>
             <div>
+<<<<<<< HEAD
               <label className="block text-xs font-medium text-gray-700 mb-1 dark:text-gray-300">
                 Longitude
               </label>
@@ -175,11 +203,22 @@ export default function LocationPredictionPanel({ onLocationSelect }) {
                 value={selectedLng}
                 onChange={(e) => setSelectedLng(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 rounded-lg text-sm"
+=======
+              <label className="block text-xs font-medium text-gray-700 mb-1 dark:text-gray-300">Longitude</label>
+              <input
+                type="number"
+                step="0.000001"
+                disabled={modePoint !== 'manual'}
+                value={selectedLng}
+                onChange={(e) => setSelectedLng(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
+>>>>>>> d2ba357aeeb9a820e31b2f521302684bf8a313a2
                 placeholder="107.614526"
               />
             </div>
           </div>
 
+<<<<<<< HEAD
           {/* Button Pilih dari Peta */}
           <button
             onClick={() => setShowMapPicker(true)}
@@ -188,6 +227,62 @@ export default function LocationPredictionPanel({ onLocationSelect }) {
             <MapPin className="w-4 h-4" />
             Pilih Lokasi dari Peta
           </button>
+=======
+          {/* Method Buttons */}
+          <div className="mt-4 space-y-2">
+            <label className=" text-gray-700 text-xs">Metode Pemilihan Lokasi</label>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {/* Manual Input */}
+              <button
+                onClick={() => setMode('manual')}
+                className={`px-3 py-2 rounded-lg border font-medium transition text-xs ${
+                  modePoint === 'manual' ? 'border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700' : 'border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700'
+                }`}
+              >
+                Input Manual
+              </button>
+
+              {/* Pilih dari Peta */}
+              <button
+                onClick={() => {
+                  setShowPicker(true);
+                  setModePoint('picker');
+                }}
+                className={`px-3 py-2 rounded-lg border font-medium transition text-xs ${
+                  modePoint === 'picker' ? 'border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700' : 'border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700'
+                }`}
+              >
+                Pilih Lokasi Lewat Peta
+              </button>
+            </div>
+          </div>
+
+          {showPicker && (
+            <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 h-full w-full">
+              <div className="bg-white dark:bg-gray-900 dark:text-white p-4 rounded-lg shadow-lg lg:w-1/2 w-3/4 h-3/4 relative overflow-auto">
+                <h2 className="font-semibold mb-2">Pilih Lokasi dari Peta</h2>
+
+                <MapComponent
+                  className="h-full rounded-lg"
+                  center={[-6.914742, 107.614526]}
+                  zoom={13}
+                  radius={searchRadius}
+                  selectMode
+                  onSelectLocation={(lat, lon) => {
+                    setSelectedLat(lat);
+                    setSelectedLng(lon);
+                    setShowPicker(false);
+                  }}
+                />
+
+                <button onClick={() => setShowPicker(false)} className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded">
+                  X
+                </button>
+              </div>
+            </div>
+          )}
+>>>>>>> d2ba357aeeb9a820e31b2f521302684bf8a313a2
           <div>
             <label className="block text-xs font-medium text-gray-700 mb-1 dark:text-gray-300">
               Radius Analisis (km): {searchRadius}
@@ -205,7 +300,7 @@ export default function LocationPredictionPanel({ onLocationSelect }) {
           <button
             onClick={handleAnalyzeLocation}
             disabled={loading}
-            className="w-full py-3 px-4 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg font-medium hover:from-green-700 hover:to-teal-700 disabled:opacity-50 transition-all"
+            className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 transition-all"
           >
             {loading ? (
               <>

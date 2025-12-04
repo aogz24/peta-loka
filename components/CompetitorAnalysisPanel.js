@@ -1,5 +1,6 @@
 "use client";
 
+<<<<<<< HEAD
 import { useState } from "react";
 import {
   Target,
@@ -15,6 +16,17 @@ const MapComponent = dynamic(() => import("@/components/MapComponent"), {
   loading: () => (
     <div className="w-full h-full flex items-center justify-center">
       <Loader2 className="w-8 h-8 animate-spin" />
+=======
+import { useState } from 'react';
+import { Target, TrendingDown, AlertCircle, Loader2, MapPin } from 'lucide-react';
+import dynamic from 'next/dynamic';
+// Dynamic import untuk MapComponent (client-side only)
+const MapComponent = dynamic(() => import('@/components/MapComponent'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg">
+      <Loader2 className="w-8 h-8 animate-spin text-blue-600 dark:text-blue-100" />
+>>>>>>> d2ba357aeeb9a820e31b2f521302684bf8a313a2
     </div>
   ),
 });
@@ -27,7 +39,12 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
   const [category, setCategory] = useState("");
   const [radius, setRadius] = useState(1.0);
   const [includeAll, setIncludeAll] = useState(false);
+<<<<<<< HEAD
   const [showMapPicker, setShowMapPicker] = useState(false);
+=======
+  const [mode, setMode] = useState('manual'); // 'manual' or 'picker'
+  const [showPicker, setShowPicker] = useState(false);
+>>>>>>> d2ba357aeeb9a820e31b2f521302684bf8a313a2
 
   const handleAnalyze = async () => {
     if (!lat || !lng) {
@@ -97,6 +114,7 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
       <div className="space-y-3">
         <div className="grid grid-cols-2 gap-2">
           <div>
+<<<<<<< HEAD
             <label className="block text-xs font-medium text-gray-700 mb-1 dark:text-gray-300">
               Latitude
             </label>
@@ -132,6 +150,71 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
           <MapPin className="w-4 h-4" />
           Pilih Lokasi dari Peta
         </button>
+=======
+            <label className="block text-xs font-medium text-gray-700 mb-1 dark:text-gray-300">Latitude</label>
+            <input type="number" step="0.000001" disabled={mode !== 'manual'} value={lat} onChange={(e) => setLat(e.target.value)} className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm" placeholder="-6.914742" />
+          </div>
+          <div>
+            <label className="block text-xs font-medium text-gray-700 mb-1">Longitude</label>
+            <input type="number" step="0.000001" disabled={mode !== 'manual'} value={lng} onChange={(e) => setLng(e.target.value)} className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm" placeholder="107.614526" />
+          </div>
+        </div>
+
+        {/* Method Buttons */}
+        <div className="mt-4 space-y-2">
+          <label className=" text-gray-700 text-xs">Metode Pemilihan Lokasi</label>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {/* Manual Input */}
+            <button
+              onClick={() => setMode('manual')}
+              className={`px-3 py-2 rounded-lg border font-medium transition text-xs ${
+                mode === 'manual' ? 'border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700' : 'border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700'
+              }`}
+            >
+              Input Manual
+            </button>
+
+            {/* Pilih dari Peta */}
+            <button
+              onClick={() => {
+                setShowPicker(true);
+                setMode('picker');
+              }}
+              className={`px-3 py-2 rounded-lg border font-medium transition text-xs ${
+                mode === 'picker' ? 'border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700' : 'border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700'
+              }`}
+            >
+              Pilih Lokasi Lewat Peta
+            </button>
+          </div>
+        </div>
+
+        {showPicker && (
+          <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 h-full w-full">
+            <div className="bg-white dark:bg-gray-900 dark:text-white p-4 rounded-lg shadow-lg lg:w-1/2 w-3/4 h-3/4 relative overflow-auto">
+              <h2 className="font-semibold mb-2">Pilih Lokasi dari Peta</h2>
+
+              <MapComponent
+                className="h-full rounded-lg"
+                center={[-6.914742, 107.614526]}
+                zoom={13}
+                radius={radius}
+                selectMode
+                onSelectLocation={(lat, lon) => {
+                  setLat(lat);
+                  setLng(lon);
+                  setShowPicker(false);
+                }}
+              />
+
+              <button onClick={() => setShowPicker(false)} className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded">
+                X
+              </button>
+            </div>
+          </div>
+        )}
+>>>>>>> d2ba357aeeb9a820e31b2f521302684bf8a313a2
 
         <div>
           <label className="block text-xs font-medium text-gray-700 mb-1 dark:text-gray-300">
@@ -180,7 +263,7 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
         <button
           onClick={handleAnalyze}
           disabled={loading}
-          className="w-full py-3 px-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 transition-all"
+          className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 transition-all"
         >
           {loading ? (
             <>
