@@ -85,14 +85,18 @@ export default function LocationPredictionPanel({ onLocationSelect }) {
       <div className="flex gap-2">
         <button
           onClick={() => setMode('scan')}
-          className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors ${mode === 'scan' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-gray-800'}`}
+          className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors cursor-pointer hover:brightness-90 ${
+            mode === 'scan' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-gray-800'
+          }`}
         >
           <Search className="w-4 h-4 inline mr-2" />
           Scan Area
         </button>
         <button
           onClick={() => setMode('analyze')}
-          className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors ${mode === 'analyze' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-gray-800'}`}
+          className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors cursor-pointer hover:brightness-90  ${
+            mode === 'analyze' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-gray-800'
+          }`}
         >
           <Target className="w-4 h-4 inline mr-2" />
           Analyze Point
@@ -106,7 +110,7 @@ export default function LocationPredictionPanel({ onLocationSelect }) {
           <button
             onClick={handleScanArea}
             disabled={loading}
-            className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 transition-all"
+            className="w-full py-3 px-4 cursor-pointer hover:brightness-90 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 transition-all"
           >
             {loading ? (
               <>
@@ -162,7 +166,7 @@ export default function LocationPredictionPanel({ onLocationSelect }) {
               {/* Manual Input */}
               <button
                 onClick={() => setModePoint('manual')}
-                className={`px-3 py-2 rounded-lg border font-medium transition text-xs ${
+                className={`px-3 py-2 rounded-lg border font-medium transition text-xs cursor-pointer hover:brightness-90 ${
                   modePoint === 'manual' ? 'border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700' : 'border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700'
                 }`}
               >
@@ -175,7 +179,7 @@ export default function LocationPredictionPanel({ onLocationSelect }) {
                   setShowMapPicker(true);
                   setModePoint('picker');
                 }}
-                className={`px-3 py-2 rounded-lg border font-medium transition text-xs ${
+                className={`px-3 py-2 rounded-lg border font-medium transition text-xs cursor-pointer hover:brightness-90 ${
                   modePoint === 'picker' ? 'border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700' : 'border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700'
                 }`}
               >
@@ -191,7 +195,7 @@ export default function LocationPredictionPanel({ onLocationSelect }) {
           <button
             onClick={handleAnalyzeLocation}
             disabled={loading}
-            className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 transition-all"
+            className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 cursor-pointer  text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 transition-all"
           >
             {loading ? (
               <>

@@ -241,7 +241,7 @@ export default function SearchUMKM() {
                 {/* Manual Input */}
                 <button
                   onClick={() => setMode('manual')}
-                  className={`px-3 py-2 rounded-lg border font-medium transition ${
+                  className={`px-3 py-1 cursor-pointer text-sm rounded-lg border font-medium transition hover:brightness-90 ${
                     mode === 'manual' ? 'border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700' : 'border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700'
                   }`}
                 >
@@ -254,7 +254,7 @@ export default function SearchUMKM() {
                     setShowMapPicker(true);
                     setMode('picker');
                   }}
-                  className={`px-3 py-2 rounded-lg border font-medium transition ${
+                  className={`px-3 py-1 cursor-pointer text-sm rounded-lg border font-medium transition hover:brightness-90 ${
                     mode === 'picker' ? 'border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700' : 'border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700'
                   }`}
                 >
@@ -264,7 +264,7 @@ export default function SearchUMKM() {
             </div>
 
             {/* Button */}
-            <button onClick={handleLocationChange} disabled={loading} className="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-semibold">
+            <button onClick={handleLocationChange} disabled={loading} className="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-semibold cursor-pointer">
               {loading ? 'Memuat...' : 'Cari Data'}
             </button>
           </aside>
@@ -301,37 +301,49 @@ export default function SearchUMKM() {
               <div className="hidden md:flex items-center gap-2 overflow-x-auto">
                 <button
                   onClick={() => setActiveTab('map')}
-                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'map' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
+                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap cursor-pointer hover:brightness-90 ${
+                    activeTab === 'map' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'
+                  }`}
                 >
                   🗺️ Map
                 </button>
                 <button
                   onClick={() => setActiveTab('stats')}
-                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'stats' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
+                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap cursor-pointer hover:brightness-90 ${
+                    activeTab === 'stats' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'
+                  }`}
                 >
                   📊 Stats
                 </button>
                 <button
                   onClick={() => setActiveTab('ai')}
-                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'ai' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
+                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap cursor-pointer hover:brightness-90 ${
+                    activeTab === 'ai' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'
+                  }`}
                 >
                   🤖 AI Insight
                 </button>
                 <button
                   onClick={() => setActiveTab('prediction')}
-                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'prediction' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
+                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap cursor-pointer hover:brightness-90 ${
+                    activeTab === 'prediction' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'
+                  }`}
                 >
                   🎯 Prediksi Lokasi
                 </button>
                 <button
                   onClick={() => setActiveTab('competitor')}
-                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'competitor' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
+                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap cursor-pointer hover:brightness-90 ${
+                    activeTab === 'competitor' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'
+                  }`}
                 >
                   🎯 Analisis Kompetitor
                 </button>
                 <button
                   onClick={() => setActiveTab('recommendations')}
-                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap ${activeTab === 'recommendations' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'}`}
+                  className={`px-3 py-2 rounded-md text-sm whitespace-nowrap cursor-pointer hover:brightness-90 ${
+                    activeTab === 'recommendations' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'
+                  }`}
                 >
                   ✨ Rekomendasi
                 </button>

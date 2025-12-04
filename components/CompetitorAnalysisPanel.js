@@ -140,7 +140,7 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
             {/* Manual Input */}
             <button
               onClick={() => setMode('manual')}
-              className={`px-3 py-2 rounded-lg border font-medium transition text-xs ${
+              className={`px-3 py-2 rounded-lg border font-medium transition text-xs cursor-pointer hover:brightness-90 ${
                 mode === 'manual' ? 'border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700' : 'border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700'
               }`}
             >
@@ -153,7 +153,7 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
                 setShowMapPicker(true);
                 setMode('picker');
               }}
-              className={`px-3 py-2 rounded-lg border font-medium transition text-xs ${
+              className={`px-3 py-2 rounded-lg border font-medium transition text-xs cursor-pointer hover:brightness-90 ${
                 mode === 'picker' ? 'border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700' : 'border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700'
               }`}
             >
