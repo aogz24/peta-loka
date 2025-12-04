@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Target, TrendingDown, AlertCircle, Loader2, MapPin } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import Select from 'react-select';
 // Dynamic import untuk MapComponent (client-side only)
 const MapComponent = dynamic(() => import('@/components/MapComponent'), {
   ssr: false,
@@ -18,11 +19,444 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
   const [analysis, setAnalysis] = useState(null);
   const [lat, setLat] = useState('');
   const [lng, setLng] = useState('');
-  const [category, setCategory] = useState('');
+  const [selectedCategories, setSelectedCategories] = useState([]);
   const [radius, setRadius] = useState(1.0);
   const [includeAll, setIncludeAll] = useState(false);
   const [mode, setMode] = useState('manual'); // 'manual' or 'picker'
-  const [showMapPicker, setShowMapPicker] = useState(false);
+  const [showPicker, setShowPicker] = useState(false);
+  
+  const kategoriOptions = useMemo(() => [
+    { value: 'accessories', label: 'Accessories' },
+    { value: 'advertising_agency', label: 'Advertising Agency' },
+    { value: 'agrarian', label: 'Agrarian' },
+    { value: 'alcohol', label: 'Alcohol' },
+    { value: 'appliance', label: 'Appliance' },
+    { value: 'architect', label: 'Architect' },
+    { value: 'art', label: 'Art' },
+    { value: 'association', label: 'Association' },
+    { value: 'baby_goods', label: 'Baby Goods' },
+    { value: 'bag', label: 'Bag' },
+    { value: 'bakery', label: 'Bakery' },
+    { value: 'beauty', label: 'Beauty' },
+    { value: 'beverages', label: 'Beverages' },
+    { value: 'bicycle', label: 'Bicycle' },
+    { value: 'bookmaker', label: 'Bookmaker' },
+    { value: 'books', label: 'Books' },
+    { value: 'boutique', label: 'Boutique' },
+    { value: 'building_material', label: 'Building Material' },
+    { value: 'butcher', label: 'Butcher' },
+    { value: 'car', label: 'Car' },
+    { value: 'car_parts', label: 'Car Parts' },
+    { value: 'car_repair', label: 'Car Repair' },
+    { value: 'Cellullar', label: 'Cellular' },
+    { value: 'chemist', label: 'Chemist' },
+    { value: 'clothes', label: 'Clothes' },
+    { value: 'coffee', label: 'Coffee' },
+    { value: 'company', label: 'Company' },
+    { value: 'computer', label: 'Computer' },
+    { value: 'confectionery', label: 'Confectionery' },
+    { value: 'consulting', label: 'Consulting' },
+    { value: 'convenience', label: 'Convenience' },
+    { value: 'copyshop', label: 'Copyshop' },
+    { value: 'cosmetics', label: 'Cosmetics' },
+    { value: 'courier', label: 'Courier' },
+    { value: 'coworking', label: 'Coworking' },
+    { value: 'dairy', label: 'Dairy' },
+    { value: 'department_store', label: 'Department Store' },
+    { value: 'Distributor', label: 'Distributor' },
+    { value: 'doityourself', label: 'Do It Yourself' },
+    { value: 'dry_cleaning', label: 'Dry Cleaning' },
+    { value: 'e-cigarette', label: 'E-Cigarette' },
+    { value: 'educational_institution', label: 'Educational Institution' },
+    { value: 'electrical', label: 'Electrical' },
+    { value: 'electronics', label: 'Electronics' },
+    { value: 'electronics_repair', label: 'Electronics Repair' },
+    { value: 'employment_agency', label: 'Employment Agency' },
+    { value: 'estate_agent', label: 'Estate Agent' },
+    { value: 'fabric', label: 'Fabric' },
+    { value: 'fashion', label: 'Fashion' },
+    { value: 'fashion_accessories', label: 'Fashion Accessories' },
+    { value: 'financial', label: 'Financial' },
+    { value: 'florist', label: 'Florist' },
+    { value: 'food', label: 'Food' },
+    { value: 'frame', label: 'Frame' },
+    { value: 'frozen_food', label: 'Frozen Food' },
+    { value: 'funeral_directors', label: 'Funeral Directors' },
+    { value: 'furniture', label: 'Furniture' },
+    { value: 'games', label: 'Games' },
+    { value: 'general', label: 'General' },
+    { value: 'gift', label: 'Gift' },
+    { value: 'government', label: 'Government' },
+    { value: 'greengrocer', label: 'Greengrocer' },
+    { value: 'grocery', label: 'Grocery' },
+    { value: 'hairdresser', label: 'Hairdresser' },
+    { value: 'hardware', label: 'Hardware' },
+    { value: 'health_food', label: 'Health Food' },
+    { value: 'health_insurance', label: 'Health Insurance' },
+    { value: 'hearing_aids', label: 'Hearing Aids' },
+    { value: 'hifi', label: 'HiFi' },
+    { value: 'houseware', label: 'Houseware' },
+    { value: 'insurance', label: 'Insurance' },
+    { value: 'it', label: 'IT' },
+    { value: 'jeweller', label: 'Jeweller' },
+    { value: 'jewelry', label: 'Jewelry' },
+    { value: 'Keyboard', label: 'Keyboard' },
+    { value: 'kiosk', label: 'Kiosk' },
+    { value: 'kitchen', label: 'Kitchen' },
+    { value: 'laundry', label: 'Laundry' },
+    { value: 'lawyer', label: 'Lawyer' },
+    { value: 'lighting', label: 'Lighting' },
+    { value: 'locksmith', label: 'Locksmith' },
+    { value: 'logistics', label: 'Logistics' },
+    { value: 'mall', label: 'Mall' },
+    { value: 'massage', label: 'Massage' },
+    { value: 'medical_supply', label: 'Medical Supply' },
+    { value: 'metal_construction', label: 'Metal Construction' },
+    { value: 'metal_works', label: 'Metal Works' },
+    { value: 'mobile_phone', label: 'Mobile Phone' },
+    { value: 'motorcycle', label: 'Motorcycle' },
+    { value: 'motorcycle_repair', label: 'Motorcycle Repair' },
+    { value: 'music', label: 'Music' },
+    { value: 'musical_instrument', label: 'Musical Instrument' },
+    { value: 'newspaper', label: 'Newspaper' },
+    { value: 'ngo', label: 'NGO' },
+    { value: 'no', label: 'No' },
+    { value: 'notary', label: 'Notary' },
+    { value: 'optician', label: 'Optician' },
+    { value: 'outdoor', label: 'Outdoor' },
+    { value: 'paint', label: 'Paint' },
+    { value: 'pastry', label: 'Pastry' },
+  ], []);
+
+  const allOption = { value: '*', label: 'Select All' };
+
+  const handleCategoryChange = (selected) => {
+    if (!selected || selected.length === 0) {
+      setSelectedCategories([]);
+      return;
+    }
+
+    // Check if "Select All" was clicked
+    const selectAllClicked = selected.some((option) => option.value === '*');
+    const wasAllSelected = selectedCategories.some((option) => option.value === '*');
+
+    if (selectAllClicked && !wasAllSelected) {
+      // User clicked "Select All" - select all options
+      setSelectedCategories([allOption, ...kategoriOptions]);
+    } else if (!selectAllClicked && wasAllSelected) {
+      // User deselected "Select All" - clear all
+      setSelectedCategories([]);
+    } else if (selected.length === kategoriOptions.length + 1) {
+      // All individual options selected - add "Select All"
+      setSelectedCategories([allOption, ...kategoriOptions]);
+    } else {
+      // Normal selection - remove "Select All" if present
+      setSelectedCategories(selected.filter((option) => option.value !== '*'));
+    }
+  };
+  
+  const kategori = [
+    {
+      category: "accessories",
+    },
+    {
+      category: "advertising_agency",
+    },
+    {
+      category: "agrarian",
+    },
+    {
+      category: "alcohol",
+    },
+    {
+      category: "appliance",
+    },
+    {
+      category: "architect",
+    },
+    {
+      category: "art",
+    },
+    {
+      category: "association",
+    },
+    {
+      category: "baby_goods",
+    },
+    {
+      category: "bag",
+    },
+    {
+      category: "bakery",
+    },
+    {
+      category: "beauty",
+    },
+    {
+      category: "beverages",
+    },
+    {
+      category: "bicycle",
+    },
+    {
+      category: "bookmaker",
+    },
+    {
+      category: "books",
+    },
+    {
+      category: "boutique",
+    },
+    {
+      category: "building_material",
+    },
+    {
+      category: "butcher",
+    },
+    {
+      category: "car",
+    },
+    {
+      category: "car_parts",
+    },
+    {
+      category: "car_repair",
+    },
+    {
+      category: "Cellullar",
+    },
+    {
+      category: "chemist",
+    },
+    {
+      category: "clothes",
+    },
+    {
+      category: "coffee",
+    },
+    {
+      category: "company",
+    },
+    {
+      category: "computer",
+    },
+    {
+      category: "confectionery",
+    },
+    {
+      category: "consulting",
+    },
+    {
+      category: "convenience",
+    },
+    {
+      category: "copyshop",
+    },
+    {
+      category: "cosmetics",
+    },
+    {
+      category: "courier",
+    },
+    {
+      category: "coworking",
+    },
+    {
+      category: "dairy",
+    },
+    {
+      category: "department_store",
+    },
+    {
+      category: "Distributor",
+    },
+    {
+      category: "doityourself",
+    },
+    {
+      category: "dry_cleaning",
+    },
+    {
+      category: "e-cigarette",
+    },
+    {
+      category: "educational_institution",
+    },
+    {
+      category: "electrical",
+    },
+    {
+      category: "electronics",
+    },
+    {
+      category: "electronics_repair",
+    },
+    {
+      category: "employment_agency",
+    },
+    {
+      category: "estate_agent",
+    },
+    {
+      category: "fabric",
+    },
+    {
+      category: "fashion",
+    },
+    {
+      category: "fashion_accessories",
+    },
+    {
+      category: "financial",
+    },
+    {
+      category: "florist",
+    },
+    {
+      category: "food",
+    },
+    {
+      category: "frame",
+    },
+    {
+      category: "frozen_food",
+    },
+    {
+      category: "funeral_directors",
+    },
+    {
+      category: "furniture",
+    },
+    {
+      category: "games",
+    },
+    {
+      category: "general",
+    },
+    {
+      category: "gift",
+    },
+    {
+      category: "government",
+    },
+    {
+      category: "greengrocer",
+    },
+    {
+      category: "grocery",
+    },
+    {
+      category: "hairdresser",
+    },
+    {
+      category: "hardware",
+    },
+    {
+      category: "health_food",
+    },
+    {
+      category: "health_insurance",
+    },
+    {
+      category: "hearing_aids",
+    },
+    {
+      category: "hifi",
+    },
+    {
+      category: "houseware",
+    },
+    {
+      category: "insurance",
+    },
+    {
+      category: "it",
+    },
+    {
+      category: "jeweller",
+    },
+    {
+      category: "jewelry",
+    },
+    {
+      category: "Keyboard",
+    },
+    {
+      category: "kiosk",
+    },
+    {
+      category: "kitchen",
+    },
+    {
+      category: "laundry",
+    },
+    {
+      category: "lawyer",
+    },
+    {
+      category: "lighting",
+    },
+    {
+      category: "locksmith",
+    },
+    {
+      category: "logistics",
+    },
+    {
+      category: "mall",
+    },
+    {
+      category: "massage",
+    },
+    {
+      category: "medical_supply",
+    },
+    {
+      category: "metal_construction",
+    },
+    {
+      category: "metal_works",
+    },
+    {
+      category: "mobile_phone",
+    },
+    {
+      category: "motorcycle",
+    },
+    {
+      category: "motorcycle_repair",
+    },
+    {
+      category: "music",
+    },
+    {
+      category: "musical_instrument",
+    },
+    {
+      category: "newspaper",
+    },
+    {
+      category: "ngo",
+    },
+    {
+      category: "no",
+    },
+    {
+      category: "notary",
+    },
+    {
+      category: "optician",
+    },
+    {
+      category: "outdoor",
+    },
+    {
+      category: "paint",
+    },
+    {
+      category: "pastry",
+    },
+  ];
 
   const handleAnalyze = async () => {
     if (!lat || !lng) {
@@ -32,7 +466,12 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
 
     setLoading(true);
     try {
-      const response = await fetch(`/api/competitor-analysis?lat=${lat}&lng=${lng}&category=${category}&radius=${radius}&includeAll=${includeAll}`);
+      const categories = selectedCategories
+        .filter((cat) => cat.value !== '*')
+        .map((cat) => cat.value)
+        .join(',');
+      
+      const response = await fetch(`/api/competitor-analysis?lat=${lat}&lng=${lng}&category=${categories}&radius=${radius}&includeAll=${includeAll}`);
       const data = await response.json();
 
       if (data.success) {
@@ -114,7 +553,7 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
             {/* Pilih dari Peta */}
             <button
               onClick={() => {
-                setShowMapPicker(true);
+                setShowPicker(true);
                 setMode('picker');
               }}
               className={`px-3 py-2 rounded-lg border font-medium transition text-xs ${
@@ -126,27 +565,90 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
           </div>
         </div>
 
+        {showPicker && (
+          <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 h-full w-full">
+            <div className="bg-white dark:bg-gray-900 dark:text-white p-4 rounded-lg shadow-lg lg:w-1/2 w-3/4 h-3/4 relative overflow-auto">
+              <h2 className="font-semibold mb-2">Pilih Lokasi dari Peta</h2>
+
+              <MapComponent
+                className="h-full rounded-lg"
+                center={[-6.914742, 107.614526]}
+                zoom={13}
+                radius={radius}
+                selectMode
+                onSelectLocation={(lat, lon) => {
+                  setLat(lat);
+                  setLng(lon);
+                  setShowPicker(false);
+                }}
+              />
+
+              <button onClick={() => setShowPicker(false)} className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded">
+                X
+              </button>
+            </div>
+          </div>
+        )}
+
         <div>
           <label className="block text-xs font-medium text-gray-700 mb-1 dark:text-gray-300">Kategori (opsional)</label>
-          <input
-            type="text"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 rounded-lg text-sm"
-            placeholder="e.g., Kuliner, Kerajinan"
+          <Select
+            isMulti
+            options={[allOption, ...kategoriOptions]}
+            value={selectedCategories}
+            onChange={handleCategoryChange}
+            placeholder="Pilih kategori..."
+            className="text-sm"
+            classNamePrefix="select"
+            styles={{
+              control: (base, state) => ({
+                ...base,
+                borderColor: state.isFocused ? '#3b82f6' : '#d1d5db',
+                '&:hover': {
+                  borderColor: '#3b82f6',
+                },
+                boxShadow: state.isFocused ? '0 0 0 1px #3b82f6' : 'none',
+              }),
+              menu: (base) => ({
+                ...base,
+                zIndex: 50,
+              }),
+              option: (base, state) => ({
+                ...base,
+                backgroundColor: state.isSelected 
+                  ? '#3b82f6' 
+                  : state.isFocused 
+                  ? '#dbeafe' 
+                  : 'white',
+                color: state.isSelected ? 'white' : '#1f2937',
+                fontWeight: state.data.value === '*' ? '600' : '400',
+                '&:active': {
+                  backgroundColor: '#3b82f6',
+                },
+              }),
+              multiValue: (base) => ({
+                ...base,
+                backgroundColor: '#dbeafe',
+              }),
+              multiValueLabel: (base) => ({
+                ...base,
+                color: '#1e40af',
+              }),
+              multiValueRemove: (base) => ({
+                ...base,
+                color: '#1e40af',
+                '&:hover': {
+                  backgroundColor: '#3b82f6',
+                  color: 'white',
+                },
+              }),
+            }}
           />
         </div>
 
         <div>
           <label className="block text-xs font-medium text-gray-700 mb-1 dark:text-gray-300">Radius Analisis (km): {radius}</label>
           <input type="range" min="0.3" max="5" step="0.1" value={radius} onChange={(e) => setRadius(parseFloat(e.target.value))} className="w-full" />
-        </div>
-
-        <div className="flex items-center">
-          <input type="checkbox" id="includeAll" checked={includeAll} onChange={(e) => setIncludeAll(e.target.checked)} className="mr-2" />
-          <label htmlFor="includeAll" className="text-sm text-gray-700 dark:text-gray-300">
-            Tampilkan semua kategori
-          </label>
         </div>
 
         <button
@@ -245,7 +747,7 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
               <h4 className="font-semibold mb-3">Top Kompetitor Terdekat</h4>
               <div className="space-y-2 max-h-64 overflow-y-auto">
                 {analysis.topCompetitors.map((comp, idx) => (
-                  <div key={idx} className="p-3 border cursor-pointer border-gray-200 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800" onClick={() => onLocationSelect(comp)}>
+                  <div key={idx} className="p-3 border border-gray-200 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
                     <div className="flex justify-between items-start">
                       <div>
                         <div className="font-medium">{comp.name}</div>
@@ -279,34 +781,6 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
               </div>
             </div>
           )}
-        </div>
-      )}
-
-      {/* Map Picker Modal */}
-      {showMapPicker && (
-        <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
-          <div className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 h-3/4 relative">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="font-semibold text-lg">Pilih Lokasi dari Peta</h2>
-              <button onClick={() => setShowMapPicker(false)} className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div className="h-[calc(100%-60px)]">
-              <MapComponent
-                center={lat && lng ? [parseFloat(lat), parseFloat(lng)] : [parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LAT), parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LNG)]}
-                zoom={13}
-                selectMode
-                onSelectLocation={(selectedLat, selectedLng) => {
-                  setLat(selectedLat.toFixed(6));
-                  setLng(selectedLng.toFixed(6));
-                  setShowMapPicker(false);
-                }}
-              />
-            </div>
-          </div>
         </div>
       )}
     </div>
