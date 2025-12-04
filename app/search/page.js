@@ -382,7 +382,22 @@ export default function SearchUMKM() {
 
               {activeTab === 'stats' &&
                 (clusteringData && clusteringData.overall?.clusters?.length > 0 ? (
-                  <ClusterStats clusteringData={clusteringData} radius={radius} />
+                  <ClusterStats
+                    clusteringData={clusteringData}
+                    radius={radius}
+                    onClusterSelect={(lat, lng) => {
+                      setCenter([lat, lng]);
+                      setZoom(15);
+                      if (typeof window !== 'undefined') {
+                        // Pada mobile (<= 768px) scroll ke tinggi device, selainnya scroll ke atas
+                        if (window.innerWidth <= 768) {
+                          window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                        } else {
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                      }
+                    }}
+                  />
                 ) : (
                   <div className="text-sm text-zinc-500 py-8 text-center">Belum ada data clustering. Jalankan pencarian terlebih dahulu.</div>
                 ))}
@@ -413,9 +428,10 @@ export default function SearchUMKM() {
 
               {activeTab === 'competitor' && (
                 <CompetitorAnalysisPanel
-                  onLocationSelect={(lat, lng) => {
-                    setCenter([lat, lng]);
-                    setZoom(15);
+                  onLocationSelect={(item) => {
+                    setSelectedItem(item);
+                    setCenter([item.lat, item.lon]);
+                    setZoom(25);
                     if (typeof window !== 'undefined') {
                       // Pada mobile (<= 768px) scroll ke tinggi device, selainnya scroll ke atas
                       if (window.innerWidth <= 768) {
@@ -435,7 +451,7 @@ export default function SearchUMKM() {
                     if (item.lat && item.lon) {
                       setCenter([item.lat, item.lon]);
                     }
-                    setZoom(100);
+                    setZoom(25);
                     if (typeof window !== 'undefined') {
                       // Pada mobile (<= 768px) scroll ke tinggi device, selainnya scroll ke atas
                       if (window.innerWidth <= 768) {
