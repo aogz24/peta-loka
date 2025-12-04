@@ -2,15 +2,10 @@
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import ClusterLocationButton from './ClusterLocationButton';
-import { useState } from 'react';
-import dynamic from 'next/dynamic';
 
-const MapCard = dynamic(() => import('./MapCard'), { ssr: false });
 const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ef4444', '#ec4899', '#14b8a6', '#f97316'];
 
-export default function ClusterStats({ clusteringData, radius }) {
-  const [activeCluster, setActiveCluster] = useState(null);
-
+export default function ClusterStats({ clusteringData, onClusterSelect }) {
   if (!clusteringData || !clusteringData.umkm) {
     return (
       <div className="glass-card p-6">
@@ -129,7 +124,7 @@ export default function ClusterStats({ clusteringData, radius }) {
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-600 dark:text-zinc-300">{cluster.totalItems}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-600 dark:text-zinc-300">{cluster.dominantCategory}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-600 dark:text-zinc-300">
-                    <ClusterLocationButton key={index} onClick={() => setActiveCluster({ lat: cluster.center.lat, lon: cluster.center.lon, index: index })} className="inline-block" />
+                    <ClusterLocationButton key={index} onClick={() => onClusterSelect && onClusterSelect(cluster.center.lat, cluster.center.lon)} className="inline-block" />
                   </td>
                 </tr>
               ))}
@@ -137,7 +132,6 @@ export default function ClusterStats({ clusteringData, radius }) {
           </table>
         </div>
       </div>
-      {activeCluster && <MapCard lat={activeCluster.lat} lon={activeCluster.lon} onClose={() => setActiveCluster(null)} index={activeCluster.index} radius={radius} />}
 
       {/* Wisata Potensi */}
       <div className="glass-card p-6">

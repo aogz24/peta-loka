@@ -245,7 +245,7 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
               <h4 className="font-semibold mb-3">Top Kompetitor Terdekat</h4>
               <div className="space-y-2 max-h-64 overflow-y-auto">
                 {analysis.topCompetitors.map((comp, idx) => (
-                  <div key={idx} className="p-3 border border-gray-200 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                  <div key={idx} className="p-3 border cursor-pointer border-gray-200 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800" onClick={() => onLocationSelect(comp)}>
                     <div className="flex justify-between items-start">
                       <div>
                         <div className="font-medium">{comp.name}</div>
