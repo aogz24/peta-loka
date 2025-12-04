@@ -15,7 +15,7 @@ export default function Accordion({ items = [] }) {
         const isOpen = openId === it.id;
         const panelId = `accordion-panel-${it.id}`;
         return (
-          <div key={it.id} className="glass-card p-4">
+          <div key={it.id} className="glass-card p-4 ">
             <h3>
               <button
                 type="button"
@@ -28,14 +28,14 @@ export default function Accordion({ items = [] }) {
                     toggle(it.id);
                   }
                 }}
-                className="w-full text-left flex items-center justify-between gap-4"
+                className="w-full text-left flex items-center justify-between gap-4 cursor-pointer "
               >
                 <span className="font-semibold">{it.title}</span>
                 <span className="text-sm text-zinc-500">{isOpen ? '—' : '+'}</span>
               </button>
             </h3>
 
-            <div id={panelId} role="region" aria-labelledby={panelId + '-label'} className={`mt-3 text-sm text-zinc-700 dark:text-zinc-300 ${isOpen ? 'block' : 'hidden'}`}>
+            <div id={panelId} role="region" aria-labelledby={panelId + '-label'} className={`mt-3 text-sm text-zinc-700 dark:text-zinc-300   ${isOpen ? 'block' : 'hidden'}`}>
               {typeof it.content === 'string' ? <p>{it.content}</p> : it.content}
             </div>
           </div>

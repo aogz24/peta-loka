@@ -42,14 +42,13 @@ export default function ContactForm() {
         <textarea name="message" value={form.message} onChange={handleChange} rows={5} className="w-full glass-bg px-3 py-2 rounded-md border border-zinc-200 dark:border-zinc-700" placeholder="Tulis pesan Anda..." />
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex  w-fit py-1 px-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 transition-all">
         <button type="submit" className="glass-btn px-4 py-2 rounded-md" disabled={status === 'sending'}>
           {status === 'sending' ? 'Mengirim...' : 'Kirim Pesan'}
         </button>
-
-        {status === 'success' && <p className="text-sm text-green-600">Pesan terkirim. Terima kasih!</p>}
-        {status === 'missing' && <p className="text-sm text-red-600">Lengkapi semua field terlebih dahulu.</p>}
       </div>
+      {status === 'success' && <p className="text-sm text-green-600">Pesan terkirim. Terima kasih!</p>}
+      {status === 'missing' && <p className="text-sm text-red-600">Lengkapi semua field terlebih dahulu.</p>}
     </form>
   );
 }
