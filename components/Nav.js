@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from './ThemeToggle';
+import Image from 'next/image';
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function Nav() {
         <div className="flex items-center justify-between py-3">
           {/* Logo Section */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white w-10 h-10 flex items-center justify-center font-semibold shadow-md shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-all">PL</div>
+            <Image src="/logo.png" className="dark:invert-100 dark:saturate-0" alt="PetaLoka Logo" width={40} height={40} />
             <div>
               <h1 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">PetaLoka</h1>
               <p className="text-xs text-zinc-500 dark:text-zinc-400 -mt-1">Pemetaan & Analisis UMKM</p>
