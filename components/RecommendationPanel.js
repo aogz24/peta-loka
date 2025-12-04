@@ -144,7 +144,10 @@ export default function RecommendationPanel({ onItemClick }) {
               </div>
             )}
           </div>
-          <button onClick={handleClearHistory} className="mt-3 w-full py-2 text-xs text-red-600 hover:bg-red-50 dark:hover:bg-red-900 dark:hover:text-red-100 rounded-lg transition-colors">
+          <button
+            onClick={handleClearHistory}
+            className="cursor-pointer mt-3 w-full py-2 text-xs bg-red-500/75 hover:bg-red-600/75 text-white dark:bg-red-700/75 dark:hover:bg-red-600/75 rounded-lg transition-colors rounded-lg transition-colors"
+          >
             Hapus Riwayat
           </button>
         </div>
@@ -154,7 +157,7 @@ export default function RecommendationPanel({ onItemClick }) {
       <button
         onClick={handleGetRecommendations}
         disabled={loading}
-        className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 transition-all"
+        className="w-full py-3 px-4 bg-gradient-to-r cursor-pointer from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 transition-all"
       >
         {loading ? (
           <>

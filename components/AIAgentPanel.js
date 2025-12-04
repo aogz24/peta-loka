@@ -206,21 +206,27 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
           <button
             onClick={() => setSelectedType('clustering')}
             disabled={loading}
-            className={`px-3 py-1.5 rounded-full text-sm ${selectedType === 'clustering' ? 'bg-blue-600 text-white' : 'bg-transparent border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300'}`}
+            className={`px-3 py-1.5 rounded-full text-sm cursor-pointer hover:brightness-90 ${
+              selectedType === 'clustering' ? 'bg-blue-600 text-white' : 'bg-transparent border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300'
+            }`}
           >
             Analisis Lengkap
           </button>
           <button
             onClick={() => setSelectedType('area-potential')}
             disabled={loading}
-            className={`px-3 py-1.5 rounded-full text-sm ${selectedType === 'area-potential' ? 'bg-blue-600 text-white' : 'bg-transparent border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300'}`}
+            className={`px-3 py-1.5 rounded-full text-sm cursor-pointer hover:brightness-90 ${
+              selectedType === 'area-potential' ? 'bg-blue-600 text-white' : 'bg-transparent border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300'
+            }`}
           >
             Potensi Area
           </button>
           <button
             onClick={() => setSelectedType('chat')}
             disabled={loading}
-            className={`px-3 py-1.5 rounded-full text-sm ${selectedType === 'chat' ? 'bg-blue-600 text-white' : 'bg-transparent border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300'}`}
+            className={`px-3 py-1.5 rounded-full text-sm cursor-pointer hover:brightness-90 ${
+              selectedType === 'chat' ? 'bg-blue-600 text-white' : 'bg-transparent border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300'
+            }`}
           >
             Chat Custom
           </button>
@@ -276,7 +282,7 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
         <button
           onClick={generateInsight}
           disabled={loading || (selectedType === 'chat' && !query)}
-          className=" flex gap-4 justify-center w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 transition-all"
+          className=" flex gap-4 justify-center w-full py-3 px-4 bg-gradient-to-r cursor-pointer hover:brightness-90 from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 transition-all"
         >
           {loading ? (
             <>
