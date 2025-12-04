@@ -200,7 +200,9 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
       {/* Type Selector */}
       <div className="space-y-2">
         <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Tipe Analisis:</label>
-        <div className="flex items-center gap-2 flex-wrap">
+
+        {/* Desktop: button group */}
+        <div className="flex items-center gap-2 flex-wrap hidden sm:flex">
           <button
             onClick={() => setSelectedType('clustering')}
             disabled={loading}
@@ -222,6 +224,20 @@ export default function AIAgentPanel({ clusteringData, onInsightGenerated, cente
           >
             Chat Custom
           </button>
+        </div>
+
+        {/* Mobile: select dropdown */}
+        <div className="sm:hidden">
+          <select
+            value={selectedType}
+            onChange={(e) => setSelectedType(e.target.value)}
+            disabled={loading}
+            className="w-full px-3 py-2 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 text-sm"
+          >
+            <option value="clustering">Analisis Lengkap</option>
+            <option value="area-potential">Potensi Area</option>
+            <option value="chat">Chat Custom</option>
+          </select>
         </div>
       </div>
 
