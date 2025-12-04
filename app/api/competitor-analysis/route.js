@@ -33,9 +33,13 @@ export async function GET(request) {
 
     const targetLocation = { lat, lng, category };
 
+    // Parse categories from comma-separated string
+    const categories = category ? category.split(',').map(c => c.trim()).filter(c => c) : [];
+
     const analysis = analyzeCompetitors(targetLocation, umkmData, {
       radius,
       includeAllCategories,
+      categories,
       maxCompetitors: 50,
     });
 

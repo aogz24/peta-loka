@@ -637,7 +637,7 @@ export default function CompetitorAnalysisPanel({ onLocationSelect }) {
 
         <div>
           <label className="block text-xs font-medium text-gray-700 mb-1 dark:text-gray-300">
-            Kategori (opsional)
+            Kategori
           </label>
           <Select
             isMulti
