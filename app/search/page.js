@@ -30,6 +30,7 @@ export default function SearchUMKM() {
   const [activeTab, setActiveTab] = useState('map');
   const [showPicker, setShowPicker] = useState(false);
   const [mode, setMode] = useState('manual'); // manual, current, map
+  const [zoom, setZoom] = useState(13);
 
   // Auto-load data on mount
   useEffect(() => {
@@ -83,6 +84,7 @@ export default function SearchUMKM() {
 
   const handleLocationChange = () => {
     handleScrapeAndCluster();
+    setZoom(13);
   };
 
   return (
@@ -297,7 +299,7 @@ export default function SearchUMKM() {
                 {scrapedData && clusteringData ? (
                   <MapComponent
                     center={center}
-                    zoom={13}
+                    zoom={zoom}
                     radius={radius}
                     umkmData={scrapedData.umkm || []}
                     wisataData={scrapedData.wisata || []}
@@ -404,7 +406,8 @@ export default function SearchUMKM() {
                 <LocationPredictionPanel
                   onLocationSelect={(lat, lng) => {
                     setCenter([lat, lng]);
-                    setActiveTab('map');
+                    setZoom(15);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                 />
               )}
@@ -413,7 +416,8 @@ export default function SearchUMKM() {
                 <CompetitorAnalysisPanel
                   onLocationSelect={(lat, lng) => {
                     setCenter([lat, lng]);
-                    setActiveTab('map');
+                    setZoom(15);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                 />
               )}
