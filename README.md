@@ -86,23 +86,22 @@ npm run start
 ```
 
 ## Demo
+
 **Screenshot aplikasi:**
 
-![Homepage](demo\screnshoot\tampilan_awal.png)
-![Peta Hasil Clustering](demo\screnshoot\tampilan_awal.png)
-![Statistik](demo\screnshoot\chart.png)
-![Ai Insight](demo\screnshoot\ai.png)
-![Prediksi Lokasi](demo\screnshoot\prediksi.png)
-![Analyze Poin](demo\screnshoot\poin.png)
-![Analisis Kompetitor](demo\screnshoot\kompetitor.png)
-![Rekomendasi](demo\screnshoot\rekomendasi.png)
-![Faq](demo\screnshoot\faq.png)
-
+![Homepage](demo/screnshoot/tampilan_awal.png)
+![Peta Hasil Clustering](demo/screnshoot/tampilan_awal.png)
+![Statistik](demo/screnshoot/chart.png)
+![Ai Insight](demo/screnshoot/ai.png)
+![Prediksi Lokasi](demo/screnshoot/prediksi.png)
+![Analyze Poin](demo/screnshoot/poin.png)
+![Analisis Kompetitor](demo/screnshoot/kompetitor.png)
+![Rekomendasi](demo/screnshoot/rekomendasi.png)
+![Faq](demo/screnshoot/faq.png)
 
 **Video demo Aplikasi:**
 
 ![Demo Aplikasi]()
-
 
 ## Fitur Utama
 
