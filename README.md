@@ -92,7 +92,7 @@ npm run start
 **Screenshot aplikasi:**
 
 ![Homepage](demo/screnshoot/tampilan_awal.png)
-![Peta Hasil Clustering](demo/screnshoot/tampilan_awal.png)
+![Peta Hasil Clustering](demo/screnshoot/clustering.png)
 ![Statistik](demo/screnshoot/chart.png)
 ![Ai Insight](demo/screnshoot/ai.png)
 ![Prediksi Lokasi](demo/screnshoot/prediksi.png)
