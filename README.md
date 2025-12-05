@@ -101,7 +101,7 @@ npm run start
 
 **Video demo Aplikasi:**
 
-![Demo Aplikasi](https://drive.google.com/file/d/1VBvYu2mf99PCGGw0J8pA8ijzCvUjaysk/view?usp=sharing)
+[Video Demo Aplikasi](https://drive.google.com/file/d/1VBvYu2mf99PCGGw0J8pA8ijzCvUjaysk/view?usp=sharing)
 
 ## Fitur Utama
 
