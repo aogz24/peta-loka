@@ -48,7 +48,7 @@ npm install
 
 3. Siapkan variabel lingkungan
 
-Buat file `.env.local` di root dan tambahkan minimal variabel berikut:
+Buat file `.env` di root dan tambahkan minimal variabel berikut:
 
 ```env
 # Kolosal / AI provider
@@ -86,18 +86,23 @@ npm run start
 ```
 
 ## Demo
+**Screenshot aplikasi:**
 
-Tambahkan screenshot atau GIF demo ke folder `public/` dan ganti path di bawah ini.
+![Homepage](demo\screnshoot\tampilan_awal.png)
+![Peta Hasil Clustering](demo\screnshoot\tampilan_awal.png)
+![Statistik](demo\screnshoot\chart.png)
+![Ai Insight](demo\screnshoot\ai.png)
+![Prediksi Lokasi](demo\screnshoot\prediksi.png)
+![Analyze Poin](demo\screnshoot\poin.png)
+![Analisis Kompetitor](demo\screnshoot\kompetitor.png)
+![Rekomendasi](demo\screnshoot\rekomendasi.png)
+![Faq](demo\screnshoot\faq.png)
 
-**Screenshot contoh:**
 
-![Demo Screenshot](public/demo-screenshot.png)
+**Video demo Aplikasi:**
 
-**Short GIF demo (opsional):**
+![Demo Aplikasi]()
 
-![Demo GIF](public/demo-demo.gif)
-
-> Catatan: file `public/demo-screenshot.png` dan `public/demo-demo.gif` belum termasuk dalam repo — silakan tambahkan file asli untuk menampilkan demo.
 
 ## Fitur Utama
 
@@ -120,6 +125,7 @@ Tambahkan screenshot atau GIF demo ke folder `public/` dan ganti path di bawah i
 - **Icons**: Lucide React
 
 Struktur direktori utama:
+
 - `components/` - Komponen React
 - `lib/services/` - Logic layanan
 - `app/api/` - API endpoints
