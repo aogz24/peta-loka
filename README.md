@@ -1,5 +1,7 @@
 # PetaLoka
 
+![Logo](./public/logo.png)
+
 PetaLoka adalah platform pemetaan dan analisis untuk UMKM, yang menggabungkan data lokasi, clustering geografis, dan model AI untuk menghasilkan insight strategis. Aplikasi ini memanfaatkan data dari OpenStreetMap, Supabase, dan layanan AI untuk rekomendasi lokasi, analisis kompetitor, dan visualisasi peta interaktif.
 
 ## Daftar Isi
