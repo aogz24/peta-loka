@@ -170,7 +170,7 @@ Untuk panduan teknis dan setup lebih lanjut, lihat file berikut di repo:
 
 - [`SUPABASE_SETUP.md`](./SUPABASE_SETUP.md) - Panduan setup Supabase
 - [`MIGRATION_GUIDE.md`](./MIGRATION_GUIDE.md) - Panduan migrasi data
-- [`NEW_FEATURES.md`](./NEW_FEATURES.md) - Catatan fitur baru dan perubahan
+- [`Dokumentasi API`](https://peta-loka.vercel.app/api-docs)
 
 ## Hubungi / Lapor Bug
 

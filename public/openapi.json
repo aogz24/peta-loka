@@ -1,0 +1,842 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Peta Loka API",
+    "description": "API untuk sistem rekomendasi lokasi UMKM berbasis data spasial, analisis kompetitor, clustering, dan prediksi lokasi potensial",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Peta Loka Team"
+    }
+  },
+  "servers": [
+    {
+      "url": "/api",
+      "description": "API Server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Data",
+      "description": "Endpoint untuk mengambil data UMKM, Wisata, dan Pelatihan"
+    },
+    {
+      "name": "Analysis",
+      "description": "Endpoint untuk analisis clustering, kompetitor, dan prediksi lokasi"
+    },
+    {
+      "name": "Recommendations",
+      "description": "Endpoint untuk rekomendasi personalized"
+    },
+    {
+      "name": "Scraping",
+      "description": "Endpoint untuk scraping data dari sumber eksternal"
+    },
+    {
+      "name": "AI Agent",
+      "description": "Endpoint untuk AI chatbot agent"
+    }
+  ],
+  "paths": {
+    "/umkm": {
+      "get": {
+        "tags": ["Data"],
+        "summary": "Fetch UMKM data",
+        "description": "Mengambil data UMKM dari database dengan opsi filter",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Filter berdasarkan kategori UMKM",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Batasi jumlah hasil",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data UMKM berhasil diambil",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/UMKM"
+                      }
+                    },
+                    "count": {
+                      "type": "integer"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "cached": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/wisata": {
+      "get": {
+        "tags": ["Data"],
+        "summary": "Fetch Wisata data",
+        "description": "Mengambil data tempat wisata dari database dengan opsi filter",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Filter berdasarkan kategori wisata",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Batasi jumlah hasil",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data wisata berhasil diambil",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Wisata"
+                      }
+                    },
+                    "count": {
+                      "type": "integer"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "cached": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pelatihan": {
+      "get": {
+        "tags": ["Data"],
+        "summary": "Fetch Pelatihan data",
+        "description": "Mengambil data pelatihan UMKM dari database",
+        "responses": {
+          "200": {
+            "description": "Data pelatihan berhasil diambil",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Pelatihan"
+                      }
+                    },
+                    "count": {
+                      "type": "integer"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "cached": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clustering": {
+      "get": {
+        "tags": ["Analysis"],
+        "summary": "Clustering Analysis",
+        "description": "Melakukan analisis clustering pada data UMKM, Wisata, dan Pelatihan menggunakan K-Means",
+        "parameters": [
+          {
+            "name": "clusters",
+            "in": "query",
+            "description": "Jumlah cluster yang diinginkan",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 5,
+              "minimum": 2,
+              "maximum": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Clustering berhasil dilakukan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "umkm": {
+                          "type": "object"
+                        },
+                        "wisata": {
+                          "type": "object"
+                        },
+                        "pelatihan": {
+                          "type": "object"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "cached": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Data tidak ditemukan"
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/competitor-analysis": {
+      "get": {
+        "tags": ["Analysis"],
+        "summary": "Competitor Analysis",
+        "description": "Menganalisis kompetitor UMKM dalam radius tertentu dari lokasi yang ditentukan",
+        "parameters": [
+          {
+            "name": "lat",
+            "in": "query",
+            "description": "Latitude lokasi target",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "lng",
+            "in": "query",
+            "description": "Longitude lokasi target",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Kategori UMKM (dapat berupa multiple categories dipisahkan koma)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "radius",
+            "in": "query",
+            "description": "Radius pencarian dalam kilometer",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "default": 1.0
+            }
+          },
+          {
+            "name": "includeAll",
+            "in": "query",
+            "description": "Include semua kategori dalam analisis",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Analisis kompetitor berhasil",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "analysis": {
+                      "type": "object",
+                      "properties": {
+                        "competitors": {
+                          "type": "array"
+                        },
+                        "summary": {
+                          "type": "object"
+                        },
+                        "densityScore": {
+                          "type": "number"
+                        },
+                        "competitionLevel": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Parameter tidak valid"
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/location-prediction": {
+      "get": {
+        "tags": ["Analysis"],
+        "summary": "Location Prediction",
+        "description": "Prediksi lokasi potensial untuk UMKM baru berdasarkan analisis data spasial",
+        "parameters": [
+          {
+            "name": "mode",
+            "in": "query",
+            "description": "Mode analisis: 'scan' untuk mencari top lokasi, 'analyze' untuk analisis lokasi spesifik",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["scan", "analyze"],
+              "default": "scan"
+            }
+          },
+          {
+            "name": "lat",
+            "in": "query",
+            "description": "Latitude (diperlukan untuk mode 'analyze')",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "lng",
+            "in": "query",
+            "description": "Longitude (diperlukan untuk mode 'analyze')",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "gridSize",
+            "in": "query",
+            "description": "Ukuran grid untuk scanning (dalam derajat)",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "default": 0.5
+            }
+          },
+          {
+            "name": "topN",
+            "in": "query",
+            "description": "Jumlah top lokasi yang dikembalikan",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "minScore",
+            "in": "query",
+            "description": "Skor minimum untuk lokasi potensial",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "default": 50
+            }
+          },
+          {
+            "name": "searchRadius",
+            "in": "query",
+            "description": "Radius pencarian dalam kilometer",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "default": 1.0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Prediksi lokasi berhasil",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "mode": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/recommendations": {
+      "post": {
+        "tags": ["Recommendations"],
+        "summary": "Personalized Recommendations",
+        "description": "Mendapatkan rekomendasi personalized berdasarkan user behavior dan preferensi",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": ["personalized", "category", "related"],
+                    "description": "Tipe rekomendasi"
+                  },
+                  "behaviors": {
+                    "type": "array",
+                    "description": "Array of user behaviors",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "itemId": {
+                          "type": "string"
+                        },
+                        "action": {
+                          "type": "string",
+                          "enum": ["view", "click", "favorite", "share"]
+                        },
+                        "category": {
+                          "type": "string"
+                        },
+                        "timestamp": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  },
+                  "category": {
+                    "type": "string",
+                    "description": "Kategori untuk type='category'"
+                  },
+                  "currentItem": {
+                    "type": "object",
+                    "description": "Item saat ini untuk type='related'"
+                  },
+                  "options": {
+                    "type": "object",
+                    "description": "Opsi tambahan untuk filtering"
+                  }
+                },
+                "required": ["type"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Rekomendasi berhasil dibuat",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "result": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request body tidak valid"
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/scrape": {
+      "get": {
+        "tags": ["Scraping"],
+        "summary": "Scrape data UMKM",
+        "description": "Scraping data UMKM dari Google Maps (endpoint internal)",
+        "responses": {
+          "200": {
+            "description": "Scraping berhasil",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/scrape-osm": {
+      "get": {
+        "tags": ["Scraping"],
+        "summary": "Scrape data dari OpenStreetMap",
+        "description": "Mengambil data POI dari OpenStreetMap",
+        "parameters": [
+          {
+            "name": "lat",
+            "in": "query",
+            "description": "Latitude",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "lng",
+            "in": "query",
+            "description": "Longitude",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "radius",
+            "in": "query",
+            "description": "Radius pencarian dalam meter",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data berhasil diambil dari OSM",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ai-agent": {
+      "post": {
+        "tags": ["AI Agent"],
+        "summary": "AI Chatbot Agent",
+        "description": "Berinteraksi dengan AI agent untuk mendapatkan insight dan rekomendasi",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "description": "User message/query"
+                  },
+                  "context": {
+                    "type": "object",
+                    "description": "Context data (optional)"
+                  }
+                },
+                "required": ["message"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response dari AI agent",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "response": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request tidak valid"
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "UMKM": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "lat": {
+            "type": "number",
+            "format": "double"
+          },
+          "lng": {
+            "type": "number",
+            "format": "double"
+          },
+          "address": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "number"
+          },
+          "reviews": {
+            "type": "integer"
+          }
+        }
+      },
+      "Wisata": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "lat": {
+            "type": "number",
+            "format": "double"
+          },
+          "lng": {
+            "type": "number",
+            "format": "double"
+          },
+          "address": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "number"
+          },
+          "reviews": {
+            "type": "integer"
+          }
+        }
+      },
+      "Pelatihan": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "lat": {
+            "type": "number",
+            "format": "double"
+          },
+          "lng": {
+            "type": "number",
+            "format": "double"
+          },
+          "address": {
+            "type": "string"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": false
+          },
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

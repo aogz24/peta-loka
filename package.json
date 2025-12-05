@@ -25,7 +25,8 @@
     "react-leaflet": "^5.0.0",
     "react-leaflet-cluster": "^4.0.0",
     "react-select": "^5.10.2",
-    "recharts": "^3.5.1"
+    "recharts": "^3.5.1",
+    "swagger-ui-react": "^5.30.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
