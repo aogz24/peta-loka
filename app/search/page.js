@@ -23,6 +23,7 @@ export default function SearchUMKM() {
   const [center, setCenter] = useState([parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LAT), parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LNG)]); // Bandung default
   const [radius, setRadius] = useState(5000);
   const [numClusters, setNumClusters] = useState(5);
+  const [clusterMode, setClusterMode] = useState('auto'); // 'auto' atau 'manual'
   const [loading, setLoading] = useState(false);
   const [scrapedData, setScrapedData] = useState(null);
   const [clusteringData, setClusteringData] = useState(null);
@@ -64,7 +65,7 @@ export default function SearchUMKM() {
             umkmData: scrapeResult.data.umkm,
             wisataData: scrapeResult.data.wisata,
             pelatihanData: scrapeResult.data.pelatihan,
-            numClusters: numClusters,
+            numClusters: clusterMode === 'auto' ? 'auto' : numClusters,
           }),
         });
 
@@ -193,44 +194,80 @@ export default function SearchUMKM() {
                 <input type="range" min={1000} max={20000} step={500} value={radius} onChange={(e) => setRadius(parseInt(e.target.value))} className="w-full accent-blue-600 cursor-pointer" />
               </div>
 
-              {/* Jumlah Cluster */}
+              {/* Mode Clustering */}
               <div className="space-y-2">
-                <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Jumlah Cluster</label>
-
-                <div className="relative">
-                  <span className="absolute left-3 top-2.5 text-zinc-400 dark:text-zinc-500">
-                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="1.5"
-                        d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-                      />
-                    </svg>
-                  </span>
-
-                  <input
-                    type="number"
-                    min={2}
-                    max={10}
-                    value={numClusters}
-                    onChange={(e) => {
-                      const val = parseInt(e.target.value);
-                      if (!isNaN(val) && val >= 2 && val <= 10) {
-                        setNumClusters(val);
-                      }
-                    }}
+                <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Mode Clustering</label>
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    onClick={() => setClusterMode('auto')}
                     disabled={loading}
-                    className="w-full pl-12 pr-3 py-2.5 rounded-xl bg-white dark:bg-zinc-900 
-                   border border-zinc-300 dark:border-zinc-700
-                   text-zinc-900 dark:text-zinc-100 
-                   shadow-sm focus:ring-2 focus:ring-blue-500 transition-all"
-                  />
+                    className={`px-3 py-2 rounded-lg border font-medium text-sm transition ${
+                      clusterMode === 'auto'
+                        ? 'bg-blue-600 text-white border-blue-600'
+                        : 'bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700'
+                    }`}
+                  >
+                    Auto (Silhouette)
+                  </button>
+                  <button
+                    onClick={() => setClusterMode('manual')}
+                    disabled={loading}
+                    className={`px-3 py-2 rounded-lg border font-medium text-sm transition ${
+                      clusterMode === 'manual'
+                        ? 'bg-blue-600 text-white border-blue-600'
+                        : 'bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700'
+                    }`}
+                  >
+                    Manual
+                  </button>
                 </div>
-
-                <input type="range" min={2} max={10} step={1} value={numClusters} onChange={(e) => setNumClusters(parseInt(e.target.value))} disabled={loading} className="w-full accent-blue-600 cursor-pointer" />
-                <p className="text-xs text-zinc-500 dark:text-zinc-400">Pilih 2-10 cluster untuk mengelompokkan data</p>
+                <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                  {clusterMode === 'auto'
+                    ? 'Sistem akan otomatis menentukan jumlah cluster optimal menggunakan Silhouette Coefficient'
+                    : 'Tentukan sendiri jumlah cluster yang diinginkan'}
+                </p>
               </div>
+
+              {/* Jumlah Cluster - Only show when manual mode */}
+              {clusterMode === 'manual' && (
+                <div className="space-y-2">
+                  <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Jumlah Cluster</label>
+
+                  <div className="relative">
+                    <span className="absolute left-3 top-2.5 text-zinc-400 dark:text-zinc-500">
+                      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.5"
+                          d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                        />
+                      </svg>
+                    </span>
+
+                    <input
+                      type="number"
+                      min={2}
+                      max={10}
+                      value={numClusters}
+                      onChange={(e) => {
+                        const val = parseInt(e.target.value);
+                        if (!isNaN(val) && val >= 2 && val <= 10) {
+                          setNumClusters(val);
+                        }
+                      }}
+                      disabled={loading}
+                      className="w-full pl-12 pr-3 py-2.5 rounded-xl bg-white dark:bg-zinc-900 
+                     border border-zinc-300 dark:border-zinc-700
+                     text-zinc-900 dark:text-zinc-100 
+                     shadow-sm focus:ring-2 focus:ring-blue-500 transition-all"
+                    />
+                  </div>
+
+                  <input type="range" min={2} max={10} step={1} value={numClusters} onChange={(e) => setNumClusters(parseInt(e.target.value))} disabled={loading} className="w-full accent-blue-600 cursor-pointer" />
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">Pilih 2-10 cluster untuk mengelompokkan data</p>
+                </div>
+              )}
             </div>
 
             {/* Method Buttons */}

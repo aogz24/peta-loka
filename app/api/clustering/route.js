@@ -6,10 +6,16 @@ import cacheManager from "@/lib/utils/cache";
 export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
-    const numClusters = parseInt(searchParams.get("clusters") || "5");
+    const numClustersParam = searchParams.get("clusters");
+    // Jika clusters tidak ditentukan atau "auto", gunakan Silhouette Coefficient
+    const numClusters = numClustersParam && numClustersParam !== "auto" 
+      ? parseInt(numClustersParam) 
+      : null;
 
     // Check cache first (TTL: 30 minutes)
-    const cacheKey = cacheManager.generateKey("clustering", { numClusters });
+    const cacheKey = cacheManager.generateKey("clustering", { 
+      numClusters: numClusters || "auto" 
+    });
     const cachedResult = cacheManager.get(cacheKey);
 
     if (cachedResult) {
@@ -33,6 +39,7 @@ export async function GET(request) {
     }
 
     // Lakukan clustering dan analisis
+    // Jika numClusters null, akan otomatis menggunakan Silhouette Coefficient
     const analysis = clusteringService.analyzeAll(
       umkmData,
       wisataData,
@@ -46,7 +53,9 @@ export async function GET(request) {
     return NextResponse.json({
       success: true,
       data: analysis,
-      message: "Clustering completed successfully",
+      message: numClusters 
+        ? "Clustering completed successfully with manual cluster count"
+        : "Clustering completed successfully with optimal cluster count (Silhouette Coefficient)",
       cached: false,
     });
   } catch (error) {
@@ -64,15 +73,18 @@ export async function POST(request) {
       umkmData: customUmkm,
       wisataData: customWisata,
       pelatihanData: customPelatihan,
-      numClusters = 5,
+      numClusters,
     } = await request.json();
+
+    // Jika numClusters tidak ditentukan atau "auto", gunakan Silhouette Coefficient
+    const finalNumClusters = numClusters === "auto" || !numClusters ? null : numClusters;
 
     // Generate cache key for POST requests
     const cacheKey = cacheManager.generateKey("clustering-post", {
       hasCustomUmkm: !!customUmkm,
       hasCustomWisata: !!customWisata,
       hasCustomPelatihan: !!customPelatihan,
-      numClusters,
+      numClusters: finalNumClusters || "auto",
       umkmCount: customUmkm?.length || 0,
       wisataCount: customWisata?.length || 0,
       pelatihanCount: customPelatihan?.length || 0,
@@ -111,11 +123,12 @@ export async function POST(request) {
     }
 
     // Lakukan clustering dan analisis
+    // Jika finalNumClusters null, akan otomatis menggunakan Silhouette Coefficient
     const analysis = clusteringService.analyzeAll(
       finalUmkm,
       finalWisata,
       finalPelatihan,
-      numClusters
+      finalNumClusters
     );
 
     // Store in cache (TTL: 30 minutes)
@@ -124,7 +137,9 @@ export async function POST(request) {
     return NextResponse.json({
       success: true,
       data: analysis,
-      message: "Clustering completed successfully",
+      message: finalNumClusters
+        ? "Clustering completed successfully with manual cluster count"
+        : "Clustering completed successfully with optimal cluster count (Silhouette Coefficient)",
       cached: false,
     });
   } catch (error) {

@@ -65,8 +65,49 @@ export default function ClusterStats({ clusteringData, onClusterSelect }) {
         <div className="glass-card flex flex-col p-4">
           <div className="text-sm text-zinc-500 dark:text-zinc-300">Total Cluster</div>
           <div className="mt-2 text-3xl font-bold text-zinc-900 dark:text-zinc-50">{summary.totalClusters}</div>
+          {summary.method && (
+            <div className="mt-1 text-xs text-zinc-400 dark:text-zinc-500">
+              {summary.method === 'silhouette-optimized' ? '🎯 Auto-optimized' : '✋ Manual'}
+            </div>
+          )}
         </div>
       </div>
+
+      {/* Clustering Quality Indicator */}
+      {summary.silhouetteScore !== undefined && (
+        <div className="glass-card p-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="text-sm font-medium text-zinc-700 dark:text-zinc-300">Kualitas Clustering (Silhouette Score)</div>
+              <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+                Skor -1 hingga 1, semakin tinggi semakin baik kualitas clusternya
+              </div>
+            </div>
+            <div className="text-right">
+              <div className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+                {summary.silhouetteScore.toFixed(3)}
+              </div>
+              <div className="text-xs mt-1">
+                <span
+                  className={`px-2 py-1 rounded-full font-medium ${
+                    summary.silhouetteScore >= 0.5
+                      ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300'
+                      : summary.silhouetteScore >= 0.25
+                      ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300'
+                      : 'bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300'
+                  }`}
+                >
+                  {summary.silhouetteScore >= 0.5
+                    ? 'Excellent'
+                    : summary.silhouetteScore >= 0.25
+                    ? 'Good'
+                    : 'Fair'}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

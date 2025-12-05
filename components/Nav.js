@@ -37,7 +37,6 @@ export default function Nav() {
           <nav className="hidden md:flex items-center gap-6">
             {[
               { href: "/search", label: "Cari Potensi" },
-              { href: "/api-docs", label: "API Docs" },
               { href: "/faq", label: "FAQ" },
               { href: "/contact", label: "Kontak" },
             ].map((item) => {
@@ -107,7 +106,6 @@ export default function Nav() {
           <div className="px-4 pt-4 pb-6 space-y-4">
             {[
               { href: "/search", label: "Cari Potensi" },
-              { href: "/api-docs", label: "API Docs" },
               { href: "/faq", label: "FAQ" },
               { href: "/contact", label: "Kontak" },
             ].map((item) => {
