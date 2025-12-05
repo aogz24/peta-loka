@@ -101,7 +101,7 @@ npm run start
 
 **Video demo Aplikasi:**
 
-![Demo Aplikasi]()
+![Demo Aplikasi](https://drive.google.com/file/d/1VBvYu2mf99PCGGw0J8pA8ijzCvUjaysk/view?usp=sharing)
 
 ## Fitur Utama
 
@@ -170,7 +170,7 @@ Untuk panduan teknis dan setup lebih lanjut, lihat file berikut di repo:
 
 - [`SUPABASE_SETUP.md`](./SUPABASE_SETUP.md) - Panduan setup Supabase
 - [`MIGRATION_GUIDE.md`](./MIGRATION_GUIDE.md) - Panduan migrasi data
-- [`Dokumentasi API`](https://peta-loka.vercel.app/api-docs)
+- [`Dokumentasi API`](https://peta-loka.vercel.app/api-docs) - Dokumentasi Api yang digunakan
 
 ## Hubungi / Lapor Bug
 
