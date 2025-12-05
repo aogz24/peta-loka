@@ -70,10 +70,10 @@ GET /api/location-prediction?mode=analyze&lat=-6.914742&lng=107.614526&searchRad
 
 **Rating Categories**:
 
-- 75+ = **Sangat Potensial** ✅
-- 60-74 = **Potensial** ✔️
-- 40-59 = **Cukup Potensial** ⚠️
-- <40 = **Kurang Potensial** ❌
+- 75+ = **Sangat Potensial**
+- 60-74 = **Potensial**
+- 40-59 = **Cukup Potensial**
+- <40 = **Kurang Potensial**
 
 ### Usage di UI
 

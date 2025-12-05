@@ -170,7 +170,6 @@ Untuk panduan teknis dan setup lebih lanjut, lihat file berikut di repo:
 
 - [`SUPABASE_SETUP.md`](./SUPABASE_SETUP.md) - Panduan setup Supabase
 - [`MIGRATION_GUIDE.md`](./MIGRATION_GUIDE.md) - Panduan migrasi data
-- [`SETUP_CHECKLIST.md`](./SETUP_CHECKLIST.md) - Checklist setup lingkungan
 - [`NEW_FEATURES.md`](./NEW_FEATURES.md) - Catatan fitur baru dan perubahan
 
 ## Hubungi / Lapor Bug
