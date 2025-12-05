@@ -1,324 +1,177 @@
-# PetaLoka UMKM 🗺️
+# PetaLoka
 
-Platform pemetaan dan analisis UMKM dengan fitur clustering dan AI insight menggunakan data dari OpenStreetMap, Supabase, dan Kolosal AI.
+PetaLoka adalah platform pemetaan dan analisis untuk UMKM, yang menggabungkan data lokasi, clustering geografis, dan model AI untuk menghasilkan insight strategis. Aplikasi ini memanfaatkan data dari OpenStreetMap, Supabase, dan layanan AI untuk rekomendasi lokasi, analisis kompetitor, dan visualisasi peta interaktif.
 
-## 🎯 Masalah yang Diselesaikan
+## Daftar Isi
 
-### 1. **Distribusi UMKM Tidak Merata**
+- [Ringkasan](#ringkasan)
+- [Quickstart](#quickstart)
+- [Demo](#demo)
+- [Fitur Utama](#fitur-utama)
+- [Arsitektur & Tech Stack](#arsitektur--tech-stack)
+- [Kontribusi](#kontribusi)
+- [Lisensi](#lisensi)
+- [Atribusi](#atribusi)
+- [Dokumentasi](#dokumentasi)
 
-Banyak UMKM terpusat di area tertentu sementara area lain kurang terlayani. Platform ini memberikan **visualisasi clustering** untuk mengidentifikasi area yang oversaturated atau underserved, membantu pengambil kebijakan dan pelaku usaha dalam perencanaan lokasi.
+## Ringkasan
 
-### 2. **Kesulitan Menemukan Lokasi Strategis**
+PetaLoka membantu pemangku kepentingan untuk:
 
-Pelaku UMKM baru kesulitan menentukan lokasi usaha yang potensial. Fitur **Prediksi Lokasi Potensial** menganalisis kompetitor density, kedekatan dengan wisata, dan akses pelatihan untuk merekomendasikan lokasi terbaik dengan scoring objektif.
+- Memvisualisasikan distribusi UMKM dan titik-titik potensial
+- Mengelompokkan (clustering) titik-titik UMKM untuk analisis wilayah
+- Menghasilkan rekomendasi lokasi potensial dan analisis kompetitor berbasis AI
+- Menyajikan dashboard statistik dan peta interaktif untuk pengambilan keputusan
 
-### 3. **Kurangnya Informasi Kompetitor**
+## Quickstart
 
-UMKM sulit mengakses data kompetitor di sekitar mereka. **Analisis Kompetitor** memberikan competitive intelligence lengkap: jumlah kompetitor dalam radius tertentu, market saturation level, dan rekomendasi strategis berbasis AI.
+**Prasyarat**
 
-### 4. **Data Tersebar dan Tidak Terintegrasi**
+- Node.js (disarankan v18 atau lebih baru)
+- NPM atau PNPM/Yarn
+- Akun Supabase (untuk menyimpan data)
 
-Data UMKM, wisata, dan pelatihan tersebar di berbagai sumber tanpa integrasi. Platform ini mengintegrasikan semua data dalam **satu database Supabase** yang terstruktur, searchable, dan scalable dengan performa tinggi.
+**Langkah Instalasi**
 
-### 5. **Tidak Ada Insight untuk Pengembangan**
+1. Clone repositori
 
-Pemilik UMKM dan pembuat kebijakan kekurangan insight mendalam untuk strategi pengembangan. **AI Agent dengan Kolosal AI** menghasilkan analisis mendalam, rekomendasi actionable, dan menjawab pertanyaan strategis secara interaktif.
+```bash
+git clone https://github.com/aogz24/peta-loka.git
+cd peta-loka
+```
 
-### 6. **Akses Pelatihan Tidak Optimal**
-
-UMKM kesulitan menemukan pelatihan terdekat dari lokasi mereka. Sistem clustering menghubungkan setiap cluster UMKM dengan **rekomendasi pelatihan terdekat**, meningkatkan akses ke program pengembangan kapasitas.
-
-### 7. **Potensi Wisata Mikro Tidak Termanfaatkan**
-
-Area dengan potensi wisata mikro tidak teridentifikasi untuk dikembangkan. Platform ini mendeteksi **area dengan konsentrasi wisata tinggi** yang dapat dikembangkan menjadi destinasi wisata terintegrasi dengan UMKM lokal.
-
-### 8. **Pengalaman Pengguna Tidak Personal**
-
-Setiap pengguna memiliki kebutuhan berbeda namun mendapat informasi yang sama. Fitur **Rekomendasi Personal** melacak behavior pengguna (view, search, favorite) dan memberikan saran yang disesuaikan dengan preferensi individu.
-
-## 🎯 Fitur Utama
-
-### 1. **Database Supabase**
-
-- Data UMKM, wisata mikro, dan tempat pelatihan tersimpan di Supabase
-- Query cepat dengan indexing
-- Real-time ready
-- Scalable dan reliable
-
-### 2. **Sistem Clustering (K-Means)**
-
-- **Produk Lokal Unggulan**: Clustering UMKM berdasarkan lokasi geografis
-- **Lokasi Usaha Kecil**: Pemetaan distribusi UMKM per cluster
-- **Potensi Wisata Mikro**: Identifikasi area dengan potensi wisata tinggi
-- **Pelatihan Terdekat**: Rekomendasi tempat pelatihan untuk setiap cluster UMKM
-
-### 3. **AI Agent dengan Kolosal AI**
-
-- Generate insight dari hasil clustering
-- Rekomendasi strategis untuk pengembangan UMKM
-- Analisis potensi area
-- Chat interaktif untuk pertanyaan custom
-- Powered by **Llama 4 Maverick**
-
-### 4. **Visualisasi Interaktif**
-
-- Peta interaktif dengan Leaflet
-- Marker berbeda untuk UMKM, wisata, dan pelatihan
-- Cluster visualization dengan warna
-- Chart dan grafik statistik (Bar Chart, Pie Chart)
-- Dashboard analytics lengkap
-
-### 5. **🎯 Prediksi Lokasi Potensial**
-
-- Scan area untuk menemukan lokasi terbaik untuk UMKM baru
-- Scoring berdasarkan kompetitor density, proximity ke wisata & pelatihan
-- Rating: Sangat Potensial, Potensial, Cukup Potensial, Kurang Potensial
-- Mode: Auto-scan atau analisis point spesifik
-
-### 6. **🎯 Analisis Kompetitor**
-
-- Competitive intelligence dalam radius tertentu
-- Market saturation level (Very Low → Very High)
-- Density zones: very close, close, moderate
-- Strategic recommendations berbasis AI
-- Compare locations & market gap analysis
-
-### 7. **✨ Rekomendasi Personal**
-
-- User behavior tracking (view, click, search, favorite)
-- Personalized recommendations berbasis preferensi
-- 6 tipe rekomendasi: category match, location-based, similar items, dll
-- Privacy-first: semua data di localStorage
-- Auto-discovery kategori baru
-
-## 🚀 Quick Start
-
-### 1. Install Dependencies
+2. Install dependensi
 
 ```bash
 npm install
 ```
 
-### 2. Setup Supabase
+3. Siapkan variabel lingkungan
 
-Ikuti panduan lengkap di [SUPABASE_SETUP.md](./SUPABASE_SETUP.md)
-
-**Ringkasan:**
-
-1. Buat project di [Supabase](https://app.supabase.com/)
-2. Copy URL dan Anon Key ke `.env.local`
-3. Jalankan SQL schema dari `lib/supabase/schema.sql`
-4. Migrasi data dengan `npm run migrate`
-
-### 3. Setup Environment Variables
-
-Buat file `.env.local` dan isi dengan:
+Buat file `.env.local` di root dan tambahkan minimal variabel berikut:
 
 ```env
-KOLOSAL_API_KEY=YOUR_API_KEY_HERE
+# Kolosal / AI provider
+KOLOSAL_API_KEY=YOUR_API_KEY
 
 # Supabase
-NEXT_PUBLIC_SUPABASE_URL=https://xxxxxxxxxxxx.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_ANON_KEY
 
-# Map Config
+# Konfigurasi peta (opsional)
 NEXT_PUBLIC_MAP_CENTER_LAT=-6.9147418
 NEXT_PUBLIC_MAP_CENTER_LNG=107.614526
 NEXT_PUBLIC_MAP_ZOOM=12
 ```
 
-### 4. Migrasi Data ke Supabase
+4. Migrasi data ke Supabase (opsional, jika ingin mengisi DB dari file lokal)
 
 ```bash
 npm run migrate
 ```
 
-### 5. Jalankan Development Server
+5. Jalankan server pengembangan
 
 ```bash
 npm run dev
 ```
 
-Buka browser dan akses `http://localhost:3000`
+Buka http://localhost:3000
 
-## 📁 Struktur Project
+**Build untuk production**
 
-```
-peta-loka/
-├── app/
-│   ├── api/
-│   │   ├── pelatihan/       # API fetch pelatihan dari Supabase
-│   │   ├── umkm/            # API fetch UMKM dari Supabase
-│   │   ├── wisata/          # API fetch wisata dari Supabase
-│   │   ├── clustering/      # API untuk clustering data
-│   │   └── ai-agent/        # API untuk AI insight
-│   ├── layout.js
-│   └── page.js              # Halaman utama
-├── components/
-│   ├── MapComponent.js      # Komponen peta Leaflet
-│   ├── AIAgentPanel.js      # Panel AI Agent
-│   └── ClusterStats.js      # Statistik dan chart
-├── lib/
-│   ├── data/
-│   │   ├── pelatihan.json   # Source data untuk migrasi
-│   │   ├── umkm.json        # Source data untuk migrasi
-│   │   └── wisata.json      # Source data untuk migrasi
-│   ├── supabase/
-│   │   ├── client.js        # Supabase client
-│   │   └── schema.sql       # Database schema
-│   └── services/
-│       ├── supabase.js      # Supabase service
-│       ├── clustering.js    # K-Means clustering
-│       └── kolosal-ai.js    # Kolosal AI service
-├── scripts/
-│   └── migrate-to-supabase.js  # Migration script
-├── .env.local                  # Environment variables
-├── SUPABASE_SETUP.md          # Setup guide
-└── MIGRATION_GUIDE.md         # Migration guide lengkap
+```bash
+npm run build
+npm run start
 ```
 
-## 🔧 Tech Stack
+## Demo
+
+Tambahkan screenshot atau GIF demo ke folder `public/` dan ganti path di bawah ini.
+
+**Screenshot contoh:**
+
+![Demo Screenshot](public/demo-screenshot.png)
+
+**Short GIF demo (opsional):**
+
+![Demo GIF](public/demo-demo.gif)
+
+> Catatan: file `public/demo-screenshot.png` dan `public/demo-demo.gif` belum termasuk dalam repo — silakan tambahkan file asli untuk menampilkan demo.
+
+## Fitur Utama
+
+- **Peta Interaktif** - Visualisasi marker untuk UMKM, wisata, dan pelatihan
+- **Clustering Geografis** - K-Means clustering untuk identifikasi zona UMKM
+- **Prediksi Lokasi** - Rekomendasi lokasi potensial berdasarkan densitas kompetitor, jarak ke wisata, dan akses pelatihan
+- **Analisis Kompetitor** - Evaluasi level saturasi pasar dan competitive intelligence
+- **AI Insight** - Panel AI untuk insight dan rekomendasi strategi (Kolosal AI / OpenAI)
+- **Dashboard Statistik** - Visualisasi data dengan Recharts
+- **Integrasi Database** - Supabase untuk penyimpanan dan query data yang efisien
+
+## Arsitektur & Tech Stack
 
 - **Frontend**: Next.js 16, React 19, TailwindCSS
 - **Database**: Supabase (PostgreSQL)
-- **Mapping**: Leaflet, React-Leaflet
-- **Charts**: Recharts
+- **Peta**: Leaflet, React-Leaflet
 - **Clustering**: ml-kmeans
-- **AI**: Kolosal AI (Llama 4 Maverick) via OpenAI SDK
+- **Charts**: Recharts
+- **AI**: Kolosal AI / OpenAI SDK
 - **Icons**: Lucide React
 
-## 📊 Cara Kerja
+Struktur direktori utama:
+- `components/` - Komponen React
+- `lib/services/` - Logic layanan
+- `app/api/` - API endpoints
 
-### 1. **Data dari Supabase**
+## Kontribusi
 
-- Data tersimpan di 3 tabel: `pelatihan`, `umkm`, `wisata`
-- API endpoints untuk fetch data dengan filter
-- Caching untuk performance optimal
-- Real-time updates ready
+Kontribusi diterima melalui fork → branch → pull request.
 
-### 2. **Clustering**
+**Panduan Kontribusi:**
 
-- Input: Data dari Supabase dengan koordinat lat/lon
-- Algoritma: K-Means (default 5 clusters)
-- Output:
-  - Cluster assignment untuk setiap data point
-  - Centroid coordinates
-  - Cluster analysis (kategori dominan, total items, dll)
+1. Fork repository
+2. Buat branch fitur: `feat/<deskripsi-singkat>` atau perbaikan: `fix/<deskripsi-singkat>`
+3. Ikuti konvensi commit yang jelas dan singkat
+4. Kirim PR ke branch `master` dengan deskripsi perubahan dan langkah reproduksi
 
-### 3. **AI Insight**
+**Checklist PR:**
 
-- Input: Hasil clustering + context data
-- Process: Kirim ke Kolosal AI dengan prompt terstruktur
-- Output: Analisis mendalam dan rekomendasi actionable
+- Deskripsi perubahan jelas dan singkat
+- Perubahan terfokus (satu fitur atau perbaikan per PR)
+- Jika menambahkan environment variables, dokumentasikan di README atau file terkait
+- Jalankan `npm run lint` sebelum mengirim PR
 
-## 🎨 Fitur UI
+Untuk perubahan besar, silakan buka issue terlebih dahulu untuk diskusi desain.
 
-- **Tab Navigation**: Map, Statistics, AI Insight
-- **Interactive Map**:
-  - Blue markers: UMKM
-  - Green markers: Wisata
-  - Amber markers: Pelatihan
-  - Red markers: Cluster centers
-- **Statistics Dashboard**:
-  - Summary cards
-  - Bar chart (UMKM per cluster)
-  - Pie chart (Distribusi kategori)
-  - Cluster detail table
-  - Potensi wisata cards
-- **AI Panel**:
-  - Multiple analysis types
-  - Custom chat
-  - Quick actions
-  - Real-time insight generation
+## Lisensi
 
-## 📝 API Endpoints
+Proyek ini menggunakan lisensi MIT.
 
-### GET /api/pelatihan
+## Atribusi
 
-Fetch data pelatihan dari Supabase
+Proyek ini menggunakan dan terinspirasi oleh beberapa teknologi dan layanan pihak ketiga:
 
-**Query params:**
+- **Supabase** - Database dan autentikasi
+- **OpenStreetMap / Leaflet** - Data peta dan visualisasi
+- **Kolosal AI / OpenAI** - AI dan model bahasa
+- **Recharts** - Visualisasi statistik
 
-- `category` (optional): Filter by category
-- `limit` (optional): Limit results
+Mohon periksa dokumentasi masing-masing layanan untuk kebutuhan kredensial dan batasan penggunaan.
 
-### GET /api/umkm
+## Dokumentasi
 
-Fetch data UMKM dari Supabase
+Untuk panduan teknis dan setup lebih lanjut, lihat file berikut di repo:
 
-**Query params:**
+- [`SUPABASE_SETUP.md`](./SUPABASE_SETUP.md) - Panduan setup Supabase
+- [`MIGRATION_GUIDE.md`](./MIGRATION_GUIDE.md) - Panduan migrasi data
+- [`SETUP_CHECKLIST.md`](./SETUP_CHECKLIST.md) - Checklist setup lingkungan
+- [`NEW_FEATURES.md`](./NEW_FEATURES.md) - Catatan fitur baru dan perubahan
 
-- `category` (optional): Filter by category
-- `limit` (optional): Limit results
+## Hubungi / Lapor Bug
 
-### GET /api/wisata
-
-Fetch data wisata dari Supabase
-
-**Query params:**
-
-- `category` (optional): Filter by category
-- `limit` (optional): Limit results
-
-### GET /api/clustering
-
-Lakukan clustering pada data dari Supabase
-
-**Query params:**
-
-- `clusters` (optional): Jumlah cluster (default: 5)
-
-### POST /api/clustering
-
-Clustering dengan custom data
-
-```json
-{
-  "umkmData": [...],
-  "wisataData": [...],
-  "pelatihanData": [...],
-  "numClusters": 5
-}
-```
-
-### POST /api/ai-agent
-
-Generate AI insight
-
-```json
-{
-  "type": "clustering",
-  "data": {...}
-}
-```
-
-## 🌟 Tips Penggunaan
-
-1. **Untuk area padat UMKM**: Filter data dengan limit atau category
-2. **Optimal clusters**: 3-7 clusters untuk hasil terbaik
-3. **AI Insight**: Tunggu clustering selesai sebelum generate insight
-4. **Performance**: Data sudah ter-index untuk query cepat
-5. **Scalability**: Supabase mendukung jutaan records
-
-## 📚 Dokumentasi Lengkap
-
-- [SUPABASE_SETUP.md](./SUPABASE_SETUP.md) - Setup Supabase step-by-step
-- [MIGRATION_GUIDE.md](./MIGRATION_GUIDE.md) - Panduan migrasi data lengkap
-- [NEW_FEATURES.md](./NEW_FEATURES.md) - Dokumentasi fitur baru (Prediksi Lokasi, Analisis Kompetitor, Rekomendasi) ⭐
-
-## 🔄 NPM Scripts
-
-```bash
-npm run dev      # Jalankan development server
-npm run build    # Build untuk production
-npm run start    # Jalankan production server
-npm run migrate  # Migrasi data ke Supabase
-```
-
-## 📄 License
-
-MIT License
+Silakan buka [issue di GitHub](https://github.com/aogz24/peta-loka/issues) untuk laporan bug atau permintaan fitur.
 
 ---
 
-**Dibuat dengan ❤️ menggunakan Next.js, Supabase, dan Kolosal AI**
+**Built with Next.js, Supabase, and Kolosal AI**
