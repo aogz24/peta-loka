@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
-import { Loader2, MapPinned } from 'lucide-react';
-import AIAgentPanel from '@/components/AIAgentPanel';
-import ClusterStats from '@/components/ClusterStats';
-import LocationPredictionPanel from '@/components/LocationPredictionPanel';
-import CompetitorAnalysisPanel from '@/components/CompetitorAnalysisPanel';
-import RecommendationPanel from '@/components/RecommendationPanel';
+import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+import { Loader2, MapPinned } from "lucide-react";
+import AIAgentPanel from "@/components/AIAgentPanel";
+import ClusterStats from "@/components/ClusterStats";
+import LocationPredictionPanel from "@/components/LocationPredictionPanel";
+import CompetitorAnalysisPanel from "@/components/CompetitorAnalysisPanel";
+import RecommendationPanel from "@/components/RecommendationPanel";
 
 // Dynamic import untuk MapComponent (client-side only)
-const MapComponent = dynamic(() => import('@/components/MapComponent'), {
+const MapComponent = dynamic(() => import("@/components/MapComponent"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg">
@@ -20,17 +20,20 @@ const MapComponent = dynamic(() => import('@/components/MapComponent'), {
 });
 
 export default function SearchUMKM() {
-  const [center, setCenter] = useState([parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LAT), parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LNG)]); // Bandung default
+  const [center, setCenter] = useState([
+    parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LAT),
+    parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LNG),
+  ]); // Bandung default
   const [radius, setRadius] = useState(5000);
   const [numClusters, setNumClusters] = useState(5);
-  const [clusterMode, setClusterMode] = useState('auto'); // 'auto' atau 'manual'
+  const [clusterMode, setClusterMode] = useState("auto"); // 'auto' atau 'manual'
   const [loading, setLoading] = useState(false);
   const [scrapedData, setScrapedData] = useState(null);
   const [clusteringData, setClusteringData] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
-  const [activeTab, setActiveTab] = useState('map');
+  const [activeTab, setActiveTab] = useState("map");
   const [showMapPicker, setShowMapPicker] = useState(false);
-  const [mode, setMode] = useState('manual'); // manual, current, map
+  const [mode, setMode] = useState("manual"); // manual, current, map
   const [zoom, setZoom] = useState(13);
 
   // Auto-load data on mount
@@ -42,9 +45,9 @@ export default function SearchUMKM() {
     setLoading(true);
     try {
       // Step 1: Scrape data
-      const scrapeResponse = await fetch('/api/scrape', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const scrapeResponse = await fetch("/api/scrape", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           lat: center[0],
           lon: center[1],
@@ -58,14 +61,14 @@ export default function SearchUMKM() {
         setScrapedData(scrapeResult.data);
 
         // Step 2: Perform clustering
-        const clusterResponse = await fetch('/api/clustering', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+        const clusterResponse = await fetch("/api/clustering", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             umkmData: scrapeResult.data.umkm,
             wisataData: scrapeResult.data.wisata,
             pelatihanData: scrapeResult.data.pelatihan,
-            numClusters: clusterMode === 'auto' ? 'auto' : numClusters,
+            numClusters: clusterMode === "auto" ? "auto" : numClusters,
           }),
         });
 
@@ -76,8 +79,8 @@ export default function SearchUMKM() {
         }
       }
     } catch (error) {
-      console.error('Error:', error);
-      alert('Error loading data: ' + error.message);
+      console.error("Error:", error);
+      alert("Error loading data: " + error.message);
     } finally {
       setLoading(false);
     }
@@ -101,17 +104,33 @@ export default function SearchUMKM() {
                 <MapPinned className="text-blue-600/70" /> Cari Potensi UMKM
               </h2>
 
-              <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Temukan potensi UMKM dalam radius tertentu berdasarkan lokasi pilihan Anda.</p>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+                Temukan potensi UMKM dalam radius tertentu berdasarkan lokasi
+                pilihan Anda.
+              </p>
             </div>
 
             <div className="p-5 rounded-2xl bg-white/70 dark:bg-zinc-900/70 backdrop-blur border border-zinc-200/60 dark:border-zinc-700 shadow-lg space-y-5">
               {/* Latitude */}
               <div className="space-y-1.5">
-                <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Latitude</label>
+                <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                  Latitude
+                </label>
                 <div className="relative">
                   <span className="absolute left-3 top-2.5 text-zinc-400 dark:text-zinc-500">
-                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z" />
+                    <svg
+                      width="18"
+                      height="18"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z"
+                      />
                       <circle cx="12" cy="9.5" r="2" strokeWidth="1.2" />
                     </svg>
                   </span>
@@ -122,11 +141,11 @@ export default function SearchUMKM() {
                     value={center[0]}
                     onChange={(e) => {
                       const val = e.target.value;
-                      if (val === '') return;
+                      if (val === "") return;
                       const parsed = parseFloat(val);
                       if (!isNaN(parsed)) setCenter([parsed, center[1]]);
                     }}
-                    disabled={loading || mode !== 'manual'}
+                    disabled={loading || mode !== "manual"}
                     className="w-full pl-12 pr-3 py-2.5 rounded-xl bg-white dark:bg-zinc-900 
                    border border-zinc-300 dark:border-zinc-700 
                    text-zinc-900 dark:text-zinc-100
@@ -137,10 +156,18 @@ export default function SearchUMKM() {
 
               {/* Longitude */}
               <div className="space-y-1.5">
-                <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Longitude</label>
+                <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                  Longitude
+                </label>
                 <div className="relative">
                   <span className="absolute left-3 top-2.5 text-zinc-400 dark:text-zinc-500">
-                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg
+                      width="18"
+                      height="18"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
                       <circle cx="12" cy="12" r="9" strokeWidth="1.4" />
                     </svg>
                   </span>
@@ -151,11 +178,11 @@ export default function SearchUMKM() {
                     value={center[1]}
                     onChange={(e) => {
                       const val = e.target.value;
-                      if (val === '') return;
+                      if (val === "") return;
                       const parsed = parseFloat(val);
                       if (!isNaN(parsed)) setCenter([center[0], parsed]);
                     }}
-                    disabled={loading || mode !== 'manual'}
+                    disabled={loading || mode !== "manual"}
                     className="w-full pl-12 pr-3 py-2.5 rounded-xl bg-white dark:bg-zinc-900 
                    border border-zinc-300 dark:border-zinc-700 
                    text-zinc-900 dark:text-zinc-100 
@@ -166,12 +193,25 @@ export default function SearchUMKM() {
 
               {/* Radius */}
               <div className="space-y-2">
-                <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Radius (meter)</label>
+                <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                  Radius (meter)
+                </label>
 
                 <div className="relative">
                   <span className="absolute left-3 top-2.5 text-zinc-400 dark:text-zinc-500">
-                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 2L15 8H9L12 2z" />
+                    <svg
+                      width="18"
+                      height="18"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        d="M12 2L15 8H9L12 2z"
+                      />
                     </svg>
                   </span>
 
@@ -191,51 +231,69 @@ export default function SearchUMKM() {
                   />
                 </div>
 
-                <input type="range" min={1000} max={20000} step={500} value={radius} onChange={(e) => setRadius(parseInt(e.target.value))} className="w-full accent-blue-600 cursor-pointer" />
+                <input
+                  type="range"
+                  min={1000}
+                  max={20000}
+                  step={500}
+                  value={radius}
+                  onChange={(e) => setRadius(parseInt(e.target.value))}
+                  className="w-full accent-blue-600 cursor-pointer"
+                />
               </div>
 
               {/* Mode Clustering */}
               <div className="space-y-2">
-                <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Mode Clustering</label>
+                <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                  Mode Clustering
+                </label>
                 <div className="grid grid-cols-2 gap-2">
                   <button
-                    onClick={() => setClusterMode('auto')}
+                    onClick={() => setClusterMode("auto")}
                     disabled={loading}
                     className={`px-3 py-2 rounded-lg border font-medium text-sm transition ${
-                      clusterMode === 'auto'
-                        ? 'bg-blue-600 text-white border-blue-600'
-                        : 'bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700'
+                      clusterMode === "auto"
+                        ? "bg-blue-600 text-white border-blue-600"
+                        : "bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700"
                     }`}
                   >
                     Auto (Silhouette)
                   </button>
                   <button
-                    onClick={() => setClusterMode('manual')}
+                    onClick={() => setClusterMode("manual")}
                     disabled={loading}
                     className={`px-3 py-2 rounded-lg border font-medium text-sm transition ${
-                      clusterMode === 'manual'
-                        ? 'bg-blue-600 text-white border-blue-600'
-                        : 'bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700'
+                      clusterMode === "manual"
+                        ? "bg-blue-600 text-white border-blue-600"
+                        : "bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700"
                     }`}
                   >
                     Manual
                   </button>
                 </div>
                 <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                  {clusterMode === 'auto'
-                    ? 'Sistem akan otomatis menentukan jumlah cluster optimal menggunakan Silhouette Coefficient'
-                    : 'Tentukan sendiri jumlah cluster yang diinginkan'}
+                  {clusterMode === "auto"
+                    ? "Sistem akan otomatis menentukan jumlah cluster optimal menggunakan Silhouette Coefficient"
+                    : "Tentukan sendiri jumlah cluster yang diinginkan"}
                 </p>
               </div>
 
               {/* Jumlah Cluster - Only show when manual mode */}
-              {clusterMode === 'manual' && (
+              {clusterMode === "manual" && (
                 <div className="space-y-2">
-                  <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Jumlah Cluster</label>
+                  <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                    Jumlah Cluster
+                  </label>
 
                   <div className="relative">
                     <span className="absolute left-3 top-2.5 text-zinc-400 dark:text-zinc-500">
-                      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg
+                        width="18"
+                        height="18"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -264,22 +322,37 @@ export default function SearchUMKM() {
                     />
                   </div>
 
-                  <input type="range" min={2} max={10} step={1} value={numClusters} onChange={(e) => setNumClusters(parseInt(e.target.value))} disabled={loading} className="w-full accent-blue-600 cursor-pointer" />
-                  <p className="text-xs text-zinc-500 dark:text-zinc-400">Pilih 2-10 cluster untuk mengelompokkan data</p>
+                  <input
+                    type="range"
+                    min={2}
+                    max={10}
+                    step={1}
+                    value={numClusters}
+                    onChange={(e) => setNumClusters(parseInt(e.target.value))}
+                    disabled={loading}
+                    className="w-full accent-blue-600 cursor-pointer"
+                  />
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                    Pilih 2-10 cluster untuk mengelompokkan data
+                  </p>
                 </div>
               )}
             </div>
 
             {/* Method Buttons */}
             <div className="mt-4 space-y-2">
-              <label className="font-semibold text-gray-700 text-sm">Metode Pemilihan Lokasi</label>
+              <label className="font-semibold text-gray-700 text-sm">
+                Metode Pemilihan Lokasi
+              </label>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {/* Manual Input */}
                 <button
-                  onClick={() => setMode('manual')}
+                  onClick={() => setMode("manual")}
                   className={`px-3 py-1 cursor-pointer text-sm rounded-lg border font-medium transition hover:brightness-90 ${
-                    mode === 'manual' ? 'border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700' : 'border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700'
+                    mode === "manual"
+                      ? "border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700"
+                      : "border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700"
                   }`}
                 >
                   Input Manual
@@ -289,10 +362,12 @@ export default function SearchUMKM() {
                 <button
                   onClick={() => {
                     setShowMapPicker(true);
-                    setMode('picker');
+                    setMode("picker");
                   }}
                   className={`px-3 py-1 cursor-pointer text-sm rounded-lg border font-medium transition hover:brightness-90 ${
-                    mode === 'picker' ? 'border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700' : 'border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700'
+                    mode === "picker"
+                      ? "border-blue-600 bg-blue-50 dark:bg-blue-900 dark:text-blue-50 text-blue-700"
+                      : "border-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 dark:text-zinc-200 text-zinc-700"
                   }`}
                 >
                   Pilih Lokasi Lewat Peta
@@ -301,8 +376,12 @@ export default function SearchUMKM() {
             </div>
 
             {/* Button */}
-            <button onClick={handleLocationChange} disabled={loading} className="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-semibold cursor-pointer">
-              {loading ? 'Memuat...' : 'Cari Data'}
+            <button
+              onClick={handleLocationChange}
+              disabled={loading}
+              className="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-semibold cursor-pointer"
+            >
+              {loading ? "Memuat..." : "Cari Data"}
             </button>
           </aside>
 
@@ -323,7 +402,11 @@ export default function SearchUMKM() {
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded-lg">
-                    <p className="text-gray-500">{loading ? 'Memuat data...' : 'Klik "Cari Data" untuk memulai'}</p>
+                    <p className="text-gray-500">
+                      {loading
+                        ? "Memuat data..."
+                        : 'Klik "Cari Data" untuk memulai'}
+                    </p>
                   </div>
                 )}
               </div>
@@ -337,49 +420,61 @@ export default function SearchUMKM() {
               {/* Desktop buttons (hidden on mobile) */}
               <div className="hidden md:flex items-center gap-2 overflow-x-auto">
                 <button
-                  onClick={() => setActiveTab('map')}
+                  onClick={() => setActiveTab("map")}
                   className={`px-3 py-2 rounded-md text-sm whitespace-nowrap cursor-pointer hover:brightness-90 ${
-                    activeTab === 'map' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'
+                    activeTab === "map"
+                      ? "bg-blue-600 text-white"
+                      : "bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800"
                   }`}
                 >
                   🗺️ Map
                 </button>
                 <button
-                  onClick={() => setActiveTab('stats')}
+                  onClick={() => setActiveTab("stats")}
                   className={`px-3 py-2 rounded-md text-sm whitespace-nowrap cursor-pointer hover:brightness-90 ${
-                    activeTab === 'stats' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'
+                    activeTab === "stats"
+                      ? "bg-blue-600 text-white"
+                      : "bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800"
                   }`}
                 >
                   📊 Stats
                 </button>
                 <button
-                  onClick={() => setActiveTab('ai')}
+                  onClick={() => setActiveTab("ai")}
                   className={`px-3 py-2 rounded-md text-sm whitespace-nowrap cursor-pointer hover:brightness-90 ${
-                    activeTab === 'ai' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'
+                    activeTab === "ai"
+                      ? "bg-blue-600 text-white"
+                      : "bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800"
                   }`}
                 >
                   🤖 AI Insight
                 </button>
                 <button
-                  onClick={() => setActiveTab('prediction')}
+                  onClick={() => setActiveTab("prediction")}
                   className={`px-3 py-2 rounded-md text-sm whitespace-nowrap cursor-pointer hover:brightness-90 ${
-                    activeTab === 'prediction' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'
+                    activeTab === "prediction"
+                      ? "bg-blue-600 text-white"
+                      : "bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800"
                   }`}
                 >
                   🎯 Prediksi Lokasi
                 </button>
                 <button
-                  onClick={() => setActiveTab('competitor')}
+                  onClick={() => setActiveTab("competitor")}
                   className={`px-3 py-2 rounded-md text-sm whitespace-nowrap cursor-pointer hover:brightness-90 ${
-                    activeTab === 'competitor' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'
+                    activeTab === "competitor"
+                      ? "bg-blue-600 text-white"
+                      : "bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800"
                   }`}
                 >
                   🎯 Analisis Kompetitor
                 </button>
                 <button
-                  onClick={() => setActiveTab('recommendations')}
+                  onClick={() => setActiveTab("recommendations")}
                   className={`px-3 py-2 rounded-md text-sm whitespace-nowrap cursor-pointer hover:brightness-90 ${
-                    activeTab === 'recommendations' ? 'bg-blue-600 text-white' : 'bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800'
+                    activeTab === "recommendations"
+                      ? "bg-blue-600 text-white"
+                      : "bg-transparent text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800"
                   }`}
                 >
                   ✨ Rekomendasi
@@ -389,7 +484,11 @@ export default function SearchUMKM() {
               {/* Mobile select (visible on small screens) */}
               <div className="w-full md:hidden">
                 <label className="sr-only">Pilih Tab</label>
-                <select value={activeTab} onChange={(e) => setActiveTab(e.target.value)} className="w-full rounded-md border px-3 py-2 bg-white dark:bg-zinc-900 text-sm text-zinc-700 dark:text-zinc-200">
+                <select
+                  value={activeTab}
+                  onChange={(e) => setActiveTab(e.target.value)}
+                  className="w-full rounded-md border px-3 py-2 bg-white dark:bg-zinc-900 text-sm text-zinc-700 dark:text-zinc-200"
+                >
                   <option value="map">🗺️ Map</option>
                   <option value="stats">📊 Stats</option>
                   <option value="ai">🤖 AI Insight</option>
@@ -401,100 +500,133 @@ export default function SearchUMKM() {
             </div>
 
             <div className="mt-4">
-              {activeTab === 'map' && (
+              {activeTab === "map" && (
                 <div className="text-sm text-zinc-600 dark:text-zinc-300">
                   {/* Legend */}
 
-                  <p className="pl-4 ">Interaksi peta: klik marker untuk detail, daftar di kiri memudahkan navigasi.</p>
+                  <p className="pl-4 ">
+                    Interaksi peta: klik marker untuk detail, daftar di kiri
+                    memudahkan navigasi.
+                  </p>
                   <div className="glass-card rounded-lg p-4 mt-2">
-                    <h3 className="font-semibold text-gray-800 dark:text-gray-200 mb-3">Legend:</h3>
+                    <h3 className="font-semibold text-gray-800 dark:text-gray-200 mb-3">
+                      Legend:
+                    </h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                       <div className="flex items-center gap-2">
                         <div className="w-6 h-6 bg-blue-500 rounded-full border-2 border-white"></div>
-                        <span className="text-sm text-gray-700 dark:text-gray-300">UMKM</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">
+                          UMKM
+                        </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-6 h-6 bg-green-500 rounded-full border-2 border-white"></div>
-                        <span className="text-sm text-gray-700 dark:text-gray-300">Wisata Mikro</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">
+                          Wisata Mikro
+                        </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-6 h-6 bg-amber-500 rounded-full border-2 border-white"></div>
-                        <span className="text-sm text-gray-700 dark:text-gray-300">Pelatihan</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">
+                          Pelatihan
+                        </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-6 h-6 bg-red-500 rounded-full border-2 border-white"></div>
-                        <span className="text-sm text-gray-700 dark:text-gray-300">Cluster Center</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">
+                          Cluster Center
+                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
               )}
 
-              {activeTab === 'stats' &&
-                (clusteringData && clusteringData.overall?.clusters?.length > 0 ? (
+              {activeTab === "stats" &&
+                (clusteringData &&
+                clusteringData.overall?.clusters?.length > 0 ? (
                   <ClusterStats
                     clusteringData={clusteringData}
                     radius={radius}
                     onClusterSelect={(lat, lng) => {
                       setCenter([lat, lng]);
                       setZoom(15);
-                      if (typeof window !== 'undefined') {
+                      if (typeof window !== "undefined") {
                         // Pada mobile (<= 768px) scroll ke tinggi device, selainnya scroll ke atas
                         if (window.innerWidth <= 768) {
-                          window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                          window.scrollTo({
+                            top: window.innerHeight,
+                            behavior: "smooth",
+                          });
                         } else {
-                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                          window.scrollTo({ top: 0, behavior: "smooth" });
                         }
                       }
                     }}
                   />
                 ) : (
-                  <div className="text-sm text-zinc-500 py-8 text-center">Belum ada data clustering. Jalankan pencarian terlebih dahulu.</div>
+                  <div className="text-sm text-zinc-500 py-8 text-center">
+                    Belum ada data clustering. Jalankan pencarian terlebih
+                    dahulu.
+                  </div>
                 ))}
 
-              {activeTab === 'ai' &&
-                (clusteringData && clusteringData.overall?.clusters?.length > 0 ? (
-                  <AIAgentPanel clusteringData={clusteringData} center={center} rad={radius} />
+              {activeTab === "ai" &&
+                (clusteringData &&
+                clusteringData.overall?.clusters?.length > 0 ? (
+                  <AIAgentPanel
+                    clusteringData={clusteringData}
+                    center={center}
+                    rad={radius}
+                  />
                 ) : (
-                  <div className="text-sm text-zinc-500 py-8 text-center">Analisis AI akan tersedia setelah data diperoleh.</div>
+                  <div className="text-sm text-zinc-500 py-8 text-center">
+                    Analisis AI akan tersedia setelah data diperoleh.
+                  </div>
                 ))}
 
-              {activeTab === 'prediction' && (
+              {activeTab === "prediction" && (
                 <LocationPredictionPanel
                   onLocationSelect={(lat, lng) => {
                     setCenter([lat, lng]);
                     setZoom(15);
-                    if (typeof window !== 'undefined') {
+                    if (typeof window !== "undefined") {
                       // Pada mobile (<= 768px) scroll ke tinggi device, selainnya scroll ke atas
                       if (window.innerWidth <= 768) {
-                        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                        window.scrollTo({
+                          top: window.innerHeight,
+                          behavior: "smooth",
+                        });
                       } else {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        window.scrollTo({ top: 0, behavior: "smooth" });
                       }
                     }
                   }}
                 />
               )}
 
-              {activeTab === 'competitor' && (
+              {activeTab === "competitor" && (
                 <CompetitorAnalysisPanel
                   onLocationSelect={(item) => {
                     setSelectedItem(item);
                     setCenter([item.lat, item.lon]);
                     setZoom(25);
-                    if (typeof window !== 'undefined') {
+                    if (typeof window !== "undefined") {
                       // Pada mobile (<= 768px) scroll ke tinggi device, selainnya scroll ke atas
                       if (window.innerWidth <= 768) {
-                        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                        window.scrollTo({
+                          top: window.innerHeight,
+                          behavior: "smooth",
+                        });
                       } else {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        window.scrollTo({ top: 0, behavior: "smooth" });
                       }
                     }
                   }}
                 />
               )}
 
-              {activeTab === 'recommendations' && (
+              {activeTab === "recommendations" && (
                 <RecommendationPanel
                   onItemClick={(item) => {
                     setSelectedItem(item);
@@ -502,12 +634,15 @@ export default function SearchUMKM() {
                       setCenter([item.lat, item.lon]);
                     }
                     setZoom(25);
-                    if (typeof window !== 'undefined') {
+                    if (typeof window !== "undefined") {
                       // Pada mobile (<= 768px) scroll ke tinggi device, selainnya scroll ke atas
                       if (window.innerWidth <= 768) {
-                        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                        window.scrollTo({
+                          top: window.innerHeight,
+                          behavior: "smooth",
+                        });
                       } else {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        window.scrollTo({ top: 0, behavior: "smooth" });
                       }
                     }
                   }}
@@ -523,15 +658,35 @@ export default function SearchUMKM() {
           <div className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 h-3/4 relative">
             <div className="flex justify-between items-center mb-4">
               <h2 className="font-semibold text-lg">Pilih Lokasi dari Peta</h2>
-              <button onClick={() => setShowMapPicker(false)} className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <button
+                onClick={() => setShowMapPicker(false)}
+                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </div>
             <div className="h-[calc(100%-60px)]">
               <MapComponent
-                center={center ? [parseFloat(center[0]), parseFloat(center[1])] : [parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LAT), parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LNG)]}
+                center={
+                  center
+                    ? [parseFloat(center[0]), parseFloat(center[1])]
+                    : [
+                        parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LAT),
+                        parseFloat(process.env.NEXT_PUBLIC_MAP_CENTER_LNG),
+                      ]
+                }
                 zoom={13}
                 selectMode
                 onSelectLocation={(selectedLat, selectedLng) => {

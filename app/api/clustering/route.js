@@ -8,13 +8,14 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const numClustersParam = searchParams.get("clusters");
     // Jika clusters tidak ditentukan atau "auto", gunakan Silhouette Coefficient
-    const numClusters = numClustersParam && numClustersParam !== "auto" 
-      ? parseInt(numClustersParam) 
-      : null;
+    const numClusters =
+      numClustersParam && numClustersParam !== "auto"
+        ? parseInt(numClustersParam)
+        : null;
 
     // Check cache first (TTL: 30 minutes)
-    const cacheKey = cacheManager.generateKey("clustering", { 
-      numClusters: numClusters || "auto" 
+    const cacheKey = cacheManager.generateKey("clustering", {
+      numClusters: numClusters || "auto",
     });
     const cachedResult = cacheManager.get(cacheKey);
 
@@ -53,7 +54,7 @@ export async function GET(request) {
     return NextResponse.json({
       success: true,
       data: analysis,
-      message: numClusters 
+      message: numClusters
         ? "Clustering completed successfully with manual cluster count"
         : "Clustering completed successfully with optimal cluster count (Silhouette Coefficient)",
       cached: false,
@@ -77,7 +78,8 @@ export async function POST(request) {
     } = await request.json();
 
     // Jika numClusters tidak ditentukan atau "auto", gunakan Silhouette Coefficient
-    const finalNumClusters = numClusters === "auto" || !numClusters ? null : numClusters;
+    const finalNumClusters =
+      numClusters === "auto" || !numClusters ? null : numClusters;
 
     // Generate cache key for POST requests
     const cacheKey = cacheManager.generateKey("clustering-post", {
