@@ -4,6 +4,8 @@ import supabaseService from "@/lib/services/supabase";
 import cacheManager from "@/lib/utils/cache";
 
 export async function GET(request) {
+  const startTime = Date.now();
+
   try {
     const { searchParams } = new URL(request.url);
     const numClustersParam = searchParams.get("clusters");
@@ -23,10 +25,13 @@ export async function GET(request) {
       return NextResponse.json({
         success: true,
         data: cachedResult,
-        message: "Clustering result from cache",
+        message: "Clustering result from cache (instant)",
         cached: true,
+        processingTime: `${Date.now() - startTime}ms`,
       });
     }
+
+    console.log("[Clustering] Starting data fetch...");
 
     const {
       pelatihan: pelatihanData,
@@ -39,7 +44,18 @@ export async function GET(request) {
       return NextResponse.json({ error: "Data not found" }, { status: 404 });
     }
 
+    const fetchTime = Date.now();
+    console.log(`[Clustering] Data fetched in ${fetchTime - startTime}ms`);
+    console.log(
+      `[Clustering] Data: ${umkmData?.length || 0} UMKM, ${
+        wisataData?.length || 0
+      } Wisata, ${pelatihanData?.length || 0} Pelatihan`
+    );
+
     // Lakukan clustering dan analisis
+    console.log("[Clustering] Starting clustering analysis...");
+    const clusterStartTime = Date.now();
+
     // Jika numClusters null, akan otomatis menggunakan Silhouette Coefficient
     const analysis = clusteringService.analyzeAll(
       umkmData,
@@ -47,6 +63,11 @@ export async function GET(request) {
       pelatihanData,
       numClusters
     );
+
+    const clusterTime = Date.now() - clusterStartTime;
+    const totalTime = Date.now() - startTime;
+    console.log(`[Clustering] Clustering completed in ${clusterTime}ms`);
+    console.log(`[Clustering] Total processing: ${totalTime}ms`);
 
     // Store in cache (TTL: 30 minutes)
     cacheManager.set(cacheKey, analysis, 30 * 60 * 1000);
@@ -56,8 +77,16 @@ export async function GET(request) {
       data: analysis,
       message: numClusters
         ? "Clustering completed successfully with manual cluster count"
-        : "Clustering completed successfully with optimal cluster count (Silhouette Coefficient)",
+        : "Clustering completed successfully with optimal cluster count (MiniBatch K-Means)",
       cached: false,
+      processingTime: `${totalTime}ms`,
+      performance: {
+        dataFetch: `${fetchTime - startTime}ms`,
+        clustering: `${clusterTime}ms`,
+        total: `${totalTime}ms`,
+        rating:
+          totalTime < 2000 ? "excellent" : totalTime < 5000 ? "good" : "slow",
+      },
     });
   } catch (error) {
     console.error("Error in clustering API:", error);
@@ -69,6 +98,8 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
+  const startTime = Date.now();
+
   try {
     const {
       umkmData: customUmkm,
@@ -98,6 +129,7 @@ export async function POST(request) {
       return NextResponse.json({
         success: true,
         data: cachedResult,
+        processingTime: `${Date.now() - startTime}ms`,
         message: "Clustering result from cache",
         cached: true,
       });

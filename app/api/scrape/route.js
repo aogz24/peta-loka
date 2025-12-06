@@ -6,6 +6,8 @@ import cacheManager from "@/lib/utils/cache";
  * API untuk mengambil data dari Supabase berdasarkan radius
  */
 export async function POST(request) {
+  const startTime = Date.now();
+
   try {
     const { lat, lon, radius = 5000 } = await request.json();
 
@@ -24,11 +26,14 @@ export async function POST(request) {
       return NextResponse.json({
         ...cachedResult,
         cached: true,
+        processingTime: `${Date.now() - startTime}ms`,
       });
     }
 
-    // Fetch data dari Supabase berdasarkan radius
+    // Fetch data dari Supabase berdasarkan radius (optimized query)
     const result = await supabaseService.fetchByRadius(lat, lon, radius);
+
+    const processingTime = Date.now() - startTime;
 
     const response = {
       success: true,
@@ -42,6 +47,13 @@ export async function POST(request) {
       center: { lat, lon },
       message: `Found ${result.total} items within ${radius}m radius from Supabase`,
       cached: false,
+      processingTime: `${processingTime}ms`,
+      performance:
+        processingTime < 1000
+          ? "excellent"
+          : processingTime < 3000
+          ? "good"
+          : "slow",
     };
 
     // Store in cache (TTL: 15 minutes)
